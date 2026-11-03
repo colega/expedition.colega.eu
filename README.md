@@ -61,6 +61,9 @@ En el visor:
   arista que se vea: la que tapa otra pieza, no. Esc suelta la primera arista
   y, si no hay, apaga el modo.
 - La ducha sale cerrada: `ducha_abierta` viene oculta de serie.
+- En el móvil, el modelo va arriba y el panel debajo, con el árbol dentro;
+  **Panel** lo pliega para ver el modelo a pantalla completa. Las vistas fijas
+  no salen: con el dedo se gira mejor.
 
 ## Las versiones
 

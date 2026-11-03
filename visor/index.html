@@ -87,30 +87,40 @@
     .etiqueta span { color: var(--suave); font-size: 11px; }
     #error { white-space: pre-wrap; color: #b3261e; font: 12px ui-monospace, monospace; padding: 8px 14px; display: none; }
     #plegar { display: none; }
+    .botones { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
+    .botones label.opcion { margin-right: 0; }
+    /* En el movil el modelo va arriba y el panel debajo, que se desplaza entero,
+       arbol incluido. Las vistas fijas no salen: con el dedo se gira mejor.
+       Panel lo pliega para ver el modelo a pantalla completa. */
     @media (max-width: 700px) {
-      body { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
-      aside { max-height: 45vh; border-right: 0; border-bottom: 1px solid var(--linea); }
-      aside.plegado #arbol, aside.plegado .bloque { display: none; }
+      body { height: 100dvh; grid-template-columns: 1fr; grid-template-rows: minmax(0, 1fr) auto; }
+      main { order: 1; min-height: 0; }
+      aside { order: 2; height: 45dvh; overflow-y: auto; border-right: 0; border-top: 1px solid var(--linea); }
+      #arbol { flex: none; overflow: visible; }
+      .bloque-vistas { display: none; }
+      aside.plegado { height: auto; }
+      aside.plegado > :not(header) { display: none; }
+      aside.plegado header { border-bottom: 0; }
       #plegar { display: inline-block; float: right; }
+      button { padding: 6px 10px; font-size: 13px; }
+      input[type=checkbox] { width: 18px; height: 18px; }
+      summary, .cuerpo { padding: 4px 0; }
+      #info { bottom: 8px; left: 8px; right: 8px; }
     }
   </style>
 </head>
 <body>
   <aside id="lateral">
     <header>
-      <button id="plegar">Árbol</button>
+      <button id="plegar" aria-expanded="true">Panel</button>
       <h1>Caja Atego <select id="version" aria-label="Versión"></select></h1>
       <div id="estado">Arrancando OpenCascade…</div>
     </header>
-    <div class="bloque">
-      <h2>Vistas</h2>
-      <div class="vistas" id="vistas"></div>
-    </div>
-    <div class="bloque">
-      <label class="opcion"><input type="checkbox" id="aristas" checked> Aristas</label>
-      <label class="opcion"><input type="checkbox" id="suelo" checked> Suelo</label>
+    <div class="bloque botones">
       <button id="mostrarTodo">Mostrar todo</button>
       <button id="soloInterior">Solo interior</button>
+      <label class="opcion"><input type="checkbox" id="aristas" checked> Aristas</label>
+      <label class="opcion"><input type="checkbox" id="suelo" checked> Suelo</label>
     </div>
     <div class="bloque">
       <h2>Medir</h2>
@@ -118,6 +128,10 @@
       <button id="borrarMedidas">Borrar medidas</button>
       <div id="pista" class="pista"></div>
       <ol id="medidas"></ol>
+    </div>
+    <div class="bloque bloque-vistas">
+      <h2>Vistas</h2>
+      <div class="vistas" id="vistas"></div>
     </div>
     <div id="error"></div>
     <div id="arbol"></div>

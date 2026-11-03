@@ -80,19 +80,31 @@ escena.add(suelo);
 let sucio = true;
 function pedirDibujo() { sucio = true; }
 
+// Los encuadres son para una pantalla apaisada: en una estrecha, como la del
+// movil en vertical, la camara se aleja para que quepa lo mismo a lo ancho.
+const alejar = () => Math.max(1, 1.5 / camara.aspect);
+let alejado = 1;
+
 function ajustar() {
   const { clientWidth: w, clientHeight: h } = lienzo.parentElement;
+  if (!w || !h) return;
   renderer.setSize(w, h, false);
   camara.aspect = w / h;
   camara.updateProjectionMatrix();
+  // si cambia la forma del lienzo, como al plegar el panel, se reencuadra
+  const nuevo = alejar();
+  camara.position.sub(controles.target).multiplyScalar(nuevo / alejado).add(controles.target);
+  alejado = nuevo;
   sucio = true;
 }
-window.addEventListener('resize', ajustar);
+// el lienzo cambia de tamaño con la ventana y, en el movil, al plegar el panel
+new ResizeObserver(ajustar).observe(lienzo.parentElement);
 ajustar();
 
 function vista(nombre) {
   const [ojo, objetivo, arriba] = VISTAS[nombre];
-  camara.position.set(...ojo);
+  alejado = alejar();
+  camara.position.set(...objetivo).lerp(new THREE.Vector3(...ojo), alejado);
   camara.up.set(...arriba);
   controles.target.set(...objetivo);
   controles.update();
@@ -275,7 +287,10 @@ function mostrarSolo(claves, apagar = []) {
 }
 $('mostrarTodo').onclick = () => mostrarSolo(null);
 $('soloInterior').onclick = () => mostrarSolo(['Caja/Interior', 'Caja/puerta_lateral'], OCULTOS_DE_SERIE);
-$('plegar').onclick = () => $('lateral').classList.toggle('plegado');
+$('plegar').onclick = () => {
+  const plegado = $('lateral').classList.toggle('plegado');
+  $('plegar').setAttribute('aria-expanded', String(!plegado));
+};
 
 // ------------------------------------------------------------------ elegir
 let elegido = null;

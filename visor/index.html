@@ -71,6 +71,20 @@
     #info .ruta { color: var(--suave); }
     #info .medidas { font-variant-numeric: tabular-nums; margin-top: 3px; }
     #info button { margin-top: 6px; }
+    button[aria-pressed="true"] { background: var(--acento); color: var(--panel); border-color: var(--acento); }
+    .pista { color: var(--suave); font-size: 12px; margin-top: 6px; }
+    .pista:empty { display: none; }
+    #medidas { margin: 6px 0 0; padding-left: 20px; font-size: 12px; font-variant-numeric: tabular-nums; }
+    #medidas:empty { display: none; }
+    #medidas li { padding: 1px 0; }
+    #medidas li button, .etiqueta button { border: 0; padding: 0 4px; font-size: 13px; line-height: 1; color: var(--suave); }
+    #etiquetas { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+    .etiqueta {
+      position: absolute; left: 0; top: 0; pointer-events: auto; white-space: nowrap;
+      background: var(--panel); border: 1px solid #e0601f; border-radius: 5px; padding: 2px 4px 2px 7px;
+      font-size: 12px; font-variant-numeric: tabular-nums; display: flex; gap: 6px; align-items: center;
+    }
+    .etiqueta span { color: var(--suave); font-size: 11px; }
     #error { white-space: pre-wrap; color: #b3261e; font: 12px ui-monospace, monospace; padding: 8px 14px; display: none; }
     #plegar { display: none; }
     @media (max-width: 700px) {
@@ -98,11 +112,19 @@
       <button id="mostrarTodo">Mostrar todo</button>
       <button id="soloInterior">Solo interior</button>
     </div>
+    <div class="bloque">
+      <h2>Medir</h2>
+      <button id="medir" aria-pressed="false">Medir entre aristas</button>
+      <button id="borrarMedidas">Borrar medidas</button>
+      <div id="pista" class="pista"></div>
+      <ol id="medidas"></ol>
+    </div>
     <div id="error"></div>
     <div id="arbol"></div>
   </aside>
   <main>
     <canvas id="lienzo"></canvas>
+    <div id="etiquetas"></div>
     <div id="info">
       <div class="nombre"></div>
       <div class="ruta"></div>

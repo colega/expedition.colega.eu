@@ -1,6 +1,6 @@
-# Publica el visor en GitHub Pages en cada push a main: construye las
-# versiones, para no publicar un modelo que no pasa las comprobaciones, y deja
-# el visor en dist/ como pagina estatica.
+# Publica el visor en GitHub Pages en cada push a main: pasa las pruebas,
+# construye las versiones, para no publicar un modelo que no pasa las
+# comprobaciones, y deja el visor en dist/ como pagina estatica.
 name: Visor en GitHub Pages
 
 on:
@@ -30,6 +30,7 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
+      - run: npm run prueba
       - run: npm run construir
       - run: npm run visor
       - uses: actions/configure-pages@v5

@@ -22,6 +22,7 @@ Uso diario:
 npm run dev          # el visor, en http://localhost:5173
 npm run construir    # construye en Node, escribe el despiece y comprueba
 npm run visor        # deja el visor en dist/, como página estática
+npm run prueba       # las pruebas del visor
 ```
 
 `dist/` se sirve tal cual desde cualquier servidor de ficheros: el modelo se
@@ -52,6 +53,13 @@ En el visor:
   (rueda).
 - Un clic sobre una pieza la elige: sale su nombre, su material, su ruta en el
   árbol y sus cotas en el marco del modelo. Desde ahí se puede ocultar.
+- **Medir entre aristas**: con el botón encendido, la arista bajo el ratón se
+  resalta; un clic elige la primera y otro la segunda. La medida es la
+  distancia mínima entre las dos, con su Δx, Δy y Δz, y se queda dibujada con
+  una etiqueta hasta que se borra con su ×. Caben las que se quiera, salen
+  también en la lista del panel y se recuerdan por versión. Solo se elige una
+  arista que se vea: la que tapa otra pieza, no. Esc suelta la primera arista
+  y, si no hay, apaga el modo.
 - La ducha sale cerrada: `ducha_abierta` viene oculta de serie.
 
 ## Las versiones
@@ -154,6 +162,7 @@ modelo/
 versiones/            un diseño por carpeta (ver «Las versiones»)
 visor/
   index.html, visor.js   el visor: dibuja solo cuando algo cambia
+  medir.js               medir entre aristas, con su prueba en medir.test.js
   trabajador.js          construye el modelo en un hilo aparte
 vite.config.js        el visor, para npm run dev y npm run visor
 ```

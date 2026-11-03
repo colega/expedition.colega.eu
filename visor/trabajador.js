@@ -31,16 +31,18 @@ async function trabajar(nombre) {
   for (const comp of modelo.componentes.values()) {
     const cuerpos = comp.cuerpos.map((cuerpo) => {
       const m = cuerpo.forma.mesh(MALLA);
-      const lineas = cuerpo.forma.meshEdges(MALLA).lines;
+      const bordes = cuerpo.forma.meshEdges(MALLA);
       const malla = {
         nombre: cuerpo.nombre,
         material: cuerpo.material,
         vertices: new Float32Array(m.vertices),
         normales: new Float32Array(m.normals),
         triangulos: new Uint32Array(m.triangles),
-        aristas: new Float32Array(lineas),
+        aristas: new Float32Array(bordes.lines),
+        // cada arista, como [primer vertice, cuantos] dentro de aristas
+        grupos: new Uint32Array(bordes.edgeGroups.flatMap((g) => [g.start, g.count])),
       };
-      enviar.push(malla.vertices.buffer, malla.normales.buffer, malla.triangulos.buffer, malla.aristas.buffer);
+      enviar.push(malla.vertices.buffer, malla.normales.buffer, malla.triangulos.buffer, malla.aristas.buffer, malla.grupos.buffer);
       return malla;
     });
     componentes.push({ ruta: comp.ruta, cuerpos });

@@ -1,11 +1,13 @@
 // Visor del camion: el modelo se construye en trabajador.js y aqui se pinta con
 // three.js. A la izquierda va el arbol de componentes: cada casilla muestra u
-// oculta un componente con todo lo que lleva dentro, o un cuerpo suelto. Un clic en el modelo elige un cuerpo y da su
-// ruta, su material y sus cotas.
+// oculta un componente con todo lo que lleva dentro, o un cuerpo suelto. Un clic
+// en el modelo elige un cuerpo y da su ruta, su material y sus cotas; con el
+// modo de medir, mide entre aristas (medir.js).
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
 import { SIN_MATERIAL } from '../modelo/materiales.js';
+import { crearMedir } from './medir.js';
 
 // La version que se ve sale de la URL, ?v=v17, para poder tener una en cada
 // pestaña. Sin ella, la ultima.
@@ -117,6 +119,7 @@ renderer.setAnimationLoop(() => {
   if (controles.update() || sucio) {
     sucio = false;
     renderer.render(escena, camara);
+    medir.colocar();
   }
 });
 
@@ -232,6 +235,7 @@ function cargar(componentes) {
       const lineas = new THREE.BufferGeometry();
       lineas.setAttribute('position', new THREE.BufferAttribute(c.aristas, 3));
       const borde = new THREE.LineSegments(lineas, materialAristas);
+      borde.userData.grupos = c.grupos;
       malla.add(borde);
       aristas.push(borde);
       n.grupo.add(malla);
@@ -313,11 +317,25 @@ let abajo = null;
 lienzo.addEventListener('pointerdown', (e) => { abajo = [e.clientX, e.clientY]; });
 lienzo.addEventListener('pointerup', (e) => {
   if (!abajo || Math.hypot(e.clientX - abajo[0], e.clientY - abajo[1]) > 4) return;
+  if (medir.activo) { medir.clic(e); return; }
   const r = lienzo.getBoundingClientRect();
   raycaster.setFromCamera(new THREE.Vector2(((e.clientX - r.left) / r.width) * 2 - 1,
     -((e.clientY - r.top) / r.height) * 2 + 1), camara);
   const golpe = raycaster.intersectObjects(mallas.filter(seVe), false)[0];
   elegir(golpe ? golpe.object : null);
+});
+
+// ------------------------------------------------------------------ medir
+const medir = crearMedir({ escena, camara, lienzo, capa: $('etiquetas'), lista: $('medidas'), pista: $('pista'),
+  boton: $('medir'), mallas, bordes: aristas, seVe, pedirDibujo, version: VERSION });
+$('medir').onclick = () => { elegir(null); medir.alternar(); };
+$('borrarMedidas').onclick = () => medir.borrarTodas();
+// el resaltado de la arista bajo el raton, una vez por fotograma como mucho
+let movido = null;
+lienzo.addEventListener('pointermove', (e) => {
+  if (!medir.activo || e.buttons) return;
+  if (!movido) requestAnimationFrame(() => { medir.mover(movido); movido = null; });
+  movido = e;
 });
 
 // ---------------------------------------------------------------- trabajo

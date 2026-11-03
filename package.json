@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "visor": "vite build",
-    "construir": "node modelo/construir.js"
+    "construir": "node modelo/construir.js",
+    "prueba": "node --test \"visor/*.test.js\""
   },
   "dependencies": {
     "replicad": "1.1.0",

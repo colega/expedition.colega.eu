@@ -1,0 +1,109 @@
+{
+ "ventanas": [
+  {
+   "nombre": "ventana de la cocina",
+   "componente": "ventana_cocina",
+   "pared": "ancho+",
+   "modelo": "RA-35",
+   "persiana": "CH-35",
+   "caja_mm": {
+    "x": [
+     -1940,
+     -945
+    ],
+    "y": [
+     1185,
+     1250
+    ],
+    "z": [
+     1195,
+     1600
+    ]
+   }
+  },
+  {
+   "nombre": "ventana del baño",
+   "componente": "ventana_bano",
+   "pared": "ancho+",
+   "modelo": "RA-03",
+   "persiana": "CH-03",
+   "caja_mm": {
+    "x": [
+     304,
+     769
+    ],
+    "y": [
+     1185,
+     1250
+    ],
+    "z": [
+     1265,
+     1600
+    ]
+   }
+  },
+  {
+   "nombre": "ventana de los perros",
+   "componente": "ventana_perros",
+   "pared": "ancho+",
+   "modelo": "RA-35",
+   "persiana": "CH-35",
+   "caja_mm": {
+    "x": [
+     1087.5,
+     2082.5
+    ],
+    "y": [
+     1185,
+     1250
+    ],
+    "z": [
+     1195,
+     1600
+    ]
+   }
+  },
+  {
+   "nombre": "ventana del comedor",
+   "componente": "ventana_comedor",
+   "pared": "ancho-",
+   "modelo": "RA-42",
+   "persiana": "CH-42",
+   "caja_mm": {
+    "x": [
+     -1951.15,
+     -756.1500000000001
+    ],
+    "y": [
+     -1250,
+     -1185
+    ],
+    "z": [
+     1167,
+     1672
+    ]
+   }
+  },
+  {
+   "nombre": "ventana de las almohadas",
+   "componente": "ventana_almohadas",
+   "pared": "ancho-",
+   "modelo": "RA-35",
+   "persiana": "CH-35",
+   "caja_mm": {
+    "x": [
+     1048.6,
+     2043.6
+    ],
+    "y": [
+     -1250,
+     -1185
+    ],
+    "z": [
+     1267,
+     1672
+    ]
+   }
+  }
+ ]
+}

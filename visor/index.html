@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Caja Atego</title>
+  <style>
+    :root {
+      --fondo: #eef0ec;
+      --panel: #ffffff;
+      --texto: #1d211b;
+      --suave: #6a7066;
+      --linea: #d9ddd5;
+      --acento: #4d543d;
+      --resalte: #e3e8d6;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --fondo: #1b1d19;
+        --panel: #242720;
+        --texto: #e6e9e1;
+        --suave: #9aa093;
+        --linea: #383c33;
+        --acento: #b9c39a;
+        --resalte: #343a2b;
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; height: 100%; }
+    body {
+      background: var(--fondo); color: var(--texto);
+      font: 13px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
+      display: grid; grid-template-columns: 300px 1fr; overflow: hidden;
+    }
+    aside {
+      background: var(--panel); border-right: 1px solid var(--linea);
+      display: flex; flex-direction: column; min-height: 0;
+    }
+    header { padding: 12px 14px 8px; border-bottom: 1px solid var(--linea); }
+    h1 { font-size: 15px; margin: 0 0 2px; display: flex; align-items: center; gap: 8px; }
+    select { font: inherit; font-size: 13px; color: var(--texto); background: var(--panel); border: 1px solid var(--linea); border-radius: 5px; padding: 1px 4px; }
+    #estado { color: var(--suave); font-size: 12px; }
+    .bloque { padding: 8px 14px; border-bottom: 1px solid var(--linea); }
+    .bloque h2 { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--suave); margin: 0 0 6px; font-weight: 600; }
+    .vistas { display: flex; flex-wrap: wrap; gap: 4px; }
+    button {
+      font: inherit; font-size: 12px; color: var(--texto); background: transparent;
+      border: 1px solid var(--linea); border-radius: 5px; padding: 3px 8px; cursor: pointer;
+    }
+    button:hover { background: var(--resalte); }
+    label.opcion { display: inline-flex; gap: 5px; align-items: center; margin-right: 10px; cursor: pointer; }
+    #arbol { overflow: auto; flex: 1; padding: 6px 8px 16px; min-height: 0; }
+    details { margin-left: 12px; }
+    #arbol > details { margin-left: 0; }
+    summary { list-style: none; cursor: pointer; padding: 1px 0; white-space: nowrap; display: flex; align-items: center; gap: 4px; }
+    summary::-webkit-details-marker { display: none; }
+    summary::before { content: "▸"; width: 10px; color: var(--suave); font-size: 10px; }
+    details[open] > summary::before { content: "▾"; }
+    details.hoja > summary::before { content: ""; }
+    summary .n { color: var(--suave); font-size: 11px; }
+    .cuerpo { margin-left: 26px; display: flex; gap: 4px; align-items: center; white-space: nowrap; cursor: pointer; padding: 1px 0; }
+    .cuerpo.elegido, summary.elegido { background: var(--resalte); border-radius: 3px; }
+    input[type=checkbox] { margin: 0; accent-color: var(--acento); }
+    main { position: relative; min-width: 0; }
+    canvas { display: block; width: 100%; height: 100%; }
+    #info {
+      position: absolute; left: 12px; bottom: 12px; max-width: calc(100% - 24px);
+      background: var(--panel); border: 1px solid var(--linea); border-radius: 6px;
+      padding: 8px 10px; display: none; font-size: 12px;
+    }
+    #info .ruta { color: var(--suave); }
+    #info .medidas { font-variant-numeric: tabular-nums; margin-top: 3px; }
+    #info button { margin-top: 6px; }
+    #error { white-space: pre-wrap; color: #b3261e; font: 12px ui-monospace, monospace; padding: 8px 14px; display: none; }
+    #plegar { display: none; }
+    @media (max-width: 700px) {
+      body { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
+      aside { max-height: 45vh; border-right: 0; border-bottom: 1px solid var(--linea); }
+      aside.plegado #arbol, aside.plegado .bloque { display: none; }
+      #plegar { display: inline-block; float: right; }
+    }
+  </style>
+</head>
+<body>
+  <aside id="lateral">
+    <header>
+      <button id="plegar">Árbol</button>
+      <h1>Caja Atego <select id="version" aria-label="Versión"></select></h1>
+      <div id="estado">Arrancando OpenCascade…</div>
+    </header>
+    <div class="bloque">
+      <h2>Vistas</h2>
+      <div class="vistas" id="vistas"></div>
+    </div>
+    <div class="bloque">
+      <label class="opcion"><input type="checkbox" id="aristas" checked> Aristas</label>
+      <label class="opcion"><input type="checkbox" id="suelo" checked> Suelo</label>
+      <button id="mostrarTodo">Mostrar todo</button>
+      <button id="soloInterior">Solo interior</button>
+    </div>
+    <div id="error"></div>
+    <div id="arbol"></div>
+  </aside>
+  <main>
+    <canvas id="lienzo"></canvas>
+    <div id="info">
+      <div class="nombre"></div>
+      <div class="ruta"></div>
+      <div class="medidas"></div>
+      <button id="ocultarElegido">Ocultar</button>
+    </div>
+  </main>
+  <script type="module" src="./visor.js"></script>
+</body>
+</html>

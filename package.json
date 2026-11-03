@@ -1,0 +1,18 @@
+{
+  "name": "caja-atego",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "visor": "vite build",
+    "construir": "node modelo/construir.js"
+  },
+  "dependencies": {
+    "replicad": "1.1.0",
+    "replicad-opencascadejs": "1.1.0",
+    "three": "0.180.0"
+  },
+  "devDependencies": {
+    "vite": "7.3.7"
+  }
+}

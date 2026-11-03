@@ -1,0 +1,466 @@
+{"ruta":"Caja/paredes","nombre":"panel_suelo","caja":[-2350,2350,-1250,1250,-65,-15],"litros":586.882,"area":24.185,"material":"Verde militar","caras":10}
+{"ruta":"Caja/paredes","nombre":"panel_costado_izq","caja":[-2350,2350,1050,1250,-15,2115],"litros":455.949,"area":20.0225,"material":"Verde militar","caras":43}
+{"ruta":"Caja/paredes","nombre":"panel_costado_der","caja":[-2350,2350,-1250,-1050,-15,2115],"litros":389.433,"area":17.7651,"material":"Verde militar","caras":43}
+{"ruta":"Caja/paredes","nombre":"panel_frontal","caja":[2300,2350,-1050,1050,-15,2115],"litros":223.65,"area":9.369,"material":"Verde militar","caras":6}
+{"ruta":"Caja/paredes","nombre":"panel_trasera","caja":[-2350,-2300,-1050,1050,-15,0],"litros":1.575,"area":0.2745,"material":"Verde militar","caras":6}
+{"ruta":"Caja/paredes","nombre":"panel_trasera_1","caja":[-2350,-2300,-1050,1050,2100,2115],"litros":1.575,"area":0.2745,"material":"Verde militar","caras":6}
+{"ruta":"Caja/paredes","nombre":"aisl_suelo","caja":[-2285,2285,-1185,1185,-15,0],"litros":162.464,"area":21.87,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/paredes","nombre":"aisl_costado_izq","caja":[-2300,2300,1185,1200,0,2100],"litros":130.474,"area":17.7056,"material":"Blanco lacado","caras":18}
+{"ruta":"Caja/paredes","nombre":"aisl_costado_der","caja":[-2300,2300,-1200,-1185,0,2100],"litros":112.037,"area":15.3076,"material":"Blanco lacado","caras":18}
+{"ruta":"Caja/paredes","nombre":"aisl_frontal","caja":[2285,2300,-1185,1185,0,2100],"litros":74.655,"area":10.0881,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/paredes","nombre":"aisl_trasera","caja":[-2300,-2285,-1185,-1105,0,2100],"litros":2.52,"area":0.4014,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/paredes","nombre":"aisl_trasera_1","caja":[-2300,-2285,1105,1185,0,2100],"litros":2.52,"area":0.4014,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/techo","nombre":"panel_techo","caja":[-2350,2350,-1250,1250,2115,2165],"litros":574.028,"area":23.7006,"material":"Verde militar","caras":22}
+{"ruta":"Caja/techo","nombre":"aisl_techo","caja":[-2285,2285,-1185,1185,2100,2115],"litros":160.064,"area":21.574,"material":"Blanco lacado","caras":10}
+{"ruta":"Caja/techo","nombre":"placa_solar_delante_izq","caja":[563,2325,15,1149,2165,2195],"litros":59.943,"area":4.17,"material":"Fotovoltaico","caras":6}
+{"ruta":"Caja/techo","nombre":"placa_solar_delante_der","caja":[563,2325,-1149,-15,2165,2195],"litros":59.943,"area":4.17,"material":"Fotovoltaico","caras":6}
+{"ruta":"Caja/techo","nombre":"placa_solar_detras_izq","caja":[-2325,-563,15,1149,2165,2195],"litros":59.943,"area":4.17,"material":"Fotovoltaico","caras":6}
+{"ruta":"Caja/techo","nombre":"placa_solar_detras_der","caja":[-2325,-563,-1149,-15,2165,2195],"litros":59.943,"area":4.17,"material":"Fotovoltaico","caras":6}
+{"ruta":"Caja/techo","nombre":"aire_base","caja":[-376,376,-351,351,2165,2210],"litros":23.756,"area":1.1867,"material":"Blanco mate","caras":6}
+{"ruta":"Caja/techo","nombre":"aire_carcasa","caja":[-346,346,-316,316,2210,2390],"litros":78.722,"area":1.3513,"material":"Blanco mate","caras":6}
+{"ruta":"Caja/techo","nombre":"aire_rejilla","caja":[-316,-286,-261,261,2235,2355],"litros":1.879,"area":0.1638,"material":"Blanco mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/cama","nombre":"garaje_fondo","caja":[885,2285,-1185,1185,0,18],"litros":59.724,"area":6.7717,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/cama","nombre":"garaje_tapa","caja":[885,2285,-1185,1185,952,970],"litros":59.724,"area":6.7717,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/cama","nombre":"garaje_frontal","caja":[885,903,-1185,1185,18,952],"litros":39.844,"area":4.5461,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/cama","nombre":"garaje_trasera","caja":[2267,2285,-1185,1185,18,952],"litros":39.844,"area":4.5461,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/cama","nombre":"garaje_costado1","caja":[903,2267,-1185,-1167,18,952],"litros":22.932,"area":2.6307,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/cama","nombre":"garaje_costado2","caja":[903,2267,1167,1185,18,952],"litros":22.932,"area":2.6307,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/cama","nombre":"colchon","caja":[885,2285,-1185,632,970,1070],"litros":254.38,"area":5.731,"material":"Tela clara","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/cama","nombre":"colchoneta_perros","caja":[885,2285,632,1185,970,1070],"litros":77.42,"area":1.939,"material":"Tela gris","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/cama","nombre":"almohada1","caja":[945,1565,-1185,-785,1070,1190],"litros":29.76,"area":0.7408,"material":"Tela clara","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/cama","nombre":"almohada2","caja":[1605,2225,-1185,-785,1070,1190],"litros":29.76,"area":0.7408,"material":"Tela clara","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/alto_pies","nombre":"alto_pies_trasera","caja":[885,2285,1167,1185,1678,2100],"litros":10.634,"area":1.2472,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/alto_pies","nombre":"alto_pies_costado1","caja":[885,903,632,1167,1678,2100],"litros":4.064,"area":0.486,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/alto_pies","nombre":"alto_pies_costado2","caja":[2267,2285,632,1167,1678,2100],"litros":4.064,"area":0.486,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/alto_pies","nombre":"alto_pies_suelo","caja":[903,2267,632,1167,1678,1696],"litros":13.135,"area":1.5278,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/alto_pies","nombre":"alto_pies_techo","caja":[903,2267,632,1167,2082,2100],"litros":13.135,"area":1.5278,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/alto_pies","nombre":"alto_pies_puerta_1","caja":[886.5,1233.5,614,632,1696,2082],"litros":2.411,"area":0.2943,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/alto_pies","nombre":"alto_pies_puerta_2","caja":[1236.5,1583.5,614,632,1696,2082],"litros":2.411,"area":0.2943,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/alto_pies","nombre":"alto_pies_puerta_3","caja":[1586.5,1933.5,614,632,1696,2082],"litros":2.411,"area":0.2943,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/alto_pies","nombre":"alto_pies_puerta_4","caja":[1936.5,2283.5,614,632,1696,2082],"litros":2.411,"area":0.2943,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/alto_cabina","nombre":"alto_cabina_trasera","caja":[2267,2285,-825.5,614,1850,2100],"litros":6.478,"area":0.7806,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/alto_cabina","nombre":"alto_cabina_costado1","caja":[1981.8,2267,-825.5,-807.5,1850,2100],"litros":1.283,"area":0.1619,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/alto_cabina","nombre":"alto_cabina_costado2","caja":[1981.8,2267,596,614,1850,2100],"litros":1.283,"area":0.1619,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/alto_cabina","nombre":"alto_cabina_suelo","caja":[1981.8,2267,-807.5,596,1850,1868],"litros":7.205,"area":0.8613,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/alto_cabina","nombre":"alto_cabina_techo","caja":[1981.8,2267,-807.5,596,2082,2100],"litros":7.205,"area":0.8613,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/alto_cabina","nombre":"alto_cabina_puerta_1","caja":[1963.8,1981.8,-824,-467.1,1868,2082],"litros":1.375,"area":0.1733,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/alto_cabina","nombre":"alto_cabina_puerta_2","caja":[1963.8,1981.8,-464.1,-107.2,1868,2082],"litros":1.375,"area":0.1733,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/alto_cabina","nombre":"alto_cabina_puerta_3","caja":[1963.8,1981.8,-104.2,252.6,1868,2082],"litros":1.375,"area":0.1733,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/alto_cabina","nombre":"alto_cabina_puerta_4","caja":[1963.8,1981.8,255.6,612.5,1868,2082],"litros":1.375,"area":0.1733,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/alto_almohadas","nombre":"alto_almohadas_trasera","caja":[885,2285,-1185,-1167,1850,2100],"litros":6.3,"area":0.7594,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/alto_almohadas","nombre":"alto_almohadas_costado1","caja":[885,903,-1167,-843.5,1850,2100],"litros":1.456,"area":0.1824,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/alto_almohadas","nombre":"alto_almohadas_costado2","caja":[2267,2285,-1167,-843.5,1850,2100],"litros":1.456,"area":0.1824,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/alto_almohadas","nombre":"alto_almohadas_suelo","caja":[903,2267,-1167,-843.5,1850,1868],"litros":7.943,"area":0.9433,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/alto_almohadas","nombre":"alto_almohadas_techo","caja":[903,2267,-1167,-843.5,2082,2100],"litros":7.943,"area":0.9433,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/alto_almohadas","nombre":"alto_almohadas_puerta_1","caja":[886.5,1233.5,-843.5,-825.5,1868,2082],"litros":1.337,"area":0.1687,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/alto_almohadas","nombre":"alto_almohadas_puerta_2","caja":[1236.5,1583.5,-843.5,-825.5,1868,2082],"litros":1.337,"area":0.1687,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/alto_almohadas","nombre":"alto_almohadas_puerta_3","caja":[1586.5,1933.5,-843.5,-825.5,1868,2082],"litros":1.337,"area":0.1687,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/alto_almohadas","nombre":"alto_almohadas_puerta_4","caja":[1936.5,2283.5,-843.5,-825.5,1868,2082],"litros":1.337,"area":0.1687,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/escalon_cama","nombre":"escalon_cama_trasera","caja":[867,885,101,401,50,350],"litros":1.62,"area":0.2016,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/escalon_cama","nombre":"escalon_cama_delantera","caja":[585,603,101,401,50,350],"litros":1.62,"area":0.2016,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/escalon_cama","nombre":"escalon_cama_costado1","caja":[603,867,101,119,50,350],"litros":1.426,"area":0.1787,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/escalon_cama","nombre":"escalon_cama_costado2","caja":[603,867,383,401,50,350],"litros":1.426,"area":0.1787,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/escalon_cama","nombre":"escalon_cama_suelo","caja":[603,867,119,383,50,68],"litros":1.255,"area":0.1584,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/escalon_cama","nombre":"escalon_cama_techo","caja":[603,867,119,383,332,350],"litros":1.255,"area":0.1584,"material":"Roble","caras":6}
+{"ruta":"Caja/Interior/Cocina/encimera","nombre":"encimera_1_trasera","caja":[-2285,-2267,587,1185,50,950],"litros":9.688,"area":1.1303,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Cocina/encimera","nombre":"encimera_1_costado1","caja":[-2267,-1442.5,587,605,50,950],"litros":13.357,"area":1.5462,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Cocina/encimera","nombre":"encimera_1_costado2","caja":[-2267,-1442.5,1167,1185,50,950],"litros":13.357,"area":1.5462,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Cocina/encimera","nombre":"encimera_1_suelo","caja":[-2267,-1442.5,605,1167,50,68],"litros":8.341,"area":0.9767,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Cocina/encimera","nombre":"encimera_1_techo","caja":[-2267,-1442.5,605,1167,932,950],"litros":8.341,"area":0.9767,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Cocina/encimera","nombre":"encimera_2_trasera","caja":[-1442.5,-600,1167,1185,50,950],"litros":13.649,"area":1.5792,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Cocina/encimera","nombre":"encimera_2_costado1","caja":[-1442.5,-1424.5,587,1167,50,950],"litros":9.396,"area":1.0973,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Cocina/encimera","nombre":"encimera_2_costado2","caja":[-618,-600,587,1167,50,950],"litros":9.396,"area":1.0973,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Cocina/encimera","nombre":"encimera_2_suelo","caja":[-1424.5,-618,587,1167,50,68],"litros":8.42,"area":0.9855,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Cocina/encimera","nombre":"encimera_2_techo","caja":[-1424.5,-618,587,1167,932,950],"litros":8.42,"area":0.9855,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Cocina/encimera","nombre":"encimera_tablero","caja":[-2285,-600,565,1185,950,988],"litros":29.351,"area":1.8347,"material":"Blanco lacado","caras":14}
+{"ruta":"Caja/Interior/Cocina/encimera","nombre":"encimera_cajon_1","caja":[-2283.5,-1865.2,569,587,712,932],"litros":1.656,"area":0.207,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/Cocina/encimera","nombre":"encimera_puerta_1","caja":[-2283.5,-1865.2,569,587,68,709],"litros":4.826,"area":0.5743,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/Cocina/encimera","nombre":"encimera_cajon_2","caja":[-1862.2,-1444,569,587,712,932],"litros":1.656,"area":0.207,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/Cocina/encimera","nombre":"encimera_puerta_2","caja":[-1862.2,-1444,569,587,68,709],"litros":4.826,"area":0.5743,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/Cocina/encimera","nombre":"encimera_cajon_3","caja":[-1441,-1022.7,569,587,712,932],"litros":1.656,"area":0.207,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/Cocina/encimera","nombre":"encimera_puerta_3","caja":[-1441,-1022.7,569,587,68,709],"litros":4.826,"area":0.5743,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/Cocina/encimera","nombre":"encimera_cajon_4","caja":[-1019.7,-601.5,569,587,712,932],"litros":1.656,"area":0.207,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/Cocina/encimera","nombre":"encimera_puerta_4","caja":[-1019.7,-601.5,569,587,68,709],"litros":4.826,"area":0.5743,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/Cocina/fregadero","nombre":"fregadero_aro","caja":[-1030,-630,655,1105,980,988],"litros":1.44,"area":0.3736,"material":"Inox","caras":6}
+{"ruta":"Caja/Interior/Cocina/fregadero","nombre":"fregadero_cuba","caja":[-990,-670,695,1065,838,980],"litros":16.813,"area":0.4328,"material":"Inox","caras":6}
+{"ruta":"Caja/Interior/Cocina/fregadero","nombre":"fregadero_grifo","caja":[-848,-812,1057,1093,988,1248],"litros":0.265,"area":0.0314,"material":"Inox","caras":3}
+{"ruta":"Caja/Interior/Cocina/fregadero","nombre":"fregadero_cano","caja":[-846,-814,905,1075,1213,1248],"litros":0.19,"area":0.025,"material":"Inox","caras":6}
+{"ruta":"Caja/Interior/Cocina/vitroceramica","nombre":"vitro_cristal","caja":[-2245,-1945,625,1145,988,996],"litros":1.248,"area":0.3251,"material":"Esmalte negro","caras":6}
+{"ruta":"Caja/Interior/Cocina/vitroceramica","nombre":"vitro_fuego_1","caja":[-2190,-2000,904.4,1094.4,996,998],"litros":0.057,"area":0.0579,"material":"Esmalte negro","caras":3}
+{"ruta":"Caja/Interior/Cocina/vitroceramica","nombre":"vitro_fuego_2","caja":[-2190,-2000,675.6,865.6,996,998],"litros":0.057,"area":0.0579,"material":"Esmalte negro","caras":3}
+{"ruta":"Caja/Interior/Cocina/altos_cocina","nombre":"altos_cocina_trasera","caja":[-2285,-600,1165,1185,1678,2100],"litros":14.221,"area":1.5064,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Cocina/altos_cocina","nombre":"altos_cocina_costado1","caja":[-2285,-2265,712.6,1165,1678,2100],"litros":3.818,"area":0.4168,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Cocina/altos_cocina","nombre":"altos_cocina_costado2","caja":[-620,-600,712.6,1165,1678,2100],"litros":3.818,"area":0.4168,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Cocina/altos_cocina","nombre":"altos_cocina_suelo","caja":[-2265,-620,712.6,1165,1678,1698],"litros":14.884,"area":1.5723,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Cocina/altos_cocina","nombre":"altos_cocina_techo","caja":[-2265,-620,712.6,1165,2080,2100],"litros":14.884,"area":1.5723,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Cocina/altos_cocina","nombre":"altos_cocina_puerta_1","caja":[-2283.5,-1865.2,694.6,712.6,1698,2080],"litros":2.876,"area":0.3484,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/Cocina/altos_cocina","nombre":"altos_cocina_puerta_2","caja":[-1862.2,-1444,694.6,712.6,1698,2080],"litros":2.876,"area":0.3484,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/Cocina/altos_cocina","nombre":"altos_cocina_puerta_3","caja":[-1441,-1022.7,694.6,712.6,1698,2080],"litros":2.876,"area":0.3484,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/Cocina/altos_cocina","nombre":"altos_cocina_puerta_4","caja":[-1019.7,-601.5,694.6,712.6,1698,2080],"litros":2.876,"area":0.3484,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_tramo_fondo","caja":[-2285,-1013.7,-1185,-593.6,50,68],"litros":13.533,"area":1.5708,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_tramo_lado_x1","caja":[-2285,-2267,-1185,-593.6,68,472],"litros":4.301,"area":0.5137,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_tramo_lado_x2","caja":[-1031.7,-1013.7,-1185,-593.6,68,472],"litros":4.301,"area":0.5137,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_tramo_lado_y1","caja":[-2267,-1031.7,-1185,-1167,68,472],"litros":8.983,"area":1.0571,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_tramo_lado_y2","caja":[-2267,-1031.7,-611.6,-593.6,68,472],"litros":8.983,"area":1.0571,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_tramo_tapa","caja":[-2285,-1013.7,-1185,-593.6,472,490],"litros":13.533,"area":1.5708,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_tramo_cojin","caja":[-2270,-1028.7,-1170,-608.6,490,540],"litros":34.843,"area":1.574,"material":"Tela gris","caras":6}
+{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_tramo_respaldo1","caja":[-2270,-1013.7,-1185,-1035,540,930],"litros":58.795,"area":1.3808,"material":"Tela gris","caras":6}
+{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_esquina_fondo","caja":[-1013.7,-422.3,-1185,-593.6,50,68],"litros":6.296,"area":0.7421,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_esquina_lado_x1","caja":[-1013.7,-995.7,-1185,-593.6,68,472],"litros":4.301,"area":0.5137,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_esquina_lado_x2","caja":[-440.3,-422.3,-1185,-593.6,68,472],"litros":4.301,"area":0.5137,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_esquina_lado_y1","caja":[-995.7,-440.3,-1185,-1167,68,472],"litros":4.039,"area":0.4833,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_esquina_lado_y2","caja":[-995.7,-440.3,-611.6,-593.6,68,472],"litros":4.039,"area":0.4833,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_esquina_tapa","caja":[-1013.7,-422.3,-1185,-593.6,472,490],"litros":6.296,"area":0.7421,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_esquina_cojin","caja":[-998.7,-437.3,-1170,-608.6,490,540],"litros":15.758,"area":0.7426,"material":"Tela gris","caras":6}
+{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_esquina_respaldo1","caja":[-1013.7,-422.3,-1185,-1035,540,930],"litros":27.678,"area":0.6995,"material":"Tela gris","caras":6}
+{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_esquina_respaldo2","caja":[-572.3,-422.3,-1035,-608.6,540,930],"litros":19.956,"area":0.5305,"material":"Tela gris","caras":6}
+{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_retorno_fondo","caja":[-1013.7,-422.3,-593.6,-93.6,50,68],"litros":5.323,"area":0.6307,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_retorno_lado_x1","caja":[-1013.7,-995.7,-593.6,-93.6,68,472],"litros":3.636,"area":0.4365,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_retorno_lado_x2","caja":[-440.3,-422.3,-593.6,-93.6,68,472],"litros":3.636,"area":0.4365,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_retorno_lado_y1","caja":[-995.7,-440.3,-593.6,-575.6,68,472],"litros":4.039,"area":0.4833,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_retorno_lado_y2","caja":[-995.7,-440.3,-111.6,-93.6,68,472],"litros":4.039,"area":0.4833,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_retorno_tapa","caja":[-1013.7,-422.3,-593.6,-93.6,472,490],"litros":5.323,"area":0.6307,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_retorno_cojin","caja":[-998.7,-437.3,-578.6,-108.6,490,540],"litros":13.193,"area":0.6309,"material":"Tela gris","caras":6}
+{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_retorno_respaldo1","caja":[-572.3,-422.3,-593.6,-108.6,540,930],"litros":22.698,"area":0.5905,"material":"Tela gris","caras":6}
+{"ruta":"Caja/Interior/Comedor/mesa","nombre":"mesa_tablero","caja":[-1945.4,-1043.6,-547.5,53.8,800,820],"litros":10.745,"area":1.1335,"material":"Blanco lacado","caras":7}
+{"ruta":"Caja/Interior/Comedor/mesa","nombre":"mesa_columna","caja":[-1539.5,-1449.5,-291.8,-201.8,70,800],"litros":5.913,"area":0.279,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/mesa","nombre":"mesa_base","caja":[-1694.5,-1294.5,-406.8,-86.9,50,70],"litros":2.56,"area":0.2848,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/altos_comedor","nombre":"altos_comedor_trasera","caja":[-2285,200,-1185,-1167,1750,2100],"litros":15.656,"area":1.8416,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/altos_comedor","nombre":"altos_comedor_costado1","caja":[-2285,-2267,-1167,-843.5,1750,2100],"litros":2.038,"area":0.2507,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/altos_comedor","nombre":"altos_comedor_costado2","caja":[182,200,-1167,-843.5,1750,2100],"litros":2.038,"area":0.2507,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/altos_comedor","nombre":"altos_comedor_suelo","caja":[-2267,182,-1167,-843.5,1750,1768],"litros":14.261,"area":1.6843,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/altos_comedor","nombre":"altos_comedor_techo","caja":[-2267,182,-1167,-843.5,2082,2100],"litros":14.261,"area":1.6843,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/altos_comedor","nombre":"altos_comedor_puerta_1","caja":[-2283.5,-1665.2,-843.5,-825.5,1768,2082],"litros":3.494,"area":0.4218,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/altos_comedor","nombre":"altos_comedor_puerta_2","caja":[-1662.2,-1044,-843.5,-825.5,1768,2082],"litros":3.494,"area":0.4218,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/altos_comedor","nombre":"altos_comedor_puerta_3","caja":[-1041,-422.7,-843.5,-825.5,1768,2082],"litros":3.494,"area":0.4218,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/altos_comedor","nombre":"altos_comedor_puerta_4","caja":[-419.7,198.5,-843.5,-825.5,1768,2082],"litros":3.494,"area":0.4218,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/aparador","nombre":"aparador_trasera","caja":[-422.3,200,-1185,-1167,50,988],"litros":10.507,"area":1.2236,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/aparador","nombre":"aparador_costado1","caja":[-422.3,-404.3,-1167,-93.6,50,1038],"litros":19.08,"area":2.1938,"material":"Blanco lacado","caras":7}
+{"ruta":"Caja/Interior/Comedor/aparador","nombre":"aparador_costado2","caja":[182,200,-1167,-93.6,50,1038],"litros":19.08,"area":2.1938,"material":"Blanco lacado","caras":7}
+{"ruta":"Caja/Interior/Comedor/aparador","nombre":"aparador_suelo","caja":[-404.3,182,-1167,-93.6,50,68],"litros":11.328,"area":1.3184,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/aparador","nombre":"aparador_techo","caja":[-404.3,182,-1167,-93.6,970,988],"litros":11.328,"area":1.3184,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/aparador","nombre":"aparador_estante1","caja":[-404.3,182,-1167,-93.6,519,537],"litros":11.328,"area":1.3184,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/aparador","nombre":"aparador_puerta_1","caja":[-420.8,-112.7,-93.6,-75.6,68,970],"litros":5.003,"area":0.5995,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/aparador","nombre":"aparador_puerta_2","caja":[-109.7,198.5,-93.6,-75.6,68,970],"litros":5.003,"area":0.5995,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/suelo_elevado","nombre":"suelo_elevado_tablero","caja":[-2285,885,-1185,1185,32,50],"litros":135.232,"area":15.2252,"material":"Roble","caras":6}
+{"ruta":"Caja/Interior/suelo_elevado","nombre":"suelo_elevado_cerco_x0","caja":[-2285,-2267,-1185,1185,0,32],"litros":1.365,"area":0.2382,"material":"Roble","caras":6}
+{"ruta":"Caja/Interior/suelo_elevado","nombre":"suelo_elevado_cerco_x1","caja":[867,885,-1185,1185,0,32],"litros":1.365,"area":0.2382,"material":"Roble","caras":6}
+{"ruta":"Caja/Interior/suelo_elevado","nombre":"suelo_elevado_cerco_y0","caja":[-2267,867,-1185,-1167,0,32],"litros":1.805,"area":0.3146,"material":"Roble","caras":6}
+{"ruta":"Caja/Interior/suelo_elevado","nombre":"suelo_elevado_cerco_y1","caja":[-2267,867,1167,1185,0,32],"litros":1.805,"area":0.3146,"material":"Roble","caras":6}
+{"ruta":"Caja/Interior/suelo_elevado","nombre":"suelo_elevado_travesano1","caja":[-1753.7,-1735.7,-1167,1167,0,32],"litros":1.344,"area":0.2346,"material":"Roble","caras":6}
+{"ruta":"Caja/Interior/suelo_elevado","nombre":"suelo_elevado_travesano2","caja":[-1231.3,-1213.3,-1167,1167,0,32],"litros":1.344,"area":0.2346,"material":"Roble","caras":6}
+{"ruta":"Caja/Interior/suelo_elevado","nombre":"suelo_elevado_travesano3","caja":[-709,-691,-1167,1167,0,32],"litros":1.344,"area":0.2346,"material":"Roble","caras":6}
+{"ruta":"Caja/Interior/suelo_elevado","nombre":"suelo_elevado_travesano4","caja":[-186.7,-168.7,-1167,1167,0,32],"litros":1.344,"area":0.2346,"material":"Roble","caras":6}
+{"ruta":"Caja/Interior/suelo_elevado","nombre":"suelo_elevado_travesano5","caja":[335.7,353.7,-1167,1167,0,32],"litros":1.344,"area":0.2346,"material":"Roble","caras":6}
+{"ruta":"Caja/Interior/Bano/plataforma_wc","nombre":"plataforma_wc_tablero","caja":[134,851,451,985,232,250],"litros":6.854,"area":0.8095,"material":"Roble","caras":7}
+{"ruta":"Caja/Interior/Bano/plataforma_wc","nombre":"plataforma_wc_cerco_x0","caja":[134,152,451,985,50,232],"litros":1.749,"area":0.2202,"material":"Roble","caras":6}
+{"ruta":"Caja/Interior/Bano/plataforma_wc","nombre":"plataforma_wc_cerco_x1","caja":[833,851,451,985,50,232],"litros":1.749,"area":0.2202,"material":"Roble","caras":6}
+{"ruta":"Caja/Interior/Bano/plataforma_wc","nombre":"plataforma_wc_cerco_y0","caja":[152,833,451,469,50,232],"litros":2.231,"area":0.279,"material":"Roble","caras":6}
+{"ruta":"Caja/Interior/Bano/plataforma_wc","nombre":"plataforma_wc_cerco_y1","caja":[152,833,967,985,50,232],"litros":2.231,"area":0.279,"material":"Roble","caras":6}
+{"ruta":"Caja/Interior/Bano/plataforma_wc","nombre":"plataforma_wc_travesano1","caja":[483.5,501.5,469,967,50,232],"litros":1.631,"area":0.2058,"material":"Roble","caras":6}
+{"ruta":"Caja/Interior/Bano/armario_wc","nombre":"armario_wc_trasera","caja":[134,851,1167,1185,50,720],"litros":8.647,"area":1.0107,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Bano/armario_wc","nombre":"armario_wc_costado1","caja":[134,152,1003,1167,50,720],"litros":1.978,"area":0.2498,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Bano/armario_wc","nombre":"armario_wc_costado2","caja":[833,851,1003,1167,50,720],"litros":1.978,"area":0.2498,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Bano/armario_wc","nombre":"armario_wc_suelo","caja":[152,833,1003,1167,50,68],"litros":2.01,"area":0.2538,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Bano/armario_wc","nombre":"armario_wc_techo","caja":[152,833,1003,1167,702,720],"litros":2.01,"area":0.2538,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Bano/armario_wc","nombre":"armario_wc_estante1","caja":[152,833,1003,1167,232,250],"litros":2.01,"area":0.2538,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Bano/armario_wc","nombre":"armario_wc_puerta_1","caja":[135.5,491,985,1003,252,702],"litros":2.88,"area":0.3489,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/Bano/armario_wc","nombre":"armario_wc_puerta_2","caja":[494,849.5,985,1003,252,702],"litros":2.88,"area":0.3489,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/Bano/tabiques_y_puerta","nombre":"tabique_esquina","caja":[-600,-426,401,1185,50,2100],"litros":60.726,"area":3.7708,"material":"Blanco lacado","caras":10}
+{"ruta":"Caja/Interior/Bano/tabiques_y_puerta","nombre":"tabique_puerta_der","caja":[44,885,401,435,50,2100],"litros":58.618,"area":3.6447,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/Bano/tabiques_y_puerta","nombre":"tabique_puerta_dintel","caja":[-426,44,401,435,2020,2100],"litros":1.278,"area":0.1126,"material":"Gris lacado","caras":6}
+{"ruta":"Caja/Interior/Bano/tabiques_y_puerta","nombre":"tabique_lado_cama","caja":[851,885,435,1185,50,2100],"litros":52.275,"area":3.2654,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Bano/tabiques_y_puerta","nombre":"puerta_marco_x1","caja":[-466,-426,389,447,50,2060],"litros":4.663,"area":0.3986,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Bano/tabiques_y_puerta","nombre":"puerta_marco_x2","caja":[44,84,389,447,50,2060],"litros":4.663,"area":0.3986,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Bano/tabiques_y_puerta","nombre":"puerta_marco_dintel","caja":[-466,84,389,447,2020,2060],"litros":1.276,"area":0.1124,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Bano/tabiques_y_puerta","nombre":"puerta_metacrilato","caja":[-390,8,409,427,86,1984],"litros":13.597,"area":1.5935,"material":"Metacrilato","caras":6}
+{"ruta":"Caja/Interior/Bano/tabiques_y_puerta","nombre":"puerta_canto_x1","caja":[-420,-390,403,433,56,2014],"litros":1.762,"area":0.2368,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Bano/tabiques_y_puerta","nombre":"puerta_canto_x2","caja":[8,38,403,433,56,2014],"litros":1.762,"area":0.2368,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Bano/tabiques_y_puerta","nombre":"puerta_canto_z1","caja":[-390,8,403,433,56,86],"litros":0.358,"area":0.0496,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Bano/tabiques_y_puerta","nombre":"puerta_canto_z2","caja":[-390,8,403,433,1984,2014],"litros":0.358,"area":0.0496,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Bano/tabiques_y_puerta","nombre":"puerta_tirador","caja":[-57,-2,356,403,790,950],"litros":0.414,"area":0.0378,"material":"Inox","caras":6}
+{"ruta":"Caja/Interior/Bano/tabiques_y_puerta","nombre":"puerta_bisagra_1","caja":[-450,-410,395,441,190,310],"litros":0.221,"area":0.0243,"material":"Aluminio","caras":6}
+{"ruta":"Caja/Interior/Bano/tabiques_y_puerta","nombre":"puerta_bisagra_2","caja":[-450,-410,395,441,1035,1155],"litros":0.221,"area":0.0243,"material":"Aluminio","caras":6}
+{"ruta":"Caja/Interior/Bano/tabiques_y_puerta","nombre":"puerta_bisagra_3","caja":[-450,-410,395,441,1880,2000],"litros":0.221,"area":0.0243,"material":"Aluminio","caras":6}
+{"ruta":"Caja/Interior/Bano/tabiques_y_puerta","nombre":"columna_ducha_izq_cierre","caja":[-566,-466,985,1003,90,2100],"litros":3.618,"area":0.478,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Bano/tabiques_y_puerta","nombre":"columna_ducha_izq_balda1","caja":[-566,-466,1003,1185,390,408],"litros":0.328,"area":0.0466,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Bano/tabiques_y_puerta","nombre":"columna_ducha_izq_balda2","caja":[-566,-466,1003,1185,690,708],"litros":0.328,"area":0.0466,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Bano/tabiques_y_puerta","nombre":"columna_ducha_izq_balda3","caja":[-566,-466,1003,1185,990,1008],"litros":0.328,"area":0.0466,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Bano/tabiques_y_puerta","nombre":"columna_ducha_izq_balda4","caja":[-566,-466,1003,1185,1290,1308],"litros":0.328,"area":0.0466,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Bano/tabiques_y_puerta","nombre":"columna_ducha_izq_balda5","caja":[-566,-466,1003,1185,1590,1608],"litros":0.328,"area":0.0466,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Bano/tabiques_y_puerta","nombre":"columna_ducha_izq_balda6","caja":[-566,-466,1003,1185,1890,1908],"litros":0.328,"area":0.0466,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Bano/tabiques_y_puerta","nombre":"columna_ducha_der_cierre","caja":[134,152,985,1185,720,2100],"litros":4.968,"area":0.6089,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Bano/tabiques_y_puerta","nombre":"columna_ducha_der_balda1","caja":[152,202,985,1185,1020,1038],"litros":0.18,"area":0.029,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Bano/tabiques_y_puerta","nombre":"columna_ducha_der_balda2","caja":[152,202,985,1185,1320,1338],"litros":0.18,"area":0.029,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Bano/tabiques_y_puerta","nombre":"columna_ducha_der_balda3","caja":[152,202,985,1185,1620,1638],"litros":0.18,"area":0.029,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Bano/tabiques_y_puerta","nombre":"columna_ducha_der_balda4","caja":[152,202,985,1185,1920,1938],"litros":0.18,"area":0.029,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Bano/tabiques_y_puerta","nombre":"bisagra_ducha","caja":[84,134,985,1035,90,2100],"litros":3.947,"area":0.3197,"material":"Aluminio","caras":3}
+{"ruta":"Caja/Interior/Bano/instalaciones_bano","nombre":"plato_ducha","caja":[-566,134,451,1185,50,90],"litros":20.47,"area":1.1367,"material":"Esmalte blanco","caras":7}
+{"ruta":"Caja/Interior/Bano/instalaciones_bano","nombre":"desague","caja":[-286,-196,765,855,82,91],"litros":0.057,"area":0.0153,"material":"Cromo","caras":3}
+{"ruta":"Caja/Interior/Bano/instalaciones_bano","nombre":"wc_zocalo","caja":[374,751,531,889,250,290],"litros":4.849,"area":0.2951,"material":"Esmalte blanco","caras":6}
+{"ruta":"Caja/Interior/Bano/instalaciones_bano","nombre":"wc_cuerpo","caja":[354,851,511,909,290,670],"litros":68.447,"area":0.9625,"material":"Esmalte blanco","caras":8}
+{"ruta":"Caja/Interior/Bano/instalaciones_bano","nombre":"wc_aro","caja":[350,851,507,913,670,693],"litros":4.256,"area":0.407,"material":"Esmalte blanco","caras":8}
+{"ruta":"Caja/Interior/Bano/instalaciones_bano","nombre":"wc_tapa","caja":[354,821,511,909,693,720],"litros":4.559,"area":0.3798,"material":"Esmalte blanco","caras":6}
+{"ruta":"Caja/Interior/Bano/instalaciones_bano","nombre":"wc_regleta","caja":[821,851,531,889,693,716],"litros":0.247,"area":0.0393,"material":"Esmalte blanco","caras":6}
+{"ruta":"Caja/Interior/Bano/instalaciones_bano","nombre":"wc_ventilacion","caja":[776,826,685,735,50,290],"litros":0.471,"area":0.0416,"material":"Esmalte blanco","caras":3}
+{"ruta":"Caja/Interior/Bano/ducha_cerrada","nombre":"puerta_ducha","caja":[-461,84,985,1035,95,2095],"litros":54.5,"area":2.4345,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Bano/ducha_cerrada","nombre":"lavabo","caja":[-411,-11,835,985,760,860],"litros":3.769,"area":0.2953,"material":"Blanco lacado","caras":11}
+{"ruta":"Caja/Interior/Bano/ducha_cerrada","nombre":"grifo_cuerpo","caja":[-226,-196,955,985,860,930],"litros":0.063,"area":0.0102,"material":"Cromo","caras":6}
+{"ruta":"Caja/Interior/Bano/ducha_cerrada","nombre":"grifo_cano","caja":[-223,-199,895,955,905,930],"litros":0.036,"area":0.0071,"material":"Cromo","caras":6}
+{"ruta":"Caja/Interior/Bano/ducha_cerrada","nombre":"espejo_lavabo","caja":[-411,-11,980,985,1150,1750],"litros":1.2,"area":0.49,"material":"Cromo","caras":6}
+{"ruta":"Caja/Interior/Bano/ducha_cerrada","nombre":"ducha_brazo","caja":[-243,-219,1035,1105,1945,1965],"litros":0.034,"area":0.0071,"material":"Cromo","caras":6}
+{"ruta":"Caja/Interior/Bano/ducha_cerrada","nombre":"ducha_alcachofa","caja":[-281,-181,1055,1155,1925,1945],"litros":0.157,"area":0.022,"material":"Cromo","caras":3}
+{"ruta":"Caja/Interior/Bano/ducha_abierta","nombre":"puerta_ducha","caja":[84,134,440,985,95,2095],"litros":54.5,"area":2.4345,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Bano/ducha_abierta","nombre":"lavabo","caja":[134,284,490,890,760,860],"litros":3.769,"area":0.2953,"material":"Blanco lacado","caras":11}
+{"ruta":"Caja/Interior/Bano/ducha_abierta","nombre":"grifo_cuerpo","caja":[134,164,675,705,860,930],"litros":0.063,"area":0.0102,"material":"Cromo","caras":6}
+{"ruta":"Caja/Interior/Bano/ducha_abierta","nombre":"grifo_cano","caja":[164,224,678,702,905,930],"litros":0.036,"area":0.0071,"material":"Cromo","caras":6}
+{"ruta":"Caja/Interior/Bano/ducha_abierta","nombre":"espejo_lavabo","caja":[134,139,490,890,1150,1750],"litros":1.2,"area":0.49,"material":"Cromo","caras":6}
+{"ruta":"Caja/Interior/Bano/ducha_abierta","nombre":"ducha_brazo","caja":[14,84,658,682,1945,1965],"litros":0.034,"area":0.0071,"material":"Cromo","caras":6}
+{"ruta":"Caja/Interior/Bano/ducha_abierta","nombre":"ducha_alcachofa","caja":[-36,64,620,720,1925,1945],"litros":0.157,"area":0.022,"material":"Cromo","caras":3}
+{"ruta":"Caja/Interior/Cocina/ventana_cocina","nombre":"ra_brida_abajo","caja":[-1999,-886,1250,1254,1135,1179],"litros":0.196,"area":0.1072,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Cocina/ventana_cocina","nombre":"ra_brida_arriba","caja":[-1999,-886,1250,1254,1616,1660],"litros":0.196,"area":0.1072,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Cocina/ventana_cocina","nombre":"ra_brida_izq","caja":[-1999,-1956,1250,1254,1179,1616],"litros":0.075,"area":0.0414,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Cocina/ventana_cocina","nombre":"ra_brida_der","caja":[-929,-886,1250,1254,1179,1616],"litros":0.075,"area":0.0414,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Cocina/ventana_cocina","nombre":"ra_hoja_abajo","caja":[-1956,-929,1210,1254,1179,1199],"litros":0.904,"area":0.1332,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Cocina/ventana_cocina","nombre":"ra_hoja_arriba","caja":[-1956,-929,1210,1254,1596,1616],"litros":0.904,"area":0.1332,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Cocina/ventana_cocina","nombre":"ra_hoja_izq","caja":[-1956,-1936,1210,1254,1199,1596],"litros":0.349,"area":0.0526,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Cocina/ventana_cocina","nombre":"ra_hoja_der","caja":[-949,-929,1210,1254,1199,1596],"litros":0.349,"area":0.0526,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Cocina/ventana_cocina","nombre":"ra_cuerpo_abajo","caja":[-1965,-920,1210,1250,1170,1179],"litros":0.376,"area":0.1031,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Cocina/ventana_cocina","nombre":"ra_cuerpo_arriba","caja":[-1965,-920,1210,1250,1616,1625],"litros":0.376,"area":0.1031,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Cocina/ventana_cocina","nombre":"ra_cuerpo_izq","caja":[-1965,-1956,1210,1250,1179,1616],"litros":0.157,"area":0.0435,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Cocina/ventana_cocina","nombre":"ra_cuerpo_der","caja":[-929,-920,1210,1250,1179,1616],"litros":0.157,"area":0.0435,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Cocina/ventana_cocina","nombre":"ra_interior_abajo","caja":[-1935,-950,1185,1210,1200,1210],"litros":0.246,"area":0.0695,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Cocina/ventana_cocina","nombre":"ra_interior_arriba","caja":[-1935,-950,1185,1210,1585,1595],"litros":0.246,"area":0.0695,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Cocina/ventana_cocina","nombre":"ra_interior_izq","caja":[-1935,-1925,1185,1210,1210,1585],"litros":0.094,"area":0.0268,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Cocina/ventana_cocina","nombre":"ra_interior_der","caja":[-960,-950,1185,1210,1210,1585],"litros":0.094,"area":0.0268,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Cocina/ventana_cocina","nombre":"vidrio","caja":[-1936,-949,1247,1253,1199,1596],"litros":2.351,"area":0.8003,"material":"Vidrio","caras":6}
+{"ruta":"Caja/Interior/Cocina/ventana_cocina","nombre":"vidrio_interior","caja":[-1925,-960,1185,1189,1210,1585],"litros":1.448,"area":0.7345,"material":"Vidrio","caras":6}
+{"ruta":"Caja/Interior/Cocina/ventana_cocina","nombre":"ch_abajo","caja":[-1963,-922,1137,1185,1121.5,1216.5],"litros":4.747,"area":0.3068,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Cocina/ventana_cocina","nombre":"ch_arriba","caja":[-1963,-922,1137,1185,1578.5,1673.5],"litros":4.747,"area":0.3068,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Cocina/ventana_cocina","nombre":"ch_izq","caja":[-1963,-1916,1137,1185,1216.5,1578.5],"litros":0.817,"area":0.0733,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Cocina/ventana_cocina","nombre":"ch_der","caja":[-969,-922,1137,1185,1216.5,1578.5],"litros":0.817,"area":0.0733,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Bano/ventana_bano","nombre":"ra_brida_abajo","caja":[300,883,1250,1254,1206,1248.5],"litros":0.099,"area":0.0546,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Bano/ventana_bano","nombre":"ra_brida_arriba","caja":[300,883,1250,1254,1616.5,1659],"litros":0.099,"area":0.0546,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Bano/ventana_bano","nombre":"ra_brida_izq","caja":[300,342.5,1250,1254,1248.5,1616.5],"litros":0.063,"area":0.0346,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Bano/ventana_bano","nombre":"ra_brida_der","caja":[840.5,883,1250,1254,1248.5,1616.5],"litros":0.063,"area":0.0346,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Bano/ventana_bano","nombre":"ra_hoja_abajo","caja":[342.5,840.5,1210,1254,1248.5,1268.5],"litros":0.438,"area":0.0655,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Bano/ventana_bano","nombre":"ra_hoja_arriba","caja":[342.5,840.5,1210,1254,1596.5,1616.5],"litros":0.438,"area":0.0655,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Bano/ventana_bano","nombre":"ra_hoja_izq","caja":[342.5,362.5,1210,1254,1268.5,1596.5],"litros":0.289,"area":0.0437,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Bano/ventana_bano","nombre":"ra_hoja_der","caja":[820.5,840.5,1210,1254,1268.5,1596.5],"litros":0.289,"area":0.0437,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Bano/ventana_bano","nombre":"ra_cuerpo_abajo","caja":[334,849,1210,1250,1240,1248.5],"litros":0.175,"area":0.0506,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Bano/ventana_bano","nombre":"ra_cuerpo_arriba","caja":[334,849,1210,1250,1616.5,1625],"litros":0.175,"area":0.0506,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Bano/ventana_bano","nombre":"ra_cuerpo_izq","caja":[334,342.5,1210,1250,1248.5,1616.5],"litros":0.125,"area":0.0364,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Bano/ventana_bano","nombre":"ra_cuerpo_der","caja":[840.5,849,1210,1250,1248.5,1616.5],"litros":0.125,"area":0.0364,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Bano/ventana_bano","nombre":"ra_interior_abajo","caja":[364,819,1185,1210,1270,1280],"litros":0.114,"area":0.0323,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Bano/ventana_bano","nombre":"ra_interior_arriba","caja":[364,819,1185,1210,1585,1595],"litros":0.114,"area":0.0323,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Bano/ventana_bano","nombre":"ra_interior_izq","caja":[364,374,1185,1210,1280,1585],"litros":0.076,"area":0.0219,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Bano/ventana_bano","nombre":"ra_interior_der","caja":[809,819,1185,1210,1280,1585],"litros":0.076,"area":0.0219,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Bano/ventana_bano","nombre":"vidrio","caja":[362.5,820.5,1247,1253,1268.5,1596.5],"litros":0.901,"area":0.3099,"material":"Vidrio","caras":6}
+{"ruta":"Caja/Interior/Bano/ventana_bano","nombre":"vidrio_interior","caja":[374,809,1185,1189,1280,1585],"litros":0.531,"area":0.2713,"material":"Vidrio","caras":6}
+{"ruta":"Caja/Interior/Bano/ventana_bano","nombre":"ch_abajo","caja":[337,846,1137,1185,1188.5,1283.5],"litros":2.321,"area":0.1547,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Bano/ventana_bano","nombre":"ch_arriba","caja":[337,846,1137,1185,1581.5,1676.5],"litros":2.321,"area":0.1547,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Bano/ventana_bano","nombre":"ch_izq","caja":[337,384,1137,1185,1283.5,1581.5],"litros":0.672,"area":0.0611,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Bano/ventana_bano","nombre":"ch_der","caja":[799,846,1137,1185,1283.5,1581.5],"litros":0.672,"area":0.0611,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_perros","nombre":"ra_brida_abajo","caja":[1028.5,2141.5,1250,1254,1135,1179],"litros":0.196,"area":0.1072,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_perros","nombre":"ra_brida_arriba","caja":[1028.5,2141.5,1250,1254,1616,1660],"litros":0.196,"area":0.1072,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_perros","nombre":"ra_brida_izq","caja":[1028.5,1071.5,1250,1254,1179,1616],"litros":0.075,"area":0.0414,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_perros","nombre":"ra_brida_der","caja":[2098.5,2141.5,1250,1254,1179,1616],"litros":0.075,"area":0.0414,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_perros","nombre":"ra_hoja_abajo","caja":[1071.5,2098.5,1210,1254,1179,1199],"litros":0.904,"area":0.1332,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_perros","nombre":"ra_hoja_arriba","caja":[1071.5,2098.5,1210,1254,1596,1616],"litros":0.904,"area":0.1332,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_perros","nombre":"ra_hoja_izq","caja":[1071.5,1091.5,1210,1254,1199,1596],"litros":0.349,"area":0.0526,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_perros","nombre":"ra_hoja_der","caja":[2078.5,2098.5,1210,1254,1199,1596],"litros":0.349,"area":0.0526,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_perros","nombre":"ra_cuerpo_abajo","caja":[1062.5,2107.5,1210,1250,1170,1179],"litros":0.376,"area":0.1031,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_perros","nombre":"ra_cuerpo_arriba","caja":[1062.5,2107.5,1210,1250,1616,1625],"litros":0.376,"area":0.1031,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_perros","nombre":"ra_cuerpo_izq","caja":[1062.5,1071.5,1210,1250,1179,1616],"litros":0.157,"area":0.0435,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_perros","nombre":"ra_cuerpo_der","caja":[2098.5,2107.5,1210,1250,1179,1616],"litros":0.157,"area":0.0435,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_perros","nombre":"ra_interior_abajo","caja":[1092.5,2077.5,1185,1210,1200,1210],"litros":0.246,"area":0.0695,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_perros","nombre":"ra_interior_arriba","caja":[1092.5,2077.5,1185,1210,1585,1595],"litros":0.246,"area":0.0695,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_perros","nombre":"ra_interior_izq","caja":[1092.5,1102.5,1185,1210,1210,1585],"litros":0.094,"area":0.0268,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_perros","nombre":"ra_interior_der","caja":[2067.5,2077.5,1185,1210,1210,1585],"litros":0.094,"area":0.0268,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_perros","nombre":"vidrio","caja":[1091.5,2078.5,1247,1253,1199,1596],"litros":2.351,"area":0.8003,"material":"Vidrio","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_perros","nombre":"vidrio_interior","caja":[1102.5,2067.5,1185,1189,1210,1585],"litros":1.448,"area":0.7345,"material":"Vidrio","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_perros","nombre":"ch_abajo","caja":[1064.5,2105.5,1137,1185,1121.5,1216.5],"litros":4.747,"area":0.3068,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_perros","nombre":"ch_arriba","caja":[1064.5,2105.5,1137,1185,1578.5,1673.5],"litros":4.747,"area":0.3068,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_perros","nombre":"ch_izq","caja":[1064.5,1111.5,1137,1185,1216.5,1578.5],"litros":0.817,"area":0.0733,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_perros","nombre":"ch_der","caja":[2058.5,2105.5,1137,1185,1216.5,1578.5],"litros":0.817,"area":0.0733,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Comedor/ventana_comedor","nombre":"ra_brida_abajo","caja":[-2008.6,-698.7,-1254,-1250,1109.5,1153],"litros":0.228,"area":0.1248,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Comedor/ventana_comedor","nombre":"ra_brida_arriba","caja":[-2008.6,-698.7,-1254,-1250,1686,1729.5],"litros":0.228,"area":0.1248,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Comedor/ventana_comedor","nombre":"ra_brida_izq","caja":[-2008.6,-1967.1,-1254,-1250,1153,1686],"litros":0.088,"area":0.0488,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Comedor/ventana_comedor","nombre":"ra_brida_der","caja":[-740.2,-698.7,-1254,-1250,1153,1686],"litros":0.088,"area":0.0488,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Comedor/ventana_comedor","nombre":"ra_hoja_abajo","caja":[-1967.1,-740.2,-1254,-1210,1153,1173],"litros":1.08,"area":0.1588,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Comedor/ventana_comedor","nombre":"ra_hoja_arriba","caja":[-1967.1,-740.2,-1254,-1210,1666,1686],"litros":1.08,"area":0.1588,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Comedor/ventana_comedor","nombre":"ra_hoja_izq","caja":[-1967.1,-1947.1,-1254,-1210,1173,1666],"litros":0.434,"area":0.0649,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Comedor/ventana_comedor","nombre":"ra_hoja_der","caja":[-760.2,-740.2,-1254,-1210,1173,1666],"litros":0.434,"area":0.0649,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Comedor/ventana_comedor","nombre":"ra_cuerpo_abajo","caja":[-1976.1,-731.2,-1250,-1210,1142,1153],"litros":0.548,"area":0.1279,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Comedor/ventana_comedor","nombre":"ra_cuerpo_arriba","caja":[-1976.1,-731.2,-1250,-1210,1686,1697],"litros":0.548,"area":0.1279,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Comedor/ventana_comedor","nombre":"ra_cuerpo_izq","caja":[-1976.1,-1967.1,-1250,-1210,1153,1686],"litros":0.192,"area":0.053,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Comedor/ventana_comedor","nombre":"ra_cuerpo_der","caja":[-740.2,-731.2,-1250,-1210,1153,1686],"litros":0.192,"area":0.053,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Comedor/ventana_comedor","nombre":"ra_interior_abajo","caja":[-1946.1,-761.2,-1210,-1185,1172,1182],"litros":0.296,"area":0.0835,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Comedor/ventana_comedor","nombre":"ra_interior_arriba","caja":[-1946.1,-761.2,-1210,-1185,1657,1667],"litros":0.296,"area":0.0835,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Comedor/ventana_comedor","nombre":"ra_interior_izq","caja":[-1946.1,-1936.1,-1210,-1185,1182,1657],"litros":0.119,"area":0.0338,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Comedor/ventana_comedor","nombre":"ra_interior_der","caja":[-771.2,-761.2,-1210,-1185,1182,1657],"litros":0.119,"area":0.0338,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Comedor/ventana_comedor","nombre":"vidrio","caja":[-1947.1,-760.2,-1253,-1247,1173,1666],"litros":3.511,"area":1.1905,"material":"Vidrio","caras":6}
+{"ruta":"Caja/Interior/Comedor/ventana_comedor","nombre":"vidrio_interior","caja":[-1936.1,-771.2,-1189,-1185,1182,1657],"litros":2.214,"area":1.1199,"material":"Vidrio","caras":6}
+{"ruta":"Caja/Interior/Comedor/ventana_comedor","nombre":"ch_abajo","caja":[-1972.6,-734.7,-1185,-1137,1093.5,1188.5],"litros":5.645,"area":0.3632,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Comedor/ventana_comedor","nombre":"ch_arriba","caja":[-1972.6,-734.7,-1185,-1137,1650.5,1745.5],"litros":5.645,"area":0.3632,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Comedor/ventana_comedor","nombre":"ch_izq","caja":[-1972.6,-1925.6,-1185,-1137,1188.5,1650.5],"litros":1.042,"area":0.0923,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Comedor/ventana_comedor","nombre":"ch_der","caja":[-781.7,-734.7,-1185,-1137,1188.5,1650.5],"litros":1.042,"area":0.0923,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_almohadas","nombre":"ra_brida_abajo","caja":[989.6,2102.6,-1254,-1250,1207,1251],"litros":0.196,"area":0.1072,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_almohadas","nombre":"ra_brida_arriba","caja":[989.6,2102.6,-1254,-1250,1688,1732],"litros":0.196,"area":0.1072,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_almohadas","nombre":"ra_brida_izq","caja":[989.6,1032.6,-1254,-1250,1251,1688],"litros":0.075,"area":0.0414,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_almohadas","nombre":"ra_brida_der","caja":[2059.6,2102.6,-1254,-1250,1251,1688],"litros":0.075,"area":0.0414,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_almohadas","nombre":"ra_hoja_abajo","caja":[1032.6,2059.6,-1254,-1210,1251,1271],"litros":0.904,"area":0.1332,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_almohadas","nombre":"ra_hoja_arriba","caja":[1032.6,2059.6,-1254,-1210,1668,1688],"litros":0.904,"area":0.1332,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_almohadas","nombre":"ra_hoja_izq","caja":[1032.6,1052.6,-1254,-1210,1271,1668],"litros":0.349,"area":0.0526,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_almohadas","nombre":"ra_hoja_der","caja":[2039.6,2059.6,-1254,-1210,1271,1668],"litros":0.349,"area":0.0526,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_almohadas","nombre":"ra_cuerpo_abajo","caja":[1023.6,2068.6,-1250,-1210,1242,1251],"litros":0.376,"area":0.1031,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_almohadas","nombre":"ra_cuerpo_arriba","caja":[1023.6,2068.6,-1250,-1210,1688,1697],"litros":0.376,"area":0.1031,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_almohadas","nombre":"ra_cuerpo_izq","caja":[1023.6,1032.6,-1250,-1210,1251,1688],"litros":0.157,"area":0.0435,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_almohadas","nombre":"ra_cuerpo_der","caja":[2059.6,2068.6,-1250,-1210,1251,1688],"litros":0.157,"area":0.0435,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_almohadas","nombre":"ra_interior_abajo","caja":[1053.6,2038.6,-1210,-1185,1272,1282],"litros":0.246,"area":0.0695,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_almohadas","nombre":"ra_interior_arriba","caja":[1053.6,2038.6,-1210,-1185,1657,1667],"litros":0.246,"area":0.0695,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_almohadas","nombre":"ra_interior_izq","caja":[1053.6,1063.6,-1210,-1185,1282,1657],"litros":0.094,"area":0.0268,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_almohadas","nombre":"ra_interior_der","caja":[2028.6,2038.6,-1210,-1185,1282,1657],"litros":0.094,"area":0.0268,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_almohadas","nombre":"vidrio","caja":[1052.6,2039.6,-1253,-1247,1271,1668],"litros":2.351,"area":0.8003,"material":"Vidrio","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_almohadas","nombre":"vidrio_interior","caja":[1063.6,2028.6,-1189,-1185,1282,1657],"litros":1.448,"area":0.7345,"material":"Vidrio","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_almohadas","nombre":"ch_abajo","caja":[1025.6,2066.6,-1185,-1137,1193.5,1288.5],"litros":4.747,"area":0.3068,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_almohadas","nombre":"ch_arriba","caja":[1025.6,2066.6,-1185,-1137,1650.5,1745.5],"litros":4.747,"area":0.3068,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_almohadas","nombre":"ch_izq","caja":[1025.6,1072.6,-1185,-1137,1288.5,1650.5],"litros":0.817,"area":0.0733,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Dormitorio/ventana_almohadas","nombre":"ch_der","caja":[2019.6,2066.6,-1185,-1137,1288.5,1650.5],"litros":0.817,"area":0.0733,"material":"Negro mate","caras":6}
+{"ruta":"Camion/chasis","nombre":"larguero_izq","caja":[-2200,4450,-425,-355,-365,-165],"litros":93.1,"area":3.619,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/chasis","nombre":"larguero_der","caja":[-2200,4450,355,425,-365,-165],"litros":93.1,"area":3.619,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/chasis","nombre":"travesano_1","caja":[-2200,-2080,-355,355,-335,-195],"litros":11.928,"area":0.4028,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/chasis","nombre":"travesano_2","caja":[-1260,-1140,-355,355,-335,-195],"litros":11.928,"area":0.4028,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/chasis","nombre":"travesano_3","caja":[-60,60,-355,355,-335,-195],"litros":11.928,"area":0.4028,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/chasis","nombre":"travesano_4","caja":[1140,1260,-355,355,-335,-195],"litros":11.928,"area":0.4028,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/chasis","nombre":"travesano_5","caja":[2240,2360,-355,355,-335,-195],"litros":11.928,"area":0.4028,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/chasis","nombre":"travesano_6","caja":[3340,3460,-355,355,-335,-195],"litros":11.928,"area":0.4028,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/chasis","nombre":"travesano_7","caja":[4240,4360,-355,355,-335,-195],"litros":11.928,"area":0.4028,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/chasis","nombre":"falso_izq","caja":[-2350,2350,-465,-365,-165,-65],"litros":47,"area":1.9,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/chasis","nombre":"falso_der","caja":[-2350,2350,365,465,-165,-65],"litros":47,"area":1.9,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/chasis","nombre":"falso_travesano_1","caja":[-2250,-2150,-385,385,-145,-65],"litros":6.16,"area":0.2932,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/chasis","nombre":"falso_travesano_2","caja":[-1050,-950,-385,385,-145,-65],"litros":6.16,"area":0.2932,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/chasis","nombre":"falso_travesano_3","caja":[350,450,-385,385,-145,-65],"litros":6.16,"area":0.2932,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/chasis","nombre":"falso_travesano_4","caja":[1550,1650,-385,385,-145,-65],"litros":6.16,"area":0.2932,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/chasis","nombre":"falso_travesano_5","caja":[2150,2250,-385,385,-145,-65],"litros":6.16,"area":0.2932,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/chasis","nombre":"eje_trasero","caja":[-760,-620,-802.5,802.5,-865,-725],"litros":24.707,"area":0.7367,"material":"Negro chasis","caras":3}
+{"ruta":"Camion/chasis","nombre":"ballesta_trasero_izq","caja":[-1190,-190,-445,-405,-735,-365],"litros":14.8,"area":0.8496,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/chasis","nombre":"ballesta_trasero_der","caja":[-1190,-190,405,445,-735,-365],"litros":14.8,"area":0.8496,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/chasis","nombre":"eje_delantero","caja":[3250,3390,-802.5,802.5,-865,-725],"litros":24.707,"area":0.7367,"material":"Negro chasis","caras":3}
+{"ruta":"Camion/chasis","nombre":"ballesta_delantero_izq","caja":[2820,3820,-445,-405,-735,-365],"litros":14.8,"area":0.8496,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/chasis","nombre":"ballesta_delantero_der","caja":[2820,3820,405,445,-735,-365],"litros":14.8,"area":0.8496,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/ruedas","nombre":"rueda_trasero_izq","caja":[-1155,-225,-1097.5,-802.5,-1260,-330],"litros":111.328,"area":2.1913,"material":"Goma","caras":4}
+{"ruta":"Camion/ruedas","nombre":"llanta_trasero_izq","caja":[-1004,-376,-1041.4,-858.5,-1109,-481],"litros":56.653,"area":0.9803,"material":"Aluminio","caras":3}
+{"ruta":"Camion/ruedas","nombre":"buje_trasero_izq","caja":[-820,-560,-1041.4,-988.3,-925,-665],"litros":2.819,"area":0.1496,"material":"Acero","caras":3}
+{"ruta":"Camion/ruedas","nombre":"rueda_trasero_der","caja":[-1155,-225,802.5,1097.5,-1260,-330],"litros":111.328,"area":2.1913,"material":"Goma","caras":4}
+{"ruta":"Camion/ruedas","nombre":"llanta_trasero_der","caja":[-1004,-376,858.6,1041.5,-1109,-481],"litros":56.653,"area":0.9803,"material":"Aluminio","caras":3}
+{"ruta":"Camion/ruedas","nombre":"buje_trasero_der","caja":[-820,-560,988.4,1041.5,-925,-665],"litros":2.819,"area":0.1496,"material":"Acero","caras":3}
+{"ruta":"Camion/ruedas","nombre":"rueda_delantero_izq","caja":[2855,3785,-1097.5,-802.5,-1260,-330],"litros":111.328,"area":2.1913,"material":"Goma","caras":4}
+{"ruta":"Camion/ruedas","nombre":"llanta_delantero_izq","caja":[3006,3634,-1041.4,-858.5,-1109,-481],"litros":56.653,"area":0.9803,"material":"Aluminio","caras":3}
+{"ruta":"Camion/ruedas","nombre":"buje_delantero_izq","caja":[3190,3450,-1041.4,-988.3,-925,-665],"litros":2.819,"area":0.1496,"material":"Acero","caras":3}
+{"ruta":"Camion/ruedas","nombre":"rueda_delantero_der","caja":[2855,3785,802.5,1097.5,-1260,-330],"litros":111.328,"area":2.1913,"material":"Goma","caras":4}
+{"ruta":"Camion/ruedas","nombre":"llanta_delantero_der","caja":[3006,3634,858.6,1041.5,-1109,-481],"litros":56.653,"area":0.9803,"material":"Aluminio","caras":3}
+{"ruta":"Camion/ruedas","nombre":"buje_delantero_der","caja":[3190,3450,988.4,1041.5,-925,-665],"litros":2.819,"area":0.1496,"material":"Acero","caras":3}
+{"ruta":"Camion/cabina","nombre":"cabina","caja":[2460,4515,-1150,1150,-305,1490],"litros":7049.434,"area":26.421,"material":"Verde militar","caras":38}
+{"ruta":"Camion/cabina","nombre":"parabrisas","caja":[4280.4,4502.2,-1000,1000,657,1320],"litros":26.52,"area":2.8786,"material":"Vidrio","caras":6}
+{"ruta":"Camion/cabina","nombre":"ventanilla_izq","caja":[3400,4180,-1080,-1065,600,1290],"litros":8.073,"area":1.1205,"material":"Vidrio","caras":6}
+{"ruta":"Camion/cabina","nombre":"ventanilla_trasera_izq","caja":[2740,3180,-1080,-1065,770,1290],"litros":3.432,"area":0.4864,"material":"Vidrio","caras":6}
+{"ruta":"Camion/cabina","nombre":"puerta_izq","caja":[3273,4232,-1150,-1142,202,1380],"litros":4.732,"area":1.2407,"material":"Verde militar","caras":10}
+{"ruta":"Camion/cabina","nombre":"espejo_brazo_izq","caja":[4380,4420,-1330,-1120,1150,1190],"litros":0.336,"area":0.0368,"material":"Verde militar","caras":6}
+{"ruta":"Camion/cabina","nombre":"espejo_izq","caja":[4300,4420,-1390,-1270,560,1150],"litros":8.496,"area":0.312,"material":"Negro mate","caras":6}
+{"ruta":"Camion/cabina","nombre":"faro_izq","caja":[4600,4645,-1050,-700,-450,-300],"litros":2.363,"area":0.15,"material":"Vidrio oscuro","caras":6}
+{"ruta":"Camion/cabina","nombre":"peldano_1_izq","caja":[4030,4420,-1170,-1000,-420,-390],"litros":1.989,"area":0.1662,"material":"Aluminio","caras":6}
+{"ruta":"Camion/cabina","nombre":"peldano_2_izq","caja":[4030,4420,-1170,-1000,-815,-785],"litros":1.989,"area":0.1662,"material":"Aluminio","caras":6}
+{"ruta":"Camion/cabina","nombre":"peldano_soporte_1_izq","caja":[4030,4060,-1175,-1170,-815,-305],"litros":0.077,"area":0.036,"material":"Aluminio","caras":6}
+{"ruta":"Camion/cabina","nombre":"peldano_soporte_2_izq","caja":[4390,4420,-1175,-1170,-815,-305],"litros":0.077,"area":0.036,"material":"Aluminio","caras":6}
+{"ruta":"Camion/cabina","nombre":"guardabarros_delantero_izq","caja":[2665,3975,-1152.5,-747.5,-625,30],"litros":43.912,"area":1.8582,"material":"Negro mate","caras":6}
+{"ruta":"Camion/cabina","nombre":"faldilla_delantera_izq","caja":[2640,2660,-1137.5,-762.5,-1130,-625],"litros":3.788,"area":0.414,"material":"Negro mate","caras":6}
+{"ruta":"Camion/cabina","nombre":"ventanilla_der","caja":[3400,4180,1065,1080,600,1290],"litros":8.073,"area":1.1205,"material":"Vidrio","caras":6}
+{"ruta":"Camion/cabina","nombre":"ventanilla_trasera_der","caja":[2740,3180,1065,1080,770,1290],"litros":3.432,"area":0.4864,"material":"Vidrio","caras":6}
+{"ruta":"Camion/cabina","nombre":"puerta_der","caja":[3273,4232,1142,1150,202,1380],"litros":4.732,"area":1.2407,"material":"Verde militar","caras":10}
+{"ruta":"Camion/cabina","nombre":"espejo_brazo_der","caja":[4380,4420,1120,1330,1150,1190],"litros":0.336,"area":0.0368,"material":"Verde militar","caras":6}
+{"ruta":"Camion/cabina","nombre":"espejo_der","caja":[4300,4420,1270,1390,560,1150],"litros":8.496,"area":0.312,"material":"Negro mate","caras":6}
+{"ruta":"Camion/cabina","nombre":"faro_der","caja":[4600,4645,700,1050,-450,-300],"litros":2.363,"area":0.15,"material":"Vidrio oscuro","caras":6}
+{"ruta":"Camion/cabina","nombre":"peldano_1_der","caja":[4030,4420,1000,1170,-420,-390],"litros":1.989,"area":0.1662,"material":"Aluminio","caras":6}
+{"ruta":"Camion/cabina","nombre":"peldano_2_der","caja":[4030,4420,1000,1170,-815,-785],"litros":1.989,"area":0.1662,"material":"Aluminio","caras":6}
+{"ruta":"Camion/cabina","nombre":"peldano_soporte_1_der","caja":[4030,4060,1170,1175,-815,-305],"litros":0.077,"area":0.036,"material":"Aluminio","caras":6}
+{"ruta":"Camion/cabina","nombre":"peldano_soporte_2_der","caja":[4390,4420,1170,1175,-815,-305],"litros":0.077,"area":0.036,"material":"Aluminio","caras":6}
+{"ruta":"Camion/cabina","nombre":"guardabarros_delantero_der","caja":[2665,3975,747.5,1152.5,-625,30],"litros":43.912,"area":1.8582,"material":"Negro mate","caras":6}
+{"ruta":"Camion/cabina","nombre":"faldilla_delantera_der","caja":[2640,2660,762.5,1137.5,-1130,-625],"litros":3.788,"area":0.414,"material":"Negro mate","caras":6}
+{"ruta":"Camion/cabina","nombre":"parachoques","caja":[4515,4640,-1100,1100,-650,-165],"litros":133.375,"area":2.8053,"material":"Negro mate","caras":6}
+{"ruta":"Camion/cabina","nombre":"calandra","caja":[4505,4530,-800,800,-120,517],"litros":25.48,"area":2.1503,"material":"Negro mate","caras":6}
+{"ruta":"Camion/cabina","nombre":"parasol","caja":[4180,4380,-1100,1100,1440,1490],"litros":22,"area":1.12,"material":"Negro mate","caras":6}
+{"ruta":"Camion/cabina","nombre":"foco_soporte_izq","caja":[4260,4300,-620,-580,1490,1530],"litros":0.064,"area":0.0096,"material":"Negro mate","caras":6}
+{"ruta":"Camion/cabina","nombre":"foco_izq","caja":[4220,4360,-685,-515,1525,1695],"litros":3.178,"area":0.1202,"material":"Cromo","caras":3}
+{"ruta":"Camion/cabina","nombre":"foco_soporte_der","caja":[4260,4300,580,620,1490,1530],"litros":0.064,"area":0.0096,"material":"Negro mate","caras":6}
+{"ruta":"Camion/cabina","nombre":"foco_der","caja":[4220,4360,515,685,1525,1695],"litros":3.178,"area":0.1202,"material":"Cromo","caras":3}
+{"ruta":"Caja/remates","nombre":"garrafa_1","caja":[900,1220,1010,1180,-600,-160],"litros":23.936,"area":0.54,"material":"Verde garrafa","caras":6}
+{"ruta":"Caja/remates","nombre":"garrafa_2","caja":[1250,1570,1010,1180,-600,-160],"litros":23.936,"area":0.54,"material":"Verde garrafa","caras":6}
+{"ruta":"Caja/remates","nombre":"garrafa_soporte","caja":[860,1610,1020,1180,-640,-600],"litros":4.8,"area":0.3128,"material":"Aluminio anodizado","caras":6}
+{"ruta":"Caja/remates","nombre":"zocalo_izq","caja":[-2230,171.5,-1262,-1225,-65,25],"litros":7.997,"area":0.6166,"material":"Aluminio","caras":6}
+{"ruta":"Caja/remates","nombre":"zocalo_izq_delante","caja":[913.5,2230,-1262,-1225,-65,25],"litros":4.384,"area":0.3411,"material":"Aluminio","caras":6}
+{"ruta":"Caja/remates","nombre":"remate_techo_izq","caja":[-2230,2230,-1260,-1230,2095,2155],"litros":8.028,"area":0.8064,"material":"Aluminio","caras":6}
+{"ruta":"Caja/remates","nombre":"zocalo_der","caja":[-2230,2230,1225,1262,-65,25],"litros":14.852,"area":1.1395,"material":"Aluminio","caras":6}
+{"ruta":"Caja/remates","nombre":"remate_techo_der","caja":[-2230,2230,1230,1260,2095,2155],"litros":8.028,"area":0.8064,"material":"Aluminio","caras":6}
+{"ruta":"Camion/bajos","nombre":"deposito_agua_limpia","caja":[-2200,-800,-320,320,-920,-280],"litros":450.379,"area":3.4583,"material":"Negro chasis","caras":3}
+{"ruta":"Camion/bajos","nombre":"deposito_grises","caja":[200,1100,-380,380,-950,-600],"litros":239.4,"area":2.53,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/bajos","nombre":"calderin_aire_1","caja":[400,1000,460,780,-860,-540],"litros":48.255,"area":0.764,"material":"Blanco mate","caras":3}
+{"ruta":"Camion/bajos","nombre":"deposito_gasoil","caja":[-1930,-1290,720,1180,-520,-150],"litros":108.928,"area":1.4028,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/bajos","nombre":"cofre_der","caja":[-1930,-1290,-1240,-860,-540,-120],"litros":102.144,"area":1.3432,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/bajos","nombre":"rueda_repuesto","caja":[-2365,-1435,-465,465,-847.5,-552.5],"litros":200.391,"area":2.2205,"material":"Negro chasis","caras":3}
+{"ruta":"Camion/bajos","nombre":"soporte_repuesto","caja":[-2200,-1600,-500,500,-760,-700],"litros":36,"area":1.392,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/bajos","nombre":"guardabarros_izq","caja":[-1248.6,-131.4,-1142.5,-757.5,-755,-235],"litros":33.728,"area":1.4442,"material":"Negro mate","caras":6}
+{"ruta":"Camion/bajos","nombre":"faldilla_izq","caja":[-1575,-1555,-1142.5,-757.5,-1130,-555],"litros":4.428,"area":0.4812,"material":"Negro mate","caras":6}
+{"ruta":"Camion/bajos","nombre":"guardabarros_der","caja":[-1248.6,-131.4,757.5,1142.5,-755,-235],"litros":33.728,"area":1.4442,"material":"Negro mate","caras":6}
+{"ruta":"Camion/bajos","nombre":"faldilla_der","caja":[-1575,-1555,757.5,1142.5,-1130,-555],"litros":4.428,"area":0.4812,"material":"Negro mate","caras":6}
+{"ruta":"Camion/bajos","nombre":"proteccion_alta_izq","caja":[-65,2465,-1230,-1200,-400,-310],"litros":6.831,"area":0.6126,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/bajos","nombre":"proteccion_baja_izq","caja":[-65,2465,-1230,-1200,-760,-655],"litros":7.97,"area":0.6894,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/bajos","nombre":"proteccion_montante_1_izq","caja":[-65,-25,-1200,-1170,-760,-170],"litros":0.708,"area":0.085,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/bajos","nombre":"proteccion_montante_2_izq","caja":[1200,1240,-1200,-1170,-760,-170],"litros":0.708,"area":0.085,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/bajos","nombre":"proteccion_montante_3_izq","caja":[2425,2465,-1200,-1170,-760,-170],"litros":0.708,"area":0.085,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/bajos","nombre":"proteccion_alta_der","caja":[-65,2465,1200,1230,-400,-310],"litros":6.831,"area":0.6126,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/bajos","nombre":"proteccion_baja_der","caja":[-65,2465,1200,1230,-760,-655],"litros":7.97,"area":0.6894,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/bajos","nombre":"proteccion_montante_1_der","caja":[-65,-25,1170,1200,-760,-170],"litros":0.708,"area":0.085,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/bajos","nombre":"proteccion_montante_2_der","caja":[1200,1240,1170,1200,-760,-170],"litros":0.708,"area":0.085,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/bajos","nombre":"proteccion_montante_3_der","caja":[2425,2465,1170,1200,-760,-170],"litros":0.708,"area":0.085,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/bajos","nombre":"paragolpes_trasero","caja":[-2420,-2300,-1100,1100,-760,-640],"litros":31.68,"area":1.0848,"material":"Acero","caras":6}
+{"ruta":"Camion/bajos","nombre":"paragolpes_soporte_izq","caja":[-2300,-2150,-1000,-900,-700,-365],"litros":5.025,"area":0.1975,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/bajos","nombre":"faldilla_trasera_izq","caja":[-2440,-2420,-1080,-420,-1110,-640],"litros":6.204,"area":0.6656,"material":"Negro mate","caras":6}
+{"ruta":"Camion/bajos","nombre":"piloto_trasero_izq","caja":[-2230,-2200,-1050,-700,-420,-300],"litros":1.26,"area":0.1122,"material":"Piloto rojo","caras":6}
+{"ruta":"Camion/bajos","nombre":"paragolpes_soporte_der","caja":[-2300,-2150,900,1000,-700,-365],"litros":5.025,"area":0.1975,"material":"Negro chasis","caras":6}
+{"ruta":"Camion/bajos","nombre":"faldilla_trasera_der","caja":[-2440,-2420,420,1080,-1110,-640],"litros":6.204,"area":0.6656,"material":"Negro mate","caras":6}
+{"ruta":"Camion/bajos","nombre":"piloto_trasero_der","caja":[-2230,-2200,700,1050,-420,-300],"litros":1.26,"area":0.1122,"material":"Piloto rojo","caras":6}
+{"ruta":"Camion/bajos","nombre":"escape","caja":[-300,1100,-560,-420,-980,-860],"litros":23.52,"area":0.7616,"material":"Acero","caras":6}
+{"ruta":"Camion/bajos","nombre":"escape_salida","caja":[-560,-300,-545,-435,-975,-865],"litros":2.471,"area":0.1089,"material":"Inox","caras":3}
+{"ruta":"Caja/rampa","nombre":"rampa_hoja","caja":[-2358,-2303,-1105,1105,0,1800],"litros":218.79,"area":8.3971,"material":"Acero","caras":6}
+{"ruta":"Caja/rampa","nombre":"panel_ciego","caja":[-2350,-2285,-1105,1105,1800,2100],"litros":43.095,"area":1.6523,"material":"Verde militar","caras":6}
+{"ruta":"Caja/rampa","nombre":"rampa_liston_01","caja":[-2303,-2285,-1085,1085,40,187.3],"litros":5.752,"area":0.7226,"material":"Roble","caras":6}
+{"ruta":"Caja/rampa","nombre":"rampa_liston_02","caja":[-2303,-2285,-1085,1085,197.3,344.5],"litros":5.752,"area":0.7226,"material":"Roble","caras":6}
+{"ruta":"Caja/rampa","nombre":"rampa_liston_03","caja":[-2303,-2285,-1085,1085,354.5,501.8],"litros":5.752,"area":0.7226,"material":"Roble","caras":6}
+{"ruta":"Caja/rampa","nombre":"rampa_liston_04","caja":[-2303,-2285,-1085,1085,511.8,659.1],"litros":5.752,"area":0.7226,"material":"Roble","caras":6}
+{"ruta":"Caja/rampa","nombre":"rampa_liston_05","caja":[-2303,-2285,-1085,1085,669.1,816.4],"litros":5.752,"area":0.7226,"material":"Roble","caras":6}
+{"ruta":"Caja/rampa","nombre":"rampa_liston_06","caja":[-2303,-2285,-1085,1085,826.4,973.6],"litros":5.752,"area":0.7226,"material":"Roble","caras":6}
+{"ruta":"Caja/rampa","nombre":"rampa_liston_07","caja":[-2303,-2285,-1085,1085,983.6,1130.9],"litros":5.752,"area":0.7226,"material":"Roble","caras":6}
+{"ruta":"Caja/rampa","nombre":"rampa_liston_08","caja":[-2303,-2285,-1085,1085,1140.9,1288.2],"litros":5.752,"area":0.7226,"material":"Roble","caras":6}
+{"ruta":"Caja/rampa","nombre":"rampa_liston_09","caja":[-2303,-2285,-1085,1085,1298.2,1445.5],"litros":5.752,"area":0.7226,"material":"Roble","caras":6}
+{"ruta":"Caja/rampa","nombre":"rampa_liston_10","caja":[-2303,-2285,-1085,1085,1455.5,1602.7],"litros":5.752,"area":0.7226,"material":"Roble","caras":6}
+{"ruta":"Caja/rampa","nombre":"rampa_liston_11","caja":[-2303,-2285,-1085,1085,1612.7,1760],"litros":5.752,"area":0.7226,"material":"Roble","caras":6}
+{"ruta":"Caja/puerta_lateral","nombre":"de_brida_abajo","caja":[171.5,913.5,-1254,-1250,-17.5,26],"litros":0.129,"area":0.0708,"material":"Negro mate","caras":6}
+{"ruta":"Caja/puerta_lateral","nombre":"de_brida_arriba","caja":[171.5,913.5,-1254,-1250,1927,1970.5],"litros":0.129,"area":0.0708,"material":"Negro mate","caras":6}
+{"ruta":"Caja/puerta_lateral","nombre":"de_brida_izq","caja":[171.5,215,-1254,-1250,26,1927],"litros":0.331,"area":0.1809,"material":"Negro mate","caras":6}
+{"ruta":"Caja/puerta_lateral","nombre":"de_brida_der","caja":[870,913.5,-1254,-1250,26,1927],"litros":0.331,"area":0.1809,"material":"Negro mate","caras":6}
+{"ruta":"Caja/puerta_lateral","nombre":"de_cuerpo_abajo","caja":[204,881,-1250,-1212,15,26],"litros":0.283,"area":0.0672,"material":"Negro mate","caras":6}
+{"ruta":"Caja/puerta_lateral","nombre":"de_cuerpo_arriba","caja":[204,881,-1250,-1212,1927,1938],"litros":0.283,"area":0.0672,"material":"Negro mate","caras":6}
+{"ruta":"Caja/puerta_lateral","nombre":"de_cuerpo_izq","caja":[204,215,-1250,-1212,26,1927],"litros":0.795,"area":0.1871,"material":"Negro mate","caras":6}
+{"ruta":"Caja/puerta_lateral","nombre":"de_cuerpo_der","caja":[870,881,-1250,-1212,26,1927],"litros":0.795,"area":0.1871,"material":"Negro mate","caras":6}
+{"ruta":"Caja/puerta_lateral","nombre":"de_tope_abajo","caja":[204,881,-1212,-1208,15,50],"litros":0.095,"area":0.0531,"material":"Negro mate","caras":6}
+{"ruta":"Caja/puerta_lateral","nombre":"de_tope_arriba","caja":[204,881,-1212,-1208,1903,1938],"litros":0.095,"area":0.0531,"material":"Negro mate","caras":6}
+{"ruta":"Caja/puerta_lateral","nombre":"de_tope_izq","caja":[204,239,-1212,-1208,50,1903],"litros":0.259,"area":0.1448,"material":"Negro mate","caras":6}
+{"ruta":"Caja/puerta_lateral","nombre":"de_tope_der","caja":[846,881,-1212,-1208,50,1903],"litros":0.259,"area":0.1448,"material":"Negro mate","caras":6}
+{"ruta":"Caja/puerta_lateral","nombre":"de_interior_abajo","caja":[235,850,-1208,-1185,46,50],"litros":0.057,"area":0.0334,"material":"Negro mate","caras":6}
+{"ruta":"Caja/puerta_lateral","nombre":"de_interior_arriba","caja":[235,850,-1208,-1185,1903,1907],"litros":0.057,"area":0.0334,"material":"Negro mate","caras":6}
+{"ruta":"Caja/puerta_lateral","nombre":"de_interior_izq","caja":[235,239,-1208,-1185,50,1903],"litros":0.17,"area":0.1002,"material":"Negro mate","caras":6}
+{"ruta":"Caja/puerta_lateral","nombre":"de_interior_der","caja":[846,850,-1208,-1185,50,1903],"litros":0.17,"area":0.1002,"material":"Negro mate","caras":6}
+{"ruta":"Caja/puerta_lateral","nombre":"hoja","caja":[215,870,-1254,-1212,26,1927],"litros":52.297,"area":2.705,"material":"Verde militar","caras":6}
+{"ruta":"Caja/puerta_lateral","nombre":"de_cerradura","caja":[275,385,-1257,-1192,866.5,1086.5],"litros":1.573,"area":0.0913,"material":"Negro mate","caras":6}
+{"ruta":"Caja/puerta_lateral","nombre":"de_bisagra","caja":[858,878,-1257,-1254,86,1867],"litros":0.107,"area":0.082,"material":"Negro mate","caras":6}

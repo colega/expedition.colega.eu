@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(./fusion-bridge/fb:*)",
+      "Bash(fusion-bridge/fb:*)",
+      "Bash(make -C fusion-bridge:*)"
+    ]
+  }
+}

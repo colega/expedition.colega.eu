@@ -28,6 +28,7 @@ const MATERIALES = {
   cama: 'Blanco lacado',
   alto_pies: 'Blanco lacado',
   rampa: 'Acero',
+  rampa_abierta: 'Acero',
   alto_cabina: 'Blanco lacado',
   encimera: 'Blanco lacado',
   altos_cocina: 'Blanco lacado',

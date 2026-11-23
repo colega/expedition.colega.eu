@@ -70,7 +70,10 @@ export function exterior(modelo) {
   const muroX = [E.caja_x[0], E.caja_x[0] + 65];
   const RA = R.RAMPA;
   const rampa = modelo.nuevo(CAJA, 'rampa');
+  const ABIERTA = R.RAMPA_ABIERTA;
   cortarMuro([muroX[0] - 10, muroX[1] + 10], [...RA.ancho], [0.0, ALTO]);
+  // se abre el hueco de arriba abajo y se rellena con la hoja metalica, sus
+  // listones de madera por dentro y un panel ciego de la rampa al techo.
   // La hoja y su forro miden 73 y el muro trasero 65: la rampa se corre hacia
   // fuera lo que sobra. Por dentro queda a ras del paramento y por fuera vuela 8,
   // que es lo que hace una trampilla elevadora de verdad.
@@ -87,6 +90,25 @@ export function exterior(modelo) {
   for (let k = 0; k < n; k++) {
     const z0 = RA.margen + k * (canto + RA.junta);
     bloque(rampa, `rampa_liston_${String(k + 1).padStart(2, '0')}`, dentroX, yListon, [z0, z0 + canto]);
+  }
+
+  // R111: la rampa abierta, de terraza: la hoja gira 90 grados sobre su canto
+  // de abajo, el de dentro, y queda horizontal a la altura del suelo de la
+  // caja. Los listones de la cara de dentro quedan hacia arriba, haciendo el
+  // suelo de la terraza. La tapa ciega de encima abre con ella: gira sobre su
+  // canto de arriba, el de fuera, y queda horizontal bajo ese nivel, de
+  // visera.
+  if (ABIERTA) {
+    const abierta = modelo.nuevo(CAJA, 'rampa_abierta');
+    const bisagraX = hojaX[1];
+    bloque(abierta, 'rampa_hoja', [bisagraX - RA.alto, bisagraX], [...RA.ancho], [-RA.hoja, 0.0]);
+    for (let k = 0; k < n; k++) {
+      const z0 = RA.margen + k * (canto + RA.junta);
+      bloque(abierta, `rampa_liston_${String(k + 1).padStart(2, '0')}`,
+        [bisagraX - z0 - canto, bisagraX - z0], yListon, [0.0, RA.liston]);
+    }
+    bloque(abierta, 'panel_ciego', [muroX[0] - (ALTO - RA.alto), muroX[0]],
+      [...RA.ancho], [ALTO - (muroX[1] - muroX[0]), ALTO]);
   }
 
   // Sin escalera al techo (regla R21): descartada.

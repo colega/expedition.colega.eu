@@ -60,7 +60,10 @@ En el visor:
   también en la lista del panel y se recuerdan por versión. Solo se elige una
   arista que se vea: la que tapa otra pieza, no. Esc suelta la primera arista
   y, si no hay, apaga el modo.
-- La ducha sale cerrada: `ducha_abierta` viene oculta de serie.
+- La ducha sale cerrada: `ducha_abierta` viene oculta de serie. La rampa, lo
+  mismo (R111): el botón **Abrir/cerrar rampa** cambia de una a otra, y si has
+  ocultado las dos, vuelve a enseñar la cerrada. Abierta, la tapa ciega de
+  encima la acompaña y queda horizontal, de visera.
 - En el móvil, el modelo va arriba y el panel debajo, con el árbol dentro;
   **Panel** lo pliega para ver el modelo a pantalla completa. Las vistas fijas
   no salen: con el dedo se gira mejor.
@@ -207,7 +210,7 @@ Caja
                      ducha_abierta, toallero, alto_bano, ventana_bano
     suelo_elevado
   remates            zócalos, remates de techo, faldones, garrafas
-  rampa
+  rampa              cerrada, y su abierta de terraza (v17, oculta de serie)
   puerta_lateral
 Camion
   chasis, ruedas, cabina, bajos
@@ -264,7 +267,7 @@ ventilador, cúpula de satélite, antena, focos y luces de gabarito.
 ## Estado y cabos sueltos
 
 Al día, las dos versiones dan 0 fuera de sitio: la v16 tiene 459 cuerpos, 301
-en el interior, y la v17 467, 308 en el interior.
+en el interior, y la v17 480, 308 en el interior.
 
 Contar los cuerpos no es una formalidad: `caja()` devuelve `null` cuando el
 rango que le llega mide cero, sin quejarse, y la pieza desaparece sin aviso.

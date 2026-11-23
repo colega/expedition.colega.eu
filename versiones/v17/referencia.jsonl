@@ -446,6 +446,19 @@
 {"ruta":"Caja/rampa","nombre":"rampa_liston_09","caja":[-2303,-2285,-1085,1085,1298.2,1445.5],"litros":5.752,"area":0.7226,"material":"Roble","caras":6}
 {"ruta":"Caja/rampa","nombre":"rampa_liston_10","caja":[-2303,-2285,-1085,1085,1455.5,1602.7],"litros":5.752,"area":0.7226,"material":"Roble","caras":6}
 {"ruta":"Caja/rampa","nombre":"rampa_liston_11","caja":[-2303,-2285,-1085,1085,1612.7,1760],"litros":5.752,"area":0.7226,"material":"Roble","caras":6}
+{"ruta":"Caja/rampa_abierta","nombre":"rampa_hoja","caja":[-4103,-2303,-1105,1105,-55,0],"litros":218.79,"area":8.3971,"material":"Acero","caras":6}
+{"ruta":"Caja/rampa_abierta","nombre":"rampa_liston_01","caja":[-2490.3,-2343,-1085,1085,0,18],"litros":5.752,"area":0.7226,"material":"Roble","caras":6}
+{"ruta":"Caja/rampa_abierta","nombre":"rampa_liston_02","caja":[-2647.5,-2500.3,-1085,1085,0,18],"litros":5.752,"area":0.7226,"material":"Roble","caras":6}
+{"ruta":"Caja/rampa_abierta","nombre":"rampa_liston_03","caja":[-2804.8,-2657.5,-1085,1085,0,18],"litros":5.752,"area":0.7226,"material":"Roble","caras":6}
+{"ruta":"Caja/rampa_abierta","nombre":"rampa_liston_04","caja":[-2962.1,-2814.8,-1085,1085,0,18],"litros":5.752,"area":0.7226,"material":"Roble","caras":6}
+{"ruta":"Caja/rampa_abierta","nombre":"rampa_liston_05","caja":[-3119.4,-2972.1,-1085,1085,0,18],"litros":5.752,"area":0.7226,"material":"Roble","caras":6}
+{"ruta":"Caja/rampa_abierta","nombre":"rampa_liston_06","caja":[-3276.6,-3129.4,-1085,1085,0,18],"litros":5.752,"area":0.7226,"material":"Roble","caras":6}
+{"ruta":"Caja/rampa_abierta","nombre":"rampa_liston_07","caja":[-3433.9,-3286.6,-1085,1085,0,18],"litros":5.752,"area":0.7226,"material":"Roble","caras":6}
+{"ruta":"Caja/rampa_abierta","nombre":"rampa_liston_08","caja":[-3591.2,-3443.9,-1085,1085,0,18],"litros":5.752,"area":0.7226,"material":"Roble","caras":6}
+{"ruta":"Caja/rampa_abierta","nombre":"rampa_liston_09","caja":[-3748.5,-3601.2,-1085,1085,0,18],"litros":5.752,"area":0.7226,"material":"Roble","caras":6}
+{"ruta":"Caja/rampa_abierta","nombre":"rampa_liston_10","caja":[-3905.7,-3758.5,-1085,1085,0,18],"litros":5.752,"area":0.7226,"material":"Roble","caras":6}
+{"ruta":"Caja/rampa_abierta","nombre":"rampa_liston_11","caja":[-4063,-3915.7,-1085,1085,0,18],"litros":5.752,"area":0.7226,"material":"Roble","caras":6}
+{"ruta":"Caja/rampa_abierta","nombre":"panel_ciego","caja":[-2650,-2350,-1105,1105,2035,2100],"litros":43.095,"area":1.6523,"material":"Verde militar","caras":6}
 {"ruta":"Caja/puerta_lateral","nombre":"de_brida_abajo","caja":[171.5,913.5,-1254,-1250,-17.5,26],"litros":0.129,"area":0.0708,"material":"Negro mate","caras":6}
 {"ruta":"Caja/puerta_lateral","nombre":"de_brida_arriba","caja":[171.5,913.5,-1254,-1250,1927,1970.5],"litros":0.129,"area":0.0708,"material":"Negro mate","caras":6}
 {"ruta":"Caja/puerta_lateral","nombre":"de_brida_izq","caja":[171.5,215,-1254,-1250,26,1927],"litros":0.331,"area":0.1809,"material":"Negro mate","caras":6}

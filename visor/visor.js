@@ -42,8 +42,9 @@ const VISTAS = {
   cocina: [[-400, 6800, 2050], [-1400, 600, 300], [0, 0, 1]],
 };
 
-// lo que sale oculto la primera vez: la ducha se enseña cerrada
-const OCULTOS_DE_SERIE = ['Caja/Interior/Bano/ducha_abierta'];
+// lo que sale oculto la primera vez: la ducha se enseña cerrada, y la rampa
+// tambien (R111)
+const OCULTOS_DE_SERIE = ['Caja/Interior/Bano/ducha_abierta', 'Caja/rampa_abierta'];
 const CLAVE_OCULTOS = 'caja_atego.ocultos';
 
 const $ = (id) => document.getElementById(id);
@@ -208,6 +209,7 @@ function alternar(clave, visible) {
   n.casilla.checked = visible;
   if (visible) ocultos.delete(clave); else ocultos.add(clave);
   guardarOcultos();
+  if (clave === 'Caja/rampa_abierta') pintaBotonRampa();
 }
 
 function cuerpoDelArbol(n, malla) {
@@ -265,6 +267,9 @@ function cargar(componentes) {
     n.detalles.open = n.clave.split('/').length <= 2
       && [...nodos.keys()].some((k) => k.startsWith(n.clave + '/'));
   }
+  // R111: el boton de la rampa, solo en las versiones que la ven abierta
+  $('rampa').hidden = !nodos.has('Caja/rampa_abierta');
+  pintaBotonRampa();
 }
 
 $('aristas').onchange = (e) => { for (const a of aristas) a.visible = e.target.checked; };
@@ -283,10 +288,29 @@ function mostrarSolo(claves, apagar = []) {
     n.casilla.checked = visible;
     if (!visible) ocultos.add(n.clave);
   }
+  pintaBotonRampa();
   guardarOcultos();
 }
 $('mostrarTodo').onclick = () => mostrarSolo(null);
 $('soloInterior').onclick = () => mostrarSolo(['Caja/Interior', 'Caja/puerta_lateral'], OCULTOS_DE_SERIE);
+
+// R111: la rampa se ve cerrada o abierta, nunca las dos. Si no se ve ninguna,
+// el boton vuelve a la cerrada.
+function pintaBotonRampa() {
+  $('rampa').setAttribute('aria-pressed', String(!ocultos.has('Caja/rampa_abierta')));
+}
+$('rampa').onclick = () => {
+  if (!nodos.has('Caja/rampa_abierta')) return;
+  if (!ocultos.has('Caja/rampa_abierta')) {          // abierta a la vista: cerrada
+    alternar('Caja/rampa_abierta', false);
+    alternar('Caja/rampa', true);
+  } else if (!ocultos.has('Caja/rampa')) {           // cerrada a la vista: abierta
+    alternar('Caja/rampa', false);
+    alternar('Caja/rampa_abierta', true);
+  } else {                                           // ninguna a la vista: cerrada
+    alternar('Caja/rampa', true);
+  }
+};
 $('plegar').onclick = () => {
   const plegado = $('lateral').classList.toggle('plegado');
   $('plegar').setAttribute('aria-expanded', String(!plegado));

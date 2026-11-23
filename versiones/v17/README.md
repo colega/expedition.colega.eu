@@ -9,7 +9,10 @@ La caja va sobre un Mercedes Atego: 4570 x 2370 x 2100 por dentro, de panel
 sándwich de 50 con 15 de aislamiento (R1). Toda la casa va sobre un suelo
 elevado de 50 (R3). De la trasera a la cabina:
 
-- **Trasera.** Una rampa elevadora que hace de terraza (R54).
+- **Trasera.** Una rampa elevadora que hace de terraza (R54). Se puede ver
+  abierta: la hoja gira sobre su canto de abajo y queda a la altura del suelo,
+  con las maderas hacia arriba, y la tapa ciega de encima abre con ella, de
+  visera (R111).
 - **Costado de la cocina**, el izquierdo:
   - Encimera de 620 de fondo, de la trasera al baño, a 988 (R79, R84, R95).
     Fregadero junto al baño y vitro de dos fuegos junto a la trasera (R28).

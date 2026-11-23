@@ -7,9 +7,10 @@
 import { measureVolume } from 'replicad';
 import { envolvente } from './geo.js';
 
-// Lo que no es casa: la envolvente, el camion y lo que va por fuera.
+// Lo que no es casa: la envolvente, el camion y lo que va por fuera. La rampa
+// abierta (R111) es la misma rampa de fuera, tumbada de terraza.
 const VEHICULO = new Set(['paredes', 'chasis', 'ruedas', 'cabina', 'remates',
-  'bajos', 'techo', 'puerta_lateral', 'rampa']);
+  'bajos', 'techo', 'puerta_lateral', 'rampa', 'rampa_abierta']);
 
 const conCuerpos = (modelo) => [...modelo.componentes.values()].filter((c) => c.cuerpos.length);
 const r1 = (v) => Math.round(v * 10) / 10;
@@ -96,7 +97,8 @@ export function huecos(modelo) {
 // el camion se quedan fuera: los huecos de ventana y de puerta se cortan de los
 // paneles, asi que ahi el solape es el corte.
 export function choques(modelo) {
-  const FUERA = new Set(['paredes', 'techo', 'remates', 'chasis', 'ruedas', 'cabina', 'bajos']);
+  const FUERA = new Set(['paredes', 'techo', 'remates', 'chasis', 'ruedas', 'cabina', 'bajos',
+    'rampa', 'rampa_abierta']);
   const MINIMO_MM3 = 1.0;
   const cuerpos = [];
   for (const comp of conCuerpos(modelo)) {

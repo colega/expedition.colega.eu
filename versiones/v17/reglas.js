@@ -63,6 +63,16 @@ export const ATEGO = { eje_delantero: 3320.0, eje_trasero: -690.0, rueda_diam: 9
 export const RAMPA = { alto: 1800.0, ancho: [-1105.0, 1105.0], hoja: 55.0,
   liston: 18.0, listones: 11, junta: 10.0, margen: 40.0 };
 
+// R111 La rampa se puede ver abierta: la misma hoja, girada 90 grados sobre
+//      su canto de abajo, el de dentro, y queda horizontal a la altura del
+//      suelo de la caja, haciendo de terraza: los listones de la cara de
+//      dentro quedan hacia arriba y hacen el suelo. La tapa ciega que hay
+//      encima abre con ella: girada sobre su canto de arriba, el de fuera,
+//      queda horizontal bajo ese nivel, de visera. Viene oculta de serie,
+//      como la ducha abierta, y el visor da un boton para cambiar de una a
+//      otra.
+export const RAMPA_ABIERTA = true;
+
 // R3  Toda la casa va sobre un suelo elevado de 50: tablero de 18 sobre un
 //     cerco con travesaños cada 600, con 32 de luz por debajo para nivelar.
 //     Llega de la trasera a los pies de la cama; la cama posa en el suelo de

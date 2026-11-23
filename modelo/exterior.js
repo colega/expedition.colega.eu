@@ -160,9 +160,13 @@ export function exterior(modelo) {
   }
 
   // ----------------------------------------------------------------------- bajos
-  // depositos entre largueros
-  cilindro(bajos, 'deposito_agua_limpia', 'x', [-1500.0, 0.0, -600.0], 1400.0, 320.0);
-  bloque(bajos, 'deposito_grises', [200.0, 1100.0], [-380.0, 380.0], [-950.0, -600.0]);
+  // depositos entre largueros, salvo que la version los descarte (R21)
+  if (!R.FUERA.deposito_de_agua_limpia) {
+    cilindro(bajos, 'deposito_agua_limpia', 'x', [-1500.0, 0.0, -600.0], 1400.0, 320.0);
+  }
+  if (!R.FUERA.deposito_de_aguas_grises) {
+    bloque(bajos, 'deposito_grises', [200.0, 1100.0], [-380.0, 380.0], [-950.0, -600.0]);
+  }
   cilindro(bajos, 'calderin_aire_1', 'x', [700.0, 620.0, -700.0], 600.0, 160.0);
 
   // detras de la rueda trasera: el deposito del camion en el costado de la
@@ -171,9 +175,12 @@ export function exterior(modelo) {
   bloque(bajos, 'deposito_gasoil', detras, [720.0, 1180.0], [-520.0, -150.0]);
   bloque(bajos, 'cofre_der', detras, [-1240.0, -860.0], [-540.0, -120.0]);
 
-  // rueda de repuesto tumbada en el voladizo trasero
-  cilindro(bajos, 'rueda_repuesto', 'z', [-1900.0, 0.0, -700.0], E.rueda_ancho, E.rueda_r);
-  bloque(bajos, 'soporte_repuesto', [-2200.0, -1600.0], [-500.0, 500.0], [-760.0, -700.0]);
+  // rueda de repuesto tumbada en el voladizo trasero, con su soporte, salvo
+  // que la version la descarte (R21)
+  if (!R.FUERA.rueda_de_repuesto) {
+    cilindro(bajos, 'rueda_repuesto', 'z', [-1900.0, 0.0, -700.0], E.rueda_ancho, E.rueda_r);
+    bloque(bajos, 'soporte_repuesto', [-2200.0, -1600.0], [-500.0, 500.0], [-760.0, -700.0]);
+  }
 
   // guardabarros curvos sobre las ruedas traseras, y la faldilla detras
   for (const [lado, signo] of [['izq', -1], ['der', 1]]) {

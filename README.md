@@ -267,7 +267,7 @@ ventilador, cúpula de satélite, antena, focos y luces de gabarito.
 ## Estado y cabos sueltos
 
 Al día, las dos versiones dan 0 fuera de sitio: la v16 tiene 459 cuerpos, 301
-en el interior, y la v17 480, 308 en el interior.
+en el interior, y la v17 476, 308 en el interior.
 
 Contar los cuerpos no es una formalidad: `caja()` devuelve `null` cuando el
 rango que le llega mide cero, sin quejarse, y la pieza desaparece sin aviso.

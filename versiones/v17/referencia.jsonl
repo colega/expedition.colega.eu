@@ -403,13 +403,9 @@
 {"ruta":"Caja/remates","nombre":"remate_techo_izq","caja":[-2230,2230,-1260,-1230,2095,2155],"litros":8.028,"area":0.8064,"material":"Aluminio","caras":6}
 {"ruta":"Caja/remates","nombre":"zocalo_der","caja":[-2230,2230,1225,1262,-65,25],"litros":14.852,"area":1.1395,"material":"Aluminio","caras":6}
 {"ruta":"Caja/remates","nombre":"remate_techo_der","caja":[-2230,2230,1230,1260,2095,2155],"litros":8.028,"area":0.8064,"material":"Aluminio","caras":6}
-{"ruta":"Camion/bajos","nombre":"deposito_agua_limpia","caja":[-2200,-800,-320,320,-920,-280],"litros":450.379,"area":3.4583,"material":"Negro chasis","caras":3}
-{"ruta":"Camion/bajos","nombre":"deposito_grises","caja":[200,1100,-380,380,-950,-600],"litros":239.4,"area":2.53,"material":"Negro chasis","caras":6}
 {"ruta":"Camion/bajos","nombre":"calderin_aire_1","caja":[400,1000,460,780,-860,-540],"litros":48.255,"area":0.764,"material":"Blanco mate","caras":3}
 {"ruta":"Camion/bajos","nombre":"deposito_gasoil","caja":[-1930,-1290,720,1180,-520,-150],"litros":108.928,"area":1.4028,"material":"Negro chasis","caras":6}
 {"ruta":"Camion/bajos","nombre":"cofre_der","caja":[-1930,-1290,-1240,-860,-540,-120],"litros":102.144,"area":1.3432,"material":"Negro chasis","caras":6}
-{"ruta":"Camion/bajos","nombre":"rueda_repuesto","caja":[-2365,-1435,-465,465,-847.5,-552.5],"litros":200.391,"area":2.2205,"material":"Negro chasis","caras":3}
-{"ruta":"Camion/bajos","nombre":"soporte_repuesto","caja":[-2200,-1600,-500,500,-760,-700],"litros":36,"area":1.392,"material":"Negro chasis","caras":6}
 {"ruta":"Camion/bajos","nombre":"guardabarros_izq","caja":[-1248.6,-131.4,-1142.5,-757.5,-755,-235],"litros":33.728,"area":1.4442,"material":"Negro mate","caras":6}
 {"ruta":"Camion/bajos","nombre":"faldilla_izq","caja":[-1575,-1555,-1142.5,-757.5,-1130,-555],"litros":4.428,"area":0.4812,"material":"Negro mate","caras":6}
 {"ruta":"Camion/bajos","nombre":"guardabarros_der","caja":[-1248.6,-131.4,757.5,1142.5,-755,-235],"litros":33.728,"area":1.4442,"material":"Negro mate","caras":6}

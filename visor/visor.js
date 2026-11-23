@@ -115,12 +115,11 @@ const selector = $('version');
 for (const nombre of VERSIONES) selector.add(new Option(nombre, nombre, false, nombre === VERSION));
 selector.onchange = () => { location.search = `?v=${selector.value}`; };
 
+const selectorVistas = $('vistas');
 for (const nombre of Object.keys(VISTAS)) {
-  const b = document.createElement('button');
-  b.textContent = nombre.replaceAll('_', ' ');
-  b.onclick = () => vista(nombre);
-  $('vistas').append(b);
+  selectorVistas.add(new Option(nombre.replaceAll('_', ' '), nombre, false, nombre === 'iso'));
 }
+selectorVistas.onchange = () => vista(selectorVistas.value);
 vista('iso');
 
 // Se dibuja solo cuando algo cambia: la camara, el tamaño o cualquier cosa del

@@ -7,8 +7,9 @@
 // El arbol es el de siempre:
 //
 //     Camion            cabina, chasis, ruedas, bajos, frontal
-//     Caja              paredes, remates, techo, rampa, puerta lateral
-//       paredes         envolvente menos la tapa de arriba (R34)
+//     Caja              paredes, techo, remates, rampa, puerta lateral
+//       paredes         la envolvente agrupada por pared (R34): cada pared,
+//                       un grupo con su panel y su aislamiento
 //       techo           la tapa de arriba mas el equipo que va sobre ella (R37)
 //       Interior        suelo elevado y las cuatro estancias
 //         Dormitorio    cama, altos, escalon, ventanas
@@ -25,6 +26,7 @@ import {
 
 export const CAMION = ['Camion'];
 export const CAJA = ['Caja'];
+export const PAREDES = ['Caja', 'paredes'];
 export const INTERIOR = ['Caja', 'Interior'];
 export const DORMITORIO = ['Caja', 'Interior', 'Dormitorio'];
 export const COCINA = ['Caja', 'Interior', 'Cocina'];

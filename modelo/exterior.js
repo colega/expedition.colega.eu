@@ -6,7 +6,7 @@
 //
 // Las cotas parten de la caja: exterior 4700 x 2500 x 2230, con la cara de abajo
 // a -65 y la de arriba a 2165 en el marco del modelo (R1).
-import { CAJA, CAMION, caja, cilindroCentrado, muros, ord } from './geo.js';
+import { CAJA, CAMION, PAREDES, caja, cilindroCentrado, muros, ord } from './geo.js';
 
 const ENVOLVENTE = ['panel_', 'aisl_'];
 
@@ -35,7 +35,6 @@ export function exterior(modelo) {
   // caja.js: aqui solo se añade.
   const techo = modelo.grupo([...CAJA, 'techo']);
   const bajos = modelo.nuevo(CAMION, 'bajos');
-  const paredes = modelo.buscar('paredes');
 
   const bloque = (comp, nombre, x, y, z) => {
     const forma = caja(x, y, z);
@@ -46,15 +45,15 @@ export function exterior(modelo) {
 
   // Corta un hueco en el panel y el aislamiento, sin tocar nada mas.
   //
-  // R37: la envolvente vive en dos componentes, 'paredes' y 'techo'. Hay que
-  // buscar el objetivo en los dos. Y solo contra la envolvente: en 'techo' esta
-  // tambien el equipo que se monta encima, y un hueco no se come su propio aire
-  // acondicionado.
+  // R34: la envolvente vive en el arbol de 'paredes', agrupada por pared, y en
+  // 'techo' la tapa de arriba. Hay que buscar el objetivo en los dos. Y solo
+  // contra la envolvente: en 'techo' esta tambien el equipo que se monta encima,
+  // y un hueco no se come su propio aire acondicionado.
   const cortarMuro = (x, y, z) => {
     const herramienta = caja(x, y, z);
     if (!herramienta) return 0;
     let n = 0;
-    for (const duenio of [paredes, techo]) {
+    for (const duenio of [...modelo.dentroDe(PAREDES), techo]) {
       for (const cuerpo of muros(duenio, herramienta)) {
         if (!ENVOLVENTE.some((p) => cuerpo.nombre.startsWith(p))) continue;
         duenio.restar(cuerpo, herramienta);

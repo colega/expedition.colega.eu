@@ -2,7 +2,7 @@
 //
 // Origen: centro del suelo interior. X a lo largo, hacia la cabina; Y a lo
 // ancho, hacia el costado de la cocina; Z hacia arriba.
-import { CAJA, placa } from './geo.js';
+import { CAJA, PAREDES, placa } from './geo.js';
 
 const rectangulo = (x, y) => [[x[0], y[0]], [x[1], y[0]], [x[1], y[1]], [x[0], y[1]]];
 
@@ -11,6 +11,15 @@ export function caja(modelo) {
   // R1: las cotas de fuera de la caja
   const CAJA_EXT = { largo: 4700.0, ancho: 2500.0, alto: R.CAJA_ALTO_EXT };
   const paredes = modelo.nuevo(CAJA, 'paredes');
+  // R34: cada pared, un grupo con su panel y su aislamiento, para poder
+  // ocultarla de una pieza en el visor.
+  const pared_suelo = modelo.nuevo(PAREDES, 'pared_suelo');
+  const pared_costado_izq = modelo.nuevo(PAREDES, 'pared_costado_izq');
+  const pared_costado_der = modelo.nuevo(PAREDES, 'pared_costado_der');
+  const pared_frontal = modelo.nuevo(PAREDES, 'pared_frontal');
+  // R21: sin pared trasera en las versiones que la descartan: el plano lo
+  // cubren la rampa y su tapa ciega.
+  const pared_trasera = R.FUERA.pared_trasera ? null : modelo.nuevo(PAREDES, 'pared_trasera');
   // R37: el panel y el aislamiento del techo van al componente 'techo', con el
   // equipo que se monta encima. Asi al ocultar el techo se oculta todo el techo,
   // no solo las placas.
@@ -44,20 +53,23 @@ export function caja(modelo) {
   const piezas = [
     // el suelo y el techo son la tapa entera, asi que se llevan tambien el
     // redondeo vertical de las cuatro esquinas
-    [paredes, 'panel_suelo', rectangulo([-LX, LX], [-LY, LY]), [BASE, BASE + PANEL]],
+    [pared_suelo, 'panel_suelo', rectangulo([-LX, LX], [-LY, LY]), [BASE, BASE + PANEL]],
     [tapa, 'panel_techo', rectangulo([-LX, LX], [-LY, LY]), [TOP - PANEL, TOP]],
-    [paredes, 'panel_costado_izq', costado(1), Z_PANEL],
-    [paredes, 'panel_costado_der', costado(-1), Z_PANEL],
-    [paredes, 'panel_frontal', rectangulo([PX, LX], [-ENTRE, ENTRE]), Z_PANEL],
-    [paredes, 'panel_trasera', rectangulo([-LX, -PX], [-ENTRE, ENTRE]), Z_PANEL],
+    [pared_costado_izq, 'panel_costado_izq', costado(1), Z_PANEL],
+    [pared_costado_der, 'panel_costado_der', costado(-1), Z_PANEL],
+    [pared_frontal, 'panel_frontal', rectangulo([PX, LX], [-ENTRE, ENTRE]), Z_PANEL],
     // el aislamiento no lleva redondeos, asi que van seis cajas y ya
-    [paredes, 'aisl_suelo', rectangulo([-AX, AX], [-AY, AY]), [Z_PANEL[0], Z_AISL[0]]],
+    [pared_suelo, 'aisl_suelo', rectangulo([-AX, AX], [-AY, AY]), [Z_PANEL[0], Z_AISL[0]]],
     [tapa, 'aisl_techo', rectangulo([-AX, AX], [-AY, AY]), [Z_AISL[1], Z_PANEL[1]]],
-    [paredes, 'aisl_costado_izq', rectangulo([-PX, PX], [AY, PY]), Z_AISL],
-    [paredes, 'aisl_costado_der', rectangulo([-PX, PX], [-PY, -AY]), Z_AISL],
-    [paredes, 'aisl_frontal', rectangulo([AX, PX], [-AY, AY]), Z_AISL],
-    [paredes, 'aisl_trasera', rectangulo([-PX, -AX], [-AY, AY]), Z_AISL],
+    [pared_costado_izq, 'aisl_costado_izq', rectangulo([-PX, PX], [AY, PY]), Z_AISL],
+    [pared_costado_der, 'aisl_costado_der', rectangulo([-PX, PX], [-PY, -AY]), Z_AISL],
+    [pared_frontal, 'aisl_frontal', rectangulo([AX, PX], [-AY, AY]), Z_AISL],
   ];
+  if (pared_trasera) {
+    piezas.push(
+      [pared_trasera, 'panel_trasera', rectangulo([-LX, -PX], [-ENTRE, ENTRE]), Z_PANEL],
+      [pared_trasera, 'aisl_trasera', rectangulo([-PX, -AX], [-AY, AY]), Z_AISL]);
+  }
   for (const [destino, nombre, contorno, z] of piezas) {
     destino.poner(nombre, placa(contorno, z));
   }

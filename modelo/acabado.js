@@ -4,7 +4,7 @@
 // del techo tambien. La cabina, igual. Aqui se buscan esas aristas por geometria
 // y se les aplica un radio, y despues se asigna un material a cada cuerpo. Los
 // colores de cada material estan en materiales.js.
-import { redondear } from './geo.js';
+import { PAREDES, redondear } from './geo.js';
 import { C } from './cabina.js';
 
 // R34: el borde de techo baja de 60 a 40. El techo es una pieza suelta de
@@ -154,13 +154,19 @@ function direccion(e, tolerancia = 0.02) {
 const esHorizontal = (e) => direccion(e) === 'x' || direccion(e) === 'y';
 
 function redondeos(modelo) {
-  // R34: la envolvente va partida en piezas, asi que cada una se redondea por
-  // su cuenta. Las esquinas verticales las tienen el suelo, el techo y los dos
-  // costados, que son los que envuelven la esquina; el borde de arriba lo tiene
-  // solo el techo. R37: la tapa de arriba vive en el componente 'techo'.
-  const paredes = modelo.buscar('paredes');
+  // R34: la envolvente va partida en piezas y agrupada por pared, asi que cada
+  // una se redondea por su cuenta, buscandola en el arbol de 'paredes'; la
+  // tapa de arriba vive en el componente 'techo'. Las esquinas verticales las
+  // tienen el suelo, el techo y los dos costados, que son los que envuelven
+  // la esquina; el borde de arriba lo tiene solo el techo.
   const techo = modelo.buscar('techo');
-  const pieza = (nombre) => paredes.cuerpo(nombre) || techo.cuerpo(nombre);
+  const pieza = (nombre) => {
+    for (const comp of modelo.dentroDe(PAREDES)) {
+      const cuerpo = comp.cuerpo(nombre);
+      if (cuerpo) return cuerpo;
+    }
+    return techo.cuerpo(nombre);
+  };
   for (const nombre of ['panel_suelo', 'panel_techo', 'panel_costado_izq', 'panel_costado_der']) {
     redondear(pieza(nombre), RADIOS.caja_vertical, (e) => direccion(e) === 'z'
       && cerca(Math.abs(e.startPoint.x), 2350) && cerca(Math.abs(e.startPoint.y), 1250));

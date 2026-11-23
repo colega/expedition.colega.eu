@@ -41,14 +41,16 @@ export const ALTURA_PISO = 1260.0;
 export const ATEGO = { eje_delantero: 3320.0, eje_trasero: -690.0, rueda_diam: 930.0,
   rueda_ancho: 295.0, llanta_diam: 620.0, via: 1900.0 };
 
-// R34 La envolvente sale partida en doce cuerpos, seis por capa: los dos
-//     costados, el frontal, la trasera, el suelo y el techo. Asi se puede
-//     ocultar una pared sola en el visor y mirar dentro.
+// R34 La envolvente sale partida en piezas, una por capa y pared: los dos
+//     costados, el frontal, el suelo y el techo, agrupadas en el visor por
+//     pared, para poder ocultarla de una pieza y mirar dentro de la caja de
+//     una vez. Sin pared trasera: su plano lo cubren la rampa y su tapa ciega
+//     (R21, R54).
 //     El redondeo de 120 de las esquinas verticales necesita 120 mm de material
 //     en las dos caras que se juntan, y una pared suelta solo tiene los 50 del
 //     panel. Por eso los costados corren de punta a punta y envuelven 200 mm
 //     sobre la cara frontal y la trasera, y el suelo y el techo son la tapa
-//     entera. El frontal y la trasera van entre los retornos. El borde de
+//     entera. El frontal va entre los retornos. El borde de
 //     arriba se redondea a 40, que es lo que cabe en el canto del techo.
 //     Los huecos de ventana y de puerta se cortan contra las piezas a las que
 //     llegan: geo.muros() las busca.
@@ -520,6 +522,7 @@ export const FUERA = {
   portezuela_de_servicio: 'descartada',
   baca: 'descartada',
   remates: 'descartados',
+  pared_trasera: 'sin pared: el plano lo cubren la rampa y su tapa ciega',
   climatizador: 'descartado',
   ventilador_de_techo: 'descartado',
   presurizador: 'para mas adelante',

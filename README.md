@@ -196,7 +196,8 @@ de cuerpos con nombre, y cada guion rehace los suyos de cero con
 
 ```
 Caja
-  paredes            panel sándwich y aislamiento, en doce cuerpos (R34)
+  paredes            panel sándwich y aislamiento agrupados por pared:
+                     pared_suelo, pared_frontal, pared_costado_izq y der (R34)
   techo              tapa de arriba, 4 placas solares, aire acondicionado y,
                      en la v17, claraboya del baño
   Interior
@@ -267,7 +268,7 @@ ventilador, cúpula de satélite, antena, focos y luces de gabarito.
 ## Estado y cabos sueltos
 
 Al día, las dos versiones dan 0 fuera de sitio: la v16 tiene 459 cuerpos, 301
-en el interior, y la v17 468, 308 en el interior.
+en el interior, y la v17 464, 308 en el interior.
 
 Contar los cuerpos no es una formalidad: `caja()` devuelve `null` cuando el
 rango que le llega mide cero, sin quejarse, y la pieza desaparece sin aviso.

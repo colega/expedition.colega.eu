@@ -42,7 +42,9 @@ export function puertaLateral(modelo) {
   [x, z] = centrado(DE.paso);
   cortes.push(caja(x, [fueraY - 20, D.pared_y + 20], z));
   for (const corte of cortes) {
-    for (const cuerpo of muros(paredes, corte)) paredes.restar(cuerpo, corte);
+    for (const muro of modelo.dentroDe(paredes.ruta)) {
+      for (const cuerpo of muros(muro, corte)) muro.restar(cuerpo, corte);
+    }
   }
 
   // Marco rectangular en el plano de la pared: cuatro tiras.

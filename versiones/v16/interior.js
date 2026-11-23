@@ -917,7 +917,9 @@ function persianaOutbound(comp, c, clave, signo, m) {
 function cortarMuro(x, y, z) {
   const paredes = M.buscar('paredes');
   const herramienta = cajaForma(x, y, z);
-  for (const cuerpo of muros(paredes, herramienta)) paredes.restar(cuerpo, herramienta);
+  for (const muro of M.dentroDe(paredes.ruta)) {
+    for (const cuerpo of muros(muro, herramienta)) muro.restar(cuerpo, herramienta);
+  }
 }
 
 const RUTA_VENTANA = { ventana_cocina: COCINA, ventana_bano: RUTA_BANO,

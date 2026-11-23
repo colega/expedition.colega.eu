@@ -12,6 +12,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  actions: read
 
 concurrency:
   group: pages
@@ -37,5 +38,23 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
+      # deploy-pages pregunta por el artefacto nada mas arrancar, y el servicio
+      # de artefactos a veces tarda unos segundos en listarlo (nos ha pasado en
+      # tres de los ultimos cuatro pushes): se le da su tiempo, mirando cada 5
+      # segundos hasta dos minutos.
+      - name: Espera al artefacto
+        run: |
+          for i in $(seq 24); do
+            if curl -sf -H "Authorization: Bearer ${{ github.token }}" \
+                "https://api.github.com/repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts?name=github-pages" \
+                | grep -q '"total_count":[1-9]'; then
+              echo "el artefacto esta a la vista (intento $i)"
+              exit 0
+            fi
+            sleep 5
+          done
+          echo "el artefacto no aparece en la API"
+          exit 1
+        timeout-minutes: 3
       - id: despliegue
         uses: actions/deploy-pages@v4

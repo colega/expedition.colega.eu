@@ -47,7 +47,7 @@ jobs:
           for i in $(seq 24); do
             if curl -sf -H "Authorization: Bearer ${{ github.token }}" \
                 "https://api.github.com/repos/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts?name=github-pages" \
-                | grep -q '"total_count":[1-9]'; then
+                | jq -e '.total_count > 0'; then
               echo "el artefacto esta a la vista (intento $i)"
               exit 0
             fi

@@ -64,6 +64,9 @@ En el visor:
   mismo (R111): el botón **Abrir/cerrar rampa** cambia de una a otra, y si has
   ocultado las dos, vuelve a enseñar la cerrada. Abierta, la tapa ciega de
   encima la acompaña y queda horizontal, de visera.
+- **Paisaje**: prado con florecillas, arboles a media y larga distancia y cielo
+  azul. Al encenderlo, la niebla funde el prado con el horizonte y la rejilla
+  del suelo se apaga, que el prado la sustituye.
 - En el móvil, el modelo va arriba y el panel debajo, con el árbol dentro;
   **Panel** lo pliega para ver el modelo a pantalla completa. Las vistas fijas
   no salen: con el dedo se gira mejor.

@@ -8,6 +8,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
 import { SIN_MATERIAL } from '../modelo/materiales.js';
 import { crearMedir } from './medir.js';
+import { crearPaisaje } from './paisaje.js';
 
 // La version que se ve sale de la URL, ?v=v17, para poder tener una en cada
 // pestaña. Sin ella, la ultima.
@@ -77,6 +78,19 @@ escena.add(sol);
 const suelo = new THREE.GridHelper(20000, 40, 0x9aa093, oscuro ? 0x2c3028 : 0xd3d7cf);
 suelo.rotation.x = Math.PI / 2;
 escena.add(suelo);
+
+// R112: el prado, con su cielo, sus flores y sus arboles. Se baja al suelo
+// firme cuando llega el modelo, igual que la rejilla.
+const paisaje = crearPaisaje();
+escena.add(paisaje.grupo);
+$('paisaje').onclick = () => {
+  const on = $('paisaje').getAttribute('aria-pressed') !== 'true';
+  $('paisaje').setAttribute('aria-pressed', String(on));
+  paisaje.grupo.visible = on;
+  escena.fog = on ? paisaje.niebla : null;
+  // el prado sustituye a la rejilla
+  if (on && $('suelo').checked) { $('suelo').checked = false; suelo.visible = false; }
+};
 
 let sucio = true;
 function pedirDibujo() { sucio = true; }
@@ -385,6 +399,7 @@ trabajador.onmessage = ({ data }) => {
     reflejos();
     colores = data.colores;
     suelo.position.z = -data.altura_piso;
+    paisaje.grupo.position.z = -data.altura_piso;
     cargar(data.componentes);
     const s = ((performance.now() - inicio) / 1000).toFixed(1);
     const avisos = data.notas.redondeos_fallidos?.length ? ` · ${data.notas.redondeos_fallidos.length} redondeo sin hacer` : '';

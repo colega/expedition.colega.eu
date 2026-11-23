@@ -36,7 +36,8 @@ elevado de 50 (R3). De la trasera a la cabina:
 - **Ventanas** de Outbound con persiana por dentro. Cada una va centrada en lo
   suyo, y las de un costado rematan a la misma cota: 1600 en el de la cocina y
   1672 en el de la puerta (R90, R93, R96).
-- **Techo**: cuatro placas solares y el aire acondicionado (R22, R23).
+- **Techo**: cuatro placas solares y el aire acondicionado (R22, R23). A un
+  lado del aire, la claraboya del baño (R110).
 - **El camión**: un Mercedes Atego de cabina L, 4x2, medido de sus fotos. El
   suelo de la caja queda a 1260 del suelo firme, el eje delantero 970 por
   delante de la caja y el trasero bajo la esquina del sofá, con 4010 de batalla

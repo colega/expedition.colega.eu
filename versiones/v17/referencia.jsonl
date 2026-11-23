@@ -10,8 +10,8 @@
 {"ruta":"Caja/paredes","nombre":"aisl_frontal","caja":[2285,2300,-1185,1185,0,2100],"litros":74.655,"area":10.0881,"material":"Blanco lacado","caras":6}
 {"ruta":"Caja/paredes","nombre":"aisl_trasera","caja":[-2300,-2285,-1185,-1105,0,2100],"litros":2.52,"area":0.4014,"material":"Blanco lacado","caras":6}
 {"ruta":"Caja/paredes","nombre":"aisl_trasera_1","caja":[-2300,-2285,1105,1185,0,2100],"litros":2.52,"area":0.4014,"material":"Blanco lacado","caras":6}
-{"ruta":"Caja/techo","nombre":"panel_techo","caja":[-2350,2350,-1250,1250,2115,2165],"litros":574.028,"area":23.7006,"material":"Verde militar","caras":22}
-{"ruta":"Caja/techo","nombre":"aisl_techo","caja":[-2285,2285,-1185,1185,2100,2115],"litros":160.064,"area":21.574,"material":"Blanco lacado","caras":10}
+{"ruta":"Caja/techo","nombre":"panel_techo","caja":[-2350,2350,-1250,1250,2115,2165],"litros":556.528,"area":23.1206,"material":"Verde militar","caras":26}
+{"ruta":"Caja/techo","nombre":"aisl_techo","caja":[-2285,2285,-1185,1185,2100,2115],"litros":154.814,"area":20.91,"material":"Blanco lacado","caras":14}
 {"ruta":"Caja/techo","nombre":"placa_solar_delante_izq","caja":[563,2325,15,1149,2165,2195],"litros":59.943,"area":4.17,"material":"Fotovoltaico","caras":6}
 {"ruta":"Caja/techo","nombre":"placa_solar_delante_der","caja":[563,2325,-1149,-15,2165,2195],"litros":59.943,"area":4.17,"material":"Fotovoltaico","caras":6}
 {"ruta":"Caja/techo","nombre":"placa_solar_detras_izq","caja":[-2325,-563,15,1149,2165,2195],"litros":59.943,"area":4.17,"material":"Fotovoltaico","caras":6}
@@ -19,6 +19,7 @@
 {"ruta":"Caja/techo","nombre":"aire_base","caja":[-376,376,-351,351,2165,2210],"litros":23.756,"area":1.1867,"material":"Blanco mate","caras":6}
 {"ruta":"Caja/techo","nombre":"aire_carcasa","caja":[-346,346,-316,316,2210,2390],"litros":78.722,"area":1.3513,"material":"Blanco mate","caras":6}
 {"ruta":"Caja/techo","nombre":"aire_rejilla","caja":[-316,-286,-261,261,2235,2355],"litros":1.879,"area":0.1638,"material":"Blanco mate","caras":6}
+{"ruta":"Caja/techo","nombre":"claraboya_bano","caja":[-351,351,467,969,2165,2263],"litros":34.536,"area":0.9408,"material":"Vidrio oscuro","caras":6}
 {"ruta":"Caja/Interior/Dormitorio/cama","nombre":"garaje_fondo","caja":[885,2285,-1185,1185,0,18],"litros":59.724,"area":6.7717,"material":"Blanco lacado","caras":6}
 {"ruta":"Caja/Interior/Dormitorio/cama","nombre":"garaje_tapa","caja":[885,2285,-1185,1185,952,970],"litros":59.724,"area":6.7717,"material":"Blanco lacado","caras":6}
 {"ruta":"Caja/Interior/Dormitorio/cama","nombre":"garaje_frontal","caja":[885,903,-1185,1185,18,952],"litros":39.844,"area":4.5461,"material":"Blanco lacado","caras":6}

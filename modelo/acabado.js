@@ -125,6 +125,8 @@ const POR_PREFIJO = [
   ['puerta_bisagra', 'Aluminio'],
   ['puerta_metacrilato', 'Metacrilato'],
   ['grifo', 'Cromo'], ['ducha_', 'Cromo'], ['desague', 'Cromo'],
+  // R110 de la v17: la claraboya es cristal tintado
+  ['claraboya', 'Vidrio oscuro'],
 ];
 
 // Por un trozo del nombre en cualquier sitio, si no hay prefijo que valga.

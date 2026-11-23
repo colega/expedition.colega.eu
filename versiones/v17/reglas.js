@@ -283,8 +283,8 @@ export const BANO = {
   retranqueo: 16.0,
 };
 export const MARCO_PUERTA_BANO = 40.0;
-// R102 Sin claraboya: la luz y la ventilacion salen por la ventana del baño,
-//      que abre.
+// R102 La ventilacion del baño sigue saliendo por su ventana, que abre; la luz
+//      de arriba llega por la claraboya del techo (R110).
 
 // R103 Dentro del baño, una puerta giratoria hace de ducha:
 //      - Una puerta de 50 de grueso, paralela a la pared de la caja y a 150 de
@@ -484,6 +484,18 @@ export const AIRE = { modelo: 'Dometic FreshJet FJZ7 2600', largo: 752.0, ancho:
   alto: 225.0, hueco: 400.0, techo_admitido: [25.0, 60.0] };
 export const AIRE_X = 0.0;
 
+// R110 Al otro lado, sobre el baño, una claraboya Carbest Panorama 70x50:
+//      doble cristal de seguridad tintado, con oscurecedor y mosquitera, LED y
+//      apertura a 60 grados con muelles de gas. El corte en el techo es de
+//      700 x 500 y la unidad, casi todo ella vidrio, mide 702 x 502 de fuera
+//      con 98 de altura. Va centrada en el ancho del plato de la ducha
+//      (R103), corrida 100 hacia el centro para que el hueco no llegue al
+//      marco de la puerta; la ventilacion del baño sigue siendo la de su
+//      ventana (R102).
+export const CLARABOYA = { modelo: 'Carbest Panorama 70x50', corte: [700.0, 500.0],
+  fuera: [702.0, 502.0], alto: 98.0,
+  y_centro: (BANO.y_muro + BANO.retranqueo + COSTADO_COCINA) / 2.0 - 100.0 };
+
 // --- fuera del proyecto --------------------------------------------------
 // R21 Descartados, o para mas adelante.
 export const FUERA = {
@@ -497,9 +509,9 @@ export const FUERA = {
   toma_220: 'descartada',
   portezuela_de_servicio: 'descartada',
   baca: 'descartada',
-  claraboyas: 'descartadas',
   climatizador: 'descartado',
   ventilador_de_techo: 'descartado',
+  presurizador: 'para mas adelante',
   cupula_de_satelite: 'descartada',
   antena: 'descartada',
   focos_de_baca: 'descartados',

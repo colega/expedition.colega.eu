@@ -92,8 +92,9 @@ export function exterior(modelo) {
   // Sin escalera al techo (regla R21): descartada.
 
   // ---------------------------------------------------------------------- techo
-  // R22: en el techo van las placas y el aire (R23). Sin baca, sin claraboyas,
-  // sin ventilador, sin cupula ni antena (R21).
+  // R22: en el techo van las placas y el aire (R23). Sin baca, sin ventilador
+  // de techo, sin cupula ni antena (R21); la claraboya, en R110, solo en las
+  // versiones que la llevan en sus reglas.
   const PLACA = R.PLACA;
   // las placas se acercan al canto para dejar la banda central al aire
   const BORDE_PLACA = 25.0;
@@ -123,6 +124,18 @@ export function exterior(modelo) {
     [-AIRE.ancho / 2 + 35, AIRE.ancho / 2 - 35], [E.techo + 45, E.techo + AIRE.alto]);
   bloque(techo, 'aire_rejilla', enX(-AIRE.largo / 2 + 60, -AIRE.largo / 2 + 90),
     [-AIRE.ancho / 2 + 90, AIRE.ancho / 2 - 90], [E.techo + 70, E.techo + AIRE.alto - 35]);
+
+  // R110: claraboya sobre el baño, al lado del aire del costado de la cocina,
+  // con su corte en el techo. La unidad cubre el hueco desde arriba, como el
+  // aire acondicionado.
+  const CLARABOYA = R.CLARABOYA;
+  if (CLARABOYA) {
+    const CY = CLARABOYA.y_centro;
+    cortarMuro([AX - CLARABOYA.corte[0] / 2, AX + CLARABOYA.corte[0] / 2],
+      [CY - CLARABOYA.corte[1] / 2, CY + CLARABOYA.corte[1] / 2], [E.techo - 90, E.techo + 20]);
+    bloque(techo, 'claraboya_bano', [AX - CLARABOYA.fuera[0] / 2, AX + CLARABOYA.fuera[0] / 2],
+      [CY - CLARABOYA.fuera[1] / 2, CY + CLARABOYA.fuera[1] / 2], [E.techo, E.techo + CLARABOYA.alto]);
+  }
 
   // ----------------------------------------------------------------------- bajos
   // depositos entre largueros

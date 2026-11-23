@@ -75,10 +75,10 @@ export function puertaLateral(modelo) {
     [z[0] + 60, z[1] - 60]);
 
   // el zocalo de la caja se corta donde monta la brida: queda en dos trozos y
-  // el de detras conserva el nombre
+  // el de detras conserva el nombre. Sin remates, nada que cortar (R21).
   const remates = modelo.buscar('remates');
   const [xb, zb] = centrado(DE.marco);
-  for (const cuerpo of [...remates.cuerpos]) {
+  for (const cuerpo of remates ? [...remates.cuerpos] : []) {
     const bb = envolvente(cuerpo.forma);
     if (!(cuerpo.nombre.startsWith('zocalo_') && bb.y[1] < 0 && bb.z[1] > zb[0])) continue;
     const nombre = cuerpo.nombre;

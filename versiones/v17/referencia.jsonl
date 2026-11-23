@@ -395,14 +395,6 @@
 {"ruta":"Camion/cabina","nombre":"foco_izq","caja":[4220,4360,-685,-515,1525,1695],"litros":3.178,"area":0.1202,"material":"Cromo","caras":3}
 {"ruta":"Camion/cabina","nombre":"foco_soporte_der","caja":[4260,4300,580,620,1490,1530],"litros":0.064,"area":0.0096,"material":"Negro mate","caras":6}
 {"ruta":"Camion/cabina","nombre":"foco_der","caja":[4220,4360,515,685,1525,1695],"litros":3.178,"area":0.1202,"material":"Cromo","caras":3}
-{"ruta":"Caja/remates","nombre":"garrafa_1","caja":[900,1220,1010,1180,-600,-160],"litros":23.936,"area":0.54,"material":"Verde garrafa","caras":6}
-{"ruta":"Caja/remates","nombre":"garrafa_2","caja":[1250,1570,1010,1180,-600,-160],"litros":23.936,"area":0.54,"material":"Verde garrafa","caras":6}
-{"ruta":"Caja/remates","nombre":"garrafa_soporte","caja":[860,1610,1020,1180,-640,-600],"litros":4.8,"area":0.3128,"material":"Aluminio anodizado","caras":6}
-{"ruta":"Caja/remates","nombre":"zocalo_izq","caja":[-2230,171.5,-1262,-1225,-65,25],"litros":7.997,"area":0.6166,"material":"Aluminio","caras":6}
-{"ruta":"Caja/remates","nombre":"zocalo_izq_delante","caja":[913.5,2230,-1262,-1225,-65,25],"litros":4.384,"area":0.3411,"material":"Aluminio","caras":6}
-{"ruta":"Caja/remates","nombre":"remate_techo_izq","caja":[-2230,2230,-1260,-1230,2095,2155],"litros":8.028,"area":0.8064,"material":"Aluminio","caras":6}
-{"ruta":"Caja/remates","nombre":"zocalo_der","caja":[-2230,2230,1225,1262,-65,25],"litros":14.852,"area":1.1395,"material":"Aluminio","caras":6}
-{"ruta":"Caja/remates","nombre":"remate_techo_der","caja":[-2230,2230,1230,1260,2095,2155],"litros":8.028,"area":0.8064,"material":"Aluminio","caras":6}
 {"ruta":"Camion/bajos","nombre":"calderin_aire_1","caja":[400,1000,460,780,-860,-540],"litros":48.255,"area":0.764,"material":"Blanco mate","caras":3}
 {"ruta":"Camion/bajos","nombre":"deposito_gasoil","caja":[-1930,-1290,720,1180,-520,-150],"litros":108.928,"area":1.4028,"material":"Negro chasis","caras":6}
 {"ruta":"Camion/bajos","nombre":"cofre_der","caja":[-1930,-1290,-1240,-860,-540,-120],"litros":102.144,"area":1.3432,"material":"Negro chasis","caras":6}

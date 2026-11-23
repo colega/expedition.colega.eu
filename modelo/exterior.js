@@ -29,7 +29,8 @@ export function exterior(modelo) {
 
   // Cada familia de piezas a su grupo: lo del camion bajo Camion, lo de la caja
   // bajo Caja. Asi se puede ocultar el camion entero y trabajar solo en la caja.
-  const ext = modelo.nuevo(CAJA, 'remates');
+  // R21: sin remates en las versiones que los descartan.
+  const ext = R.FUERA.remates ? null : modelo.nuevo(CAJA, 'remates');
   // R37: 'techo' ya trae el panel y el aislamiento de arriba, que los pone
   // caja.js: aqui solo se añade.
   const techo = modelo.grupo([...CAJA, 'techo']);
@@ -208,23 +209,25 @@ export function exterior(modelo) {
     }
   }
 
-  // Sin toldo ni ducha exterior (R21). Las garrafas van por dentro de la
-  // proteccion lateral.
-  [900.0, 1250.0].forEach((x, k) => {
-    bloque(ext, `garrafa_${k + 1}`, [x, x + 320], [1010.0, 1180.0], [-600.0, -160.0]);
-  });
-  bloque(ext, 'garrafa_soporte', [860.0, 1610.0], [1020.0, 1180.0], [-640.0, -600.0]);
+  if (ext) {
+    // Sin toldo ni ducha exterior (R21). Las garrafas van por dentro de la
+    // proteccion lateral.
+    [900.0, 1250.0].forEach((x, k) => {
+      bloque(ext, `garrafa_${k + 1}`, [x, x + 320], [1010.0, 1180.0], [-600.0, -160.0]);
+    });
+    bloque(ext, 'garrafa_soporte', [860.0, 1610.0], [1020.0, 1180.0], [-640.0, -600.0]);
 
-  // ------------------------------------------- detalles de la caja como el real
-  // perfileria: zocalo y remate de techo, que es lo que da el aire de caja de
-  // aluminio en vez de cubo blanco
-  for (const [lado, y] of [['izq', E.caja_y[0]], ['der', E.caja_y[1]]]) {
-    const signo = y < 0 ? -1 : 1;
-    bloque(ext, 'zocalo_' + lado, [E.caja_x[0] + 120, E.caja_x[1] - 120],
-      ord(y - signo * 25, y + signo * 12), [E.fondo, E.fondo + 90]);
-    bloque(ext, 'remate_techo_' + lado, [E.caja_x[0] + 120, E.caja_x[1] - 120],
-      ord(y - signo * 20, y + signo * 10), [E.techo - 70, E.techo - 10]);
-    // Sin portezuela de servicio ni luces de gabarito (R21).
+    // ------------------------------------------- detalles de la caja como el real
+    // perfileria: zocalo y remate de techo, que es lo que da el aire de caja de
+    // aluminio en vez de cubo blanco
+    for (const [lado, y] of [['izq', E.caja_y[0]], ['der', E.caja_y[1]]]) {
+      const signo = y < 0 ? -1 : 1;
+      bloque(ext, 'zocalo_' + lado, [E.caja_x[0] + 120, E.caja_x[1] - 120],
+        ord(y - signo * 25, y + signo * 12), [E.fondo, E.fondo + 90]);
+      bloque(ext, 'remate_techo_' + lado, [E.caja_x[0] + 120, E.caja_x[1] - 120],
+        ord(y - signo * 20, y + signo * 10), [E.techo - 70, E.techo - 10]);
+      // Sin portezuela de servicio ni luces de gabarito (R21).
+    }
   }
 
   // paragolpes trasero con sus faldillas y los pilotos al final del bastidor,

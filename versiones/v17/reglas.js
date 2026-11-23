@@ -519,6 +519,7 @@ export const FUERA = {
   toma_220: 'descartada',
   portezuela_de_servicio: 'descartada',
   baca: 'descartada',
+  remates: 'descartados',
   climatizador: 'descartado',
   ventilador_de_techo: 'descartado',
   presurizador: 'para mas adelante',

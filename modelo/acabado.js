@@ -59,10 +59,8 @@ const CUERPO_MATERIAL = {
   parabrisas: 'Vidrio',
   calandra: 'Negro mate',
   parachoques: 'Negro mate',
-  espejo_izq: 'Negro mate',
-  espejo_der: 'Negro mate',
-  faro_izq: 'Vidrio oscuro',
-  faro_der: 'Vidrio oscuro',
+  faro_izq: 'Cromo',
+  faro_der: 'Cromo',
   llanta_trasero_izq: 'Negro chasis',
   llanta_trasero_der: 'Negro chasis',
   llanta_delantero_izq: 'Negro chasis',
@@ -105,6 +103,15 @@ const POR_PREFIJO = [
   ['peldano', 'Aluminio'],
   ['foco_soporte', 'Negro mate'],
   ['foco_', 'Cromo'],
+  // la cabina: retrovisores negros con la luna de espejo, la rejilla de la
+  // calandra en gris sobre su fondo negro y la estrella cromada
+  ['espejo_', 'Negro mate'],
+  ['luna_', 'Cromo'],
+  ['calandra_', 'Aluminio anodizado'],
+  ['estrella', 'Cromo'],
+  ['limpiaparabrisas', 'Negro mate'],
+  ['tirador_', 'Negro mate'],
+  ['antiniebla', 'Vidrio'],
   // R90: las ventanas de Outbound tienen el marco negro
   ['ra_', 'Negro mate'],
   // R96: y su persiana, a juego

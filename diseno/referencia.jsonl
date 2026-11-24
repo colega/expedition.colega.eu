@@ -358,14 +358,23 @@
 {"ruta":"Camion/ruedas","nombre":"rueda_delantero_der","caja":[2755,3885,767.5,1132.5,-1360,-230],"litros":276.15,"area":3.451,"material":"Goma","caras":4}
 {"ruta":"Camion/ruedas","nombre":"llanta_delantero_der","caja":[3036,3604,836.9,1063.2,-1079,-511],"litros":57.342,"area":0.9106,"material":"Negro chasis","caras":3}
 {"ruta":"Camion/ruedas","nombre":"buje_delantero_der","caja":[3190,3450,1022.5,1088.1,-925,-665],"litros":3.488,"area":0.1599,"material":"Acero","caras":3}
-{"ruta":"Camion/cabina","nombre":"cabina","caja":[2460,4515,-1150,1150,-305,1490],"litros":7049.434,"area":26.421,"material":"Verde militar","caras":38}
+{"ruta":"Camion/cabina","nombre":"cabina","caja":[2460,4515,-1150,1150,-305,1490],"litros":7029.799,"area":26.5461,"material":"Verde militar","caras":43}
 {"ruta":"Camion/cabina","nombre":"parabrisas","caja":[4280.4,4502.2,-1000,1000,657,1320],"litros":26.52,"area":2.8786,"material":"Vidrio","caras":6}
+{"ruta":"Camion/cabina","nombre":"limpiaparabrisas_izq","caja":[4487.3,4505.3,-820,-120,685,709],"litros":0.302,"area":0.0597,"material":"Negro mate","caras":6}
+{"ruta":"Camion/cabina","nombre":"limpiaparabrisas_der","caja":[4487.3,4505.3,120,820,685,709],"litros":0.302,"area":0.0597,"material":"Negro mate","caras":6}
 {"ruta":"Camion/cabina","nombre":"ventanilla_izq","caja":[3400,4180,-1080,-1065,600,1290],"litros":8.073,"area":1.1205,"material":"Vidrio","caras":6}
 {"ruta":"Camion/cabina","nombre":"ventanilla_trasera_izq","caja":[2740,3180,-1080,-1065,770,1290],"litros":3.432,"area":0.4864,"material":"Vidrio","caras":6}
 {"ruta":"Camion/cabina","nombre":"puerta_izq","caja":[3273,4232,-1150,-1142,202,1380],"litros":4.732,"area":1.2407,"material":"Verde militar","caras":10}
-{"ruta":"Camion/cabina","nombre":"espejo_brazo_izq","caja":[4380,4420,-1330,-1120,1150,1190],"litros":0.336,"area":0.0368,"material":"Verde militar","caras":6}
-{"ruta":"Camion/cabina","nombre":"espejo_izq","caja":[4300,4420,-1390,-1270,560,1150],"litros":8.496,"area":0.312,"material":"Negro mate","caras":6}
-{"ruta":"Camion/cabina","nombre":"faro_izq","caja":[4600,4645,-1050,-700,-450,-300],"litros":2.363,"area":0.15,"material":"Vidrio oscuro","caras":6}
+{"ruta":"Camion/cabina","nombre":"tirador_cabina_izq","caja":[3323,3463,-1168,-1150,330,370],"litros":0.101,"area":0.0177,"material":"Negro mate","caras":6}
+{"ruta":"Camion/cabina","nombre":"espejo_tubo_izq","caja":[4246,4274,-1314,-1286,620,1340],"litros":0.443,"area":0.0646,"material":"Negro mate","caras":3}
+{"ruta":"Camion/cabina","nombre":"espejo_brazo_alto_izq","caja":[4246,4274,-1314,-1110,1326,1354],"litros":0.126,"area":0.0192,"material":"Negro mate","caras":3}
+{"ruta":"Camion/cabina","nombre":"espejo_brazo_bajo_izq","caja":[4246,4274,-1314,-1110,606,634],"litros":0.126,"area":0.0192,"material":"Negro mate","caras":3}
+{"ruta":"Camion/cabina","nombre":"espejo_izq","caja":[4235,4285,-1500,-1320,880,1310],"litros":3.87,"area":0.2158,"material":"Negro mate","caras":6}
+{"ruta":"Camion/cabina","nombre":"espejo_angular_izq","caja":[4235,4285,-1500,-1320,680,840],"litros":1.44,"area":0.0916,"material":"Negro mate","caras":6}
+{"ruta":"Camion/cabina","nombre":"luna_espejo_izq","caja":[4229,4235,-1485,-1335,895,1295],"litros":0.36,"area":0.1266,"material":"Cromo","caras":6}
+{"ruta":"Camion/cabina","nombre":"luna_angular_izq","caja":[4229,4235,-1485,-1335,695,825],"litros":0.117,"area":0.0424,"material":"Cromo","caras":6}
+{"ruta":"Camion/cabina","nombre":"faro_izq","caja":[4630,4646,-1100,-820,-420,-340],"litros":0.358,"area":0.0563,"material":"Cromo","caras":6}
+{"ruta":"Camion/cabina","nombre":"antiniebla_izq","caja":[4610,4620,-1050,-850,-590,-480],"litros":0.22,"area":0.0502,"material":"Vidrio","caras":6}
 {"ruta":"Camion/cabina","nombre":"peldano_1_izq","caja":[4030,4420,-1170,-1000,-420,-390],"litros":1.989,"area":0.1662,"material":"Aluminio","caras":6}
 {"ruta":"Camion/cabina","nombre":"peldano_2_izq","caja":[4030,4420,-1170,-1000,-815,-785],"litros":1.989,"area":0.1662,"material":"Aluminio","caras":6}
 {"ruta":"Camion/cabina","nombre":"peldano_soporte_1_izq","caja":[4030,4060,-1175,-1170,-815,-305],"litros":0.077,"area":0.036,"material":"Aluminio","caras":6}
@@ -375,17 +384,39 @@
 {"ruta":"Camion/cabina","nombre":"ventanilla_der","caja":[3400,4180,1065,1080,600,1290],"litros":8.073,"area":1.1205,"material":"Vidrio","caras":6}
 {"ruta":"Camion/cabina","nombre":"ventanilla_trasera_der","caja":[2740,3180,1065,1080,770,1290],"litros":3.432,"area":0.4864,"material":"Vidrio","caras":6}
 {"ruta":"Camion/cabina","nombre":"puerta_der","caja":[3273,4232,1142,1150,202,1380],"litros":4.732,"area":1.2407,"material":"Verde militar","caras":10}
-{"ruta":"Camion/cabina","nombre":"espejo_brazo_der","caja":[4380,4420,1120,1330,1150,1190],"litros":0.336,"area":0.0368,"material":"Verde militar","caras":6}
-{"ruta":"Camion/cabina","nombre":"espejo_der","caja":[4300,4420,1270,1390,560,1150],"litros":8.496,"area":0.312,"material":"Negro mate","caras":6}
-{"ruta":"Camion/cabina","nombre":"faro_der","caja":[4600,4645,700,1050,-450,-300],"litros":2.363,"area":0.15,"material":"Vidrio oscuro","caras":6}
+{"ruta":"Camion/cabina","nombre":"tirador_cabina_der","caja":[3323,3463,1150,1168,330,370],"litros":0.101,"area":0.0177,"material":"Negro mate","caras":6}
+{"ruta":"Camion/cabina","nombre":"espejo_tubo_der","caja":[4246,4274,1286,1314,620,1340],"litros":0.443,"area":0.0646,"material":"Negro mate","caras":3}
+{"ruta":"Camion/cabina","nombre":"espejo_brazo_alto_der","caja":[4246,4274,1110,1314,1326,1354],"litros":0.126,"area":0.0192,"material":"Negro mate","caras":3}
+{"ruta":"Camion/cabina","nombre":"espejo_brazo_bajo_der","caja":[4246,4274,1110,1314,606,634],"litros":0.126,"area":0.0192,"material":"Negro mate","caras":3}
+{"ruta":"Camion/cabina","nombre":"espejo_der","caja":[4235,4285,1320,1500,880,1310],"litros":3.87,"area":0.2158,"material":"Negro mate","caras":6}
+{"ruta":"Camion/cabina","nombre":"espejo_angular_der","caja":[4235,4285,1320,1500,680,840],"litros":1.44,"area":0.0916,"material":"Negro mate","caras":6}
+{"ruta":"Camion/cabina","nombre":"luna_espejo_der","caja":[4229,4235,1335,1485,895,1295],"litros":0.36,"area":0.1266,"material":"Cromo","caras":6}
+{"ruta":"Camion/cabina","nombre":"luna_angular_der","caja":[4229,4235,1335,1485,695,825],"litros":0.117,"area":0.0424,"material":"Cromo","caras":6}
+{"ruta":"Camion/cabina","nombre":"faro_der","caja":[4630,4646,820,1100,-420,-340],"litros":0.358,"area":0.0563,"material":"Cromo","caras":6}
+{"ruta":"Camion/cabina","nombre":"antiniebla_der","caja":[4610,4620,850,1050,-590,-480],"litros":0.22,"area":0.0502,"material":"Vidrio","caras":6}
 {"ruta":"Camion/cabina","nombre":"peldano_1_der","caja":[4030,4420,1000,1170,-420,-390],"litros":1.989,"area":0.1662,"material":"Aluminio","caras":6}
 {"ruta":"Camion/cabina","nombre":"peldano_2_der","caja":[4030,4420,1000,1170,-815,-785],"litros":1.989,"area":0.1662,"material":"Aluminio","caras":6}
 {"ruta":"Camion/cabina","nombre":"peldano_soporte_1_der","caja":[4030,4060,1170,1175,-815,-305],"litros":0.077,"area":0.036,"material":"Aluminio","caras":6}
 {"ruta":"Camion/cabina","nombre":"peldano_soporte_2_der","caja":[4390,4420,1170,1175,-815,-305],"litros":0.077,"area":0.036,"material":"Aluminio","caras":6}
 {"ruta":"Camion/cabina","nombre":"guardabarros_delantero_der","caja":[2665,3975,712.5,1187.5,-625,30],"litros":51.502,"area":2.1419,"material":"Negro mate","caras":6}
 {"ruta":"Camion/cabina","nombre":"faldilla_delantera_der","caja":[2640,2660,727.5,1172.5,-1230,-625],"litros":5.385,"area":0.5804,"material":"Negro mate","caras":6}
-{"ruta":"Camion/cabina","nombre":"parachoques","caja":[4515,4640,-1100,1100,-650,-165],"litros":133.375,"area":2.8053,"material":"Negro mate","caras":6}
-{"ruta":"Camion/cabina","nombre":"calandra","caja":[4505,4530,-800,800,-120,517],"litros":25.48,"area":2.1503,"material":"Negro mate","caras":6}
+{"ruta":"Camion/cabina","nombre":"calandra","caja":[4485,4493,-850,850,-290,95],"litros":5.236,"area":1.3424,"material":"Negro mate","caras":6}
+{"ruta":"Camion/cabina","nombre":"calandra_lama_1","caja":[4493,4511,-840,840,-233,-193],"litros":1.21,"area":0.1963,"material":"Aluminio anodizado","caras":6}
+{"ruta":"Camion/cabina","nombre":"calandra_lama_2","caja":[4493,4511,-840,840,-117.5,-77.5],"litros":1.21,"area":0.1963,"material":"Aluminio anodizado","caras":6}
+{"ruta":"Camion/cabina","nombre":"calandra_lama_3","caja":[4493,4511,-840,840,-2,38],"litros":1.21,"area":0.1963,"material":"Aluminio anodizado","caras":6}
+{"ruta":"Camion/cabina","nombre":"calandra_barra_1","caja":[4493,4501,-747,-733,-280,85],"litros":0.041,"area":0.0163,"material":"Aluminio anodizado","caras":6}
+{"ruta":"Camion/cabina","nombre":"calandra_barra_2","caja":[4493,4501,-587,-573,-280,85],"litros":0.041,"area":0.0163,"material":"Aluminio anodizado","caras":6}
+{"ruta":"Camion/cabina","nombre":"calandra_barra_3","caja":[4493,4501,-427,-413,-280,85],"litros":0.041,"area":0.0163,"material":"Aluminio anodizado","caras":6}
+{"ruta":"Camion/cabina","nombre":"calandra_barra_4","caja":[4493,4501,-267,-253,-280,85],"litros":0.041,"area":0.0163,"material":"Aluminio anodizado","caras":6}
+{"ruta":"Camion/cabina","nombre":"calandra_barra_5","caja":[4493,4501,-107,-93,-280,85],"litros":0.041,"area":0.0163,"material":"Aluminio anodizado","caras":6}
+{"ruta":"Camion/cabina","nombre":"calandra_barra_6","caja":[4493,4501,53,67,-280,85],"litros":0.041,"area":0.0163,"material":"Aluminio anodizado","caras":6}
+{"ruta":"Camion/cabina","nombre":"calandra_barra_7","caja":[4493,4501,213,227,-280,85],"litros":0.041,"area":0.0163,"material":"Aluminio anodizado","caras":6}
+{"ruta":"Camion/cabina","nombre":"calandra_barra_8","caja":[4493,4501,373,387,-280,85],"litros":0.041,"area":0.0163,"material":"Aluminio anodizado","caras":6}
+{"ruta":"Camion/cabina","nombre":"calandra_barra_9","caja":[4493,4501,533,547,-280,85],"litros":0.041,"area":0.0163,"material":"Aluminio anodizado","caras":6}
+{"ruta":"Camion/cabina","nombre":"calandra_barra_10","caja":[4493,4501,693,707,-280,85],"litros":0.041,"area":0.0163,"material":"Aluminio anodizado","caras":6}
+{"ruta":"Camion/cabina","nombre":"estrella_aro","caja":[4500,4518,-175,175,-270,80],"litros":0.408,"area":0.0824,"material":"Cromo","caras":4}
+{"ruta":"Camion/cabina","nombre":"estrella","caja":[4501,4513,-132.5,132.5,-171.5,58],"litros":0.134,"area":0.0324,"material":"Cromo","caras":8}
+{"ruta":"Camion/cabina","nombre":"parachoques","caja":[4515,4640,-1100,1100,-760,-320],"litros":119.284,"area":2.638,"material":"Negro mate","caras":16}
 {"ruta":"Camion/cabina","nombre":"parasol","caja":[4180,4380,-1100,1100,1440,1490],"litros":22,"area":1.12,"material":"Negro mate","caras":6}
 {"ruta":"Camion/cabina","nombre":"foco_soporte_izq","caja":[4260,4300,-620,-580,1490,1530],"litros":0.064,"area":0.0096,"material":"Negro mate","caras":6}
 {"ruta":"Camion/cabina","nombre":"foco_izq","caja":[4220,4360,-685,-515,1525,1695],"litros":3.178,"area":0.1202,"material":"Cromo","caras":3}

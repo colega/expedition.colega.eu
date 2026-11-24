@@ -21,7 +21,9 @@ export function ponerRueda(comp, sufijo, eje, centro, sentido, ATEGO) {
   const neumatico = comp.poner(`rueda_${sufijo}`, cil(0, ancho, rueda_diam / 2.0));
   comp.restar(neumatico, cil(0, ancho + 20, llanta_diam / 2.0));
   comp.poner(`llanta_${sufijo}`, cil(0, ancho * 0.62, llanta_diam / 2.0 + 4));
-  comp.poner(`buje_${sufijo}`, cil(ancho * 0.22, ancho * 0.18, 130.0));
+  // el buje sobresale 25 de la cara de la llanta: con las dos caras a ras, el
+  // visor las pintaba a la vez y salian rayas
+  comp.poner(`buje_${sufijo}`, cil(ancho * 0.22 + 25.0, ancho * 0.18, 130.0));
 }
 
 export function chasis(modelo) {

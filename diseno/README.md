@@ -41,9 +41,9 @@ elevado de 50 (R3). De la trasera a la cabina:
 - **Techo**: cuatro placas solares y el aire acondicionado (R22, R23). A un
   lado del aire, la claraboya del baño (R110).
 - **El camión**: un Mercedes Atego de cabina L, 4x2, medido de sus fotos. El
-  suelo de la caja queda a 1260 del suelo firme, el eje delantero 970 por
+  suelo de la caja queda a 1360 del suelo firme, el eje delantero 970 por
   delante de la caja y el trasero bajo la esquina del sofá, con 4010 de batalla
-  y ruedas de 930 (R108). Entre los ejes lleva la protección lateral de serie y
+  y ruedas Continental HCS 365/85 R20, de 1130 (R108). Entre los ejes lleva la protección lateral de serie y
   detrás de la rueda trasera, en el costado de la cocina, su depósito.
 
 ## Pendiente

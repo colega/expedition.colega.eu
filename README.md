@@ -168,7 +168,7 @@ Todo en milímetros.
 - Origen en el **centro del suelo interior de la caja**.
 - **X** hacia la cabina, **Y** hacia el costado izquierdo, el de la cocina, y
   **Z** arriba. El costado derecho, el de la puerta de entrada, es Y negativa.
-- El suelo firme está 1260 mm más abajo, en z -1260 (`ALTURA_PISO`, R108).
+- El suelo firme está 1360 mm más abajo, en z -1360 (`ALTURA_PISO`, R108).
   Ahí va la rejilla del visor.
 - Las paredes por dentro: trasera en x -2285, cabina en 2285, costado de la
   puerta en y -1185 y de la cocina en 1185 (`TRASERA`, `FRONTAL`,
@@ -286,7 +286,7 @@ Pendiente de decidir (lo propio del diseño, en `diseno/README.md`):
 
 - **Acceso a la cama.** Del cajón-escalón al colchón quedan 720 (R101).
 - **Acceso al garaje** bajo la cama, por los costados del camión (R7).
-- **Peldaño de la puerta**: el umbral está a 1310 del suelo firme y ahora no
+- **Peldaño de la puerta**: el umbral está a 1410 del suelo firme y ahora no
   hay nada (R15).
 - **Acceso al techo**: no hay escalera y arriba están las placas y el aire
   (R21).

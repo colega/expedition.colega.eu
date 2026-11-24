@@ -5,7 +5,7 @@
 //   - y a lo ancho, hacia el costado izquierdo, el de la cocina; el derecho, el
 //     de la puerta de entrada, es el de la acera
 //   - z hacia arriba, desde el suelo interior de la caja
-// El origen es el centro del suelo interior. El suelo firme queda 1260 mm mas
+// El origen es el centro del suelo interior. El suelo firme queda 1360 mm mas
 // abajo (R108).
 //
 // Las reglas se numeran para poder referirse a ellas al hablar del proyecto. No
@@ -31,15 +31,16 @@ export const COSTADO_COCINA = INTERIOR.ancho / 2.0;     // el izquierdo
 // R108 El camion es un Mercedes Atego de cabina L, 4x2. Las cotas del chasis
 //      salen de sus fotos de perfil, escaladas con la caja de R1, asi que
 //      valen con unos 50 mm de margen:
-//        - el suelo interior de la caja queda a 1260 del suelo firme, y la cara
-//          de abajo de la caja a 1195
+//        - el suelo interior de la caja queda a 1360 del suelo firme, y la cara
+//          de abajo de la caja a 1295: el eje queda 795 por encima del suelo,
+//          bajo el bastidor, y el resto lo pone el radio de la rueda
 //        - el eje delantero va 970 por delante de la caja, en x 3320, y el
 //          trasero en x -690, bajo la esquina del sofa: 4010 de batalla y
 //          1660 de voladizo de la caja por detras
-//        - ruedas sencillas de 930, 295/60 R22.5, con 1900 de via
-export const ALTURA_PISO = 1260.0;
-export const ATEGO = { eje_delantero: 3320.0, eje_trasero: -690.0, rueda_diam: 930.0,
-  rueda_ancho: 295.0, llanta_diam: 620.0, via: 1900.0 };
+//        - ruedas sencillas de 1130, Continental HCS 365/85 R20, con 1900 de via
+export const ALTURA_PISO = 1360.0;
+export const ATEGO = { eje_delantero: 3320.0, eje_trasero: -690.0, rueda_diam: 1130.0,
+  rueda_ancho: 365.0, llanta_diam: 560.0, via: 1900.0 };
 
 // R34 La envolvente sale partida en piezas, una por capa y pared: los dos
 //     costados, el frontal, el suelo y el techo, agrupadas en el visor por

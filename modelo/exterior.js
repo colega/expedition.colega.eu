@@ -25,6 +25,10 @@ export function exterior(modelo) {
     rueda_ancho: R.ATEGO.rueda_ancho,
     via: R.ATEGO.via / 2,
   };
+  // cara de delante y de detras del guardabarros trasero, a la altura del eje:
+  // lo que va junto a la rueda trasera se mide desde ahi (R108)
+  const GB_ATRAS = E.eje_trasero - E.rueda_r - 95;
+  const GB_ADELANTE = E.eje_trasero + E.rueda_r + 95;
   const ALTO = R.INTERIOR.alto;
 
   // Cada familia de piezas a su grupo: lo del camion bajo Camion, lo de la caja
@@ -171,7 +175,7 @@ export function exterior(modelo) {
 
   // detras de la rueda trasera: el deposito del camion en el costado de la
   // cocina, como en la foto, y un cofre en el de la puerta
-  const detras = [-1930.0, -1290.0];
+  const detras = [GB_ATRAS - 40.0 - 640.0, GB_ATRAS - 40.0];
   bloque(bajos, 'deposito_gasoil', detras, [720.0, 1180.0], [-520.0, -150.0]);
   bloque(bajos, 'cofre_der', detras, [-1240.0, -860.0], [-540.0, -120.0]);
 
@@ -200,7 +204,7 @@ export function exterior(modelo) {
   // montantes, un poco por dentro de la cara de la caja
   for (const [lado, signo] of [['izq', -1], ['der', 1]]) {
     const y = ord(signo * 1200, signo * 1230);
-    const tramo = [-65.0, 2465.0];
+    const tramo = [GB_ADELANTE + 65.0, 2465.0];
     bloque(bajos, 'proteccion_alta_' + lado, tramo, y, [-400.0, -310.0]);
     bloque(bajos, 'proteccion_baja_' + lado, tramo, y, [-760.0, -655.0]);
     for (const [k, x] of [[1, tramo[0]], [2, 1200.0], [3, tramo[1] - 40]]) {

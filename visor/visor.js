@@ -119,12 +119,13 @@ function vista(nombre) {
   controles.update();
 }
 
+const VISTA_INICIAL = 'iso_trasera';
 const selectorVistas = $('vistas');
 for (const nombre of Object.keys(VISTAS)) {
-  selectorVistas.add(new Option(nombre.replaceAll('_', ' '), nombre, false, nombre === 'iso'));
+  selectorVistas.add(new Option(nombre.replaceAll('_', ' '), nombre, false, nombre === VISTA_INICIAL));
 }
 selectorVistas.onchange = () => vista(selectorVistas.value);
-vista('iso');
+vista(VISTA_INICIAL);
 
 // Se dibuja solo cuando algo cambia: la camara, el tamaño o cualquier cosa del
 // panel. Quieto, el visor no gasta.

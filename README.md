@@ -40,12 +40,13 @@ sola y el camión se vuelve a levantar.
 
 En el visor:
 
-- A la izquierda, el árbol de componentes, que arranca plegado. Cada casilla
-  muestra u oculta un componente con todo lo que lleva dentro, o un cuerpo
-  suelto. Lo oculto se recuerda entre recargas; **Mostrar todo** lo enciende
-  todo, paisaje incluido, y **Solo interior** deja el interior y la puerta
-  lateral. **Solo baño**, **Solo cocina** y **Solo comedor** dejan únicamente
-  esa zona del interior y apagan el paisaje.
+- A la izquierda, el árbol de componentes. Arranca oculto y plegado: el botón
+  **Componentes** lo muestra. Cada casilla muestra u oculta un componente con
+  todo lo que lleva dentro, o un cuerpo suelto. Lo oculto se recuerda entre
+  recargas; **Mostrar todo** lo enciende todo, paisaje incluido, y **Solo
+  interior** deja el interior y la puerta lateral. **Solo baño**, **Solo
+  cocina** y **Solo comedor** dejan únicamente esa zona del interior y apagan
+  el paisaje.
 - Botones de **vistas** fijas, los mismos encuadres de siempre, para comparar
   de una pasada a otra.
 - Con el ratón se gira (botón izquierdo), se desplaza (derecho) y se acerca

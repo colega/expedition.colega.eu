@@ -100,7 +100,7 @@ export const FRENTE = { grueso: 18.0, vuelo: 18.0, junta: 3.0, bahias_encimera: 
 //     es de madera.
 // R29 Por fuera, caja y cabina en verde militar, y bastidor, bajos, defensa y
 //     faldones en negro. La perfileria de aluminio se queda vista.
-export const VERDE_MILITAR = [77, 84, 61];
+export const VERDE_MILITAR = [116, 130, 85];
 export const NEGRO_CHASIS = [28, 28, 30];
 
 // R80 Los altos cuelgan del techo y son cajas rectas, sin cortes:

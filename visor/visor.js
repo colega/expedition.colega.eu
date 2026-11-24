@@ -305,6 +305,12 @@ function cargar(componentes) {
   pintaBotonRampa();
 }
 
+// el arbol arranca oculto; este boton lo muestra
+$('verArbol').onclick = (e) => {
+  const ver = $('arbol').hidden;
+  $('arbol').hidden = !ver;
+  e.currentTarget.setAttribute('aria-pressed', String(ver));
+};
 $('aristas').onchange = (e) => { for (const a of aristas) a.visible = e.target.checked; };
 $('suelo').onchange = (e) => { suelo.visible = e.target.checked; };
 // Deja a la vista solo esas ramas, con todo lo que llevan dentro. Las ramas de

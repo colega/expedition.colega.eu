@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Caja Atego</title>
+  <title>Atego 4x4</title>
   <style>
     :root {
       --fondo: #eef0ec;
@@ -113,7 +113,7 @@
   <aside id="lateral">
     <header>
       <button id="plegar" aria-expanded="true">Panel</button>
-      <h1>Caja Atego</h1>
+      <h1>Atego 4x4</h1>
       <div id="estado">Arrancando OpenCascade…</div>
     </header>
     <div class="bloque botones">
@@ -144,7 +144,8 @@
       <select id="vistas" aria-label="Vista"></select>
     </div>
     <div id="error"></div>
-    <div id="arbol"></div>
+    <div class="bloque"><button id="verArbol" aria-pressed="false">Componentes</button></div>
+    <div id="arbol" hidden></div>
   </aside>
   <main>
     <canvas id="lienzo"></canvas>

@@ -866,6 +866,10 @@ function ventanaOutbound(comp, c, clave, signo, m) {
   const canto = m.canto_hoja;
   const cristal = [m.hoja[0] - 2 * canto, m.hoja[1] - 2 * canto];
   anillo(comp, 'ra_brida', clave, lado, centro, m.marco, m.hoja, fondo(-m.brida, 0.0));
+  // R114: la junta de silicona alrededor de la brida, sobre el panel
+  const J = R.JUNTA;
+  anillo(comp, 'ra_junta', clave, lado, centro, [m.marco[0] + 2 * J.ancho, m.marco[1] + 2 * J.ancho], m.marco,
+    fondo(-J.grueso, 0.0));
   anillo(comp, 'ra_hoja', clave, lado, centro, m.hoja, cristal, fondo(-m.brida, m.fondo_cuerpo));
   anillo(comp, 'ra_cuerpo', clave, lado, centro, m.cuerpo, m.hoja, fondo(0.0, m.fondo_cuerpo));
   // el escalon de dentro: un canto fino y el cristal de dentro a ras del

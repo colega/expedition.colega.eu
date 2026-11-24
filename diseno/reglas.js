@@ -82,6 +82,12 @@ export const RAMPA_ABIERTA = true;
 //      abierta (R111), la hoja la lleva colgada bajo la terraza.
 export const REPUESTO = { separacion: 40.0, soporte: 90.0 };
 
+// R114 Los marcos de las ventanas (R90) y de la puerta (R99) van pintados del
+//      color de la caja por fuera: la brida, la hoja y el cuerpo. Alrededor de
+//      la brida, sobre el panel, una junta de silicona negra de 5 de ancho y 2
+//      de grueso. Por dentro siguen negros, igual que las persianas (R96).
+export const JUNTA = { ancho: 5.0, grueso: 2.0 };
+
 // R3  Toda la casa va sobre un suelo elevado de 50: tablero de 18 sobre un
 //     cerco con travesaños cada 600, con 32 de luz por debajo para nivelar.
 //     Llega de la trasera a los pies de la cama; la cama posa en el suelo de
@@ -385,8 +391,8 @@ export const INODORO = { modelo: 'Separett Tiny 1270-03',
   orina_litros: 7.5, solidos_litros: 14.5 };
 
 // --- ventanas ------------------------------------------------------------
-// R90 Las ventanas son de Outbound, serie RA: abatibles, con marco negro y
-//     doble acristalamiento de acrilico. Las cotas son las de su hoja de
+// R90 Las ventanas son de Outbound, serie RA: abatibles, con el marco pintado
+//     (R114) y doble acristalamiento de acrilico. Las cotas son las de su hoja de
 //     medidas (outbound.eu, "Window dimensions and weights"), en mm y con la
 //     letra que usa el fabricante. A es el alto y B el ancho.
 //       marco      A x B    la brida de fuera, de 4 (G), que monta sobre el panel

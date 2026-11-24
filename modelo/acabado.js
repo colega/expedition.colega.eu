@@ -110,12 +110,14 @@ const POR_PREFIJO = [
   ['limpiaparabrisas', 'Negro mate'],
   ['tirador_', 'Negro mate'],
   ['antiniebla', 'Vidrio'],
-  // R90: las ventanas de Outbound tienen el marco negro
-  ['ra_', 'Negro mate'],
-  // R96: y su persiana, a juego
+  // R114: los marcos de Outbound van pintados del color de la caja por fuera,
+  // con la junta negra alrededor; por dentro siguen negros, como la persiana
+  // (R96), y la cerradura y las bisagras de la puerta tambien
+  ['ra_junta', 'Negro mate'], ['de_junta', 'Negro mate'],
+  ['ra_interior', 'Negro mate'], ['de_interior', 'Negro mate'],
+  ['de_cerradura', 'Negro mate'], ['de_bisagra', 'Negro mate'],
   ['ch_', 'Negro mate'],
-  // R99: y el marco de la puerta, con la hoja del color de la caja
-  ['de_', 'Negro mate'],
+  ['ra_', 'Verde militar'], ['de_', 'Verde militar'],
   // R49: las almohadas van por prefijo y no por contenido, que
   // 'alto_almohadas' tambien lleva la palabra dentro y el armario salia
   // forrado de tela

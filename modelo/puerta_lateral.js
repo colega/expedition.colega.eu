@@ -64,6 +64,9 @@ export function puertaLateral(modelo) {
   // hasta el paramento.
   const tope = fueraY + DE.fondo_cuerpo - DE.pared;
   anillo('de_brida', DE.marco, DE.hoja, [fueraY - DE.brida, fueraY]);
+  // R114: la junta de silicona alrededor de la brida, sobre el panel
+  const J = R.JUNTA;
+  anillo('de_junta', DE.marco.map((v) => v + 2 * J.ancho), DE.marco, [fueraY - J.grueso, fueraY]);
   anillo('de_cuerpo', DE.cuerpo, DE.hoja, [fueraY, tope]);
   anillo('de_tope', DE.cuerpo, DE.libre, [tope, fueraY + DE.fondo_cuerpo]);
   anillo('de_interior', DE.interior, DE.libre, [fueraY + DE.fondo_cuerpo, D.pared_y]);

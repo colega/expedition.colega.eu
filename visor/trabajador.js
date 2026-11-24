@@ -16,6 +16,10 @@ const MALLA = { tolerance: 0.5, angularTolerance: 0.25 };
 const inicio = performance.now();
 const listo = opencascade({ locateFile: () => wasmUrl }).then(setOC);
 
+// el visor dice que ramas quiere ver (?solo): las demas no se mallan
+const pedido = new Promise((resolver) => { onmessage = ({ data }) => resolver(data.solo); });
+const dentro = (ruta, solo) => !solo || solo.some((r) => ruta === r || ruta.startsWith(r + '/'));
+
 async function trabajar() {
   await listo;
   const arrancado = performance.now();
@@ -23,7 +27,9 @@ async function trabajar() {
   const construido = performance.now();
   const componentes = [];
   const enviar = [];
+  const solo = await pedido;
   for (const comp of modelo.componentes.values()) {
+    if (!dentro(comp.ruta.join('/'), solo)) continue;
     const cuerpos = comp.cuerpos.map((cuerpo) => {
       const m = cuerpo.forma.mesh(MALLA);
       const bordes = cuerpo.forma.meshEdges(MALLA);

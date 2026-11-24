@@ -14,6 +14,14 @@ import { crearPaisaje, DIRECCION_SOL } from './paisaje.js';
 const inicio = performance.now();
 const trabajador = new Worker(new URL('./trabajador.js', import.meta.url), { type: 'module' });
 
+// Para trabajar en una parte: ?solo=Camion/ruedas,Caja/Interior/Bano malla y
+// pinta solo esas ramas, sin paisaje y sin tocar lo guardado en el navegador;
+// ?vista=frontal elige el encuadre. El modelo se construye entero, que los
+// cortes de unas piezas dependen de otras.
+const PARAMETROS = new URLSearchParams(location.search);
+const SOLO = PARAMETROS.get('solo')?.split(',').map((r) => r.trim().replace(/^\/+|\/+$/g, '')).filter(Boolean) || null;
+trabajador.postMessage({ solo: SOLO });
+
 // Encuadres fijos, para comparar de una pasada a otra: ojo, objetivo y
 // vertical, en mm y en el marco del modelo.
 const VISTAS = {
@@ -79,15 +87,19 @@ const suelo = new THREE.GridHelper(20000, 40, 0x9aa093, oscuro ? 0x2c3028 : 0xd3
 suelo.rotation.x = Math.PI / 2;
 escena.add(suelo);
 
-// R112: el prado, con su cielo, sus flores y sus arboles. Se baja al suelo
-// firme cuando llega el modelo, igual que la rejilla.
-const paisaje = crearPaisaje();
-escena.add(paisaje.grupo);
+// R112: el prado, con su cielo, sus flores y sus arboles. Se monta la primera
+// vez que se enciende y se baja al suelo firme, igual que la rejilla.
+let paisaje = null;
 // Con paisaje se apagan las aristas y la rejilla del suelo, que el prado la
 // sustituye; sin paisaje se encienden, para mirar el modelo de cerca.
 function ponerPaisaje(on) {
+  if (on && !paisaje) {
+    paisaje = crearPaisaje();
+    paisaje.grupo.position.z = suelo.position.z;
+    escena.add(paisaje.grupo);
+  }
   $('paisaje').checked = on;
-  paisaje.grupo.visible = on;
+  if (paisaje) paisaje.grupo.visible = on;
   sol.castShadow = on;
   escena.fog = on ? paisaje.niebla : null;
   ponerAristas(!on);
@@ -158,7 +170,7 @@ const NOMBRES_VISTAS = {
     bano_dentro: 'Baño por dentro',
   },
 };
-const VISTA_INICIAL = 'iso_trasera';
+const VISTA_INICIAL = VISTAS[PARAMETROS.get('vista')] ? PARAMETROS.get('vista') : 'iso_trasera';
 const selectorVistas = $('vistas');
 for (const [grupo, vistas] of Object.entries(NOMBRES_VISTAS)) {
   const og = document.createElement('optgroup');
@@ -238,6 +250,7 @@ const materialElegido = new THREE.MeshStandardMaterial({ color: 0xff9a1f, emissi
 // Lo que se oculta se recuerda entre recargas, que al cambiar una regla la
 // pagina se recarga sola. Si el navegador no deja guardar, se empieza de cero.
 function leerOcultos() {
+  if (SOLO) return new Set(OCULTOS_DE_SERIE);
   try {
     const guardado = localStorage.getItem(CLAVE_OCULTOS);
     return new Set(guardado ? JSON.parse(guardado) : OCULTOS_DE_SERIE);
@@ -247,6 +260,7 @@ function leerOcultos() {
 }
 const ocultos = leerOcultos();
 function guardarOcultos() {
+  if (SOLO) return;
   try { localStorage.setItem(CLAVE_OCULTOS, JSON.stringify([...ocultos])); } catch { /* sin almacenamiento */ }
 }
 
@@ -362,7 +376,7 @@ function ponerAristas(on) {
   for (const a of aristas) a.visible = on;
 }
 $('aristas').onchange = (e) => ponerAristas(e.target.checked);
-ponerPaisaje(true);   // arranca con paisaje: sin aristas ni rejilla
+ponerPaisaje(!SOLO);   // arranca con paisaje, sin aristas ni rejilla; con ?solo, al reves
 // Deja a la vista solo esas ramas, con todo lo que llevan dentro. Las ramas de
 // encima siguen encendidas, pero sin sus otros hijos. Lo de apagar se apaga
 // aunque caiga dentro.
@@ -485,6 +499,20 @@ lienzo.addEventListener('pointermove', (e) => {
   movido = e;
 });
 
+// Encuadra lo cargado, mirando desde donde mira la vista de ahora.
+function encuadrar() {
+  const caja = new THREE.Box3();
+  for (const m of mallas) caja.expandByObject(m);
+  if (caja.isEmpty()) return;
+  const centro = caja.getCenter(new THREE.Vector3());
+  const radio = caja.getSize(new THREE.Vector3()).length() / 2;
+  const dir = camara.position.clone().sub(controles.target).normalize();
+  const distancia = (radio / Math.sin(THREE.MathUtils.degToRad(camara.fov) / 2)) * alejar() * 1.05;
+  controles.target.copy(centro);
+  camara.position.copy(centro).addScaledVector(dir, distancia);
+  controles.update();
+}
+
 // ---------------------------------------------------------------- trabajo
 trabajador.onmessage = ({ data }) => {
   if (data.tipo === 'paso') {
@@ -495,11 +523,12 @@ trabajador.onmessage = ({ data }) => {
     colores = data.colores;
     iniciarColor();
     suelo.position.z = -data.altura_piso;
-    paisaje.grupo.position.z = -data.altura_piso;
+    if (paisaje) paisaje.grupo.position.z = -data.altura_piso;
     cargar(data.componentes);
+    if (SOLO && !PARAMETROS.has('vista')) encuadrar();
     const s = ((performance.now() - inicio) / 1000).toFixed(1);
     const avisos = data.notas.redondeos_fallidos?.length ? ` · ${data.notas.redondeos_fallidos.length} redondeo sin hacer` : '';
-    estado.textContent = `${mallas.length} cuerpos en ${s} s${avisos}`;
+    estado.textContent = `${mallas.length} cuerpos en ${s} s${avisos}${SOLO ? ` · solo ${SOLO.join(', ')}` : ''}`;
     const t = data.tiempos;
     estado.title = `arrancar ${Math.round(t.arrancar)} ms, construir ${Math.round(t.construir)} ms, mallar ${Math.round(t.mallar)} ms,`
       + ` llega a los ${Math.round(llegada - inicio)} ms y se monta en ${Math.round(performance.now() - llegada)} ms`;

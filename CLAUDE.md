@@ -20,4 +20,7 @@ cambios de otro diseño.
 
 Tras cualquier cambio de geometría, pasa `npm run construir` y mira el
 informe: verificar, huecos, choques, sin_color y la comparación con
-`diseno/referencia.jsonl`. Se mira el visor con `npm run dev`.
+`diseno/referencia.jsonl`. Se mira el visor con `npm run dev`. Para mirar
+solo lo que se ha tocado, abre `/visor/?solo=<rama>,<rama>` (por ejemplo
+`?solo=Camion/cabina`), con `&vista=<clave>` si hace falta un encuadre fijo:
+carga antes y sin paisaje.

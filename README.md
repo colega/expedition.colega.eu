@@ -82,6 +82,12 @@ En el visor:
   con las aristas y la rejilla del suelo apagadas, que el prado la sustituye.
   El interruptor **Paisaje** lo apaga y entonces enciende aristas y suelo; los
   otros dos se pueden mover aparte.
+- **Una parte sola**: `?solo=` con ramas del árbol separadas por comas malla y
+  pinta solo esas, sin paisaje, encuadradas y sin tocar lo oculto que guarda
+  el navegador. `?vista=` elige el encuadre por su clave de `VISTAS`
+  (`visor/visor.js`). Por ejemplo
+  `/visor/?solo=Camion/ruedas,Caja/Interior/Bano&vista=lateral`. El modelo se
+  construye entero igual, que los cortes de unas piezas dependen de otras.
 - En el móvil, el modelo va arriba y el panel debajo, con el árbol dentro;
   **Panel** lo pliega para ver el modelo a pantalla completa. Las vistas fijas
   no salen: con el dedo se gira mejor.

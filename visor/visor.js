@@ -76,15 +76,21 @@ escena.add(suelo);
 // firme cuando llega el modelo, igual que la rejilla.
 const paisaje = crearPaisaje();
 escena.add(paisaje.grupo);
+// Con paisaje se apagan las aristas y la rejilla del suelo, que el prado la
+// sustituye; sin paisaje se encienden, para mirar el modelo de cerca.
 function ponerPaisaje(on) {
-  $('paisaje').setAttribute('aria-pressed', String(on));
+  $('paisaje').checked = on;
   paisaje.grupo.visible = on;
   escena.fog = on ? paisaje.niebla : null;
-  // el prado sustituye a la rejilla
-  if (on && $('suelo').checked) { $('suelo').checked = false; suelo.visible = false; }
+  ponerAristas(!on);
+  ponerSuelo(!on);
 }
-$('paisaje').onclick = () => ponerPaisaje($('paisaje').getAttribute('aria-pressed') !== 'true');
-ponerPaisaje(true);
+function ponerSuelo(on) {
+  $('suelo').checked = on;
+  suelo.visible = on;
+}
+$('paisaje').onchange = (e) => ponerPaisaje(e.target.checked);
+$('suelo').onchange = (e) => ponerSuelo(e.target.checked);
 
 let sucio = true;
 function pedirDibujo() { sucio = true; }
@@ -119,10 +125,38 @@ function vista(nombre) {
   controles.update();
 }
 
+// Como se llama cada encuadre en el selector, por grupos. Derecha e izquierda
+// son las del conductor: la cocina esta a la izquierda (y+).
+const NOMBRES_VISTAS = {
+  Exterior: {
+    iso: 'Isométrica delantera derecha',
+    iso_trasera: 'Isométrica trasera derecha',
+    iso_alta: 'Isométrica alta',
+    tres_cuartos: 'Tres cuartos delantera derecha',
+    tres_cuartos_frente_izq: 'Tres cuartos delantera izquierda',
+    tres_cuartos_izq: 'Tres cuartos trasera izquierda',
+    lateral: 'Lateral derecho',
+    lateral_izq: 'Lateral izquierdo',
+    frontal: 'Frontal',
+    planta: 'Planta',
+  },
+  Interior: {
+    planta_interior: 'Planta del interior',
+    interior_trasera: 'Interior desde atrás',
+    dormitorio: 'Dormitorio',
+    cocina: 'Cocina',
+    cocina_frente: 'Cocina de frente',
+    bano: 'Baño',
+    bano_dentro: 'Baño por dentro',
+  },
+};
 const VISTA_INICIAL = 'iso_trasera';
 const selectorVistas = $('vistas');
-for (const nombre of Object.keys(VISTAS)) {
-  selectorVistas.add(new Option(nombre.replaceAll('_', ' '), nombre, false, nombre === VISTA_INICIAL));
+for (const [grupo, vistas] of Object.entries(NOMBRES_VISTAS)) {
+  const og = document.createElement('optgroup');
+  og.label = grupo;
+  for (const [nombre, texto] of Object.entries(vistas)) og.append(new Option(texto, nombre, false, nombre === VISTA_INICIAL));
+  selectorVistas.append(og);
 }
 selectorVistas.onchange = () => vista(selectorVistas.value);
 vista(VISTA_INICIAL);
@@ -245,7 +279,7 @@ function alternar(clave, visible) {
   n.casilla.checked = visible;
   if (visible) ocultos.delete(clave); else ocultos.add(clave);
   guardarOcultos();
-  if (clave === 'Caja/rampa_abierta') pintaBotonRampa();
+  pintaPares();
 }
 
 function cuerpoDelArbol(n, malla) {
@@ -286,6 +320,7 @@ function cargar(componentes) {
       lineas.setAttribute('position', new THREE.BufferAttribute(c.aristas, 3));
       const borde = new THREE.LineSegments(lineas, materialAristas);
       borde.userData.grupos = c.grupos;
+      borde.visible = $('aristas').checked;
       malla.add(borde);
       aristas.push(borde);
       n.grupo.add(malla);
@@ -300,19 +335,24 @@ function cargar(componentes) {
     n.casilla.checked = !ocultos.has(n.clave);
     n.grupo.visible = n.casilla.checked;
   }
-  // R111: el boton de la rampa, solo si hay rampa abierta
-  $('rampa').hidden = !nodos.has('Caja/rampa_abierta');
-  pintaBotonRampa();
+  // R111: el boton de cada pareja, solo si hay la abierta
+  for (const [id, { abierta }] of Object.entries(PARES)) $(id).hidden = !nodos.has(abierta);
+  $('abrir').hidden = Object.keys(PARES).every((id) => $(id).hidden);
+  pintaPares();
 }
 
 // el arbol arranca oculto; este boton lo muestra
 $('verArbol').onclick = (e) => {
   const ver = $('arbol').hidden;
   $('arbol').hidden = !ver;
-  e.currentTarget.setAttribute('aria-pressed', String(ver));
+  e.currentTarget.setAttribute('aria-expanded', String(ver));
 };
-$('aristas').onchange = (e) => { for (const a of aristas) a.visible = e.target.checked; };
-$('suelo').onchange = (e) => { suelo.visible = e.target.checked; };
+function ponerAristas(on) {
+  $('aristas').checked = on;
+  for (const a of aristas) a.visible = on;
+}
+$('aristas').onchange = (e) => ponerAristas(e.target.checked);
+ponerPaisaje(true);   // arranca con paisaje: sin aristas ni rejilla
 // Deja a la vista solo esas ramas, con todo lo que llevan dentro. Las ramas de
 // encima siguen encendidas, pero sin sus otros hijos. Lo de apagar se apaga
 // aunque caiga dentro.
@@ -327,32 +367,44 @@ function mostrarSolo(claves, apagar = []) {
     n.casilla.checked = visible;
     if (!visible) ocultos.add(n.clave);
   }
-  pintaBotonRampa();
+  pintaPares();
   guardarOcultos();
 }
-$('mostrarTodo').onclick = () => { mostrarSolo(null, ['Caja/rampa']); ponerPaisaje(true); };
+// Todo es la vista de serie: la rampa y la ducha abiertas o cerradas, no las dos
+$('mostrarTodo').onclick = () => { mostrarSolo(null, OCULTOS_DE_SERIE); ponerPaisaje(true); };
 $('soloInterior').onclick = () => mostrarSolo(['Caja/Interior', 'Caja/puerta_lateral'], OCULTOS_DE_SERIE);
 for (const [id, zona] of [['soloBano', 'Bano'], ['soloCocina', 'Cocina'], ['soloComedor', 'Comedor']]) {
   $(id).onclick = () => { mostrarSolo([`Caja/Interior/${zona}`], OCULTOS_DE_SERIE); ponerPaisaje(false); };
 }
 
-// R111: la rampa se ve cerrada o abierta, nunca las dos. Si no se ve ninguna,
-// el boton vuelve a la cerrada.
-function pintaBotonRampa() {
-  $('rampa').setAttribute('aria-pressed', String(!ocultos.has('Caja/rampa_abierta')));
-}
-$('rampa').onclick = () => {
-  if (!nodos.has('Caja/rampa_abierta')) return;
-  if (!ocultos.has('Caja/rampa_abierta')) {          // abierta a la vista: cerrada
-    alternar('Caja/rampa_abierta', false);
-    alternar('Caja/rampa', true);
-  } else if (!ocultos.has('Caja/rampa')) {           // cerrada a la vista: abierta
-    alternar('Caja/rampa', false);
-    alternar('Caja/rampa_abierta', true);
-  } else {                                           // ninguna a la vista: cerrada
-    alternar('Caja/rampa', true);
-  }
+// R111: la rampa y la ducha se ven cerradas o abiertas, nunca las dos. Si no se
+// ve ninguna, el boton vuelve a la cerrada. Cada boton dice como esta.
+const PARES = {
+  rampa: { abierta: 'Caja/rampa_abierta', cerrada: 'Caja/rampa' },
+  ducha: { abierta: 'Caja/Interior/Bano/ducha_abierta', cerrada: 'Caja/Interior/Bano/ducha_cerrada' },
 };
+const seVeRama = (clave) => nodos.has(clave) && seVe(nodos.get(clave).grupo);
+function pintaPares() {
+  for (const [id, { abierta, cerrada }] of Object.entries(PARES)) {
+    const estado = seVeRama(abierta) ? 'abierta' : seVeRama(cerrada) ? 'cerrada' : 'oculta';
+    $(id).setAttribute('aria-pressed', String(estado === 'abierta'));
+    $(id).querySelector('.par-estado').textContent = estado;
+  }
+}
+for (const [id, { abierta, cerrada }] of Object.entries(PARES)) {
+  $(id).onclick = () => {
+    if (!nodos.has(abierta)) return;
+    if (seVeRama(abierta)) {                         // abierta a la vista: cerrada
+      alternar(abierta, false);
+      alternar(cerrada, true);
+    } else if (seVeRama(cerrada)) {                  // cerrada a la vista: abierta
+      alternar(cerrada, false);
+      alternar(abierta, true);
+    } else {                                         // ninguna a la vista: cerrada
+      alternar(cerrada, true);
+    }
+  };
+}
 $('plegar').onclick = () => {
   const plegado = $('lateral').classList.toggle('plegado');
   $('plegar').setAttribute('aria-expanded', String(!plegado));
@@ -409,7 +461,11 @@ lienzo.addEventListener('pointerup', (e) => {
 // ------------------------------------------------------------------ medir
 const medir = crearMedir({ escena, camara, lienzo, capa: $('etiquetas'), lista: $('medidas'), pista: $('pista'),
   boton: $('medir'), mallas, bordes: aristas, seVe, pedirDibujo });
-$('medir').onclick = () => { elegir(null); medir.alternar(); };
+$('medir').onclick = () => {
+  elegir(null);
+  medir.alternar();
+  if (medir.activo && !$('aristas').checked) ponerAristas(true);   // se mide entre aristas: que se vean
+};
 $('borrarMedidas').onclick = () => medir.borrarTodas();
 // el resaltado de la arista bajo el raton, una vez por fotograma como mucho
 let movido = null;

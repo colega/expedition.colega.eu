@@ -43,17 +43,19 @@ En el visor:
 - A la izquierda, el árbol de componentes. Arranca oculto y plegado: el botón
   **Componentes** lo muestra. Cada casilla muestra u oculta un componente con
   todo lo que lleva dentro, o un cuerpo suelto. Lo oculto se recuerda entre
-  recargas; **Mostrar todo** lo enciende todo, paisaje incluido, y **Solo
-  interior** deja el interior y la puerta lateral. **Solo baño**, **Solo
-  cocina** y **Solo comedor** dejan únicamente esa zona del interior y apagan
-  el paisaje.
-- Botones de **vistas** fijas, los mismos encuadres de siempre, para comparar
-  de una pasada a otra.
+  recargas. Los botones de **Mostrar** van juntos: **Todo** enciende todo, con
+  paisaje; **Interior** deja el interior y la puerta lateral; **Baño**,
+  **Cocina** y **Comedor** dejan únicamente esa zona del interior y apagan el
+  paisaje.
+- El selector de **vista** tiene los encuadres fijos, con nombre y agrupados en
+  exterior e interior, los mismos de siempre para comparar de una pasada a
+  otra. Derecha e izquierda son las del conductor.
 - Con el ratón se gira (botón izquierdo), se desplaza (derecho) y se acerca
   (rueda).
 - Un clic sobre una pieza la elige: sale su nombre, su material, su ruta en el
   árbol y sus cotas en el marco del modelo. Desde ahí se puede ocultar.
-- **Medir entre aristas**: con el botón encendido, la arista bajo el ratón se
+- **Medir entre aristas**: con el botón **Entre aristas** encendido (que
+  enciende las aristas si estaban apagadas), la arista bajo el ratón se
   resalta; un clic elige la primera y otro la segunda. La medida es la
   distancia mínima entre las dos, con su Δx, Δy y Δz, y se queda dibujada con
   una etiqueta hasta que se borra con su ×. Caben las que se quiera, salen
@@ -61,17 +63,21 @@ En el visor:
   arista que se vea: la que tapa otra pieza, no. Esc suelta la primera arista
   y, si no hay, apaga el modo.
 - La ducha sale cerrada: `ducha_abierta` viene oculta de serie. La rampa sale
-  abierta y `rampa`, la cerrada, oculta (R111): el botón **Abrir/cerrar
-  rampa** cambia de una a otra, y si has ocultado las dos, vuelve a enseñar la
-  cerrada. Abierta, la tapa ciega de encima la acompaña y queda horizontal, de
-  visera. **Mostrar todo** enciende todo menos la rampa cerrada.
+  abierta y `rampa`, la cerrada, oculta (R111). Los botones **Rampa** y
+  **Ducha** de "Abrir y cerrar" dicen cómo está cada una y cambian de la
+  abierta a la cerrada; si has ocultado las dos, vuelven a enseñar la cerrada.
+  Abierta, la tapa ciega de encima acompaña a la rampa y queda horizontal, de
+  visera. **Todo** deja la rampa y la ducha como salen de serie, nunca las dos
+  a la vez.
 - **Color**: el selector cambia el color de la caja y la cabina (el verde
   militar de R29) en vivo, sin reconstruir. Se recuerda entre recargas y
   **Original** vuelve al de las reglas. Para dejar uno de forma definitiva se
   cambia `VERDE_MILITAR` en `diseno/reglas.js`.
 - **Paisaje**: prado con florecillas, arboles a media y larga distancia y cielo
-  azul. Sale encendido, con la niebla fundiendo el prado con el horizonte y la
-  rejilla del suelo apagada, que el prado la sustituye; el botón lo apaga.
+  azul. Sale encendido, con la niebla fundiendo el prado con el horizonte, y
+  con las aristas y la rejilla del suelo apagadas, que el prado la sustituye.
+  El interruptor **Paisaje** lo apaga y entonces enciende aristas y suelo; los
+  otros dos se pueden mover aparte.
 - En el móvil, el modelo va arriba y el panel debajo, con el árbol dentro;
   **Panel** lo pliega para ver el modelo a pantalla completa. Las vistas fijas
   no salen: con el dedo se gira mejor.

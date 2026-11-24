@@ -8,144 +8,268 @@
     :root {
       --fondo: #eef0ec;
       --panel: #ffffff;
+      --hundido: #f3f5f0;      /* fondo de los grupos de botones */
       --texto: #1d211b;
       --suave: #6a7066;
-      --linea: #d9ddd5;
+      --linea: #dfe3da;
       --acento: #4d543d;
-      --resalte: #e3e8d6;
+      --sobre-acento: #ffffff;
+      --resalte: #e6ebd9;
+      --pista: #c9cec1;        /* carril de los interruptores */
+      --sombra: 0 1px 2px rgba(29, 33, 27, .08), 0 4px 14px rgba(29, 33, 27, .08);
+      --radio: 8px;
     }
     @media (prefers-color-scheme: dark) {
       :root {
         --fondo: #1b1d19;
         --panel: #242720;
+        --hundido: #1d201a;
         --texto: #e6e9e1;
         --suave: #9aa093;
         --linea: #383c33;
         --acento: #b9c39a;
+        --sobre-acento: #1b1d19;
         --resalte: #343a2b;
+        --pista: #4a4f42;
+        --sombra: 0 1px 2px rgba(0, 0, 0, .3), 0 4px 14px rgba(0, 0, 0, .3);
       }
     }
     * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
     html, body { margin: 0; height: 100%; }
     body {
       background: var(--fondo); color: var(--texto);
       font: 13px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
-      display: grid; grid-template-columns: 300px 1fr; overflow: hidden;
+      display: grid; grid-template-columns: 340px 1fr; overflow: hidden;
     }
+
+    /* ------------------------------------------------------------ panel */
     aside {
       background: var(--panel); border-right: 1px solid var(--linea);
-      display: flex; flex-direction: column; min-height: 0;
+      display: flex; flex-direction: column; min-height: 0; overflow-y: auto;
+      scrollbar-width: thin; scrollbar-color: var(--pista) transparent;
     }
-    header { padding: 12px 14px 8px; border-bottom: 1px solid var(--linea); }
-    h1 { font-size: 15px; margin: 0 0 2px; display: flex; align-items: center; gap: 8px; }
-    select { font: inherit; font-size: 13px; color: var(--texto); background: var(--panel); border: 1px solid var(--linea); border-radius: 5px; padding: 1px 4px; }
-    #estado { color: var(--suave); font-size: 12px; }
-    .bloque { padding: 8px 14px; border-bottom: 1px solid var(--linea); }
-    .bloque h2 { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--suave); margin: 0 0 6px; font-weight: 600; }
+    header {
+      position: sticky; top: 0; z-index: 2; background: var(--panel);
+      padding: 16px 16px 12px; border-bottom: 1px solid var(--linea);
+    }
+    .titulo { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    h1 { font-size: 17px; font-weight: 650; letter-spacing: -.01em; margin: 0; }
+    #estado { color: var(--suave); font-size: 12px; margin-top: 2px; font-variant-numeric: tabular-nums; }
+    .bloque { padding: 14px 16px; border-bottom: 1px solid var(--linea); }
+    .bloque h2 {
+      font-size: 11px; text-transform: uppercase; letter-spacing: .08em; font-weight: 600;
+      color: var(--suave); margin: 0 0 8px;
+    }
+
+    /* ---------------------------------------------------------- botones */
     button {
-      font: inherit; font-size: 12px; color: var(--texto); background: transparent;
-      border: 1px solid var(--linea); border-radius: 5px; padding: 3px 8px; cursor: pointer;
+      font: inherit; font-size: 12.5px; color: var(--texto); background: var(--panel);
+      border: 1px solid var(--linea); border-radius: var(--radio); padding: 6px 10px; min-height: 30px;
+      cursor: pointer; transition: background-color .12s, border-color .12s, color .12s;
     }
-    button:hover { background: var(--resalte); }
-    label.opcion { display: inline-flex; gap: 5px; align-items: center; margin-right: 10px; cursor: pointer; }
-    #arbol { overflow: auto; flex: 1; padding: 6px 8px 16px; min-height: 0; }
-    details { margin-left: 12px; }
-    #arbol > details { margin-left: 0; }
-    summary { list-style: none; cursor: pointer; padding: 1px 0; white-space: nowrap; display: flex; align-items: center; gap: 4px; }
-    summary::-webkit-details-marker { display: none; }
-    summary::before { content: "▸"; width: 10px; color: var(--suave); font-size: 10px; }
-    details[open] > summary::before { content: "▾"; }
-    details.hoja > summary::before { content: ""; }
-    summary .n { color: var(--suave); font-size: 11px; }
-    .cuerpo { margin-left: 26px; display: flex; gap: 4px; align-items: center; white-space: nowrap; cursor: pointer; padding: 1px 0; }
-    .cuerpo.elegido, summary.elegido { background: var(--resalte); border-radius: 3px; }
-    input[type=checkbox] { margin: 0; accent-color: var(--acento); }
-    input[type=color] { width: 34px; height: 24px; padding: 0; border: 1px solid var(--linea); border-radius: 5px; background: var(--panel); cursor: pointer; }
-    main { position: relative; min-width: 0; }
-    canvas { display: block; width: 100%; height: 100%; }
-    #info {
-      position: absolute; left: 12px; bottom: 12px; max-width: calc(100% - 24px);
-      background: var(--panel); border: 1px solid var(--linea); border-radius: 6px;
-      padding: 8px 10px; display: none; font-size: 12px;
+    button:hover:not(:disabled) { background: var(--resalte); }
+    button:active:not(:disabled) { transform: translateY(.5px); }
+    button:disabled { opacity: .5; cursor: default; }
+    button[aria-pressed="true"] { background: var(--acento); color: var(--sobre-acento); border-color: var(--acento); }
+    :focus-visible { outline: 2px solid var(--acento); outline-offset: 2px; }
+
+    /* un grupo de botones en una sola pieza */
+    .segmentado {
+      display: flex; gap: 2px;
+      background: var(--hundido); border: 1px solid var(--linea); border-radius: calc(var(--radio) + 3px); padding: 3px;
     }
-    #info .ruta { color: var(--suave); }
-    #info .medidas { font-variant-numeric: tabular-nums; margin-top: 3px; }
-    #info button { margin-top: 6px; }
-    button[aria-pressed="true"] { background: var(--acento); color: var(--panel); border-color: var(--acento); }
-    .pista { color: var(--suave); font-size: 12px; margin-top: 6px; }
+    /* cada boton ancho segun su texto, y el sobrante repartido a partes iguales */
+    .segmentado button { flex: 1 1 auto; border: 0; background: transparent; padding: 6px 8px; border-radius: var(--radio); }
+    .segmentado button:hover:not(:disabled) { background: var(--panel); box-shadow: 0 1px 3px rgba(0, 0, 0, .14); }
+
+    .dos { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    /* rampa y ducha: el nombre y, debajo, como esta */
+    .par { display: flex; flex-direction: column; align-items: flex-start; gap: 1px; padding: 7px 12px; text-align: left; }
+    .par-nombre { font-weight: 600; }
+    .par-estado { font-size: 11.5px; opacity: .75; }
+
+    /* ---------------------------------------------------- interruptores */
+    .interruptores { border: 1px solid var(--linea); border-radius: calc(var(--radio) + 2px); overflow: hidden; }
+    .fila { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 12px; cursor: pointer; }
+    .fila + .fila { border-top: 1px solid var(--linea); }
+    .fila:hover { background: var(--hundido); }
+    input.interruptor {
+      appearance: none; -webkit-appearance: none; flex: none; margin: 0; cursor: pointer;
+      width: 34px; height: 20px; border-radius: 10px; background: var(--pista); position: relative;
+      transition: background-color .15s;
+    }
+    input.interruptor::after {
+      content: ""; position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; border-radius: 50%;
+      background: #fff; box-shadow: 0 1px 2px rgba(0, 0, 0, .3); transition: transform .15s;
+    }
+    input.interruptor:checked { background: var(--acento); }
+    input.interruptor:checked::after { transform: translateX(14px); }
+
+    /* ------------------------------------------------------------ color */
+    .fila-color { display: flex; align-items: center; gap: 10px; }
+    .fila-color label { display: flex; align-items: center; gap: 10px; flex: 1; cursor: pointer; }
+    input[type=color] {
+      width: 36px; height: 30px; padding: 2px; border: 1px solid var(--linea); border-radius: var(--radio);
+      background: var(--panel); cursor: pointer;
+    }
+    input[type=color]:disabled { opacity: .5; cursor: default; }
+
+    /* ------------------------------------------------------------ vistas */
+    select {
+      width: 100%; font: inherit; font-size: 13px; color: var(--texto); background: var(--panel);
+      border: 1px solid var(--linea); border-radius: var(--radio); padding: 6px 8px; min-height: 32px; cursor: pointer;
+    }
+
+    /* ------------------------------------------------------------ medir */
+    .pista { color: var(--suave); font-size: 12px; margin-top: 8px; }
     .pista:empty { display: none; }
-    #medidas { margin: 6px 0 0; padding-left: 20px; font-size: 12px; font-variant-numeric: tabular-nums; }
+    #medidas { margin: 8px 0 0; padding: 0; list-style: none; font-size: 12px; font-variant-numeric: tabular-nums; }
     #medidas:empty { display: none; }
-    #medidas li { padding: 1px 0; }
-    #medidas li button, .etiqueta button { border: 0; padding: 0 4px; font-size: 13px; line-height: 1; color: var(--suave); }
+    #medidas li { display: flex; justify-content: space-between; align-items: center; gap: 6px; padding: 3px 0; }
+    #medidas li + li { border-top: 1px solid var(--linea); }
+    #medidas li button, .etiqueta button { border: 0; background: transparent; min-height: 0; padding: 0 4px; font-size: 14px; line-height: 1; color: var(--suave); }
     #etiquetas { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
     .etiqueta {
       position: absolute; left: 0; top: 0; pointer-events: auto; white-space: nowrap;
-      background: var(--panel); border: 1px solid #e0601f; border-radius: 5px; padding: 2px 4px 2px 7px;
+      background: var(--panel); border: 1px solid #e0601f; border-radius: var(--radio); padding: 2px 4px 2px 8px;
       font-size: 12px; font-variant-numeric: tabular-nums; display: flex; gap: 6px; align-items: center;
+      box-shadow: var(--sombra);
     }
     .etiqueta span { color: var(--suave); font-size: 11px; }
-    #error { white-space: pre-wrap; color: #b3261e; font: 12px ui-monospace, monospace; padding: 8px 14px; display: none; }
+
+    /* ------------------------------------------------------- componentes */
+    #verArbol {
+      display: flex; align-items: center; justify-content: space-between; width: 100%;
+      border: 0; background: transparent; padding: 0; min-height: 0; border-radius: 4px;
+      font-size: 11px; text-transform: uppercase; letter-spacing: .08em; font-weight: 600; color: var(--suave);
+    }
+    #verArbol:hover:not(:disabled) { background: transparent; color: var(--texto); }
+    #verArbol::after { content: "▸"; font-size: 13px; transition: transform .15s; }
+    #verArbol[aria-expanded="true"]::after { transform: rotate(90deg); }
+    #arbol { margin-top: 8px; }
+    details { margin-left: 14px; }
+    #arbol > details { margin-left: 0; }
+    summary {
+      list-style: none; cursor: pointer; padding: 2px 6px; border-radius: 6px; white-space: nowrap;
+      display: flex; align-items: center; gap: 6px;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::before { content: "▸"; width: 10px; color: var(--suave); font-size: 10px; flex: none; }
+    details[open] > summary::before { content: "▾"; }
+    details.hoja > summary::before { content: ""; }
+    summary .n { color: var(--suave); font-size: 11px; font-variant-numeric: tabular-nums; }
+    .cuerpo { margin-left: 16px; display: flex; gap: 6px; align-items: center; white-space: nowrap; cursor: pointer; padding: 2px 6px; border-radius: 6px; }
+    summary:hover, .cuerpo:hover { background: var(--hundido); }
+    .cuerpo.elegido, summary.elegido { background: var(--resalte); }
+    input[type=checkbox] { margin: 0; accent-color: var(--acento); }
+
+    /* ---------------------------------------------------------- modelo */
+    main { position: relative; min-width: 0; }
+    canvas { display: block; width: 100%; height: 100%; }
+    #info {
+      position: absolute; left: 16px; bottom: 16px; max-width: calc(100% - 32px);
+      background: var(--panel); border: 1px solid var(--linea); border-radius: calc(var(--radio) + 2px);
+      box-shadow: var(--sombra); padding: 10px 12px; display: none; font-size: 12px;
+    }
+    #info .nombre { font-weight: 600; }
+    #info .ruta { color: var(--suave); }
+    #info .medidas { font-variant-numeric: tabular-nums; margin-top: 3px; }
+    #info button { margin-top: 8px; }
+    #error { white-space: pre-wrap; color: #b3261e; font: 12px ui-monospace, monospace; padding: 8px 16px; display: none; }
     #plegar { display: none; }
-    .botones { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
-    .botones label.opcion { margin-right: 0; }
+
     /* En el movil el modelo va arriba y el panel debajo, que se desplaza entero,
        arbol incluido. Las vistas fijas no salen: con el dedo se gira mejor.
        Panel lo pliega para ver el modelo a pantalla completa. */
     @media (max-width: 700px) {
       body { height: 100dvh; grid-template-columns: 1fr; grid-template-rows: minmax(0, 1fr) auto; }
       main { order: 1; min-height: 0; }
-      aside { order: 2; height: 45dvh; overflow-y: auto; border-right: 0; border-top: 1px solid var(--linea); }
-      #arbol { flex: none; overflow: visible; }
+      aside { order: 2; height: 45dvh; border-right: 0; border-top: 1px solid var(--linea); }
       .bloque-vistas { display: none; }
-      aside.plegado { height: auto; }
+      aside.plegado { height: auto; overflow: visible; }
       aside.plegado > :not(header) { display: none; }
       aside.plegado header { border-bottom: 0; }
-      #plegar { display: inline-block; float: right; }
-      button { padding: 6px 10px; font-size: 13px; }
-      input[type=checkbox] { width: 18px; height: 18px; }
-      summary, .cuerpo { padding: 4px 0; }
-      #info { bottom: 8px; left: 8px; right: 8px; }
+      #plegar { display: inline-block; }
+      button { padding: 8px 10px; font-size: 13px; }
+      .segmentado button { padding: 8px 6px; }
+      input[type=checkbox]:not(.interruptor) { width: 18px; height: 18px; }
+      summary, .cuerpo { padding: 5px 6px; }
+      #info { bottom: 8px; left: 8px; right: 8px; max-width: none; }
     }
   </style>
 </head>
 <body>
   <aside id="lateral">
     <header>
-      <button id="plegar" aria-expanded="true">Panel</button>
-      <h1>Atego 4x4</h1>
+      <div class="titulo">
+        <h1>Atego 4x4</h1>
+        <button id="plegar" aria-expanded="true">Panel</button>
+      </div>
       <div id="estado">Arrancando OpenCascade…</div>
     </header>
-    <div class="bloque botones">
-      <button id="mostrarTodo">Mostrar todo</button>
-      <button id="soloInterior">Solo interior</button>
-      <button id="soloBano">Solo baño</button>
-      <button id="soloCocina">Solo cocina</button>
-      <button id="soloComedor">Solo comedor</button>
-      <button id="rampa" aria-pressed="false" hidden>Abrir/cerrar rampa</button>
-      <button id="paisaje" aria-pressed="true">Paisaje</button>
-      <label class="opcion"><input type="checkbox" id="aristas" checked> Aristas</label>
-      <label class="opcion"><input type="checkbox" id="suelo" checked> Suelo</label>
-    </div>
-    <div class="bloque">
+
+    <section class="bloque">
+      <h2>Mostrar</h2>
+      <div class="segmentado">
+        <button id="mostrarTodo" title="Todo el camión, con el paisaje">Todo</button>
+        <button id="soloInterior" title="Solo el interior y la puerta lateral">Interior</button>
+        <button id="soloBano" title="Solo el baño">Baño</button>
+        <button id="soloCocina" title="Solo la cocina">Cocina</button>
+        <button id="soloComedor" title="Solo el comedor">Comedor</button>
+      </div>
+    </section>
+
+    <section class="bloque" id="abrir" hidden>
+      <h2>Abrir y cerrar</h2>
+      <div class="dos">
+        <button id="rampa" class="par" aria-pressed="false" hidden>
+          <span class="par-nombre">Rampa</span><span class="par-estado"></span>
+        </button>
+        <button id="ducha" class="par" aria-pressed="false" hidden>
+          <span class="par-nombre">Ducha</span><span class="par-estado"></span>
+        </button>
+      </div>
+    </section>
+
+    <section class="bloque">
+      <h2>Escena</h2>
+      <div class="interruptores">
+        <label class="fila"><span>Paisaje</span><input type="checkbox" class="interruptor" id="paisaje" role="switch" checked></label>
+        <label class="fila"><span>Aristas</span><input type="checkbox" class="interruptor" id="aristas" role="switch" checked></label>
+        <label class="fila"><span>Suelo</span><input type="checkbox" class="interruptor" id="suelo" role="switch" checked></label>
+      </div>
+    </section>
+
+    <section class="bloque">
       <h2>Color</h2>
-      <label class="opcion"><input type="color" id="color" disabled> Caja y cabina</label>
-      <button id="colorOriginal" disabled>Original</button>
-    </div>
-    <div class="bloque">
+      <div class="fila-color">
+        <label><input type="color" id="color" disabled><span>Caja y cabina</span></label>
+        <button id="colorOriginal" disabled>Original</button>
+      </div>
+    </section>
+
+    <section class="bloque">
       <h2>Medir</h2>
-      <button id="medir" aria-pressed="false">Medir entre aristas</button>
-      <button id="borrarMedidas">Borrar medidas</button>
+      <div class="dos">
+        <button id="medir" aria-pressed="false">Entre aristas</button>
+        <button id="borrarMedidas">Borrar medidas</button>
+      </div>
       <div id="pista" class="pista"></div>
       <ol id="medidas"></ol>
-    </div>
-    <div class="bloque bloque-vistas">
-      <h2>Vistas</h2>
+    </section>
+
+    <section class="bloque bloque-vistas">
+      <h2>Vista</h2>
       <select id="vistas" aria-label="Vista"></select>
-    </div>
+    </section>
+
     <div id="error"></div>
-    <div class="bloque"><button id="verArbol" aria-pressed="false">Componentes</button></div>
-    <div id="arbol" hidden></div>
+
+    <section class="bloque">
+      <button id="verArbol" aria-expanded="false" aria-controls="arbol">Componentes</button>
+      <div id="arbol" hidden></div>
+    </section>
   </aside>
   <main>
     <canvas id="lienzo"></canvas>

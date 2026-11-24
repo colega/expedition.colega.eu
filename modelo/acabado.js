@@ -83,8 +83,6 @@ const CUERPO_MATERIAL = {
   piloto_trasero_izq: 'Piloto rojo',
   piloto_trasero_der: 'Piloto rojo',
   hoja: 'Verde militar',
-  escape: 'Acero',
-  escape_salida: 'Inox',
   garrafa_1: 'Verde garrafa',
   garrafa_2: 'Verde garrafa',
   colchon: 'Tela clara',

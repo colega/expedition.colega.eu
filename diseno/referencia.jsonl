@@ -422,7 +422,6 @@
 {"ruta":"Camion/cabina","nombre":"foco_izq","caja":[4220,4360,-685,-515,1525,1695],"litros":3.178,"area":0.1202,"material":"Cromo","caras":3}
 {"ruta":"Camion/cabina","nombre":"foco_soporte_der","caja":[4260,4300,580,620,1490,1530],"litros":0.064,"area":0.0096,"material":"Negro mate","caras":6}
 {"ruta":"Camion/cabina","nombre":"foco_der","caja":[4220,4360,515,685,1525,1695],"litros":3.178,"area":0.1202,"material":"Cromo","caras":3}
-{"ruta":"Camion/bajos","nombre":"calderin_aire_1","caja":[400,1000,460,780,-860,-540],"litros":48.255,"area":0.764,"material":"Blanco mate","caras":3}
 {"ruta":"Camion/bajos","nombre":"deposito_gasoil","caja":[-2030,-1390,720,1180,-520,-150],"litros":108.928,"area":1.4028,"material":"Negro chasis","caras":6}
 {"ruta":"Camion/bajos","nombre":"cofre_der","caja":[-2030,-1390,-1240,-860,-540,-120],"litros":102.144,"area":1.3432,"material":"Negro chasis","caras":6}
 {"ruta":"Camion/bajos","nombre":"guardabarros_izq","caja":[-1348.8,-31.2,-1177.5,-722.5,-755,-135],"litros":47.723,"area":1.9953,"material":"Negro mate","caras":6}
@@ -446,8 +445,6 @@
 {"ruta":"Camion/bajos","nombre":"paragolpes_soporte_der","caja":[-2300,-2150,900,1000,-700,-365],"litros":5.025,"area":0.1975,"material":"Negro chasis","caras":6}
 {"ruta":"Camion/bajos","nombre":"faldilla_trasera_der","caja":[-2440,-2420,420,1080,-1210,-640],"litros":7.524,"area":0.8016,"material":"Negro mate","caras":6}
 {"ruta":"Camion/bajos","nombre":"piloto_trasero_der","caja":[-2230,-2200,700,1050,-420,-300],"litros":1.26,"area":0.1122,"material":"Piloto rojo","caras":6}
-{"ruta":"Camion/bajos","nombre":"escape","caja":[-300,1100,-560,-420,-980,-860],"litros":23.52,"area":0.7616,"material":"Acero","caras":6}
-{"ruta":"Camion/bajos","nombre":"escape_salida","caja":[-560,-300,-545,-435,-975,-865],"litros":2.471,"area":0.1089,"material":"Inox","caras":3}
 {"ruta":"Caja/rampa","nombre":"rampa_hoja","caja":[-2358,-2303,-1105,1105,0,1800],"litros":218.79,"area":8.3971,"material":"Acero","caras":6}
 {"ruta":"Caja/rampa","nombre":"panel_ciego","caja":[-2350,-2285,-1105,1105,1800,2100],"litros":43.095,"area":1.6523,"material":"Verde militar","caras":6}
 {"ruta":"Caja/rampa","nombre":"rampa_liston_01","caja":[-2303,-2285,-1085,1085,40,187.3],"litros":5.752,"area":0.7226,"material":"Roble","caras":6}

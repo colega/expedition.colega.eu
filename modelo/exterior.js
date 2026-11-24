@@ -184,7 +184,6 @@ export function exterior(modelo) {
   if (!R.FUERA.deposito_de_aguas_grises) {
     bloque(bajos, 'deposito_grises', [200.0, 1100.0], [-380.0, 380.0], [-950.0, -600.0]);
   }
-  cilindro(bajos, 'calderin_aire_1', 'x', [700.0, 620.0, -700.0], 600.0, 160.0);
 
   // detras de la rueda trasera: el deposito del camion en el costado de la
   // cocina, como en la foto, y un cofre en el de la puerta
@@ -251,8 +250,5 @@ export function exterior(modelo) {
   }
 
   // ------------------------------------------------ remates y equipo del costado
-  // el escape acaba por delante del eje trasero
-  bloque(bajos, 'escape', [-300.0, 1100.0], [-560.0, -420.0], [-980.0, -860.0]);
-  cilindro(bajos, 'escape_salida', 'x', [-430.0, -490.0, -920.0], 260.0, 55.0);
   // Sin boca de agua, toma de 220 ni cofre de gas (R21).
 }

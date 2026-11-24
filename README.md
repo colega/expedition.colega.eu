@@ -57,13 +57,14 @@ En el visor:
   también en la lista del panel y se recuerdan. Solo se elige una
   arista que se vea: la que tapa otra pieza, no. Esc suelta la primera arista
   y, si no hay, apaga el modo.
-- La ducha sale cerrada: `ducha_abierta` viene oculta de serie. La rampa, lo
-  mismo (R111): el botón **Abrir/cerrar rampa** cambia de una a otra, y si has
-  ocultado las dos, vuelve a enseñar la cerrada. Abierta, la tapa ciega de
-  encima la acompaña y queda horizontal, de visera.
+- La ducha sale cerrada: `ducha_abierta` viene oculta de serie. La rampa sale
+  abierta y `rampa`, la cerrada, oculta (R111): el botón **Abrir/cerrar
+  rampa** cambia de una a otra, y si has ocultado las dos, vuelve a enseñar la
+  cerrada. Abierta, la tapa ciega de encima la acompaña y queda horizontal, de
+  visera. **Mostrar todo** enciende todo menos la rampa cerrada.
 - **Paisaje**: prado con florecillas, arboles a media y larga distancia y cielo
-  azul. Al encenderlo, la niebla funde el prado con el horizonte y la rejilla
-  del suelo se apaga, que el prado la sustituye.
+  azul. Sale encendido, con la niebla fundiendo el prado con el horizonte y la
+  rejilla del suelo apagada, que el prado la sustituye; el botón lo apaga.
 - En el móvil, el modelo va arriba y el panel debajo, con el árbol dentro;
   **Panel** lo pliega para ver el modelo a pantalla completa. Las vistas fijas
   no salen: con el dedo se gira mejor.
@@ -197,7 +198,7 @@ Caja
     Bano             tabiques_y_puerta, instalaciones_bano, ducha_cerrada,
                      ducha_abierta, toallero, alto_bano, ventana_bano
     suelo_elevado
-  rampa              cerrada, y su abierta de terraza (oculta de serie)
+  rampa              cerrada (oculta de serie), y su abierta de terraza
   puerta_lateral
 Camion
   chasis, ruedas, cabina, bajos

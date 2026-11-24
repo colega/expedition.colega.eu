@@ -37,9 +37,9 @@ const VISTAS = {
 };
 
 // lo que sale oculto la primera vez: la ducha se enseña cerrada, y la rampa
-// tambien (R111)
-const OCULTOS_DE_SERIE = ['Caja/Interior/Bano/ducha_abierta', 'Caja/rampa_abierta'];
-const CLAVE_OCULTOS = 'caja_atego.ocultos';
+// abierta (R111). La clave cambia con esta lista, para que se vea la nueva.
+const OCULTOS_DE_SERIE = ['Caja/Interior/Bano/ducha_abierta', 'Caja/rampa'];
+const CLAVE_OCULTOS = 'caja_atego.ocultos.2';
 
 const $ = (id) => document.getElementById(id);
 const estado = $('estado');
@@ -76,14 +76,15 @@ escena.add(suelo);
 // firme cuando llega el modelo, igual que la rejilla.
 const paisaje = crearPaisaje();
 escena.add(paisaje.grupo);
-$('paisaje').onclick = () => {
-  const on = $('paisaje').getAttribute('aria-pressed') !== 'true';
+function ponerPaisaje(on) {
   $('paisaje').setAttribute('aria-pressed', String(on));
   paisaje.grupo.visible = on;
   escena.fog = on ? paisaje.niebla : null;
   // el prado sustituye a la rejilla
   if (on && $('suelo').checked) { $('suelo').checked = false; suelo.visible = false; }
-};
+}
+$('paisaje').onclick = () => ponerPaisaje($('paisaje').getAttribute('aria-pressed') !== 'true');
+ponerPaisaje(true);
 
 let sucio = true;
 function pedirDibujo() { sucio = true; }
@@ -293,7 +294,7 @@ function mostrarSolo(claves, apagar = []) {
   pintaBotonRampa();
   guardarOcultos();
 }
-$('mostrarTodo').onclick = () => mostrarSolo(null);
+$('mostrarTodo').onclick = () => mostrarSolo(null, ['Caja/rampa']);
 $('soloInterior').onclick = () => mostrarSolo(['Caja/Interior', 'Caja/puerta_lateral'], OCULTOS_DE_SERIE);
 
 // R111: la rampa se ve cerrada o abierta, nunca las dos. Si no se ve ninguna,

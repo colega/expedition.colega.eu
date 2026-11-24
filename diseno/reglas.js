@@ -70,9 +70,8 @@ export const RAMPA = { alto: 1800.0, ancho: [-1105.0, 1105.0], hoja: 55.0,
 //      suelo de la caja, haciendo de terraza: los listones de la cara de
 //      dentro quedan hacia arriba y hacen el suelo. La tapa ciega que hay
 //      encima abre con ella: girada sobre su canto de arriba, el de fuera,
-//      queda horizontal bajo ese nivel, de visera. Viene oculta de serie,
-//      como la ducha abierta, y el visor da un boton para cambiar de una a
-//      otra.
+//      queda horizontal bajo ese nivel, de visera. El visor la enseña
+//      abierta de serie, y da un boton para cambiar de una a otra.
 export const RAMPA_ABIERTA = true;
 
 // R3  Toda la casa va sobre un suelo elevado de 50: tablero de 18 sobre un

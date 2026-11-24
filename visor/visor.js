@@ -299,9 +299,6 @@ function cargar(componentes) {
     n.cuenta.textContent = n.cuerpos;
     n.casilla.checked = !ocultos.has(n.clave);
     n.grupo.visible = n.casilla.checked;
-    // se abren las ramas que agrupan componentes, no las que solo tienen cuerpos
-    n.detalles.open = n.clave.split('/').length <= 2
-      && [...nodos.keys()].some((k) => k.startsWith(n.clave + '/'));
   }
   // R111: el boton de la rampa, solo si hay rampa abierta
   $('rampa').hidden = !nodos.has('Caja/rampa_abierta');
@@ -327,8 +324,11 @@ function mostrarSolo(claves, apagar = []) {
   pintaBotonRampa();
   guardarOcultos();
 }
-$('mostrarTodo').onclick = () => mostrarSolo(null, ['Caja/rampa']);
+$('mostrarTodo').onclick = () => { mostrarSolo(null, ['Caja/rampa']); ponerPaisaje(true); };
 $('soloInterior').onclick = () => mostrarSolo(['Caja/Interior', 'Caja/puerta_lateral'], OCULTOS_DE_SERIE);
+for (const [id, zona] of [['soloBano', 'Bano'], ['soloCocina', 'Cocina'], ['soloComedor', 'Comedor']]) {
+  $(id).onclick = () => { mostrarSolo([`Caja/Interior/${zona}`], OCULTOS_DE_SERIE); ponerPaisaje(false); };
+}
 
 // R111: la rampa se ve cerrada o abierta, nunca las dos. Si no se ve ninguna,
 // el boton vuelve a la cerrada.

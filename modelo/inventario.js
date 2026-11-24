@@ -3,7 +3,7 @@
 // Cada fila: ruta del componente, nombre, caja en mm (x0, x1, y0, y1, z0, z1),
 // volumen en litros, area en m2, material y caras.
 //
-// El referencia.jsonl de cada version guarda una fila por linea, tal cual. Tras
+// El referencia.jsonl del diseno guarda una fila por linea, tal cual. Tras
 // un cambio que no debe mover geometria, el inventario tiene que salir igual.
 import { measureArea, measureVolume } from 'replicad';
 import { envolvente } from './geo.js';

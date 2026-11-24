@@ -10,16 +10,9 @@ import { SIN_MATERIAL } from '../modelo/materiales.js';
 import { crearMedir } from './medir.js';
 import { crearPaisaje } from './paisaje.js';
 
-// La version que se ve sale de la URL, ?v=v17, para poder tener una en cada
-// pestaña. Sin ella, la ultima.
-const VERSIONES = Object.keys(import.meta.glob('../versiones/*/version.js')).map((r) => r.split('/')[2]).sort();
-const VERSION = new URLSearchParams(location.search).get('v') || VERSIONES[VERSIONES.length - 1];
-document.title = `Caja Atego ${VERSION}`;
-
 // El modelo se empieza a construir lo primero, mientras se monta la escena.
 const inicio = performance.now();
 const trabajador = new Worker(new URL('./trabajador.js', import.meta.url), { type: 'module' });
-trabajador.postMessage({ version: VERSION });
 
 // Encuadres fijos, para comparar de una pasada a otra: ojo, objetivo y
 // vertical, en mm y en el marco del modelo.
@@ -125,10 +118,6 @@ function vista(nombre) {
   controles.update();
 }
 
-const selector = $('version');
-for (const nombre of VERSIONES) selector.add(new Option(nombre, nombre, false, nombre === VERSION));
-selector.onchange = () => { location.search = `?v=${selector.value}`; };
-
 const selectorVistas = $('vistas');
 for (const nombre of Object.keys(VISTAS)) {
   selectorVistas.add(new Option(nombre.replaceAll('_', ' '), nombre, false, nombre === 'iso'));
@@ -150,7 +139,7 @@ renderer.setAnimationLoop(() => {
 });
 
 // --------------------------------------------------------------- materiales
-// los colores llegan con el modelo, que son los de su version
+// los colores llegan con el modelo, que son los de sus reglas
 let colores = {};
 const cacheMateriales = new Map();
 function material(nombre) {
@@ -280,7 +269,7 @@ function cargar(componentes) {
     n.detalles.open = n.clave.split('/').length <= 2
       && [...nodos.keys()].some((k) => k.startsWith(n.clave + '/'));
   }
-  // R111: el boton de la rampa, solo en las versiones que la ven abierta
+  // R111: el boton de la rampa, solo si hay rampa abierta
   $('rampa').hidden = !nodos.has('Caja/rampa_abierta');
   pintaBotonRampa();
 }
@@ -379,7 +368,7 @@ lienzo.addEventListener('pointerup', (e) => {
 
 // ------------------------------------------------------------------ medir
 const medir = crearMedir({ escena, camara, lienzo, capa: $('etiquetas'), lista: $('medidas'), pista: $('pista'),
-  boton: $('medir'), mallas, bordes: aristas, seVe, pedirDibujo, version: VERSION });
+  boton: $('medir'), mallas, bordes: aristas, seVe, pedirDibujo });
 $('medir').onclick = () => { elegir(null); medir.alternar(); };
 $('borrarMedidas').onclick = () => medir.borrarTodas();
 // el resaltado de la arista bajo el raton, una vez por fotograma como mucho
@@ -403,7 +392,7 @@ trabajador.onmessage = ({ data }) => {
     cargar(data.componentes);
     const s = ((performance.now() - inicio) / 1000).toFixed(1);
     const avisos = data.notas.redondeos_fallidos?.length ? ` · ${data.notas.redondeos_fallidos.length} redondeo sin hacer` : '';
-    estado.textContent = `${data.descripcion}. ${mallas.length} cuerpos en ${s} s${avisos}`;
+    estado.textContent = `${mallas.length} cuerpos en ${s} s${avisos}`;
     const t = data.tiempos;
     estado.title = `arrancar ${Math.round(t.arrancar)} ms, construir ${Math.round(t.construir)} ms, mallar ${Math.round(t.mallar)} ms,`
       + ` llega a los ${Math.round(llegada - inicio)} ms y se monta en ${Math.round(performance.now() - llegada)} ms`;

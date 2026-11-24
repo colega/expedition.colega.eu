@@ -2,7 +2,7 @@
 
 Diseño de la caja habitable de un camión de expedición. El modelo **se
 construye ejecutando código**, no dibujando a mano: las cotas viven en el
-`reglas.js` de cada versión, los sólidos los hace OpenCascade a través de
+`diseno/reglas.js`, los sólidos los hace OpenCascade a través de
 [replicad](https://replicad.xyz) y se miran en un visor propio hecho con
 three.js.
 
@@ -30,16 +30,13 @@ construye en el navegador. Lo que más pesa es OpenCascade, 23 MB (7 MB
 comprimido), que el navegador guarda tras la primera vez.
 
 Cada push a `main` lo publica en GitHub Pages
-(`.github/workflows/pages.yml`): construye todas las versiones, y si alguna
-deja algo fuera de sitio no publica nada.
+(`.github/workflows/pages.yml`): construye el modelo, y si deja algo
+fuera de sitio no publica nada.
 
 El visor construye el modelo él mismo, en un hilo aparte, con el mismo código
-que `npm run construir`: lo que se ve es lo que se comprueba. Enseña una
-versión cada vez, la que dice la URL (`?v=v17`), y sin ella la última. El
-desplegable de arriba cambia de versión; para comparar dos, una en cada
-pestaña. Tarda un par de
-segundos. Al guardar un cambio en `modelo/` la página se recarga sola y el
-camión se vuelve a levantar.
+que `npm run construir`: lo que se ve es lo que se comprueba. Tarda un par de
+segundos. Al guardar un cambio en `modelo/` o en `diseno/` la página se recarga
+sola y el camión se vuelve a levantar.
 
 En el visor:
 
@@ -57,7 +54,7 @@ En el visor:
   resalta; un clic elige la primera y otro la segunda. La medida es la
   distancia mínima entre las dos, con su Δx, Δy y Δz, y se queda dibujada con
   una etiqueta hasta que se borra con su ×. Caben las que se quiera, salen
-  también en la lista del panel y se recuerdan por versión. Solo se elige una
+  también en la lista del panel y se recuerdan. Solo se elige una
   arista que se vea: la que tapa otra pieza, no. Esc suelta la primera arista
   y, si no hay, apaga el modo.
 - La ducha sale cerrada: `ducha_abierta` viene oculta de serie. La rampa, lo
@@ -71,15 +68,13 @@ En el visor:
   **Panel** lo pliega para ver el modelo a pantalla completa. Las vistas fijas
   no salen: con el dedo se gira mejor.
 
-## Las versiones
+## El diseño
 
-Cada diseño es una carpeta de `versiones/`, no una rama: así se ven todos a la
-vez en el visor. Una versión lleva lo que es suyo:
+Hay un solo diseño, en `diseno/`. Lleva lo que es suyo:
 
 ```
-versiones/v17/
+diseno/
   README.md         su diseño y lo que tiene pendiente
-  version.js        su descripción en una línea, y sus reglas e interior
   reglas.js         sus reglas, R1 en adelante
   interior.js       sus muebles, su baño y sus ventanas
   referencia.jsonl  su inventario, para comparar (ver más abajo)
@@ -88,18 +83,8 @@ versiones/v17/
 ```
 
 El resto, la caja, el camión, la puerta lateral, el acabado, las
-comprobaciones y el visor, está en `modelo/` y `visor/` y vale para todas:
-lee las reglas de la versión que se construye. Un cambio ahí cambia todas las
-versiones, y `npm run construir` lo dice versión a versión.
-
-Para una versión nueva se copia la carpeta de la que se parte, se le cambia el
-nombre y la descripción de `version.js`, y se toca lo que cambie. Las
-versiones viejas no se tocan: son lo que fueron.
-
-| Versión | Qué es |
-|---|---|
-| [v16](versiones/v16/README.md) | Ducha giratoria contra la pared, inodoro en el suelo y corredera |
-| [v17](versiones/v17/README.md) | Inodoro en plataforma de espaldas a la cama, armario y puerta abatible |
+comprobaciones y el visor, está en `modelo/` y `visor/` y lee las reglas de
+`diseno/`. No se guardan versiones viejas: están en el historial de git.
 
 ## Construir y comprobar
 
@@ -107,14 +92,13 @@ versiones viejas no se tocan: son lo que fueron.
 npm run construir
 ```
 
-Levanta todas las versiones, cada una en menos de un segundo, y
-`node modelo/construir.js v17` solo una. Cada camión sale en este orden: caja,
+Levanta el camión en un segundo largo. Sale en este orden: caja,
 interior, chasis, cabina, exterior, puerta lateral y acabado
 (`modelo/camion.js`). El orden importa: el interior corta las ventanas en las
 paredes de la caja, la puerta lateral recorta los muebles y el zócalo, y el
 acabado va el último porque redondea y pinta cuerpos que ya existen.
 
-Escribe en la carpeta de cada versión `despiece.csv`, con los tableros de la
+Escribe en `diseno/` el `despiece.csv`, con los tableros de la
 carpintería, y `ventanas.json`, con las ventanas tal como han quedado. Y saca un
 informe con las comprobaciones, que hay que mirar siempre después de tocar
 algo:
@@ -136,7 +120,7 @@ algo:
 
 ### La referencia
 
-El `referencia.jsonl` de cada versión es el inventario de todos sus cuerpos: ruta, nombre,
+El `diseno/referencia.jsonl` es el inventario de todos sus cuerpos: ruta, nombre,
 caja envolvente, volumen, área, material y caras. Sirve para los cambios que no
 deben mover geometría: el informe empareja por nombre y, lo que no case, por
 geometría, porque dos trozos de un mismo corte pueden salir con los nombres
@@ -147,7 +131,7 @@ mueve geometría a propósito, se mira que lo que cambia es lo que tenía que
 cambiar y se guarda la nueva con:
 
 ```bash
-node modelo/construir.js v17 --referencia
+node modelo/construir.js --referencia
 ```
 
 ## Los ficheros
@@ -163,12 +147,12 @@ modelo/
   puerta_lateral.js   la puerta de la caja y el paso libre delante de ella
   acabado.js          redondeos y el material de cada cuerpo
   materiales.js       el color de cada material, para el visor
-  camion.js           una versión entera, en orden
+  camion.js           el camión entero, en orden
   comprobaciones.js   verificar, huecos y choques
   inventario.js       el inventario y la comparación con la referencia
   construir.js        lo que corre npm run construir
   oc_node.js          arranca OpenCascade en Node
-versiones/            un diseño por carpeta (ver «Las versiones»)
+diseno/               reglas e interior del diseño (ver «El diseño»)
 visor/
   index.html, visor.js   el visor: dibuja solo cuando algo cambia
   medir.js               medir entre aristas, con su prueba en medir.test.js
@@ -202,7 +186,7 @@ Caja
   paredes            panel sándwich y aislamiento agrupados por pared:
                      pared_suelo, pared_frontal, pared_costado_izq y der (R34)
   techo              tapa de arriba, 4 placas solares, aire acondicionado y,
-                     en la v17, claraboya del baño
+                     claraboya del baño
   Interior
     Dormitorio       cama (garaje), alto_pies, alto_almohadas, alto_cabina,
                      escalon_cama, ventana_perros, ventana_almohadas
@@ -213,8 +197,7 @@ Caja
     Bano             tabiques_y_puerta, instalaciones_bano, ducha_cerrada,
                      ducha_abierta, toallero, alto_bano, ventana_bano
     suelo_elevado
-  remates            (v16) zócalos, remates de techo y garrafas
-  rampa              cerrada, y su abierta de terraza (v17, oculta de serie)
+  rampa              cerrada, y su abierta de terraza (oculta de serie)
   puerta_lateral
 Camion
   chasis, ruedas, cabina, bajos
@@ -226,7 +209,7 @@ ventana no cierra el hueco.
 
 ## Las reglas del proyecto
 
-El `reglas.js` de cada versión guarda sus decisiones, numeradas, y los
+El `diseno/reglas.js` guarda sus decisiones, numeradas, y los
 guiones las leen. **No son documentación: son las cotas que se usan.** Si cambia una
 regla, cambia una línea y el modelo se recalcula. Los números no van seguidos:
 cada regla conserva el número con el que se decidió. Una regla puede tener una
@@ -270,8 +253,7 @@ ventilador, cúpula de satélite, antena, focos y luces de gabarito.
 
 ## Estado y cabos sueltos
 
-Al día, las dos versiones dan 0 fuera de sitio: la v16 tiene 459 cuerpos, 301
-en el interior, y la v17 464, 308 en el interior.
+Al día, el modelo da 0 fuera de sitio: 464 cuerpos, 308 en el interior.
 
 Contar los cuerpos no es una formalidad: `caja()` devuelve `null` cuando el
 rango que le llega mide cero, sin quejarse, y la pieza desaparece sin aviso.
@@ -299,7 +281,7 @@ Un mueble puede quedarse sin manera de abrirse y nada avisa: ninguna
 comprobación mira si la cara abierta de una carcasa da a algo. Al añadir un
 mueble, comprobar por dónde se entra a él.
 
-Pendiente de decidir, en todas las versiones (lo de cada una, en su README):
+Pendiente de decidir (lo propio del diseño, en `diseno/README.md`):
 
 - **Acceso a la cama.** Del cajón-escalón al colchón quedan 720 (R101).
 - **Acceso al garaje** bajo la cama, por los costados del camión (R7).

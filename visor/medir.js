@@ -3,7 +3,7 @@
 // Con el modo de medir encendido, un clic elige la arista mas cercana al raton
 // y otro clic la segunda. La medida es la distancia minima entre las dos, con
 // sus componentes en x, y y z, y se queda dibujada en el modelo con una
-// etiqueta flotante hasta que se borra. Las medidas se guardan por version.
+// etiqueta flotante hasta que se borra. Las medidas se guardan en el navegador.
 //
 // Las aristas son las de cada cuerpo, tal como las da OpenCascade: una recta o
 // un arco, partido en segmentos. Solo vale una arista que se vea: la que tapa
@@ -79,7 +79,7 @@ function linea(puntos, color, opacidad = 1) {
 
 const aPuntos = (segmentos) => segmentos.flat();
 
-export function crearMedir({ escena, camara, lienzo, capa, lista, pista, boton, mallas, bordes, seVe, pedirDibujo, version }) {
+export function crearMedir({ escena, camara, lienzo, capa, lista, pista, boton, mallas, bordes, seVe, pedirDibujo }) {
   const raycaster = new THREE.Raycaster();
   const grupo = new THREE.Group();
   escena.add(grupo);
@@ -87,7 +87,7 @@ export function crearMedir({ escena, camara, lienzo, capa, lista, pista, boton, 
   let activo = false;
   let primera = null;      // { segmentos, marca }
   let encima = null;       // la arista bajo el raton
-  const clave = `caja_atego.medidas.${version}`;
+  const clave = 'caja_atego.medidas';
 
   // ------------------------------------------------------------ elegir
   // La arista visible mas cercana al raton, o null. ndc va de -1 a 1.
@@ -194,7 +194,7 @@ export function crearMedir({ escena, camara, lienzo, capa, lista, pista, boton, 
     for (const m of [...medidas]) borrar(m);
   }
 
-  // Lo que se mide se recuerda entre recargas, por version. Si el navegador no
+  // Lo que se mide se recuerda entre recargas. Si el navegador no
   // deja guardar, se empieza de cero.
   function guardar() {
     try {

@@ -38,8 +38,7 @@ const MATERIALES = {
   escalon_cama: 'Blanco lacado',
   alto_almohadas: 'Blanco lacado',
   aparador: 'Blanco lacado',
-  // R103: la ducha giratoria y, en la v17, la plataforma del inodoro y su
-  // armario
+  // R103: la ducha giratoria, la plataforma del inodoro y su armario
   ducha_cerrada: 'Blanco lacado',
   ducha_abierta: 'Blanco lacado',
   plataforma_wc: 'Roble',
@@ -89,7 +88,7 @@ const CUERPO_MATERIAL = {
   garrafa_2: 'Verde garrafa',
   colchon: 'Tela clara',
   parasol: 'Negro mate',
-  puerta_tirador: 'Inox',     // R10 de la v17
+  puerta_tirador: 'Inox',     // R10
 };
 
 // Por el principio del nombre, que manda sobre el del componente.
@@ -122,11 +121,11 @@ const POR_PREFIJO = [
   ['panel_', 'Verde militar'],
   // R10: los carriles de la corredera del baño
   ['carril_', 'Aluminio'],
-  // R10 de la v17: las bisagras de la puerta abatible
+  // R10: las bisagras de la puerta abatible
   ['puerta_bisagra', 'Aluminio'],
   ['puerta_metacrilato', 'Metacrilato'],
   ['grifo', 'Cromo'], ['ducha_', 'Cromo'], ['desague', 'Cromo'],
-  // R110 de la v17: la claraboya es cristal tintado
+  // R110: la claraboya es cristal tintado
   ['claraboya', 'Vidrio oscuro'],
 ];
 

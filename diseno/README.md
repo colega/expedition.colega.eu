@@ -1,7 +1,6 @@
-# v17
+# Diseño
 
-Inodoro en plataforma de espaldas a la cama, armario y puerta abatible. Es la
-v16 con el baño que tenía la v14 en el commit 17926ef.
+Inodoro en plataforma de espaldas a la cama, armario y puerta abatible.
 
 ## El diseño
 
@@ -47,7 +46,7 @@ elevado de 50 (R3). De la trasera a la cabina:
   y ruedas de 930 (R108). Entre los ejes lleva la protección lateral de serie y
   detrás de la rueda trasera, en el costado de la cocina, su depósito.
 
-## Pendiente de esta versión
+## Pendiente
 
 - **Salida del tubo del Separett.** Baja por la plataforma hasta el suelo de la
   casa y de ahí tiene que salir afuera (R104).

@@ -29,7 +29,7 @@ export function exterior(modelo) {
 
   // Cada familia de piezas a su grupo: lo del camion bajo Camion, lo de la caja
   // bajo Caja. Asi se puede ocultar el camion entero y trabajar solo en la caja.
-  // R21: sin remates en las versiones que los descartan.
+  // R21: sin remates si las reglas los descartan.
   const ext = R.FUERA.remates ? null : modelo.nuevo(CAJA, 'remates');
   // R37: 'techo' ya trae el panel y el aislamiento de arriba, que los pone
   // caja.js: aqui solo se añade.
@@ -115,8 +115,8 @@ export function exterior(modelo) {
 
   // ---------------------------------------------------------------------- techo
   // R22: en el techo van las placas y el aire (R23). Sin baca, sin ventilador
-  // de techo, sin cupula ni antena (R21); la claraboya, en R110, solo en las
-  // versiones que la llevan en sus reglas.
+  // de techo, sin cupula ni antena (R21); la claraboya, en R110, solo si la
+  // llevan las reglas.
   const PLACA = R.PLACA;
   // las placas se acercan al canto para dejar la banda central al aire
   const BORDE_PLACA = 25.0;
@@ -160,7 +160,7 @@ export function exterior(modelo) {
   }
 
   // ----------------------------------------------------------------------- bajos
-  // depositos entre largueros, salvo que la version los descarte (R21)
+  // depositos entre largueros, salvo que las reglas los descarten (R21)
   if (!R.FUERA.deposito_de_agua_limpia) {
     cilindro(bajos, 'deposito_agua_limpia', 'x', [-1500.0, 0.0, -600.0], 1400.0, 320.0);
   }
@@ -176,7 +176,7 @@ export function exterior(modelo) {
   bloque(bajos, 'cofre_der', detras, [-1240.0, -860.0], [-540.0, -120.0]);
 
   // rueda de repuesto tumbada en el voladizo trasero, con su soporte, salvo
-  // que la version la descarte (R21)
+  // que las reglas la descarten (R21)
   if (!R.FUERA.rueda_de_repuesto) {
     cilindro(bajos, 'rueda_repuesto', 'z', [-1900.0, 0.0, -700.0], E.rueda_ancho, E.rueda_r);
     bloque(bajos, 'soporte_repuesto', [-2200.0, -1600.0], [-500.0, 500.0], [-760.0, -700.0]);

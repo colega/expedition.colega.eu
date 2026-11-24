@@ -1,7 +1,7 @@
 // Carpinteria del interior de la caja, agrupada por mueble.
 //
 // Cada mueble sale como un componente propio, asi que en el visor se puede
-// ocultar como una unidad. Las cotas salen del reglas.js de su version y van en el
+// ocultar como una unidad. Las cotas salen del reglas.js y van en el
 // marco del modelo: x hacia la cabina, y hacia el costado de la cocina y z
 // desde el suelo interior de la caja.
 //
@@ -16,7 +16,7 @@ import {
   COCINA, COMEDOR, DORMITORIO, BANO as RUTA_BANO, INTERIOR,
   caja as cajaForma, cilindro as cilindroForma, placa as placaForma,
   prisma as prismaForma, envolvente, muros, ord, redondear,
-} from '../../modelo/geo.js';
+} from '../modelo/geo.js';
 
 const ALTO = R.ALTO_INTERIOR;
 const ESPESOR = R.ESPESOR;

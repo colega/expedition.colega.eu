@@ -1,5 +1,5 @@
 # Publica el visor en GitHub Pages en cada push a main: pasa las pruebas,
-# construye las versiones, para no publicar un modelo que no pasa las
+# construye el modelo, para no publicar un modelo que no pasa las
 # comprobaciones, y deja el visor en dist/ como pagina estatica.
 name: Visor en GitHub Pages
 

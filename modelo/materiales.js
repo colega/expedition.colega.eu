@@ -1,7 +1,7 @@
 // El aspecto de cada material del modelo, para el visor.
 //
 // Los colores de la carpinteria, los metales y los vidrios son los de siempre;
-// el verde militar y el negro del chasis son los de R29 de cada version.
+// el verde militar y el negro del chasis son los de R29.
 
 // color en sRGB de 0 a 255, rugosidad de 0 a 1, metal si es metal, y opacidad
 // para los vidrios

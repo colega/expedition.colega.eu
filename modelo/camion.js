@@ -1,8 +1,8 @@
-// El camion entero de una version, de cero y en orden. Vale igual en Node y en
-// el navegador: solo hace falta haber iniciado OpenCascade con setOC() antes.
+// El camion entero, de cero y en orden. Vale igual en Node y en el navegador:
+// solo hace falta haber iniciado OpenCascade con setOC() antes.
 //
-// Cada version, en versiones/<nombre>/, trae sus reglas y su interior; el
-// resto del camion es el mismo para todas y lee las reglas de modelo.reglas.
+// diseno/ trae las reglas y el interior; el resto del camion lee las reglas de
+// modelo.reglas.
 //
 // El orden importa: interior.js corta las ventanas en las paredes de caja.js,
 // puerta_lateral.js recorta los muebles y el zocalo de exterior.js, y
@@ -14,10 +14,12 @@ import { cabina } from './cabina.js';
 import { exterior } from './exterior.js';
 import { puertaLateral } from './puerta_lateral.js';
 import { acabado } from './acabado.js';
+import * as reglas from '../diseno/reglas.js';
+import { interior } from '../diseno/interior.js';
 
 export const PASOS = [
   ['caja', 'caja y aislamiento', caja],
-  ['interior', 'muebles por componente, baño y huecos de ventana', (modelo, version) => version.interior(modelo)],
+  ['interior', 'muebles por componente, baño y huecos de ventana', interior],
   ['chasis', 'bastidor, falso chasis, ejes y ruedas', chasis],
   ['cabina', 'cabina', cabina],
   ['exterior', 'rampa, techo, bajos y accesorios', exterior],
@@ -25,14 +27,13 @@ export const PASOS = [
   ['acabado', 'redondeos y materiales', acabado],
 ];
 
-// version es lo que exporta versiones/<nombre>/version.js. aviso(nombre,
-// descripcion) se llama antes de cada paso, para ir contando.
-export function construir(version, aviso = () => {}) {
+// aviso(nombre, descripcion) se llama antes de cada paso, para ir contando.
+export function construir(aviso = () => {}) {
   const modelo = new Modelo();
-  modelo.reglas = version.reglas;
+  modelo.reglas = reglas;
   for (const [nombre, descripcion, paso] of PASOS) {
     aviso(nombre, descripcion);
-    paso(modelo, version);
+    paso(modelo);
   }
   return modelo;
 }

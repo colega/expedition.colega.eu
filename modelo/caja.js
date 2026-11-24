@@ -17,7 +17,7 @@ export function caja(modelo) {
   const pared_costado_izq = modelo.nuevo(PAREDES, 'pared_costado_izq');
   const pared_costado_der = modelo.nuevo(PAREDES, 'pared_costado_der');
   const pared_frontal = modelo.nuevo(PAREDES, 'pared_frontal');
-  // R21: sin pared trasera en las versiones que la descartan: el plano lo
+  // R21: sin pared trasera si las reglas la descartan: el plano lo
   // cubren la rampa y su tapa ciega.
   const pared_trasera = R.FUERA.pared_trasera ? null : modelo.nuevo(PAREDES, 'pared_trasera');
   // R37: el panel y el aislamiento del techo van al componente 'techo', con el

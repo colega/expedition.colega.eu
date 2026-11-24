@@ -157,6 +157,38 @@ function material(nombre) {
   }
   return cacheMateriales.get(nombre);
 }
+// ------------------------------------------------------- color del camion
+// El color de la caja y la cabina (R29) es el material 'Verde militar': el
+// selector lo cambia en vivo, sin reconstruir el modelo, y se recuerda entre
+// recargas. 'Original' vuelve al de las reglas.
+const VERDE = 'Verde militar';
+const CLAVE_COLOR = 'caja_atego.color';
+let colorOriginal = null;
+const aHex = (rgb) => '#' + rgb.map((v) => v.toString(16).padStart(2, '0')).join('');
+function ponerColor(hex) {
+  const rgb = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16));
+  colores[VERDE].color = rgb;
+  cacheMateriales.get(VERDE)?.color.setRGB(rgb[0] / 255, rgb[1] / 255, rgb[2] / 255, THREE.SRGBColorSpace);
+  $('color').value = hex;
+  pedirDibujo();
+}
+function guardarColor(hex) {
+  try {
+    if (hex) localStorage.setItem(CLAVE_COLOR, hex); else localStorage.removeItem(CLAVE_COLOR);
+  } catch { /* sin almacenamiento */ }
+}
+$('color').oninput = (e) => { ponerColor(e.target.value); guardarColor(e.target.value); };
+$('colorOriginal').onclick = () => { ponerColor(aHex(colorOriginal)); guardarColor(null); };
+// al llegar el modelo, antes de crear las mallas: se activa el selector y se
+// pone el color recordado, si lo hay
+function iniciarColor() {
+  colorOriginal = [...colores[VERDE].color];
+  let guardado = null;
+  try { guardado = localStorage.getItem(CLAVE_COLOR); } catch { /* sin almacenamiento */ }
+  ponerColor(/^#[0-9a-f]{6}$/.test(guardado) ? guardado : aHex(colorOriginal));
+  $('color').disabled = $('colorOriginal').disabled = false;
+}
+
 const materialAristas = new THREE.LineBasicMaterial({ color: 0x15170f, transparent: true, opacity: 0.45 });
 const materialElegido = new THREE.MeshStandardMaterial({ color: 0xff9a1f, emissive: 0x6b3300, roughness: 0.5 });
 
@@ -389,6 +421,7 @@ trabajador.onmessage = ({ data }) => {
     const llegada = performance.now();
     reflejos();
     colores = data.colores;
+    iniciarColor();
     suelo.position.z = -data.altura_piso;
     paisaje.grupo.position.z = -data.altura_piso;
     cargar(data.componentes);

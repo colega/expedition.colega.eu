@@ -62,6 +62,10 @@ En el visor:
   rampa** cambia de una a otra, y si has ocultado las dos, vuelve a enseñar la
   cerrada. Abierta, la tapa ciega de encima la acompaña y queda horizontal, de
   visera. **Mostrar todo** enciende todo menos la rampa cerrada.
+- **Color**: el selector cambia el color de la caja y la cabina (el verde
+  militar de R29) en vivo, sin reconstruir. Se recuerda entre recargas y
+  **Original** vuelve al de las reglas. Para dejar uno de forma definitiva se
+  cambia `VERDE_MILITAR` en `diseno/reglas.js`.
 - **Paisaje**: prado con florecillas, arboles a media y larga distancia y cielo
   azul. Sale encendido, con la niebla fundiendo el prado con el horizonte y la
   rejilla del suelo apagada, que el prado la sustituye; el botón lo apaga.

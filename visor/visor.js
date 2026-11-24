@@ -8,7 +8,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
 import { SIN_MATERIAL } from '../modelo/materiales.js';
 import { crearMedir } from './medir.js';
-import { crearPaisaje } from './paisaje.js';
+import { crearPaisaje, DIRECCION_SOL } from './paisaje.js';
 
 // El modelo se empieza a construir lo primero, mientras se monta la escena.
 const inicio = performance.now();
@@ -48,6 +48,9 @@ const estado = $('estado');
 const lienzo = $('lienzo');
 const renderer = new THREE.WebGLRenderer({ canvas: lienzo, antialias: true });
 renderer.setPixelRatio(window.devicePixelRatio);
+// sombras del sol, solo con paisaje: el camion se posa en el prado
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 const escena = new THREE.Scene();
 const oscuro = window.matchMedia('(prefers-color-scheme: dark)').matches;
 escena.background = new THREE.Color(oscuro ? 0x1b1d19 : 0xeef0ec);
@@ -65,7 +68,11 @@ controles.dampingFactor = 0.15;
 
 escena.add(new THREE.HemisphereLight(0xffffff, 0x8a8a80, 1.6));
 const sol = new THREE.DirectionalLight(0xffffff, 1.6);
-sol.position.set(6000, -8000, 12000);
+sol.position.copy(DIRECCION_SOL).multiplyScalar(20000);
+sol.shadow.mapSize.set(4096, 4096);
+Object.assign(sol.shadow.camera, { left: -9000, right: 9000, top: 9000, bottom: -9000, near: 1000, far: 40000 });
+sol.shadow.camera.updateProjectionMatrix();
+sol.shadow.normalBias = 8;
 escena.add(sol);
 
 const suelo = new THREE.GridHelper(20000, 40, 0x9aa093, oscuro ? 0x2c3028 : 0xd3d7cf);
@@ -81,6 +88,7 @@ escena.add(paisaje.grupo);
 function ponerPaisaje(on) {
   $('paisaje').checked = on;
   paisaje.grupo.visible = on;
+  sol.castShadow = on;
   escena.fog = on ? paisaje.niebla : null;
   ponerAristas(!on);
   ponerSuelo(!on);
@@ -315,6 +323,8 @@ function cargar(componentes) {
       geo.setIndex(new THREE.BufferAttribute(c.triangulos, 1));
       geo.computeBoundingBox();
       const malla = new THREE.Mesh(geo, material(c.material));
+      malla.castShadow = !malla.material.transparent;
+      malla.receiveShadow = true;
       malla.userData = { nombre: c.nombre, material: c.material, ruta: n.clave, original: malla.material };
       const lineas = new THREE.BufferGeometry();
       lineas.setAttribute('position', new THREE.BufferAttribute(c.aristas, 3));

@@ -73,8 +73,12 @@ En el visor:
   militar de R29) en vivo, sin reconstruir. Se recuerda entre recargas y
   **Original** vuelve al de las reglas. Para dejar uno de forma definitiva se
   cambia `VERDE_MILITAR` en `diseno/reglas.js`.
-- **Paisaje**: prado con florecillas, arboles a media y larga distancia y cielo
-  azul. Sale encendido, con la niebla fundiendo el prado con el horizonte, y
+- **Paisaje**: prado con manchas y textura de hierba, matas a rodales, flores,
+  las roderas por donde ha entrado el camión, bosquetes de frondosos y pinos,
+  colinas en el horizonte, nubes y el cielo con el resplandor del sol. El sol
+  echa la sombra del camión en el prado. Todo se pinta en `visor/paisaje.js`,
+  sin ficheros de textura. Sale encendido, con la niebla fundiendo el prado con
+  las colinas, y
   con las aristas y la rejilla del suelo apagadas, que el prado la sustituye.
   El interruptor **Paisaje** lo apaga y entonces enciende aristas y suelo; los
   otros dos se pueden mover aparte.

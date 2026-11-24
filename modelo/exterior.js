@@ -7,6 +7,7 @@
 // Las cotas parten de la caja: exterior 4700 x 2500 x 2230, con la cara de abajo
 // a -65 y la de arriba a 2165 en el marco del modelo (R1).
 import { CAJA, CAMION, PAREDES, caja, cilindroCentrado, muros, ord } from './geo.js';
+import { ponerRueda } from './chasis.js';
 
 const ENVOLVENTE = ['panel_', 'aisl_'];
 
@@ -96,6 +97,15 @@ export function exterior(modelo) {
     bloque(rampa, `rampa_liston_${String(k + 1).padStart(2, '0')}`, dentroX, yListon, [z0, z0 + canto]);
   }
 
+  // R113: la rueda de repuesto, como las del camion, colgada por fuera en el
+  // centro de la hoja y a REP.separacion de ella. El soporte va de la cara de
+  // fuera de la hoja al centro de la rueda. Cerrada, queda detras de la hoja.
+  const REP = R.REPUESTO;
+  const medio = REP.separacion + R.ATEGO.rueda_ancho / 2;
+  const centroHoja = RA.alto / 2;
+  ponerRueda(rampa, 'repuesto', 'x', [hojaX[0] - medio, 0.0, centroHoja], -1, R.ATEGO);
+  cilindro(rampa, 'soporte_repuesto', 'x', [hojaX[0] - medio / 2, 0.0, centroHoja], medio, REP.soporte);
+
   // R111: la rampa abierta, de terraza: la hoja gira 90 grados sobre su canto
   // de abajo, el de dentro, y queda horizontal a la altura del suelo de la
   // caja. Los listones de la cara de dentro quedan hacia arriba, haciendo el
@@ -113,6 +123,9 @@ export function exterior(modelo) {
     }
     bloque(abierta, 'panel_ciego', [muroX[0] - (ALTO - RA.alto), muroX[0]],
       [...RA.ancho], [ALTO - (muroX[1] - muroX[0]), ALTO]);
+    // R113: la hoja lleva la rueda con ella, bajo la terraza
+    ponerRueda(abierta, 'repuesto', 'z', [bisagraX - centroHoja, 0.0, -RA.hoja - medio], -1, R.ATEGO);
+    cilindro(abierta, 'soporte_repuesto', 'z', [bisagraX - centroHoja, 0.0, -RA.hoja - medio / 2], medio, REP.soporte);
   }
 
   // Sin escalera al techo (regla R21): descartada.
@@ -178,13 +191,6 @@ export function exterior(modelo) {
   const detras = [GB_ATRAS - 40.0 - 640.0, GB_ATRAS - 40.0];
   bloque(bajos, 'deposito_gasoil', detras, [720.0, 1180.0], [-520.0, -150.0]);
   bloque(bajos, 'cofre_der', detras, [-1240.0, -860.0], [-540.0, -120.0]);
-
-  // rueda de repuesto tumbada en el voladizo trasero, con su soporte, salvo
-  // que las reglas la descarten (R21)
-  if (!R.FUERA.rueda_de_repuesto) {
-    cilindro(bajos, 'rueda_repuesto', 'z', [-1900.0, 0.0, -700.0], E.rueda_ancho, E.rueda_r);
-    bloque(bajos, 'soporte_repuesto', [-2200.0, -1600.0], [-500.0, 500.0], [-760.0, -700.0]);
-  }
 
   // guardabarros curvos sobre las ruedas traseras, y la faldilla detras
   for (const [lado, signo] of [['izq', -1], ['der', 1]]) {

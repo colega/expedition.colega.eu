@@ -89,7 +89,7 @@ export function puertaLateral(modelo) {
     trozos.forEach((trozo, k) => { trozo.nombre = nombre + ['', '_delante'][k]; });
   }
 
-  // R15: sin peldaños bajo la puerta. El umbral queda a 1310 del suelo firme
+  // R15: sin peldaños bajo la puerta. El umbral queda a 1410 del suelo firme
   // (R108), asi que hara falta algo, pero se decidira despues.
   // Sin asidero junto a la puerta (R21).
 

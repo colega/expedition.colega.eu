@@ -2,9 +2,27 @@
 //
 // Marco del modelo, en mm: origen en el centro del suelo interior de la caja.
 // X crece hacia la cabina, Y es el ancho, Z la altura. El suelo interior esta a
-// 0, la cara inferior exterior de la caja a -65 y el suelo firme a -1260. Los
+// 0, la cara inferior exterior de la caja a -65 y el suelo firme a -1360. Los
 // ejes y las ruedas son los del camion de verdad (R108).
 import { CAMION, caja, cilindroCentrado, ord } from './geo.js';
+
+// Una rueda entera: el neumatico, la llanta y el buje, con el eje en 'eje'
+// ('x', 'y' o 'z') y el buje hacia donde diga 'sentido' (+1 o -1). Los nombres
+// llevan el sufijo, como rueda_trasero_izq.
+export function ponerRueda(comp, sufijo, eje, centro, sentido, ATEGO) {
+  const { rueda_diam, rueda_ancho: ancho, llanta_diam } = ATEGO;
+  const cil = (desplazo, largo, radio) => {
+    const c = [...centro];
+    c['xyz'.indexOf(eje)] += sentido * desplazo;
+    return cilindroCentrado(eje, c, largo, radio);
+  };
+  // el neumatico es un anillo: sin vaciarlo, la llanta queda enterrada y
+  // la rueda se lee como un disco negro macizo
+  const neumatico = comp.poner(`rueda_${sufijo}`, cil(0, ancho, rueda_diam / 2.0));
+  comp.restar(neumatico, cil(0, ancho + 20, llanta_diam / 2.0));
+  comp.poner(`llanta_${sufijo}`, cil(0, ancho * 0.62, llanta_diam / 2.0 + 4));
+  comp.poner(`buje_${sufijo}`, cil(ancho * 0.22, ancho * 0.18, 130.0));
+}
 
 export function chasis(modelo) {
   const { ALTURA_PISO, ATEGO } = modelo.reglas;
@@ -71,15 +89,7 @@ export function chasis(modelo) {
     bloque(ch, `ballesta_${nombre}_izq`, [x - 500, x + 500], [-mitad - 20, -mitad + 20], [P.eje_z + 60, alma[0]]);
     bloque(ch, `ballesta_${nombre}_der`, [x - 500, x + 500], [mitad - 20, mitad + 20], [P.eje_z + 60, alma[0]]);
     for (const [lado, signo] of [['izq', -1], ['der', 1]]) {
-      // el neumatico es un anillo: sin vaciarlo, la llanta queda enterrada y
-      // la rueda se lee como un disco negro macizo
-      const neumatico = ruedas.poner(`rueda_${nombre}_${lado}`,
-        rueda(x, signo * via, P.eje_z, P.rueda_ancho, P.rueda_diam / 2.0));
-      ruedas.restar(neumatico, rueda(x, signo * via, P.eje_z, P.rueda_ancho + 20, P.llanta_diam / 2.0));
-      ruedas.poner(`llanta_${nombre}_${lado}`,
-        rueda(x, signo * via, P.eje_z, P.rueda_ancho * 0.62, P.llanta_diam / 2.0 + 4));
-      ruedas.poner(`buje_${nombre}_${lado}`,
-        rueda(x, signo * (via + P.rueda_ancho * 0.22), P.eje_z, P.rueda_ancho * 0.18, 130.0));
+      ponerRueda(ruedas, `${nombre}_${lado}`, 'y', [x, signo * via, P.eje_z], signo, ATEGO);
     }
   }
 }

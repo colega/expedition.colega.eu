@@ -347,16 +347,16 @@
 {"ruta":"Camion/chasis","nombre":"ballesta_delantero_izq","caja":[2820,3820,-445,-405,-735,-365],"litros":14.8,"area":0.8496,"material":"Negro chasis","caras":6}
 {"ruta":"Camion/chasis","nombre":"ballesta_delantero_der","caja":[2820,3820,405,445,-735,-365],"litros":14.8,"area":0.8496,"material":"Negro chasis","caras":6}
 {"ruta":"Camion/ruedas","nombre":"rueda_trasero_izq","caja":[-1255,-125,-1132.5,-767.5,-1360,-230],"litros":276.15,"area":3.451,"material":"Goma","caras":4}
-{"ruta":"Camion/ruedas","nombre":"llanta_trasero_izq","caja":[-974,-406,-1063.1,-836.8,-1079,-511],"litros":57.342,"area":0.9106,"material":"Aluminio","caras":3}
+{"ruta":"Camion/ruedas","nombre":"llanta_trasero_izq","caja":[-974,-406,-1063.1,-836.8,-1079,-511],"litros":57.342,"area":0.9106,"material":"Negro chasis","caras":3}
 {"ruta":"Camion/ruedas","nombre":"buje_trasero_izq","caja":[-820,-560,-1063.1,-997.4,-925,-665],"litros":3.488,"area":0.1599,"material":"Acero","caras":3}
 {"ruta":"Camion/ruedas","nombre":"rueda_trasero_der","caja":[-1255,-125,767.5,1132.5,-1360,-230],"litros":276.15,"area":3.451,"material":"Goma","caras":4}
-{"ruta":"Camion/ruedas","nombre":"llanta_trasero_der","caja":[-974,-406,836.9,1063.2,-1079,-511],"litros":57.342,"area":0.9106,"material":"Aluminio","caras":3}
+{"ruta":"Camion/ruedas","nombre":"llanta_trasero_der","caja":[-974,-406,836.9,1063.2,-1079,-511],"litros":57.342,"area":0.9106,"material":"Negro chasis","caras":3}
 {"ruta":"Camion/ruedas","nombre":"buje_trasero_der","caja":[-820,-560,997.5,1063.1,-925,-665],"litros":3.488,"area":0.1599,"material":"Acero","caras":3}
 {"ruta":"Camion/ruedas","nombre":"rueda_delantero_izq","caja":[2755,3885,-1132.5,-767.5,-1360,-230],"litros":276.15,"area":3.451,"material":"Goma","caras":4}
-{"ruta":"Camion/ruedas","nombre":"llanta_delantero_izq","caja":[3036,3604,-1063.1,-836.8,-1079,-511],"litros":57.342,"area":0.9106,"material":"Aluminio","caras":3}
+{"ruta":"Camion/ruedas","nombre":"llanta_delantero_izq","caja":[3036,3604,-1063.1,-836.8,-1079,-511],"litros":57.342,"area":0.9106,"material":"Negro chasis","caras":3}
 {"ruta":"Camion/ruedas","nombre":"buje_delantero_izq","caja":[3190,3450,-1063.1,-997.4,-925,-665],"litros":3.488,"area":0.1599,"material":"Acero","caras":3}
 {"ruta":"Camion/ruedas","nombre":"rueda_delantero_der","caja":[2755,3885,767.5,1132.5,-1360,-230],"litros":276.15,"area":3.451,"material":"Goma","caras":4}
-{"ruta":"Camion/ruedas","nombre":"llanta_delantero_der","caja":[3036,3604,836.9,1063.2,-1079,-511],"litros":57.342,"area":0.9106,"material":"Aluminio","caras":3}
+{"ruta":"Camion/ruedas","nombre":"llanta_delantero_der","caja":[3036,3604,836.9,1063.2,-1079,-511],"litros":57.342,"area":0.9106,"material":"Negro chasis","caras":3}
 {"ruta":"Camion/ruedas","nombre":"buje_delantero_der","caja":[3190,3450,997.5,1063.1,-925,-665],"litros":3.488,"area":0.1599,"material":"Acero","caras":3}
 {"ruta":"Camion/cabina","nombre":"cabina","caja":[2460,4515,-1150,1150,-305,1490],"litros":7049.434,"area":26.421,"material":"Verde militar","caras":38}
 {"ruta":"Camion/cabina","nombre":"parabrisas","caja":[4280.4,4502.2,-1000,1000,657,1320],"litros":26.52,"area":2.8786,"material":"Vidrio","caras":6}
@@ -430,6 +430,10 @@
 {"ruta":"Caja/rampa","nombre":"rampa_liston_09","caja":[-2303,-2285,-1085,1085,1298.2,1445.5],"litros":5.752,"area":0.7226,"material":"Roble","caras":6}
 {"ruta":"Caja/rampa","nombre":"rampa_liston_10","caja":[-2303,-2285,-1085,1085,1455.5,1602.7],"litros":5.752,"area":0.7226,"material":"Roble","caras":6}
 {"ruta":"Caja/rampa","nombre":"rampa_liston_11","caja":[-2303,-2285,-1085,1085,1612.7,1760],"litros":5.752,"area":0.7226,"material":"Roble","caras":6}
+{"ruta":"Caja/rampa","nombre":"rueda_repuesto","caja":[-2763,-2398,-565,565,335,1465],"litros":276.15,"area":3.451,"material":"Goma","caras":4}
+{"ruta":"Caja/rampa","nombre":"llanta_repuesto","caja":[-2693.6,-2467.3,-284,284,616,1184],"litros":57.342,"area":0.9106,"material":"Negro chasis","caras":3}
+{"ruta":"Caja/rampa","nombre":"buje_repuesto","caja":[-2693.6,-2628,-130,130,770,1030],"litros":3.488,"area":0.1599,"material":"Acero","caras":3}
+{"ruta":"Caja/rampa","nombre":"soporte_repuesto","caja":[-2580.5,-2358,-90,90,810,990],"litros":5.662,"area":0.1767,"material":"Acero","caras":3}
 {"ruta":"Caja/rampa_abierta","nombre":"rampa_hoja","caja":[-4103,-2303,-1105,1105,-55,0],"litros":218.79,"area":8.3971,"material":"Acero","caras":6}
 {"ruta":"Caja/rampa_abierta","nombre":"rampa_liston_01","caja":[-2490.3,-2343,-1085,1085,0,18],"litros":5.752,"area":0.7226,"material":"Roble","caras":6}
 {"ruta":"Caja/rampa_abierta","nombre":"rampa_liston_02","caja":[-2647.5,-2500.3,-1085,1085,0,18],"litros":5.752,"area":0.7226,"material":"Roble","caras":6}
@@ -443,6 +447,10 @@
 {"ruta":"Caja/rampa_abierta","nombre":"rampa_liston_10","caja":[-3905.7,-3758.5,-1085,1085,0,18],"litros":5.752,"area":0.7226,"material":"Roble","caras":6}
 {"ruta":"Caja/rampa_abierta","nombre":"rampa_liston_11","caja":[-4063,-3915.7,-1085,1085,0,18],"litros":5.752,"area":0.7226,"material":"Roble","caras":6}
 {"ruta":"Caja/rampa_abierta","nombre":"panel_ciego","caja":[-2650,-2350,-1105,1105,2035,2100],"litros":43.095,"area":1.6523,"material":"Verde militar","caras":6}
+{"ruta":"Caja/rampa_abierta","nombre":"rueda_repuesto","caja":[-3768,-2638,-565,565,-460,-95],"litros":276.15,"area":3.451,"material":"Goma","caras":4}
+{"ruta":"Caja/rampa_abierta","nombre":"llanta_repuesto","caja":[-3487,-2919,-284,284,-390.6,-164.3],"litros":57.342,"area":0.9106,"material":"Negro chasis","caras":3}
+{"ruta":"Caja/rampa_abierta","nombre":"buje_repuesto","caja":[-3333,-3073,-130,130,-390.7,-324.9],"litros":3.488,"area":0.1599,"material":"Acero","caras":3}
+{"ruta":"Caja/rampa_abierta","nombre":"soporte_repuesto","caja":[-3293,-3113,-90,90,-277.5,-55],"litros":5.662,"area":0.1767,"material":"Acero","caras":3}
 {"ruta":"Caja/puerta_lateral","nombre":"de_brida_abajo","caja":[171.5,913.5,-1254,-1250,-17.5,26],"litros":0.129,"area":0.0708,"material":"Negro mate","caras":6}
 {"ruta":"Caja/puerta_lateral","nombre":"de_brida_arriba","caja":[171.5,913.5,-1254,-1250,1927,1970.5],"litros":0.129,"area":0.0708,"material":"Negro mate","caras":6}
 {"ruta":"Caja/puerta_lateral","nombre":"de_brida_izq","caja":[171.5,215,-1254,-1250,26,1927],"litros":0.331,"area":0.1809,"material":"Negro mate","caras":6}

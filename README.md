@@ -198,7 +198,8 @@ Caja
     Bano             tabiques_y_puerta, instalaciones_bano, ducha_cerrada,
                      ducha_abierta, toallero, alto_bano, ventana_bano
     suelo_elevado
-  rampa              cerrada (oculta de serie), y su abierta de terraza
+  rampa              cerrada (oculta de serie), y su abierta de terraza;
+                     cada una con la rueda de repuesto colgada (R113)
   puerta_lateral
 Camion
   chasis, ruedas, cabina, bajos
@@ -254,7 +255,7 @@ ventilador, cúpula de satélite, antena, focos y luces de gabarito.
 
 ## Estado y cabos sueltos
 
-Al día, el modelo da 0 fuera de sitio: 464 cuerpos, 308 en el interior.
+Al día, el modelo da 0 fuera de sitio: 472 cuerpos, 308 en el interior.
 
 Contar los cuerpos no es una formalidad: `caja()` devuelve `null` cuando el
 rango que le llega mide cero, sin quejarse, y la pieza desaparece sin aviso.

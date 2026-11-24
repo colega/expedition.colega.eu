@@ -75,6 +75,13 @@ export const RAMPA = { alto: 1800.0, ancho: [-1105.0, 1105.0], hoja: 55.0,
 //      abierta de serie, y da un boton para cambiar de una a otra.
 export const RAMPA_ABIERTA = true;
 
+// R113 En el centro de la rampa, por fuera, cuelga una rueda de repuesto del
+//      mismo tamaño que las del camion (R108), con su eje perpendicular a la
+//      hoja y el centro de la rueda en el de la hoja. Va a 40 de la hoja, en un
+//      soporte de 90 de radio. Cerrada la rampa, queda detras de la hoja;
+//      abierta (R111), la hoja la lleva colgada bajo la terraza.
+export const REPUESTO = { separacion: 40.0, soporte: 90.0 };
+
 // R3  Toda la casa va sobre un suelo elevado de 50: tablero de 18 sobre un
 //     cerco con travesaños cada 600, con 32 de luz por debajo para nivelar.
 //     Llega de la trasera a los pies de la cama; la cama posa en el suelo de
@@ -526,7 +533,6 @@ export const FUERA = {
   climatizador: 'descartado',
   ventilador_de_techo: 'descartado',
   presurizador: 'para mas adelante',
-  rueda_de_repuesto: 'descartada',
   deposito_de_agua_limpia: 'descartado',
   deposito_de_aguas_grises: 'descartado',
   cupula_de_satelite: 'descartada',

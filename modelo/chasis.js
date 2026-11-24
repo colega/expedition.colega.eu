@@ -4,22 +4,53 @@
 // X crece hacia la cabina, Y es el ancho, Z la altura. El suelo interior esta a
 // 0, la cara inferior exterior de la caja a -65 y el suelo firme a -1360. Los
 // ejes y las ruedas son los del camion de verdad (R108).
+import { makeBox, makeCylinder } from 'replicad';
 import { CAMION, caja, cilindroCentrado, ord } from './geo.js';
+
+// El neumatico con sus tacos (R115), en su propio marco: eje en z, centrado
+// en el origen. Es un anillo: sin vaciarlo, la llanta queda enterrada y la
+// rueda se lee como un disco negro macizo. Se hace una vez y cada rueda se
+// lleva una copia, que fundir los tacos es lo que cuesta.
+const moldes = new Map();
+function neumatico(ATEGO, T) {
+  const { rueda_diam, rueda_ancho: ancho, llanta_diam } = ATEGO;
+  const clave = JSON.stringify([rueda_diam, ancho, llanta_diam, T]);
+  if (!moldes.has(clave)) {
+    const r = rueda_diam / 2.0, base = r - T.alto;
+    let forma = makeCylinder(base, ancho, [0, 0, -ancho / 2]);
+    const paso = 360 / T.pasos;
+    for (let k = 0; k < T.pasos; k++) {
+      // la fila de un lado y, medio paso despues, la del otro
+      for (const [z0, z1, giro] of [[-ancho / 2, ancho * T.cruce, 0], [-ancho * T.cruce, ancho / 2, paso / 2]]) {
+        const taco = makeBox([base - 5, -T.ancho / 2, z0], [r, T.ancho / 2, z1]).rotate(k * paso + giro, [0, 0, 0], [0, 0, 1]);
+        forma = forma.fuse(taco);
+      }
+    }
+    forma = forma.cut(makeCylinder(llanta_diam / 2.0, ancho + 20, [0, 0, -ancho / 2 - 10]));
+    moldes.set(clave, forma);
+  }
+  return moldes.get(clave).clone();
+}
+
+// el giro que lleva el z del molde al eje de la rueda, hacia 'sentido'
+const GIROS = {
+  x: (s) => [90 * s, [0, 1, 0]],
+  y: (s) => [-90 * s, [1, 0, 0]],
+  z: (s) => [s > 0 ? 0 : 180, [1, 0, 0]],
+};
 
 // Una rueda entera: el neumatico, la llanta y el buje, con el eje en 'eje'
 // ('x', 'y' o 'z') y el buje hacia donde diga 'sentido' (+1 o -1). Los nombres
 // llevan el sufijo, como rueda_trasero_izq.
-export function ponerRueda(comp, sufijo, eje, centro, sentido, ATEGO) {
-  const { rueda_diam, rueda_ancho: ancho, llanta_diam } = ATEGO;
+export function ponerRueda(comp, sufijo, eje, centro, sentido, ATEGO, TACOS) {
+  const { rueda_ancho: ancho, llanta_diam } = ATEGO;
   const cil = (desplazo, largo, radio) => {
     const c = [...centro];
     c['xyz'.indexOf(eje)] += sentido * desplazo;
     return cilindroCentrado(eje, c, largo, radio);
   };
-  // el neumatico es un anillo: sin vaciarlo, la llanta queda enterrada y
-  // la rueda se lee como un disco negro macizo
-  const neumatico = comp.poner(`rueda_${sufijo}`, cil(0, ancho, rueda_diam / 2.0));
-  comp.restar(neumatico, cil(0, ancho + 20, llanta_diam / 2.0));
+  const [angulo, direccion] = GIROS[eje](sentido);
+  comp.poner(`rueda_${sufijo}`, neumatico(ATEGO, TACOS).rotate(angulo, [0, 0, 0], direccion).translate(centro));
   comp.poner(`llanta_${sufijo}`, cil(0, ancho * 0.62, llanta_diam / 2.0 + 4));
   // el buje sobresale 25 de la cara de la llanta: con las dos caras a ras, el
   // visor las pintaba a la vez y salian rayas
@@ -27,7 +58,7 @@ export function ponerRueda(comp, sufijo, eje, centro, sentido, ATEGO) {
 }
 
 export function chasis(modelo) {
-  const { ALTURA_PISO, ATEGO } = modelo.reglas;
+  const { ALTURA_PISO, ATEGO, TACOS } = modelo.reglas;
   const P = {
     suelo: -ALTURA_PISO,      // cota del terreno
     caja_fondo: -65.0,        // cara inferior de la caja
@@ -91,7 +122,7 @@ export function chasis(modelo) {
     bloque(ch, `ballesta_${nombre}_izq`, [x - 500, x + 500], [-mitad - 20, -mitad + 20], [P.eje_z + 60, alma[0]]);
     bloque(ch, `ballesta_${nombre}_der`, [x - 500, x + 500], [mitad - 20, mitad + 20], [P.eje_z + 60, alma[0]]);
     for (const [lado, signo] of [['izq', -1], ['der', 1]]) {
-      ponerRueda(ruedas, `${nombre}_${lado}`, 'y', [x, signo * via, P.eje_z], signo, ATEGO);
+      ponerRueda(ruedas, `${nombre}_${lado}`, 'y', [x, signo * via, P.eje_z], signo, ATEGO, TACOS);
     }
   }
 }

@@ -88,6 +88,12 @@ export const REPUESTO = { separacion: 40.0, soporte: 90.0 };
 //      de grueso. Por dentro siguen negros, igual que las persianas (R96).
 export const JUNTA = { ancho: 5.0, grueso: 2.0 };
 
+// R115 Las Continental HCS llevan tacos grandes de todo terreno: dos filas de
+//      tacos de lado a lado, que se cruzan un poco en el centro y van
+//      alternadas medio paso. 20 pasos en la vuelta, tacos de 95 de ancho y 22
+//      de alto sobre la goma. Las cotas salen de las fotos de la rueda.
+export const TACOS = { pasos: 20, ancho: 95.0, alto: 22.0, cruce: 0.08 };
+
 // R3  Toda la casa va sobre un suelo elevado de 50: tablero de 18 sobre un
 //     cerco con travesaños cada 600, con 32 de luz por debajo para nivelar.
 //     Llega de la trasera a los pies de la cama; la cama posa en el suelo de

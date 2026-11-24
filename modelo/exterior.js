@@ -103,7 +103,7 @@ export function exterior(modelo) {
   const REP = R.REPUESTO;
   const medio = REP.separacion + R.ATEGO.rueda_ancho / 2;
   const centroHoja = RA.alto / 2;
-  ponerRueda(rampa, 'repuesto', 'x', [hojaX[0] - medio, 0.0, centroHoja], -1, R.ATEGO);
+  ponerRueda(rampa, 'repuesto', 'x', [hojaX[0] - medio, 0.0, centroHoja], -1, R.ATEGO, R.TACOS);
   cilindro(rampa, 'soporte_repuesto', 'x', [hojaX[0] - medio / 2, 0.0, centroHoja], medio, REP.soporte);
 
   // R111: la rampa abierta, de terraza: la hoja gira 90 grados sobre su canto
@@ -124,7 +124,7 @@ export function exterior(modelo) {
     bloque(abierta, 'panel_ciego', [muroX[0] - (ALTO - RA.alto), muroX[0]],
       [...RA.ancho], [ALTO - (muroX[1] - muroX[0]), ALTO]);
     // R113: la hoja lleva la rueda con ella, bajo la terraza
-    ponerRueda(abierta, 'repuesto', 'z', [bisagraX - centroHoja, 0.0, -RA.hoja - medio], -1, R.ATEGO);
+    ponerRueda(abierta, 'repuesto', 'z', [bisagraX - centroHoja, 0.0, -RA.hoja - medio], -1, R.ATEGO, R.TACOS);
     cilindro(abierta, 'soporte_repuesto', 'z', [bisagraX - centroHoja, 0.0, -RA.hoja - medio / 2], medio, REP.soporte);
   }
 

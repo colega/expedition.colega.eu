@@ -47,7 +47,7 @@ elevado de 50 (R3). De la trasera a la cabina:
 - **El camión**: un Mercedes Atego de cabina L, 4x2, medido de sus fotos. El
   suelo de la caja queda a 1360 del suelo firme, el eje delantero 970 por
   delante de la caja y el trasero bajo la esquina del sofá, con 4010 de batalla
-  y ruedas Continental HCS 365/85 R20, de 1130 (R108). Entre los ejes lleva la protección lateral de serie y
+  y ruedas Continental HCS 365/85 R20, de 1130 (R108), con sus tacos (R115). Entre los ejes lleva la protección lateral de serie y
   detrás de la rueda trasera, en el costado de la cocina, su depósito. La
   cabina lleva la calandra hundida con sus lamas y la estrella, faros y
   antiniebla en el parachoques negro y retrovisores de tubo con gran angular,

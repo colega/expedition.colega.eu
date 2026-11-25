@@ -138,7 +138,7 @@ export const ALTOS_BAJO_COCINA = ALTO_INTERIOR - ALTO_COCINA_ALTO;              
 // R71 La cama va atravesada contra la pared de la cabina, de costado a
 //     costado: 1400 a lo largo de la caja, asi que los pies quedan en x 885.
 // R7  Debajo hay un garaje cerrado por los seis lados, que posa en el suelo de
-//     la caja. El acceso ira por los costados del camion, sin definir.
+//     la caja. El acceso son las trampillas de los dos costados (R116, R117).
 // R4  El colchon tiene 100 de grueso.
 // R6  La tapa del garaje, o sea el somier, queda a 970. Con el colchon quedan
 //     1030 hasta el techo, mas de los 900 que pide R5.
@@ -173,6 +173,27 @@ export const ALTO_FONDO_CAMA = 303.2;
 //      empotrada y se decide despues; por dentro quedan 264 de fondo. Del
 //      escalon al colchon quedan 720.
 export const ESCALON_CAMA = { ancho: 300.0, alto: 300.0, fondo: 300.0 };
+
+// R116 La trampilla es la puerta del garaje (R7), en el costado de la puerta, el
+//      derecho. El hueco libre mide 810 de ancho y 850 de alto, arranca a 300 de
+//      la pared frontal y baja hasta el tablero del fondo del garaje, sin escalon
+//      al sacar las cosas: de x 1175 a 1985 y de z 18 a 868. Atraviesa el muro de
+//      la caja y el costado del garaje. La hoja llena el hueco de fuera a dentro
+//      del muro y lleva alrededor una brida de 30 y la junta de silicona de R114,
+//      del color de la caja. Las bisagras van en el canto de la cabina, como las
+//      de la puerta (R99), y la cerradura en el otro.
+// R117 En el costado de la cocina, el izquierdo, otra trampilla al garaje, mas
+//      pequena: 600 x 600, tambien a 300 de la pared frontal y a ras del tablero
+//      del fondo, de x 1385 a 1985 y de z 18 a 618. Es como la de R116: hoja,
+//      brida, junta, bisagras en el canto de la cabina y cerradura en el otro.
+
+// Cotas de una trampilla del garaje: de la pared frontal hacia atras, y del
+// tablero del fondo hacia arriba.
+const trampillaGaraje = (desde_frontal, ancho, alto) => ({ desde_frontal, ancho, alto,
+  brida: 30.0, x: [FRONTAL - desde_frontal - ancho, FRONTAL - desde_frontal],
+  z: [ESPESOR, ESPESOR + alto] });
+export const TRAMPILLA_GARAJE = trampillaGaraje(300.0, 810.0, 850.0);      // R116, la derecha
+export const TRAMPILLA_GARAJE_IZQ = trampillaGaraje(300.0, 600.0, 600.0);  // R117, la izquierda
 
 // --- cocina --------------------------------------------------------------
 // R79 La cocina va en el costado izquierdo y corre de la trasera al baño en

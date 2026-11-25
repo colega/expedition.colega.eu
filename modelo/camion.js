@@ -5,7 +5,8 @@
 // modelo.reglas.
 //
 // El orden importa: interior.js corta las ventanas en las paredes de caja.js,
-// puerta_lateral.js recorta los muebles y el zocalo de exterior.js, y
+// puerta_lateral.js recorta los muebles y el zocalo de exterior.js,
+// trampilla.js corta el muro y el garaje que ya existen, y
 // acabado.js va el ultimo porque redondea y pinta cuerpos que ya existen.
 import { Modelo } from './geo.js';
 import { caja } from './caja.js';
@@ -13,6 +14,7 @@ import { chasis } from './chasis.js';
 import { cabina } from './cabina.js';
 import { exterior } from './exterior.js';
 import { puertaLateral } from './puerta_lateral.js';
+import { trampilla } from './trampilla.js';
 import { acabado } from './acabado.js';
 import * as reglas from '../diseno/reglas.js';
 import { interior } from '../diseno/interior.js';
@@ -24,6 +26,7 @@ export const PASOS = [
   ['cabina', 'cabina', cabina],
   ['exterior', 'rampa, techo, bajos y accesorios', exterior],
   ['puerta_lateral', 'puerta de acceso del costado derecho', puertaLateral],
+  ['trampilla', 'trampillas del garaje, una por costado', trampilla],
   ['acabado', 'redondeos y materiales', acabado],
 ];
 

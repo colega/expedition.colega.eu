@@ -7,7 +7,7 @@
 // El arbol es el de siempre:
 //
 //     Camion            cabina, chasis, ruedas, bajos, frontal
-//     Caja              paredes, techo, remates, rampa, puerta lateral
+//     Caja              paredes, techo, remates, rampa, puerta lateral, trampilla
 //       paredes         la envolvente agrupada por pared (R34): cada pared,
 //                       un grupo con su panel y su aislamiento
 //       techo           la tapa de arriba mas el equipo que va sobre ella (R37)

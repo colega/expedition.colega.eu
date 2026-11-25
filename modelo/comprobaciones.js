@@ -12,7 +12,8 @@ import { envolvente } from './geo.js';
 // de fuera, tumbada de terraza.
 const VEHICULO = new Set(['paredes', 'pared_suelo', 'pared_techo', 'pared_frontal',
   'pared_trasera', 'pared_costado_izq', 'pared_costado_der', 'chasis', 'ruedas',
-  'cabina', 'remates', 'bajos', 'techo', 'puerta_lateral', 'rampa', 'rampa_abierta']);
+  'cabina', 'remates', 'bajos', 'techo', 'puerta_lateral', 'trampilla_garaje',
+  'trampilla_garaje_izq', 'rampa', 'rampa_abierta']);
 
 const conCuerpos = (modelo) => [...modelo.componentes.values()].filter((c) => c.cuerpos.length);
 const r1 = (v) => Math.round(v * 10) / 10;
@@ -101,7 +102,8 @@ export function huecos(modelo) {
 export function choques(modelo) {
   const FUERA = new Set(['paredes', 'pared_suelo', 'pared_techo', 'pared_frontal',
     'pared_trasera', 'pared_costado_izq', 'pared_costado_der', 'techo', 'remates',
-    'chasis', 'ruedas', 'cabina', 'bajos', 'rampa', 'rampa_abierta']);
+    'chasis', 'ruedas', 'cabina', 'bajos', 'trampilla_garaje',
+    'trampilla_garaje_izq', 'rampa', 'rampa_abierta']);
   const MINIMO_MM3 = 1.0;
   const cuerpos = [];
   for (const comp of conCuerpos(modelo)) {

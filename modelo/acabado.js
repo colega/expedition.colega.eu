@@ -117,7 +117,10 @@ const POR_PREFIJO = [
   ['ra_interior', 'Negro mate'], ['de_interior', 'Negro mate'],
   ['de_cerradura', 'Negro mate'], ['de_bisagra', 'Negro mate'],
   ['ch_', 'Negro mate'],
-  ['ra_', 'Verde militar'], ['de_', 'Verde militar'],
+  // la trampilla del garaje (R116) va como la puerta: hoja y brida del color
+  // de la caja, y junta, bisagra y cerradura en negro
+  ['tg_junta', 'Negro mate'], ['tg_bisagra', 'Negro mate'], ['tg_cerradura', 'Negro mate'],
+  ['ra_', 'Verde militar'], ['de_', 'Verde militar'], ['tg_', 'Verde militar'],
   // R49: las almohadas van por prefijo y no por contenido, que
   // 'alto_almohadas' tambien lleva la palabra dentro y el armario salia
   // forrado de tela

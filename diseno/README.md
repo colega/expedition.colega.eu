@@ -33,8 +33,11 @@ elevado de 50 (R3). De la trasera a la cabina:
   - Puerta de la caja: una Outbound DE-20, centrada entre los altos (R99).
   - Almohadas de la cama (R49).
   - Alto del comedor de 350, desde 1750 (R66, R80).
-- **Contra la cabina**, la cama atravesada, de 1400, sobre un garaje cerrado
-  (R71, R7). Altos en U: el de los pies, de 422, y el de las almohadas y el
+- **Contra la cabina**, la cama atravesada, de 1400, sobre un garaje (R71, R7)
+  que se abre por dos trampillas, una en cada costado, a 300 de la pared de la
+  cabina y a ras del suelo del garaje, con las bisagras hacia ella: la del
+  costado de la puerta mide 810 x 850 (R116) y la de la cocina 600 x 600 (R117).
+  Altos en U: el de los pies, de 422, y el de las almohadas y el
   de la cabina, de 250 (R65, R80). Un cajón-escalón en la esquina con el baño
   (R101).
 - **Ventanas** de Outbound con persiana por dentro. Cada una va centrada en lo

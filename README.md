@@ -44,7 +44,8 @@ En el visor:
   **Componentes** lo muestra. Cada casilla muestra u oculta un componente con
   todo lo que lleva dentro, o un cuerpo suelto. Lo oculto se recuerda entre
   recargas. Los botones de **Mostrar** van juntos: **Todo** enciende todo, con
-  paisaje; **Interior** deja el interior y la puerta lateral; **Baño**,
+  paisaje; **Interior** deja el interior, la puerta lateral y las trampillas del
+  garaje; **Baño**,
   **Cocina** y **Comedor** dejan únicamente esa zona del interior y apagan el
   paisaje.
 - El selector de **vista** tiene los encuadres fijos, con nombre y agrupados en
@@ -106,7 +107,7 @@ diseno/
   ventanas.json     sus ventanas, ídem
 ```
 
-El resto, la caja, el camión, la puerta lateral, el acabado, las
+El resto, la caja, el camión, la puerta lateral, las trampillas, el acabado, las
 comprobaciones y el visor, está en `modelo/` y `visor/` y lee las reglas de
 `diseno/`. No se guardan versiones viejas: están en el historial de git.
 
@@ -117,10 +118,11 @@ npm run construir
 ```
 
 Levanta el camión en un segundo largo. Sale en este orden: caja,
-interior, chasis, cabina, exterior, puerta lateral y acabado
+interior, chasis, cabina, exterior, puerta lateral, trampillas y acabado
 (`modelo/camion.js`). El orden importa: el interior corta las ventanas en las
-paredes de la caja, la puerta lateral recorta los muebles y el zócalo, y el
-acabado va el último porque redondea y pinta cuerpos que ya existen.
+paredes de la caja, la puerta lateral recorta los muebles y el zócalo, las
+trampillas cortan el muro y el garaje que ya existen, y el acabado va el último
+porque redondea y pinta cuerpos que ya existen.
 
 Escribe en `diseno/` el `despiece.csv`, con los tableros de la
 carpintería, y `ventanas.json`, con las ventanas tal como han quedado. Y saca un
@@ -169,6 +171,7 @@ modelo/
   cabina.js           la cabina
   exterior.js         rampa, techo, bajos y accesorios
   puerta_lateral.js   la puerta de la caja y el paso libre delante de ella
+  trampilla.js        las trampillas del garaje, una por costado (R116, R117)
   acabado.js          redondeos y el material de cada cuerpo
   materiales.js       el color de cada material, para el visor
   camion.js           el camión entero, en orden
@@ -224,6 +227,8 @@ Caja
   rampa              cerrada (oculta de serie), y su abierta de terraza;
                      cada una con la rueda de repuesto colgada (R113)
   puerta_lateral
+  trampilla_garaje   hoja, brida, junta, bisagra y cerradura (R116)
+  trampilla_garaje_izq  la misma, en el costado de la cocina (R117)
 Camion
   chasis, ruedas, cabina, bajos
 ```
@@ -278,7 +283,7 @@ ventilador, cúpula de satélite, antena, focos y luces de gabarito.
 
 ## Estado y cabos sueltos
 
-Al día, el modelo da 0 fuera de sitio: 524 cuerpos, 328 en el interior.
+Al día, el modelo da 0 fuera de sitio: 546 cuerpos, 328 en el interior.
 
 Contar los cuerpos no es una formalidad: `caja()` devuelve `null` cuando el
 rango que le llega mide cero, sin quejarse, y la pieza desaparece sin aviso.
@@ -309,7 +314,6 @@ mueble, comprobar por dónde se entra a él.
 Pendiente de decidir (lo propio del diseño, en `diseno/README.md`):
 
 - **Acceso a la cama.** Del cajón-escalón al colchón quedan 720 (R101).
-- **Acceso al garaje** bajo la cama, por los costados del camión (R7).
 - **Peldaño de la puerta**: el umbral está a 1410 del suelo firme y ahora no
   hay nada (R15).
 - **Acceso al techo**: no hay escalera y arriba están las placas y el aire

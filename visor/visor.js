@@ -396,7 +396,8 @@ function mostrarSolo(claves, apagar = []) {
 }
 // Todo es la vista de serie: la rampa y la ducha abiertas o cerradas, no las dos
 $('mostrarTodo').onclick = () => { mostrarSolo(null, OCULTOS_DE_SERIE); ponerPaisaje(true); };
-$('soloInterior').onclick = () => mostrarSolo(['Caja/Interior', 'Caja/puerta_lateral'], OCULTOS_DE_SERIE);
+$('soloInterior').onclick = () => mostrarSolo(['Caja/Interior', 'Caja/puerta_lateral', 'Caja/trampilla_garaje',
+  'Caja/trampilla_garaje_izq'], OCULTOS_DE_SERIE);
 for (const [id, zona] of [['soloBano', 'Bano'], ['soloCocina', 'Cocina'], ['soloComedor', 'Comedor']]) {
   $(id).onclick = () => { mostrarSolo([`Caja/Interior/${zona}`], OCULTOS_DE_SERIE); ponerPaisaje(false); };
 }

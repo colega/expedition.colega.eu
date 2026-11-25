@@ -43,11 +43,13 @@ En el visor:
 - A la izquierda, el árbol de componentes. Arranca oculto y plegado: el botón
   **Componentes** lo muestra. Cada casilla muestra u oculta un componente con
   todo lo que lleva dentro, o un cuerpo suelto. Lo oculto se recuerda entre
-  recargas. Los botones de **Mostrar** van juntos: **Todo** enciende todo, con
-  paisaje; **Interior** deja el interior, la puerta lateral y las trampillas del
-  garaje; **Baño**,
-  **Cocina** y **Comedor** dejan únicamente esa zona del interior y apagan el
-  paisaje.
+  recargas. Los botones de **Mostrar** van en dos filas: **Todo** e **Interior**
+  arriba y las zonas debajo. **Todo** enciende todo, con paisaje; **Interior**
+  deja el interior, la puerta lateral y las trampillas del garaje;
+  **Dormitorio**, **Garaje**, **Baño**, **Cocina** y **Comedor** dejan
+  únicamente esa zona del interior y apagan el paisaje. El garaje va de la
+  `base_colchon` hacia abajo y el dormitorio de ahí hacia arriba (R118); las
+  trampillas no salen en **Garaje**, que son del muro.
 - El selector de **vista** tiene los encuadres fijos, con nombre y agrupados en
   exterior e interior, los mismos de siempre para comparar de una pasada a
   otra. Derecha e izquierda son las del conductor.
@@ -215,8 +217,11 @@ Caja
   techo              tapa de arriba, 4 placas solares, aire acondicionado y,
                      claraboya del baño
   Interior
-    Dormitorio       cama (garaje), alto_pies, alto_almohadas, alto_cabina,
+    Dormitorio       cama (base_colchon, colchon, colchoneta_perros,
+                     almohadas), alto_pies, alto_almohadas, alto_cabina,
                      escalon_cama, ventana_perros, ventana_almohadas
+    Garaje           garaje (fondo, frontal, trasera y costados), bajo la
+                     base_colchon
     Cocina           encimera, altos_cocina, fregadero, vitroceramica,
                      ventana_cocina
     Comedor          sofa (3 módulos), mesa, aparador, altos_comedor,
@@ -283,7 +288,7 @@ ventilador, cúpula de satélite, antena, focos y luces de gabarito.
 
 ## Estado y cabos sueltos
 
-Al día, el modelo da 0 fuera de sitio: 546 cuerpos, 328 en el interior.
+Al día, el modelo da 0 fuera de sitio: 547 cuerpos, 329 en el interior.
 
 Contar los cuerpos no es una formalidad: `caja()` devuelve `null` cuando el
 rango que le llega mide cero, sin quejarse, y la pieza desaparece sin aviso.

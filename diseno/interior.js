@@ -13,7 +13,7 @@
 //   - contra la cabina, la cama atravesada, con sus altos en U
 import * as R from './reglas.js';
 import {
-  COCINA, COMEDOR, DORMITORIO, BANO as RUTA_BANO, INTERIOR,
+  COCINA, COMEDOR, DORMITORIO, GARAJE, BANO as RUTA_BANO, INTERIOR,
   caja as cajaForma, cilindro as cilindroForma, placa as placaForma,
   prisma as prismaForma, envolvente, muros, ord, redondear,
 } from '../modelo/geo.js';
@@ -257,12 +257,16 @@ function estante(comp, nombre, c, cotas, trasera = null) {
   });
 }
 
-// Caja cerrada por los seis lados: el garaje bajo la cama (R7).
-function cerrada(comp, nombre, c, t = ESPESOR) {
+// El garaje bajo la cama (R7): fondo y cuatro paredes. La tapa es la base del
+// colchon, que es del dormitorio (R118).
+//
+// La pared de los pies, la frontal, sube hasta `pies`. c.z[1] es la cara de
+// arriba de la base del colchon, y las otras tres paredes llegan hasta debajo de
+// ella.
+function cajaGaraje(comp, nombre, c, pies, t = ESPESOR) {
   panel(comp, nombre + '_fondo', c.x, c.y, [c.z[0], c.z[0] + t]);
-  panel(comp, nombre + '_tapa', c.x, c.y, [c.z[1] - t, c.z[1]]);
   const dentroZ = [c.z[0] + t, c.z[1] - t];
-  panel(comp, nombre + '_frontal', [c.x[0], c.x[0] + t], c.y, dentroZ);
+  panel(comp, nombre + '_frontal', [c.x[0], c.x[0] + t], c.y, [dentroZ[0], pies]);
   panel(comp, nombre + '_trasera', [c.x[1] - t, c.x[1]], c.y, dentroZ);
   const dentroX = [c.x[0] + t, c.x[1] - t];
   panel(comp, nombre + '_costado1', dentroX, [c.y[0], c.y[0] + t], dentroZ);
@@ -559,11 +563,16 @@ function dormitorio() {
   const somier = cama.somier;
   const c = { x: [CAMA_PIES, FRONTAL], y: [COSTADO_PUERTA, COSTADO_COCINA], z: [0.0, somier] };
   const comp = componente('cama', DORMITORIO);
-  cerrada(comp, 'garaje', c);                                       // R7
+  // R7, R118: del fondo a la base del colchon es el garaje
+  const garaje = componente('garaje', GARAJE);
+  cajaGaraje(garaje, 'garaje', c, cama.pies);
+  resumen.garaje = garaje.cuerpos.length;
   const perros = [...R.CAMA_PERROS];                                // R53
   const colchonZ = [somier, somier + cama.colchon];
-  bloque(comp, 'colchon', c.x, [c.y[0], perros[0]], colchonZ);
-  bloque(comp, 'colchoneta_perros', c.x, perros, colchonZ);
+  const lecho = R.CAMA_LECHO_X;                                     // R118
+  panel(comp, 'base_colchon', lecho, c.y, [somier - ESPESOR, somier]);
+  bloque(comp, 'colchon', lecho, [c.y[0], perros[0]], colchonZ);
+  bloque(comp, 'colchoneta_perros', lecho, perros, colchonZ);
   almohadas(comp, 'almohada', c, colchonZ[1]);
   resumen.cama = comp.cuerpos.length;
 

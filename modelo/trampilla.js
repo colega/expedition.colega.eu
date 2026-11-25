@@ -24,9 +24,9 @@ function poner(modelo, R, { nombre, T, lado, dentro }) {
   const sobre = (d) => ord(fuera, fuera + lado * d);
 
   // ------------------------------------------------------- hueco en el muro y el garaje
-  // Solo en la envolvente y en el costado del garaje, que es lo que llega al hueco.
+  // Solo en la envolvente y en el garaje, que es lo que llega al hueco.
   const corte = caja(X, ord(fuera + lado * 10, dentro - lado * (R.ESPESOR + 10)), Z);
-  const destinos = [...modelo.dentroDe(modelo.buscar('paredes').ruta), modelo.buscar('cama')];
+  const destinos = [...modelo.dentroDe(modelo.buscar('paredes').ruta), modelo.buscar('garaje')];
   for (const comp of destinos) {
     for (const cuerpo of muros(comp, corte)) comp.restar(cuerpo, corte);
   }

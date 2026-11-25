@@ -37,6 +37,9 @@ elevado de 50 (R3). De la trasera a la cabina:
   que se abre por dos trampillas, una en cada costado, a 300 de la pared de la
   cabina y a ras del suelo del garaje, con las bisagras hacia ella: la del
   costado de la puerta mide 810 x 850 (R116) y la de la cocina 600 x 600 (R117).
+  El colchón es de 200 y apoya en la base del colchón, a 870, junto a la pared
+  de los pies del garaje, que sube hasta 952 (R4, R6, R118). De la base hacia
+  arriba todo es dormitorio, y hacia abajo, garaje.
   Altos en U: el de los pies, de 422, y el de las almohadas y el
   de la cabina, de 250 (R65, R80). Un cajón-escalón en la esquina con el baño
   (R101).

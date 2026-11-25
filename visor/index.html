@@ -76,11 +76,12 @@
 
     /* un grupo de botones en una sola pieza */
     .segmentado {
-      display: flex; gap: 2px;
+      display: flex; flex-wrap: wrap; gap: 2px;
       background: var(--hundido); border: 1px solid var(--linea); border-radius: calc(var(--radio) + 3px); padding: 3px;
     }
     /* cada boton ancho segun su texto, y el sobrante repartido a partes iguales */
-    .segmentado button { flex: 1 1 auto; border: 0; background: transparent; padding: 6px 8px; border-radius: var(--radio); }
+    .segmentado button { flex: 1 1 auto; border: 0; background: transparent; padding: 6px 6px; border-radius: var(--radio); }
+    .segmentado + .segmentado { margin-top: 6px; }
     .segmentado button:hover:not(:disabled) { background: var(--panel); box-shadow: 0 1px 3px rgba(0, 0, 0, .14); }
 
     .dos { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
@@ -214,6 +215,10 @@
       <div class="segmentado">
         <button id="mostrarTodo" title="Todo el camión, con el paisaje">Todo</button>
         <button id="soloInterior" title="Solo el interior, la puerta lateral y las trampillas del garaje">Interior</button>
+      </div>
+      <div class="segmentado">
+        <button id="soloDormitorio" title="Solo el dormitorio: de la base del colchón hacia arriba">Dormitorio</button>
+        <button id="soloGaraje" title="Solo el garaje: de la base del colchón hacia abajo">Garaje</button>
         <button id="soloBano" title="Solo el baño">Baño</button>
         <button id="soloCocina" title="Solo la cocina">Cocina</button>
         <button id="soloComedor" title="Solo el comedor">Comedor</button>

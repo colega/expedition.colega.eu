@@ -139,11 +139,19 @@ export const ALTOS_BAJO_COCINA = ALTO_INTERIOR - ALTO_COCINA_ALTO;              
 //     costado: 1400 a lo largo de la caja, asi que los pies quedan en x 885.
 // R7  Debajo hay un garaje cerrado por los seis lados, que posa en el suelo de
 //     la caja. El acceso son las trampillas de los dos costados (R116, R117).
-// R4  El colchon tiene 100 de grueso.
-// R6  La tapa del garaje, o sea el somier, queda a 970. Con el colchon quedan
+// R4  El colchon tiene 200 de grueso: apoya en la base del colchon y su cara de
+//     arriba queda a 1070.
+// R6  La base del colchon, o sea el somier, queda a 870. Sobre el colchon quedan
 //     1030 hasta el techo, mas de los 900 que pide R5.
-export const CAMA = { ancho: 1400.0, somier: 970.0, colchon: 100.0 };
+// R118 La pared del garaje del lado de los pies, la frontal, sube hasta 952, 82
+//      por encima de la base del colchon, y la base y el colchon no apoyan
+//      encima de ella: empiezan en su cara de dentro, en x 903, y miden 1382 en
+//      vez de 1400. La trasera y los dos costados del garaje llegan solo hasta
+//      la base, que va de pared a pared de la caja. De la base hacia arriba todo
+//      es dormitorio, y de la base hacia abajo, garaje.
+export const CAMA = { ancho: 1400.0, somier: 870.0, colchon: 200.0, pies: 952.0 };
 export const CAMA_PIES = FRONTAL - CAMA.ancho;                            // 885
+export const CAMA_LECHO_X = [CAMA_PIES + ESPESOR, FRONTAL];               // R118: tapa y colchon
 export const HOLGURA_CAMA_TECHO = 900.0;                                  // R5
 // R53 En el costado de la cocina, la colchoneta de los perros: 553 de ancho,
 //     del costado a y 632, a ras del colchon y distinta de color. El colchon se

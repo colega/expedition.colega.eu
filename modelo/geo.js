@@ -11,8 +11,9 @@
 //       paredes         la envolvente agrupada por pared (R34): cada pared,
 //                       un grupo con su panel y su aislamiento
 //       techo           la tapa de arriba mas el equipo que va sobre ella (R37)
-//       Interior        suelo elevado y las cuatro estancias
-//         Dormitorio    cama, altos, escalon, ventanas
+//       Interior        suelo elevado y las cinco estancias
+//         Dormitorio    cama (base, colchon, almohadas), altos, escalon, ventanas
+//         Garaje        fondo, frontal, trasera y costados, bajo la base del colchon
 //         Cocina        encimera, altos, fregadero, vitro, ventana
 //         Bano          tabiques con puerta, ducha, plataforma, armario, ventana
 //         Comedor       sofa, mesa, aparador, altos, ventana
@@ -29,6 +30,7 @@ export const CAJA = ['Caja'];
 export const PAREDES = ['Caja', 'paredes'];
 export const INTERIOR = ['Caja', 'Interior'];
 export const DORMITORIO = ['Caja', 'Interior', 'Dormitorio'];
+export const GARAJE = ['Caja', 'Interior', 'Garaje'];
 export const COCINA = ['Caja', 'Interior', 'Cocina'];
 export const BANO = ['Caja', 'Interior', 'Bano'];
 export const COMEDOR = ['Caja', 'Interior', 'Comedor'];

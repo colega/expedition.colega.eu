@@ -398,7 +398,8 @@ function mostrarSolo(claves, apagar = []) {
 $('mostrarTodo').onclick = () => { mostrarSolo(null, OCULTOS_DE_SERIE); ponerPaisaje(true); };
 $('soloInterior').onclick = () => mostrarSolo(['Caja/Interior', 'Caja/puerta_lateral', 'Caja/trampilla_garaje',
   'Caja/trampilla_garaje_izq'], OCULTOS_DE_SERIE);
-for (const [id, zona] of [['soloBano', 'Bano'], ['soloCocina', 'Cocina'], ['soloComedor', 'Comedor']]) {
+for (const [id, zona] of [['soloDormitorio', 'Dormitorio'], ['soloGaraje', 'Garaje'], ['soloBano', 'Bano'],
+  ['soloCocina', 'Cocina'], ['soloComedor', 'Comedor']]) {
   $(id).onclick = () => { mostrarSolo([`Caja/Interior/${zona}`], OCULTOS_DE_SERIE); ponerPaisaje(false); };
 }
 

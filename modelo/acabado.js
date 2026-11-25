@@ -26,6 +26,7 @@ const MATERIALES = {
   instalaciones_bano: 'Esmalte blanco',
   // R27: la carpinteria es de plastico blanco lacado
   cama: 'Blanco lacado',
+  garaje: 'Blanco lacado',
   alto_pies: 'Blanco lacado',
   rampa: 'Acero',
   rampa_abierta: 'Acero',
@@ -85,6 +86,8 @@ const CUERPO_MATERIAL = {
   hoja: 'Verde militar',
   garrafa_1: 'Verde garrafa',
   garrafa_2: 'Verde garrafa',
+  // antes que la regla por 'colchon', que si no la base sale forrada de tela
+  base_colchon: 'Blanco lacado',
   colchon: 'Tela clara',
   parasol: 'Negro mate',
   puerta_tirador: 'Inox',     // R10

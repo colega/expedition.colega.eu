@@ -203,6 +203,66 @@ const trampillaGaraje = (desde_frontal, ancho, alto) => ({ desde_frontal, ancho,
 export const TRAMPILLA_GARAJE = trampillaGaraje(300.0, 810.0, 850.0);      // R116, la derecha
 export const TRAMPILLA_GARAJE_IZQ = trampillaGaraje(300.0, 600.0, 600.0);  // R117, la izquierda
 
+// --- garaje: electricidad -------------------------------------------------
+// R119 A 270 de la pared frontal, la de la cabina, una mampara de metacrilato
+//      de 6 cierra el hueco de los equipos electricos, de costado a costado del
+//      garaje y del fondo a la base del colchon. Va metida en dos carriles de
+//      aluminio, abajo y arriba, y se saca tirando de sus dos tiradores. Del
+//      tablero del garaje a la mampara quedan 252 de fondo.
+export const MAMPARA = { desde_frontal: 270.0, grueso: 6.0, carril: 20.0 };
+
+// R120 Los equipos son de Victron, con las cotas de sus hojas de datos y de sus
+//      planos (victronenergy.com), en mm: alto, ancho y fondo tal como van
+//      montados. La bateria lleva sus dos bornes M8 arriba, a 75.8 de cada
+//      extremo y a 28.6 del canto largo. El BatteryProtect se cuelga con los
+//      bornes M6 hacia fuera, 47 entre ellos.
+export const VICTRON = {
+  bateria: { modelo: 'Lithium NG 25,6 V / 300 Ah', alto: 206.0, ancho: 841.0, fondo: 205.0,
+    peso: 52.0, borne_extremo: 75.8, borne_canto: 28.6 },
+  multiplus: { modelo: 'MultiPlus-II 24/5000/120-50', alto: 607.0, ancho: 330.0, fondo: 149.0, peso: 30.0 },
+  mppt: { modelo: 'SmartSolar MPPT 150/35', alto: 130.0, ancho: 186.0, fondo: 70.0 },
+  orion_xs: { modelo: 'Orion XS 1400', alto: 138.1, ancho: 124.4, fondo: 53.0 },
+  orion_tr: { modelo: 'Orion-Tr 24/12-30A', alto: 131.0, ancho: 187.0, fondo: 86.0 },
+  lynx_entrada: { modelo: 'Lynx Power In M10', alto: 168.9, ancho: 252.3, fondo: 80.0 },
+  lynx_bms: { modelo: 'Lynx Smart BMS NG 500 A M10', alto: 166.5, ancho: 152.4, fondo: 80.9 },
+  lynx_distribuidor: { modelo: 'Lynx Distributor M10', alto: 168.9, ancho: 252.3, fondo: 80.0 },
+  cerbo: { modelo: 'Cerbo GX MK2', alto: 78.0, ancho: 154.0, fondo: 48.0 },
+  protector: { modelo: 'Smart BatteryProtect 12/24V-65A', alto: 55.0, ancho: 106.0, fondo: 40.0,
+    bornes: 47.0, borne_alto: 8.0 },
+};
+
+// R121 En el hueco, lo que pesa va al suelo y lo demas se cuelga del tablero del
+//      garaje contra la cabina. Del costado de la puerta al de la cocina:
+//        - las dos baterias en el suelo, en linea, con los 20 libres que pide
+//          Victron a los lados y 23.5 delante y detras
+//        - el MultiPlus a continuacion, colgado 100 sobre el suelo para que los
+//          cables le entren por abajo
+//        - lo que Victron no deja encima de las baterias va junto al MultiPlus:
+//          los dos MPPT y el Orion XS en columna, con 100 libres arriba y
+//          abajo, y el BatteryProtect encima del MultiPlus
+//        - encima de las baterias, a 430, la cadena Lynx: Power In, BMS y los
+//          dos distribuidores, montada boca abajo para que las baterias entren
+//          por el costado de la puerta. El Cerbo va encima del BMS, y al otro
+//          lado el Orion-Tr y el cuadro de 230
+export const ELECTRICO = { holgura_bateria: 20.0, bajo_multiplus: 100.0, holgura_cargador: 100.0,
+  lynx_y: -1110.0, lynx_z: 430.0, cerbo_z: 700.0, orion_tr_y: -100.0, cuadro_y: 250.0 };
+
+// R122 El cuadro de 230 es un Schneider Resi9 MP MIP11108T de superficie, de una
+//      fila de 8 modulos: un diferencial de 2 modulos y 5 automaticos. Le llega
+//      la salida AC-OUT 1 del MultiPlus por abajo.
+export const CUADRO_230 = { modelo: 'Schneider Resi9 MP MIP11108T', alto: 198.0, ancho: 196.0,
+  fondo: 101.5, modulo: 18.0, automaticos: 5, diferencial: 2, maneta: 45.0 };
+
+// R123 El cableado principal, con lo que piden los manuales de Victron:
+//        - de cada bateria al Lynx Power In, 95 mm2 por polo (300 A)
+//        - del distribuidor al MultiPlus, 2 x 50 mm2 por polo y fusible de 400 A
+//        - a los MPPT (fusible de 40 A) y al Orion XS (60 A), 16 mm2
+//        - al Orion-Tr, 10 mm2 y 30 A, y al BatteryProtect, 16 mm2
+//        - del MultiPlus al cuadro, manguera de 3 x 6 mm2
+//      Se dibujan con el diametro de fuera y van por el plano de la pared o por
+//      delante de los equipos, sin pisar ninguno.
+export const CABLES = { bateria: 19.0, multiplus: 14.0, cargador: 9.0, orion_tr: 7.5, alterna: 13.0 };
+
 // --- cocina --------------------------------------------------------------
 // R79 La cocina va en el costado izquierdo y corre de la trasera al baño en
 //     dos modulos iguales, sin columna de despensa.

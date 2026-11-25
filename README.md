@@ -104,6 +104,7 @@ diseno/
   README.md         su diseño y lo que tiene pendiente
   reglas.js         sus reglas, R1 en adelante
   interior.js       sus muebles, su baño y sus ventanas
+  electrico.js      la mampara, los equipos y el cableado del garaje
   referencia.jsonl  su inventario, para comparar (ver más abajo)
   despiece.csv      sus tableros, que escribe npm run construir
   ventanas.json     sus ventanas, ídem
@@ -120,7 +121,8 @@ npm run construir
 ```
 
 Levanta el camión en un segundo largo. Sale en este orden: caja,
-interior, chasis, cabina, exterior, puerta lateral, trampillas y acabado
+interior, chasis, cabina, exterior, puerta lateral, trampillas, electricidad y
+acabado
 (`modelo/camion.js`). El orden importa: el interior corta las ventanas en las
 paredes de la caja, la puerta lateral recorta los muebles y el zócalo, las
 trampillas cortan el muro y el garaje que ya existen, y el acabado va el último
@@ -221,7 +223,8 @@ Caja
                      almohadas), alto_pies, alto_almohadas, alto_cabina,
                      escalon_cama, ventana_perros, ventana_almohadas
     Garaje           garaje (fondo, frontal, trasera y costados), bajo la
-                     base_colchon
+                     base_colchon; mampara, electrico (los equipos de
+                     Victron y el cuadro de 230) y cableado (R119 a R123)
     Cocina           encimera, altos_cocina, fregadero, vitroceramica,
                      ventana_cocina
     Comedor          sofa (3 módulos), mesa, aparador, altos_comedor,
@@ -288,7 +291,7 @@ ventilador, cúpula de satélite, antena, focos y luces de gabarito.
 
 ## Estado y cabos sueltos
 
-Al día, el modelo da 0 fuera de sitio: 547 cuerpos, 329 en el interior.
+Al día, el modelo da 0 fuera de sitio: 596 cuerpos, 378 en el interior.
 
 Contar los cuerpos no es una formalidad: `caja()` devuelve `null` cuando el
 rango que le llega mide cero, sin quejarse, y la pieza desaparece sin aviso.

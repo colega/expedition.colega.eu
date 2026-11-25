@@ -71,7 +71,9 @@ export function huecos(modelo) {
     // ni la plataforma del inodoro, que tiene el armario entre ella y la pared.
     if (VEHICULO.has(comp.nombre) || comp.nombre.startsWith('ventan')
         || comp.nombre.startsWith('ducha_') || comp.nombre === 'toallero'
-        || comp.nombre === 'plataforma_wc') continue;
+        || comp.nombre === 'plataforma_wc'
+        // R119 a R123: lo electrico va dentro del garaje, contra sus tableros
+        || ['mampara', 'electrico', 'cableado'].includes(comp.nombre)) continue;
     const cajas = comp.cuerpos.map((c) => envolvente(c.forma));
     const min = (e) => Math.min(...cajas.map((b) => b[e][0]));
     const max = (e) => Math.max(...cajas.map((b) => b[e][1]));

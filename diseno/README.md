@@ -40,6 +40,15 @@ elevado de 50 (R3). De la trasera a la cabina:
   El colchón es de 200 y apoya en la base del colchón, a 870, junto a la pared
   de los pies del garaje, que sube hasta 952 (R4, R6, R118). De la base hacia
   arriba todo es dormitorio, y hacia abajo, garaje.
+- **Electricidad**, en el garaje, junto a la cabina, tras una mampara de
+  metacrilato desmontable a 270 de la pared (R119). Equipos de Victron (R120,
+  R121): las dos baterías Lithium NG de 25,6 V / 300 Ah en el suelo, en línea, y
+  a continuación el MultiPlus-II 24/5000 colgado a 100 del suelo. A su lado, en
+  columna, los dos MPPT 150/35 y el Orion XS 1400, con el BatteryProtect encima
+  del MultiPlus. Sobre las baterías, la cadena Lynx (Power In, Smart BMS NG y
+  dos distribuidores), el Cerbo GX, el Orion-Tr 24/12 y el cuadro de 230 con un
+  diferencial y cinco automáticos (R122). El cableado principal va con las
+  secciones de los manuales (R123).
   Altos en U: el de los pies, de 422, y el de las almohadas y el
   de la cabina, de 250 (R65, R80). Un cajón-escalón en la esquina con el baño
   (R101).
@@ -60,6 +69,15 @@ elevado de 50 (R3). De la trasera a la cabina:
   sin deflector en el techo.
 
 ## Pendiente
+
+- **Fusibles de las baterías.** El Lynx Power In no lleva fusibles y Victron
+  pide uno por batería en el positivo: un Lynx Class-T Power In o un Class-T de
+  350 A en cada cable (R123).
+- **Lo que entra y sale del hueco eléctrico** no está dibujado: los cables de
+  las placas a los MPPT, el del alternador al Orion XS, la toma de 230 de
+  fuera, las salidas del cuadro, la de 12 del Orion-Tr y la del
+  BatteryProtect, y los cables de datos del Cerbo y del BMS (R123).
+- **El Orion XS** pide 100 libres alrededor y a los lados le quedan 69 (R121).
 
 - **Salida del tubo del Separett.** Baja por la plataforma hasta el suelo de la
   casa y de ahí tiene que salir afuera (R104).

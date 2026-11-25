@@ -29,6 +29,11 @@ export const materiales = (R) => ({
   'Vidrio oscuro': { color: [40, 40, 40], rugosidad: 0.05, opacidad: 0.6 },
   'Fotovoltaico': { color: [48, 59, 150], rugosidad: 0.1, opacidad: 0.9 },
   'Piloto rojo': { color: [196, 53, 39], rugosidad: 0.1, opacidad: 0.8 },
+  // R120 y R123: los equipos de Victron, los bornes y los cables
+  'Azul Victron': { color: [24, 86, 158], rugosidad: 0.45 },
+  'Cobre': { color: [184, 115, 51], rugosidad: 0.3, metal: true },
+  'Cable rojo': { color: [170, 32, 30], rugosidad: 0.6 },
+  'Cable gris': { color: [205, 205, 200], rugosidad: 0.6 },
 });
 
 // lo que sale sin material, para que se vea que falta

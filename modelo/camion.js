@@ -18,6 +18,7 @@ import { trampilla } from './trampilla.js';
 import { acabado } from './acabado.js';
 import * as reglas from '../diseno/reglas.js';
 import { interior } from '../diseno/interior.js';
+import { electrico } from '../diseno/electrico.js';
 
 export const PASOS = [
   ['caja', 'caja y aislamiento', caja],
@@ -27,6 +28,7 @@ export const PASOS = [
   ['exterior', 'rampa, techo, bajos y accesorios', exterior],
   ['puerta_lateral', 'puerta de acceso del costado derecho', puertaLateral],
   ['trampilla', 'trampillas del garaje, una por costado', trampilla],
+  ['electrico', 'mampara, equipos y cableado del garaje', electrico],
   ['acabado', 'redondeos y materiales', acabado],
 ];
 

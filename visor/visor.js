@@ -42,6 +42,8 @@ const VISTAS = {
   bano_dentro: [[490, -200, 1650], [490, 900, 800], [0, 0, 1]],
   cocina_frente: [[-1100, -5600, 1950], [-1100, 850, 0], [0, 0, 1]],
   cocina: [[-400, 6800, 2050], [-1400, 600, 300], [0, 0, 1]],
+  // R121: los equipos del garaje, de frente, desde detras de la mampara
+  electrico: [[-1900, 0, 900], [2150, 0, 430], [0, 0, 1]],
 };
 
 // lo que sale oculto la primera vez: la ducha se enseña cerrada, y la rampa
@@ -168,6 +170,7 @@ const NOMBRES_VISTAS = {
     cocina_frente: 'Cocina de frente',
     bano: 'Baño',
     bano_dentro: 'Baño por dentro',
+    electrico: 'Equipos eléctricos',
   },
 };
 const VISTA_INICIAL = VISTAS[PARAMETROS.get('vista')] ? PARAMETROS.get('vista') : 'iso_trasera';

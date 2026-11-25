@@ -27,6 +27,10 @@ const MATERIALES = {
   // R27: la carpinteria es de plastico blanco lacado
   cama: 'Blanco lacado',
   garaje: 'Blanco lacado',
+  // R119 a R123: la mampara, los equipos de Victron y sus cables
+  mampara: 'Metacrilato',
+  electrico: 'Azul Victron',
+  cableado: 'Negro mate',
   alto_pies: 'Blanco lacado',
   rampa: 'Acero',
   rampa_abierta: 'Acero',
@@ -141,6 +145,11 @@ const POR_PREFIJO = [
   ['puerta_bisagra', 'Aluminio'],
   ['puerta_metacrilato', 'Metacrilato'],
   ['grifo', 'Cromo'], ['ducha_', 'Cromo'], ['desague', 'Cromo'],
+  // R120 a R123: bornes de cobre, el cuadro blanco con sus automaticos grises, y
+  // los cables rojos el positivo, negros el negativo y gris la manguera de 230
+  ['borne_', 'Cobre'],
+  ['cuadro_automatico', 'Gris lacado'], ['cuadro_diferencial', 'Gris lacado'], ['cuadro', 'Blanco mate'],
+  ['cable_pos', 'Cable rojo'], ['cable_neg', 'Negro mate'], ['cable_ac', 'Cable gris'],
   // R110: la claraboya es cristal tintado
   ['claraboya', 'Vidrio oscuro'],
 ];

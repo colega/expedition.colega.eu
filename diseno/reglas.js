@@ -223,7 +223,9 @@ export const VICTRON = {
   mppt: { modelo: 'SmartSolar MPPT 150/35', alto: 130.0, ancho: 186.0, fondo: 70.0 },
   orion_xs: { modelo: 'Orion XS 1400', alto: 138.1, ancho: 124.4, fondo: 53.0 },
   orion_tr: { modelo: 'Orion-Tr 24/12-30A', alto: 131.0, ancho: 187.0, fondo: 86.0 },
-  lynx_entrada: { modelo: 'Lynx Power In M10', alto: 168.9, ancho: 252.3, fondo: 80.0 },
+  // Victron da 279 x 169 x 97 con el lado largo primero, como en todos los
+  // Lynx; montado, ese lado va a lo ancho. Lleva dos fusibles Class-T (R123)
+  lynx_entrada: { modelo: 'Lynx Class-T Power In M10', alto: 169.0, ancho: 279.0, fondo: 97.0 },
   lynx_bms: { modelo: 'Lynx Smart BMS NG 500 A M10', alto: 166.5, ancho: 152.4, fondo: 80.9 },
   lynx_distribuidor: { modelo: 'Lynx Distributor M10', alto: 168.9, ancho: 252.3, fondo: 80.0 },
   cerbo: { modelo: 'Cerbo GX MK2', alto: 78.0, ancho: 154.0, fondo: 48.0 },
@@ -235,19 +237,22 @@ export const VICTRON = {
 //      donde mejor reparte su peso el chasis: la de abajo en el suelo y la de
 //      arriba en una balda de aluminio de 8, en el bastidor de R124. Entre una
 //      bateria y lo de encima quedan 100 para los bornes y los cables. Alrededor,
-//      los 20 libres que pide Victron a los lados y 23.5 delante y detras. Encima de la torre, la cadena Lynx: Power In, BMS y los
-//      dos distribuidores, montada boca abajo para que las baterias entren por
-//      el costado de la puerta. Lo demas se cuelga del tablero del garaje,
-//      fuera de la vertical de las baterias, como pide Victron:
-//        - del lado de la cocina, el MultiPlus junto a la torre, colgado 100
+//      los 20 libres que pide Victron a los lados y 23.5 delante y detras.
+//      Encima de la torre, la cadena Lynx: Class-T Power In, BMS y los dos
+//      distribuidores, montada derecha, con las baterias entrando por el
+//      costado de la cocina. Lo demas se cuelga del tablero del garaje, fuera
+//      de la vertical de las baterias, como pide Victron:
+//        - del lado de la puerta, el MultiPlus junto a la torre, colgado 100
 //          sobre el suelo para que los cables le entren por abajo, y el cuadro
-//          de 230 a continuacion
-//        - del lado de la puerta, el BatteryProtect junto a la torre, a menos
+//          de 230 a continuacion: se llega a los dos por la trampilla grande
+//          (R116). Los bornes de continua del MultiPlus van abajo a la derecha,
+//          en el extremo lejos de la torre, y la salida AC-OUT 1 en el cercano
+//        - del lado de la cocina, el BatteryProtect junto a la torre, a menos
 //          de los 50 que pide de la bateria; la columna de los dos MPPT y el
 //          Orion XS, con 100 libres alrededor; y la del Orion-Tr y el Cerbo
 //      Entre la torre y lo de los lados queda un paso de 40 para los cables que
 //      suben.
-export const ELECTRICO = { holgura_bateria: 20.0, hueco_bornes: 100.0, balda: 8.0,
+export const ELECTRICO = { lado_multiplus: 'puerta', holgura_bateria: 20.0, hueco_bornes: 100.0, balda: 8.0,
   paso_cables: 40.0, bajo_multiplus: 100.0, holgura_cargador: 100.0, columna_cargadores_y: -790.0,
   orion_tr_z: 400.0, cerbo_z: 650.0, cuadro_z: 450.0 };
 
@@ -274,7 +279,9 @@ export const CUADRO_230 = { modelo: 'Schneider Resi9 MP MIP11108T', alto: 198.0,
   fondo: 101.5, modulo: 18.0, automaticos: 5, diferencial: 2, maneta: 45.0 };
 
 // R123 El cableado principal, con lo que piden los manuales de Victron:
-//        - de cada bateria al Lynx Power In, 95 mm2 por polo (300 A)
+//        - de cada bateria al Lynx Class-T Power In, 95 mm2 por polo (300 A),
+//          con un fusible Class-T de 350 A en el positivo de cada una, como en
+//          el esquema de Victron para dos Lithium NG con el Smart BMS NG
 //        - del distribuidor al MultiPlus, 2 x 50 mm2 por polo y fusible de 400 A
 //        - a los MPPT (fusible de 40 A) y al Orion XS (60 A), 16 mm2
 //        - al Orion-Tr, 10 mm2 y 30 A, y al BatteryProtect, 16 mm2

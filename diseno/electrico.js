@@ -172,7 +172,7 @@ function cableado(M, q) {
     return y;
   };
 
-  // de las baterias al Power In. Los de la de arriba suben derechos o por
+  // de las baterias al Class-T Power In. Los de la de arriba suben derechos o por
   // encima de ella; los de la de abajo salen por el hueco de los bornes hasta el
   // paso del costado de la puerta y suben por ahi.
   const z2 = b2.pos[2];
@@ -202,7 +202,10 @@ function cableado(M, q) {
     ['cable_neg_multiplus_1', 2238.0, 0.9, 100.0], ['cable_neg_multiplus_2', 2259.0, 0.9, 120.0],
   ].forEach(([nombre, x, frac, borne]) => {
     const y = dentro(nombre, d2, d2.y[0] + frac * (d2.y[1] - d2.y[0]));
-    const yB = q.mp.y[0] + borne;
+    // R121: los bornes de continua van abajo a la derecha del MultiPlus, mirando
+    // a la pared; se arma del lado de la cocina y luego se refleja, asi que del
+    // lado de la puerta van aqui en el extremo lejos de la torre
+    const yB = E.lado_multiplus === 'puerta' ? q.mp.y[1] - borne : q.mp.y[0] + borne;
     cable(comp, nombre, [[x, y, zL], [x, y, zMp], [x, ySube, zMp], [x, ySube, 80.0], [x, yB, 80.0],
       [x, yB, q.mp.z[0]]], C.multiplus);
   });
@@ -239,7 +242,7 @@ function cableado(M, q) {
 
   // R122: la salida AC-OUT 1 del MultiPlus al cuadro, por debajo
   const cu = q.cuadro;
-  const yAc = q.mp.y[1] - 40.0;
+  const yAc = E.lado_multiplus === 'puerta' ? q.mp.y[0] + 40.0 : q.mp.y[1] - 40.0;
   const yCu = (cu.y[0] + cu.y[1]) / 2.0;
   cable(comp, 'cable_ac_multiplus', [[2150.0, yAc, q.mp.z[0]], [2150.0, yAc, 60.0], [2150.0, yCu, 60.0],
     [2210.0, yCu, 60.0], [2210.0, yCu, cu.z[0]]], C.alterna);
@@ -249,6 +252,16 @@ export function electrico(modelo) {
   mampara(modelo);
   const q = equipos(modelo);
   cableado(modelo, q);
+  // R121: todo se arma con el MultiPlus del lado de la cocina; si va del de la
+  // puerta, se refleja en el eje del camion. El bastidor ya es simetrico y
+  // lleva el costado en el nombre, asi que se queda como esta.
+  if (E.lado_multiplus === 'puerta') {
+    for (const nombre of ['electrico', 'cableado']) {
+      for (const cuerpo of modelo.buscar(nombre).cuerpos) {
+        if (!/^(bastidor_|balda_)/.test(cuerpo.nombre)) cuerpo.forma = cuerpo.forma.mirror('XZ', [0, 0, 0]);
+      }
+    }
+  }
   modelo.notas.electrico = { hueco_mm: { x: [XM, XW], y: Y, z: Z },
     equipos: Object.fromEntries(Object.entries(V).map(([k, e]) => [k, e.modelo])) };
 }

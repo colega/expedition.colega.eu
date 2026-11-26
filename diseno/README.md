@@ -45,9 +45,10 @@ elevado de 50 (R3). De la trasera a la cabina:
   R121): las dos baterías Lithium NG de 25,6 V / 300 Ah en torre, centradas en
   el ancho, en un bastidor de perfil 4040 de Aluxprofile anclado al suelo, la
   de arriba en una balda de aluminio (R124), y encima la cadena Lynx
-  (Power In, Smart BMS NG y dos distribuidores). Del lado de la cocina, el
-  MultiPlus-II 24/5000 colgado a 100 del suelo y el cuadro de 230 con un
-  diferencial y cinco automáticos (R122). Del lado de la puerta, el
+  (Class-T Power In con un fusible Class-T de 350 A por batería, Smart BMS NG
+  y dos distribuidores). Del lado de la puerta, a mano desde la trampilla
+  grande, el MultiPlus-II 24/5000 colgado a 100 del suelo y el cuadro de 230
+  con un diferencial y cinco automáticos (R122). Del lado de la cocina, el
   BatteryProtect, los dos MPPT 150/35 y el Orion XS 1400 en columna, y el
   Orion-Tr 24/12 con el Cerbo GX. Nada de lo que Victron no deja encima de las
   baterías queda encima de ellas. El cableado principal va con las secciones de
@@ -70,9 +71,6 @@ elevado de 50 (R3). De la trasera a la cabina:
 
 ## Pendiente
 
-- **Fusibles de las baterías.** El Lynx Power In no lleva fusibles y Victron
-  pide uno por batería en el positivo: un Lynx Class-T Power In o un Class-T de
-  350 A en cada cable (R123).
 - **Uniones y anclaje del bastidor.** No están dibujadas las escuadras de
   esquina 4040 de Aluxprofile ni las piezas de fijación al suelo, ni las
   escuadras con las que va sujeta cada batería (R124). El anclaje tiene que

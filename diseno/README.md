@@ -29,6 +29,12 @@ elevado de 50 (R3). De la trasera a la cabina:
   - Colchoneta de los perros, a ras del colchón (R53).
 - **Costado de la puerta**, el derecho, el de la acera:
   - Sofá en L con la mesa junto a la trasera (R20, R13).
+  - Calefactor de agua de doble circuito dentro del arcón del tramo largo
+    del sofá, accesible por la tapa del asiento (R126). La reserva para el
+    acumulador es de 600 de largo por 300 de diámetro, más 35 para las cuatro
+    bocas orientadas hacia la cabina. Dos bocas son la entrada de agua fría
+    y la salida de agua caliente sanitaria. Las otras dos son la entrada y
+    el retorno del fluido caloportador del intercambiador.
   - Aparador entre el sofá y la puerta, con reborde redondeado (R36, R100).
   - Puerta de la caja: una Outbound DE-20, centrada entre los altos (R99).
   - Almohadas de la cama (R49).
@@ -72,6 +78,9 @@ elevado de 50 (R3). De la trasera a la cabina:
 
 ## Pendiente
 
+- **Calefactor de agua.** Elegir el equipo y la fuente de calor del primario,
+  y definir el anclaje y el recorrido de las tuberías de los dos circuitos
+  (R126).
 - **Uniones y anclaje del bastidor.** No están dibujadas las escuadras de
   esquina 4040 de Aluxprofile ni las piezas de fijación al suelo, ni las
   escuadras con las que va sujeta cada batería (R124). El anclaje tiene que

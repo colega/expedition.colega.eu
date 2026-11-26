@@ -15,7 +15,7 @@ import * as R from './reglas.js';
 import {
   COCINA, COMEDOR, DORMITORIO, GARAJE, BANO as RUTA_BANO, INTERIOR,
   caja as cajaForma, cilindro as cilindroForma, placa as placaForma,
-  prisma as prismaForma, envolvente, muros, ord, redondear,
+  cilindroEntre, prisma as prismaForma, envolvente, muros, ord, redondear,
 } from '../modelo/geo.js';
 
 const ALTO = R.ALTO_INTERIOR;
@@ -488,6 +488,43 @@ function moduloSofa(comp, nombre, c, paredes, t = ESPESOR) {
   });
 }
 
+// R126: acumulador sobre dos cunas dentro del arcon del tramo largo.
+function calefactorAgua(tramo) {
+  const comp = componente('calefactor_agua', COMEDOR);
+  const { largo, diametro, elevacion, apoyo, boca } = R.CALEFACTOR_AGUA;
+  const centroX = (tramo.x[0] + tramo.x[1]) / 2;
+  const centroY = (tramo.y[0] + tramo.y[1]) / 2;
+  const base = tramo.z[0] + ESPESOR;
+  const radio = diametro / 2;
+  const ejeZ = base + elevacion + radio;
+  const x = [centroX - largo / 2, centroX + largo / 2];
+  const acumulador = cilindroEntre('x', [centroY, ejeZ], x, radio);
+  comp.poner('acumulador', acumulador);
+
+  const anchoApoyo = [centroY - apoyo.ancho / 2, centroY + apoyo.ancho / 2];
+  [x[0] + apoyo.desde_extremo, x[1] - apoyo.desde_extremo].forEach((centro, i) => {
+    const cuna = cajaForma([centro - apoyo.largo / 2, centro + apoyo.largo / 2],
+      anchoApoyo, [base, base + apoyo.alto]);
+    comp.poner(`calefactor_cuna_${i + 1}`, cuna.cut(acumulador));
+  });
+
+  const ySanitaria = centroY + boca.desfase_y;
+  const yPrimario = centroY - boca.desfase_y;
+  const zAlta = ejeZ + boca.desfase_z;
+  const zBaja = ejeZ - boca.desfase_z;
+  const tramoBoca = [x[1], x[1] + boca.vuelo];
+  for (const [nombre, y, z] of [
+    ['sanitaria_entrada_fria', ySanitaria, zBaja],
+    ['sanitaria_salida_caliente', ySanitaria, zAlta],
+    ['primario_entrada', yPrimario, zAlta],
+    ['primario_retorno', yPrimario, zBaja],
+  ]) {
+    const exterior = cilindroEntre('x', [y, z], tramoBoca, boca.radio);
+    const interior = cilindroEntre('x', [y, z], tramoBoca, boca.radio_interior);
+    comp.poner(`calefactor_${nombre}`, exterior.cut(interior));
+  }
+}
+
 // Mesa de altura ajustable: tablero, columna y base (R13).
 //
 // R69: la esquina del tablero que da al paso de la cocina, la de la x mayor y
@@ -524,6 +561,7 @@ function comedor() {
     [['y', 0, [...esquina.x]], ['x', 1, [esquina.y[0] + abajo, esquina.y[1] - 15]]]);
   moduloSofa(comp, 'sofa_retorno', retorno, [['x', 1, [retorno.y[0], retorno.y[1] - 15]]]);
   resumen.sofa = comp.cuerpos.length;
+  calefactorAgua(tramo);
 
   const m = R.MESA;
   comp = componente('mesa', COMEDOR);

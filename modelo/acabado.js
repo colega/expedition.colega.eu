@@ -38,6 +38,7 @@ const MATERIALES = {
   encimera: 'Blanco lacado',
   altos_cocina: 'Blanco lacado',
   sofa: 'Blanco lacado',
+  calefactor_agua: 'Gris lacado',
   mesa: 'Blanco lacado',
   altos_comedor: 'Blanco lacado',
   escalon_cama: 'Blanco lacado',
@@ -152,6 +153,10 @@ const POR_PREFIJO = [
   ['mando_desconectador', 'Piloto rojo'], ['desconectador_', 'Negro mate'],
   ['cuadro_automatico', 'Gris lacado'], ['cuadro_diferencial', 'Gris lacado'], ['cuadro', 'Blanco mate'],
   ['cable_pos', 'Cable rojo'], ['cable_neg', 'Negro mate'], ['cable_ac', 'Cable gris'],
+  // R126: se distinguen las bocas de agua sanitaria y las del primario.
+  ['calefactor_cuna_', 'Acero'],
+  ['calefactor_sanitaria_', 'Inox'],
+  ['calefactor_primario_', 'Cobre'],
   // R110: la claraboya es cristal tintado
   ['claraboya', 'Vidrio oscuro'],
 ];

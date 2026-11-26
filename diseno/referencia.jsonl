@@ -120,6 +120,13 @@
 {"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_retorno_tapa","caja":[-1013.7,-422.3,-593.6,-93.6,472,490],"litros":5.323,"area":0.6307,"material":"Blanco lacado","caras":6}
 {"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_retorno_cojin","caja":[-998.7,-437.3,-578.6,-108.6,490,540],"litros":13.193,"area":0.6309,"material":"Tela gris","caras":6}
 {"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_retorno_respaldo1","caja":[-572.3,-422.3,-593.6,-108.6,540,930],"litros":22.698,"area":0.5905,"material":"Tela gris","caras":6}
+{"ruta":"Caja/Interior/Comedor/calefactor_agua","nombre":"acumulador","caja":[-1949.3,-1349.3,-1039.3,-739.3,88,388],"litros":42.412,"area":0.7069,"material":"Gris lacado","caras":3}
+{"ruta":"Caja/Interior/Comedor/calefactor_agua","nombre":"calefactor_cuna_1","caja":[-1871.8,-1826.8,-989.3,-789.3,68,126.2],"litros":0.288,"area":0.0369,"material":"Acero","caras":6}
+{"ruta":"Caja/Interior/Comedor/calefactor_agua","nombre":"calefactor_cuna_2","caja":[-1471.8,-1426.8,-989.3,-789.3,68,126.2],"litros":0.288,"area":0.0369,"material":"Acero","caras":6}
+{"ruta":"Caja/Interior/Comedor/calefactor_agua","nombre":"calefactor_sanitaria_entrada_fria","caja":[-1349.3,-1314.3,-842.3,-816.3,175,201],"litros":0.012,"area":0.0053,"material":"Inox","caras":4}
+{"ruta":"Caja/Interior/Comedor/calefactor_agua","nombre":"calefactor_sanitaria_salida_caliente","caja":[-1349.3,-1314.3,-842.3,-816.3,275,301],"litros":0.012,"area":0.0053,"material":"Inox","caras":4}
+{"ruta":"Caja/Interior/Comedor/calefactor_agua","nombre":"calefactor_primario_entrada","caja":[-1349.3,-1314.3,-962.3,-936.3,275,301],"litros":0.012,"area":0.0053,"material":"Cobre","caras":4}
+{"ruta":"Caja/Interior/Comedor/calefactor_agua","nombre":"calefactor_primario_retorno","caja":[-1349.3,-1314.3,-962.3,-936.3,175,201],"litros":0.012,"area":0.0053,"material":"Cobre","caras":4}
 {"ruta":"Caja/Interior/Comedor/mesa","nombre":"mesa_tablero","caja":[-1945.4,-1043.6,-547.5,53.8,800,820],"litros":10.745,"area":1.1335,"material":"Blanco lacado","caras":7}
 {"ruta":"Caja/Interior/Comedor/mesa","nombre":"mesa_columna","caja":[-1539.5,-1449.5,-291.8,-201.8,70,800],"litros":5.913,"area":0.279,"material":"Blanco lacado","caras":6}
 {"ruta":"Caja/Interior/Comedor/mesa","nombre":"mesa_base","caja":[-1694.5,-1294.5,-406.8,-86.9,50,70],"litros":2.56,"area":0.2848,"material":"Blanco lacado","caras":6}

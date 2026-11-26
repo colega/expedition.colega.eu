@@ -340,6 +340,13 @@ export const SOFA = { fin_x: -422.3, fondo: 591.4, retorno: 500.0 };
 export const ASIENTO = 490.0;
 export const COJIN_ASIENTO = 50.0;
 export const RESPALDO = { abajo: 150.0, arriba: 90.0, alto: 880.0 };
+// R126 Bajo la tapa del tramo largo va un acumulador de agua caliente
+//      sanitaria con intercambiador. El primario y el agua sanitaria tienen
+//      dos bocas cada uno, hacia la cabina. Son cotas de reserva para el
+//      equipo y sus apoyos, hasta elegir el modelo y la fuente de calor.
+export const CALEFACTOR_AGUA = { largo: 600.0, diametro: 300.0, elevacion: 20.0,
+  apoyo: { largo: 45.0, ancho: 200.0, alto: 60.0, desde_extremo: 100.0 },
+  boca: { vuelo: 35.0, radio: 13.0, radio_interior: 8.0, desfase_y: 60.0, desfase_z: 50.0 } };
 // R13 La mesa es de altura ajustable, con tablero de 20 y la cara de arriba a
 //     770 sobre el piso: 260 de rodillas sobre el cojin (R94).
 // R69 Lleva cortada a 45 grados la esquina que da al paso de la cocina, 100

@@ -105,17 +105,17 @@
 {"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_tramo_respaldo1","caja":[-2270,-1013.7,-1185,-1035,540,930],"litros":58.795,"area":1.3808,"material":"Tela gris","caras":6}
 {"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_esquina_fondo","caja":[-1013.7,-422.3,-1185,-593.6,50,68],"litros":6.296,"area":0.7421,"material":"Blanco lacado","caras":6}
 {"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_esquina_lado_x1","caja":[-1013.7,-995.7,-1185,-593.6,68,472],"litros":4.301,"area":0.5137,"material":"Blanco lacado","caras":6}
-{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_esquina_lado_x2","caja":[-440.3,-422.3,-1185,-593.6,68,472],"litros":4.301,"area":0.5137,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_esquina_lado_x2","caja":[-440.3,-422.3,-1185,-593.6,454,472],"litros":0.192,"area":0.0432,"material":"Blanco lacado","caras":6}
 {"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_esquina_lado_y1","caja":[-995.7,-440.3,-1185,-1167,68,472],"litros":4.039,"area":0.4833,"material":"Blanco lacado","caras":6}
-{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_esquina_lado_y2","caja":[-995.7,-440.3,-611.6,-593.6,68,472],"litros":4.039,"area":0.4833,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_esquina_lado_y2","caja":[-995.7,-440.3,-611.6,-593.6,454,472],"litros":0.18,"area":0.0406,"material":"Blanco lacado","caras":6}
 {"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_esquina_tapa","caja":[-1013.7,-422.3,-1185,-593.6,472,490],"litros":6.296,"area":0.7421,"material":"Blanco lacado","caras":6}
 {"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_esquina_cojin","caja":[-998.7,-437.3,-1170,-608.6,490,540],"litros":15.758,"area":0.7426,"material":"Tela gris","caras":6}
 {"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_esquina_respaldo1","caja":[-1013.7,-422.3,-1185,-1035,540,930],"litros":27.678,"area":0.6995,"material":"Tela gris","caras":6}
 {"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_esquina_respaldo2","caja":[-572.3,-422.3,-1035,-608.6,540,930],"litros":19.956,"area":0.5305,"material":"Tela gris","caras":6}
-{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_retorno_fondo","caja":[-1013.7,-422.3,-593.6,-93.6,50,68],"litros":5.323,"area":0.6307,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_retorno_fondo","caja":[-1013.7,-422.3,-593.6,-93.6,50,68],"litros":5.304,"area":0.6307,"material":"Blanco lacado","caras":7}
 {"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_retorno_lado_x1","caja":[-1013.7,-995.7,-593.6,-93.6,68,472],"litros":3.636,"area":0.4365,"material":"Blanco lacado","caras":6}
-{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_retorno_lado_x2","caja":[-440.3,-422.3,-593.6,-93.6,68,472],"litros":3.636,"area":0.4365,"material":"Blanco lacado","caras":6}
-{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_retorno_lado_y1","caja":[-995.7,-440.3,-593.6,-575.6,68,472],"litros":4.039,"area":0.4833,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_retorno_lado_x2","caja":[-440.3,-422.3,-593.6,-93.6,454,472],"litros":0.162,"area":0.0366,"material":"Blanco lacado","caras":6}
+{"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_retorno_lado_y1","caja":[-995.7,-440.3,-593.6,-575.6,454,472],"litros":0.18,"area":0.0406,"material":"Blanco lacado","caras":6}
 {"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_retorno_lado_y2","caja":[-995.7,-440.3,-111.6,-93.6,68,472],"litros":4.039,"area":0.4833,"material":"Blanco lacado","caras":6}
 {"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_retorno_tapa","caja":[-1013.7,-422.3,-593.6,-93.6,472,490],"litros":5.323,"area":0.6307,"material":"Blanco lacado","caras":6}
 {"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_retorno_cojin","caja":[-998.7,-437.3,-578.6,-108.6,490,540],"litros":13.193,"area":0.6309,"material":"Tela gris","caras":6}
@@ -140,14 +140,17 @@
 {"ruta":"Caja/Interior/Comedor/altos_comedor","nombre":"altos_comedor_puerta_3","caja":[-1041,-422.7,-843.5,-825.5,1768,2082],"litros":3.494,"area":0.4218,"material":"Gris lacado","caras":6}
 {"ruta":"Caja/Interior/Comedor/altos_comedor","nombre":"altos_comedor_puerta_4","caja":[-419.7,198.5,-843.5,-825.5,1768,2082],"litros":3.494,"area":0.4218,"material":"Gris lacado","caras":6}
 {"ruta":"Caja/Interior/Comedor/aparador","nombre":"aparador_trasera","caja":[-422.3,200,-1185,-1167,50,988],"litros":10.507,"area":1.2236,"material":"Blanco lacado","caras":6}
-{"ruta":"Caja/Interior/Comedor/aparador","nombre":"aparador_costado1","caja":[-422.3,-404.3,-1167,-93.6,50,1038],"litros":19.08,"area":2.1938,"material":"Blanco lacado","caras":7}
+{"ruta":"Caja/Interior/Comedor/aparador","nombre":"aparador_costado1","caja":[-422.3,-404.3,-1167,-93.6,472,1038],"litros":10.926,"area":1.2726,"material":"Blanco lacado","caras":7}
 {"ruta":"Caja/Interior/Comedor/aparador","nombre":"aparador_costado2","caja":[182,200,-1167,-93.6,50,1038],"litros":19.08,"area":2.1938,"material":"Blanco lacado","caras":7}
 {"ruta":"Caja/Interior/Comedor/aparador","nombre":"aparador_suelo","caja":[-404.3,182,-1167,-93.6,50,68],"litros":11.328,"area":1.3184,"material":"Blanco lacado","caras":6}
 {"ruta":"Caja/Interior/Comedor/aparador","nombre":"aparador_techo","caja":[-404.3,182,-1167,-93.6,970,988],"litros":11.328,"area":1.3184,"material":"Blanco lacado","caras":6}
 {"ruta":"Caja/Interior/Comedor/aparador","nombre":"aparador_estante1","caja":[-404.3,182,-1167,-93.6,519,537],"litros":11.328,"area":1.3184,"material":"Blanco lacado","caras":6}
 {"ruta":"Caja/Interior/Comedor/aparador","nombre":"aparador_puerta_1","caja":[-420.8,-112.7,-93.6,-75.6,68,970],"litros":5.003,"area":0.5995,"material":"Gris lacado","caras":6}
 {"ruta":"Caja/Interior/Comedor/aparador","nombre":"aparador_puerta_2","caja":[-109.7,198.5,-93.6,-75.6,68,970],"litros":5.003,"area":0.5995,"material":"Gris lacado","caras":6}
-{"ruta":"Caja/Interior/suelo_elevado","nombre":"suelo_elevado_tablero","caja":[-2285,885,-1185,1185,32,50],"litros":135.232,"area":15.2252,"material":"Roble","caras":6}
+{"ruta":"Caja/Interior/Comedor/deposito_agua","nombre":"deposito_cuerpo","caja":[-983.2,169.5,-1154.5,-124.1,73,452],"litros":39.028,"area":7.8127,"material":"Polietileno blanco","caras":14}
+{"ruta":"Caja/Interior/Comedor/deposito_agua","nombre":"deposito_tapa_inspeccion","caja":[-916.6,-716.6,-443.6,-243.6,452,460],"litros":0.251,"area":0.0679,"material":"Polietileno blanco","caras":3}
+{"ruta":"Caja/Interior/Comedor/deposito_agua","nombre":"deposito_desague","caja":[-832.6,-800.6,-359.6,-327.6,12,73],"litros":0.03,"area":0.0109,"material":"Polietileno blanco","caras":4}
+{"ruta":"Caja/Interior/suelo_elevado","nombre":"suelo_elevado_tablero","caja":[-2285,885,-1185,1185,32,50],"litros":135.214,"area":15.2252,"material":"Roble","caras":7}
 {"ruta":"Caja/Interior/suelo_elevado","nombre":"suelo_elevado_cerco_x0","caja":[-2285,-2267,-1185,1185,0,32],"litros":1.365,"area":0.2382,"material":"Roble","caras":6}
 {"ruta":"Caja/Interior/suelo_elevado","nombre":"suelo_elevado_cerco_x1","caja":[867,885,-1185,1185,0,32],"litros":1.365,"area":0.2382,"material":"Roble","caras":6}
 {"ruta":"Caja/Interior/suelo_elevado","nombre":"suelo_elevado_cerco_y0","caja":[-2267,867,-1185,-1167,0,32],"litros":1.805,"area":0.3146,"material":"Roble","caras":6}

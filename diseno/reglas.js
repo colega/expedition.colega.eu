@@ -359,6 +359,15 @@ export const MESA = { x: [-1945.4, -1043.6], y: [-547.5, 53.8], alto: 770.0,
 //     por la cara del centro, con dos puertas y un estante a media altura.
 export const APARADOR = { bahias: 2, estantes: [0.5] };
 export const FIN_COMEDOR = 200.0;      // hasta aqui llegan el aparador y su alto
+// R127 Deposito de agua de polietileno blanco bajo la esquina y el retorno
+//      del sofa y el aparador. Del hueco entre tableros se descuentan 25 mm
+//      en cada cota total: en planta se centra, en altura se dejan 5 mm
+//      debajo y el resto arriba para los largueros y la tapa de inspeccion.
+//      La tapa queda bajo el asiento del retorno y el desague acaba en el
+//      falso suelo, sin tuberias.
+export const DEPOSITO_AGUA = { margen: 25.0, margen_inferior: 5.0, pared: 10.0,
+  tapa: { diametro: 200.0, paso: 180.0, alto: 8.0, fraccion_x: 1 / 3 },
+  desague: { diametro: 32.0, paso: 20.0, bajo_tablero: 20.0, holgura: 2.0 } };
 // R100 Los dos costados del aparador, los que van de la pared al centro, suben
 //      50 por encima del tablero: hacen de reborde para que no se caiga lo que
 //      se deja encima. En la punta del paso el canto de arriba se redondea con
@@ -679,7 +688,7 @@ export const FUERA = {
   climatizador: 'descartado',
   ventilador_de_techo: 'descartado',
   presurizador: 'para mas adelante',
-  deposito_de_agua_limpia: 'descartado',
+  deposito_de_agua_limpia: 'descartado en los bajos (R127)',
   deposito_de_aguas_grises: 'descartado',
   cupula_de_satelite: 'descartada',
   antena: 'descartada',

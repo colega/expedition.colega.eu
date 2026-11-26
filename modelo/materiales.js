@@ -10,6 +10,7 @@ export const materiales = (R) => ({
   'Negro chasis': { color: R.NEGRO_CHASIS, rugosidad: 0.35 },
   'Blanco lacado': { color: [246, 246, 243], rugosidad: 0.3 },
   'Blanco mate': { color: [246, 246, 243], rugosidad: 0.7 },
+  'Polietileno blanco': { color: [246, 246, 240], rugosidad: 0.6 },
   'Negro mate': { color: [25, 25, 25], rugosidad: 0.7 },
   'Verde garrafa': { color: [68, 150, 72], rugosidad: 0.7 },
   'Metacrilato': { color: [246, 246, 243], rugosidad: 0.7, opacidad: 0.55 },

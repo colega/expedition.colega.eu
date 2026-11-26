@@ -146,6 +146,8 @@ algo:
   esquina del baño (R70), abarca también el hueco.
 - **sin_color**: cuerpos sin material o con uno que el visor no conoce. Debe
   salir vacío.
+- **deposito_agua**: medidas exteriores e interiores del depósito y su
+  capacidad en litros (R127).
 - **contra_referencia**: lo que cambia respecto a su `referencia.jsonl`.
 
 ### La referencia
@@ -229,7 +231,7 @@ Caja
     Cocina           encimera, altos_cocina, fregadero, vitroceramica,
                      ventana_cocina
     Comedor          sofa (3 módulos), calefactor_agua, mesa, aparador,
-                     altos_comedor, ventana_comedor
+                     deposito_agua, altos_comedor, ventana_comedor
     Bano             tabiques_y_puerta, instalaciones_bano, ducha_cerrada,
                      ducha_abierta, toallero, alto_bano, ventana_bano
     suelo_elevado
@@ -292,7 +294,7 @@ ventilador, cúpula de satélite, antena, focos y luces de gabarito.
 
 ## Estado y cabos sueltos
 
-Al día, el modelo da 0 fuera de sitio: 622 cuerpos, 404 en el interior.
+Al día, el modelo da 0 fuera de sitio: 625 cuerpos, 407 en el interior.
 
 Contar los cuerpos no es una formalidad: `caja()` devuelve `null` cuando el
 rango que le llega mide cero, sin quejarse, y la pieza desaparece sin aviso.

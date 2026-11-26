@@ -188,7 +188,9 @@ const ejes = (eje, a, otro, b, z) => ({ [eje]: a, [otro]: b, z });
 //
 // reborde es lo que los costados suben por encima del techo (R100). Con
 // delantera el frente se cierra con una tapa como la trasera (R101).
-function carcasa(comp, nombre, c, { t = ESPESOR, trasera = null, reborde = 0.0, delantera = false } = {}) {
+// inicioCostados da la cota inferior de los costados que se acortan (R127).
+function carcasa(comp, nombre, c, { t = ESPESOR, trasera = null, reborde = 0.0,
+  delantera = false, inicioCostados = [] } = {}) {
   const [eje, lado] = caraTrasera(c, trasera);
   const otro = otroEje(eje);
   let tras, dentro;
@@ -206,7 +208,7 @@ function carcasa(comp, nombre, c, { t = ESPESOR, trasera = null, reborde = 0.0, 
     panel(comp, nombre + '_delantera', e.x, e.y, e.z);
   }
   [c[otro][0], c[otro][1] - t].forEach((extremo, k) => {
-    e = ejes(eje, dentro, otro, [extremo, extremo + t], [c.z[0], c.z[1] + reborde]);
+    e = ejes(eje, dentro, otro, [extremo, extremo + t], [inicioCostados[k] ?? c.z[0], c.z[1] + reborde]);
     panel(comp, `${nombre}_costado${k + 1}`, e.x, e.y, e.z);
   });
   const entre = [c[otro][0] + t, c[otro][1] - t];
@@ -303,9 +305,9 @@ function frentes(comp, nombre, c, { bahias = 1, bandas = null, t = ESPESOR, tras
 
 // Un mueble de una pieza: carcasa, estantes y puertas.
 function mueble(nombre, ruta, c, { trasera = null, puertas = false, bahias = null,
-  estantes = [], bandas = null, reborde = null, delantera = false } = {}) {
+  estantes = [], bandas = null, reborde = null, delantera = false, inicioCostados = [] } = {}) {
   const comp = componente(nombre, ruta);
-  carcasa(comp, nombre, c, { trasera, reborde: reborde ? reborde.alto : 0.0, delantera });
+  carcasa(comp, nombre, c, { trasera, reborde: reborde ? reborde.alto : 0.0, delantera, inicioCostados });
   if (reborde) redondearPunta(comp, nombre, reborde.radio);
   const alto = c.z[1] - c.z[0];
   const cotas = estantes.map((f) => c.z[0] + alto * f);
@@ -462,20 +464,26 @@ function respaldoTrapecio(comp, nombre, c, eje, lado, z0, z1, rango) {
   return prisma(comp, nombre, otroEje(eje), centro, largo, seccion);
 }
 
-// Modulo de sofa: arcon cerrado con tapa, cojin corrido y respaldos.
+const bajoTapaSofa = (suelo) => suelo + R.ASIENTO - R.COJIN_ASIENTO - ESPESOR;
+
+// Modulo de sofa: fondo, lados, tapa, cojin corrido y respaldos.
 //
 // paredes es una lista de [eje, lado, rango] con las paredes que llevan
-// respaldo. La esquina lleva dos, formando la L.
-function moduloSofa(comp, nombre, c, paredes, t = ESPESOR) {
+// respaldo. Los lados interiores del hueco del deposito quedan como largueros.
+function moduloSofa(comp, nombre, c, paredes, largueros = []) {
+  const t = ESPESOR;
   const suelo = c.z[0];
-  const tapaZ = [suelo + R.ASIENTO - R.COJIN_ASIENTO - t, suelo + R.ASIENTO - R.COJIN_ASIENTO];
+  const tapaZ = [bajoTapaSofa(suelo), suelo + R.ASIENTO - R.COJIN_ASIENTO];
   panel(comp, nombre + '_fondo', c.x, c.y, [suelo, suelo + t]);
   const dentroZ = [suelo + t, tapaZ[0]];
+  const zLado = (lado) => largueros.includes(lado) ? [tapaZ[0] - t, tapaZ[0]] : dentroZ;
   [[c.x[0], c.x[0] + t], [c.x[1] - t, c.x[1]]].forEach((x, k) => {
-    panel(comp, `${nombre}_lado_x${k + 1}`, x, c.y, dentroZ);
+    const lado = `x${k + 1}`;
+    panel(comp, `${nombre}_lado_${lado}`, x, c.y, zLado(lado));
   });
   [[c.y[0], c.y[0] + t], [c.y[1] - t, c.y[1]]].forEach((y, k) => {
-    panel(comp, `${nombre}_lado_y${k + 1}`, [c.x[0] + t, c.x[1] - t], y, dentroZ);
+    const lado = `y${k + 1}`;
+    panel(comp, `${nombre}_lado_${lado}`, [c.x[0] + t, c.x[1] - t], y, zLado(lado));
   });
   panel(comp, nombre + '_tapa', c.x, c.y, tapaZ);
 
@@ -525,6 +533,42 @@ function calefactorAgua(tramo) {
   }
 }
 
+// R127: carcasa hueca con boca de inspeccion y salida de desague por debajo.
+function depositoAgua(sofa, retorno, aparador) {
+  const { margen, margen_inferior, pared, tapa, desague } = R.DEPOSITO_AGUA;
+  const suelo = retorno.z[0];
+  const base = suelo + ESPESOR;
+  const retranqueo = ESPESOR + margen / 2;
+  const x = [retorno.x[0] + retranqueo, aparador.x[1] - retranqueo];
+  const y = [aparador.y[0] + retranqueo, aparador.y[1] - retranqueo];
+  const z = [base + margen_inferior, bajoTapaSofa(suelo) - (margen - margen_inferior)];
+  const [ix, iy, iz] = [x, y, z].map(([inicio, fin]) => [inicio + pared, fin - pared]);
+  // El desague queda alineado con la tapa, entre travesaños del falso suelo.
+  const centro = [retorno.x[0] + (retorno.x[1] - retorno.x[0]) * tapa.fraccion_x,
+    (retorno.y[0] + retorno.y[1]) / 2];
+  const fondoDesague = SUELO - ESPESOR - desague.bajo_tablero;
+  const bocaSuperior = cilindroForma(centro, [iz[1], z[1]], tapa.paso / 2);
+  const bocaInferior = cilindroForma(centro, [fondoDesague, iz[0]], desague.paso / 2);
+
+  const comp = componente('deposito_agua', COMEDOR);
+  const cuerpo = cajaForma(x, y, z).cut(cajaForma(ix, iy, iz)).cut(bocaSuperior).cut(bocaInferior);
+  comp.poner('deposito_cuerpo', cuerpo);
+  cilindro(comp, 'deposito_tapa_inspeccion', centro, [z[1], z[1] + tapa.alto], tapa.diametro / 2);
+  const racor = cilindroForma(centro, [fondoDesague, z[0]], desague.diametro / 2);
+  comp.poner('deposito_desague', racor.cut(bocaInferior));
+
+  // El paso atraviesa el fondo del sofa y el tablero del falso suelo.
+  const paso = cilindroForma(centro, [fondoDesague, z[0]], desague.diametro / 2 + desague.holgura);
+  sofa.restar(sofa.cuerpo('sofa_retorno_fondo'), paso);
+  const medidas = (tramos) => tramos.map(([inicio, fin]) => fin - inicio);
+  const interior = medidas([ix, iy, iz]);
+  const redondearCota = (n) => Math.round(n * 10) / 10;
+  M.notas.deposito_agua = { exterior_mm: medidas([x, y, z]).map(redondearCota),
+    interior_mm: interior.map(redondearCota),
+    capacidad_l: redondearCota(interior[0] * interior[1] * interior[2] / 1e6) };
+  return paso;
+}
+
 // Mesa de altura ajustable: tablero, columna y base (R13).
 //
 // R69: la esquina del tablero que da al paso de la cocina, la de la x mayor y
@@ -554,17 +598,17 @@ function comedor() {
   const esquina = { x: [fin - fondo, fin], y: [...yLargo], z: [SUELO, SUELO] };
   const retorno = { x: [fin - fondo, fin], y: [yLargo[1], yLargo[1] + s.retorno], z: [SUELO, SUELO] };
   const abajo = R.RESPALDO.abajo;
-  let comp = componente('sofa', COMEDOR);
+  const sofa = componente('sofa', COMEDOR);
   // el respaldo del tramo se retranquea 15 del canto libre, el de la trasera
-  moduloSofa(comp, 'sofa_tramo', tramo, [['y', 0, [tramo.x[0] + 15, tramo.x[1]]]]);
-  moduloSofa(comp, 'sofa_esquina', esquina,
-    [['y', 0, [...esquina.x]], ['x', 1, [esquina.y[0] + abajo, esquina.y[1] - 15]]]);
-  moduloSofa(comp, 'sofa_retorno', retorno, [['x', 1, [retorno.y[0], retorno.y[1] - 15]]]);
-  resumen.sofa = comp.cuerpos.length;
+  moduloSofa(sofa, 'sofa_tramo', tramo, [['y', 0, [tramo.x[0] + 15, tramo.x[1]]]]);
+  moduloSofa(sofa, 'sofa_esquina', esquina,
+    [['y', 0, [...esquina.x]], ['x', 1, [esquina.y[0] + abajo, esquina.y[1] - 15]]], ['x2', 'y2']);
+  moduloSofa(sofa, 'sofa_retorno', retorno, [['x', 1, [retorno.y[0], retorno.y[1] - 15]]], ['x2', 'y1']);
+  resumen.sofa = sofa.cuerpos.length;
   calefactorAgua(tramo);
 
   const m = R.MESA;
-  comp = componente('mesa', COMEDOR);
+  const comp = componente('mesa', COMEDOR);
   mesa(comp, 'mesa', { x: [...m.x], y: [...m.y], z: [SUELO, SUELO + m.alto] });
   resumen.mesa = comp.cuerpos.length;
 
@@ -577,9 +621,10 @@ function comedor() {
   // R36: el aparador, del final del sofa al del comedor y hasta cubrir el
   // retorno, a la altura de la encimera
   const a = R.APARADOR;
-  mueble('aparador', COMEDOR,
-    { x: [fin, R.FIN_COMEDOR], y: [COSTADO_PUERTA, retorno.y[1]], z: [SUELO, COTA_ENCIMERA] },
-    { puertas: true, bahias: a.bahias, estantes: a.estantes, reborde: R.APARADOR_REBORDE });
+  const aparador = { x: [fin, R.FIN_COMEDOR], y: [COSTADO_PUERTA, retorno.y[1]], z: [SUELO, COTA_ENCIMERA] };
+  mueble('aparador', COMEDOR, aparador, { trasera: ['y', 0], puertas: true, bahias: a.bahias,
+    estantes: a.estantes, reborde: R.APARADOR_REBORDE, inicioCostados: [bajoTapaSofa(SUELO)] });
+  return depositoAgua(sofa, retorno, aparador);
 }
 
 // ------------------------------------------------------------- dormitorio
@@ -637,10 +682,11 @@ function dormitorio() {
 }
 
 // R3: de la trasera a los pies de la cama y de costado a costado.
-function sueloElevado() {
+function sueloElevado(pasoDesague) {
   const comp = componente('suelo_elevado', INTERIOR);
   plataforma(comp, 'suelo_elevado',
     { x: [TRASERA, CAMA_PIES], y: [COSTADO_PUERTA, COSTADO_COCINA], z: [0.0, SUELO] });
+  comp.restar(comp.cuerpo('suelo_elevado_tablero'), pasoDesague);
   resumen.suelo_elevado = comp.cuerpos.length;
 }
 
@@ -997,8 +1043,8 @@ export function interior(modelo) {
   resumen = {};
   dormitorio();
   cocina();
-  comedor();
-  sueloElevado();
+  const pasoDesague = comedor();
+  sueloElevado(pasoDesague);
   bano();
   const puestas = ventanas();
   modelo.notas.ventanas = puestas;

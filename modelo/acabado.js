@@ -39,6 +39,7 @@ const MATERIALES = {
   altos_cocina: 'Blanco lacado',
   sofa: 'Blanco lacado',
   calefactor_agua: 'Gris lacado',
+  deposito_agua: 'Polietileno blanco',
   mesa: 'Blanco lacado',
   altos_comedor: 'Blanco lacado',
   escalon_cama: 'Blanco lacado',

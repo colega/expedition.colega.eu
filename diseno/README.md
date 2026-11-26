@@ -36,6 +36,14 @@ elevado de 50 (R3). De la trasera a la cabina:
     y la salida de agua caliente sanitaria. Las otras dos son la entrada y
     el retorno del fluido caloportador del intercambiador.
   - Aparador entre el sofá y la puerta, con reborde redondeado (R36, R100).
+  - Depósito de agua de polietileno blanco bajo el aparador, el retorno y la
+    esquina del sofá (R127). El hueco entre tableros mide 1177,7 × 1055,4 ×
+    404 mm. Con 25 mm de margen total por cota y paredes de 10 mm, el cuerpo
+    mide 1152,7 × 1030,4 × 379 mm y tiene una capacidad interior de **410,9 L**.
+    La tapa de inspección de Ø200 mm queda bajo el asiento del retorno. El
+    desagüe atraviesa el fondo del retorno y acaba dentro del falso suelo,
+    sin tuberías conectadas. Los separadores del sofá quedan como largueros
+    bajo las tapas y el costado del aparador arranca por encima del depósito.
   - Puerta de la caja: una Outbound DE-20, centrada entre los altos (R99).
   - Almohadas de la cama (R49).
   - Alto del comedor de 350, desde 1750 (R66, R80).
@@ -78,6 +86,8 @@ elevado de 50 (R3). De la trasera a la cabina:
 
 ## Pendiente
 
+- **Depósito de agua.** Dimensionar los apoyos y el anclaje para la carga
+  del depósito lleno (R127).
 - **Calefactor de agua.** Elegir el equipo y la fuente de calor del primario,
   y definir el anclaje y el recorrido de las tuberías de los dos circuitos
   (R126).

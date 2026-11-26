@@ -48,6 +48,7 @@ console.log(JSON.stringify({
   paneles: piezas.length,
   area_tablero_m2: Math.round(area * 100) / 100,
   tableros_2440x1220: Math.round(area / (2.44 * 1.22) * 10) / 10,
+  deposito_agua: modelo.notas.deposito_agua,
   verificar: v,
   huecos: h.avisos,
   choques: c.interferencias,

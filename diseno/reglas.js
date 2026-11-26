@@ -373,6 +373,28 @@ export const PREFILTRADO_AGUA = {
   union: { largo: 42.0, radio: 18.0, paso: 10.0 },
   soporte: { grueso: 4.0, ala: 30.0, alto: 100.0 },
 };
+// R129 Presurización de la red sanitaria en el espacio entre el costado y
+//      el prefiltrado. La Shurflo 4009-231-A54K va sobre su base elástica y
+//      lleva un filtro de aspiración 255-223 hacia el pasillo. El Refix DD 2
+//      de 2 L va en vertical, con su toma inferior reservada para la T de la
+//      impulsión de agua fría. Las cotas generales son las de Pentair y Reflex.
+export const PRESURIZACION_AGUA = {
+  eje_desde_costado: 222.0,
+  bomba: { desde_trasera: 70.0, largo: 205.0, ancho: 125.0, alto: 111.0,
+    cabezal: 92.0, radio_cabezal: 44.0, radio_motor: 35.0, eje_motor: 64.0,
+    tapa: { largo: 24.0, ancho: 46.0, alto: 38.0 },
+    bocas: { desde_frente: 47.0, alto: 85.0, radio: 10.5, paso: 7.0 },
+    base: { ancho: 105.0, alto: 29.0, largo: 22.0, primer_eje: 111.0, distancia: 73.0 },
+    filtro: { vuelo: 65.0, radio_cuerpo: 12.0, radio_vaso: 24.0, alto: 28.0,
+      pared: 2.0, radio_malla: 14.0 },
+  },
+  vaso: { desde_trasera: 430.0, diametro: 132.0, alto: 269.0, hueco_inferior: 50.0,
+    radio_fondos: 35.0, toma: 24.0, radio_toma: 14.0, paso_toma: 10.0,
+    alto_tapon: 14.0, radio_tapon: 10.0,
+    soporte: { ancho: 80.0, alto: 180.0, fondo: 16.0, ala: 36.0, grueso: 4.0,
+      abrazadera_alto: 20.0, abrazadera_grueso: 3.0 },
+  },
+};
 // R13 La mesa es de altura ajustable, con tablero de 20 y la cara de arriba a
 //     770 sobre el piso: 260 de rodillas sobre el cojin (R94).
 // R69 Lleva cortada a 45 grados la esquina que da al paso de la cocina, 100
@@ -713,7 +735,6 @@ export const FUERA = {
   pared_trasera: 'sin pared: el plano lo cubren la rampa y su tapa ciega',
   climatizador: 'descartado',
   ventilador_de_techo: 'descartado',
-  presurizador: 'para mas adelante',
   deposito_de_agua_limpia: 'descartado en los bajos (R127)',
   deposito_de_aguas_grises: 'descartado',
   cupula_de_satelite: 'descartada',

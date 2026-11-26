@@ -496,9 +496,9 @@ function moduloSofa(comp, nombre, c, paredes, largueros = []) {
   });
 }
 
-function racorAgua(comp, nombre, x, centro, radio, paso) {
-  const exterior = cilindroEntre('x', centro, x, radio);
-  comp.poner(nombre, exterior.cut(cilindroEntre('x', centro, x, paso)));
+function racorAgua(comp, nombre, eje, tramo, centro, radio, paso) {
+  const exterior = cilindroEntre(eje, centro, tramo, radio);
+  comp.poner(nombre, exterior.cut(cilindroEntre(eje, centro, tramo, paso)));
 }
 
 // R126: Isotemp horizontal, con sus tomas en el extremo de la trasera.
@@ -529,7 +529,7 @@ function calefactorAgua(tramo) {
     .map(([y, z]) => [centroY + y, ejeZ + z]);
   prisma(comp, 'calefactor_tapa_resistencia', 'x', frente - tapa.vuelo / 2, tapa.vuelo, contorno);
   for (const [nombre, y, z, vuelo] of r.bocas) {
-    racorAgua(comp, `calefactor_${nombre}`, [frente - vuelo, frente],
+    racorAgua(comp, `calefactor_${nombre}`, 'x', [frente - vuelo, frente],
       [centroY + y, ejeZ + z], racor.radio, racor.paso);
   }
 }
@@ -569,7 +569,7 @@ function prefiltradoAgua(tramo) {
     const x = inicioDuo + (i + 0.5) * separacion;
     cilindro(comp, `prefiltro_vaso_pp_${micras}_um`, [x, y], [z - duo.alto, z - duo.cabecera], radioDuo);
   });
-  racorAgua(comp, 'prefiltro_union_entre_cabezales', [finMalla, inicioDuo],
+  racorAgua(comp, 'prefiltro_union_entre_cabezales', 'x', [finMalla, inicioDuo],
     [y, z - malla.cabecera / 2], union.radio, union.paso);
 
   // Ángulo desmontable desde el asiento, sujeto al lado del arcón que da al paso.
@@ -578,6 +578,74 @@ function prefiltradoAgua(tramo) {
   prisma(comp, 'prefiltro_soporte_extraible', 'x', (entrada + salida) / 2, salida - entrada,
     [[ala, z], [pared - g, z], [pared - g, z - soporte.alto], [pared, z - soporte.alto],
       [pared, z + g], [ala, z + g]]);
+}
+
+// R129: bomba y filtro de aspiración de la red sanitaria.
+function bombaAgua(trasera, y, base, r) {
+  const comp = componente('bomba_agua', COMEDOR);
+  const frente = trasera + r.desde_trasera;
+  const motor = frente + r.cabezal;
+  comp.poner('bomba_shurflo_4009_motor',
+    cilindroEntre('x', [y, base + r.eje_motor], [motor, frente + r.largo], r.radio_motor));
+  const ejeCabezal = base + r.alto - r.radio_cabezal;
+  comp.poner('bomba_shurflo_4009_cabezal',
+    cilindroEntre('x', [y, ejeCabezal], [frente + r.tapa.largo, motor], r.radio_cabezal));
+
+  const bocasX = frente + r.bocas.desde_frente;
+  const bocasZ = base + r.bocas.alto;
+  bloque(comp, 'bomba_tapa_presostato', [frente, frente + r.tapa.largo],
+    [y - r.tapa.ancho / 2, y + r.tapa.ancho / 2], [bocasZ - r.tapa.alto / 2, bocasZ + r.tapa.alto / 2]);
+  const [impulsion, aspiracion] = [y - r.ancho / 2, y + r.ancho / 2];
+  const asientoBoca = r.radio_cabezal - r.bocas.radio;
+  racorAgua(comp, 'bomba_boca_impulsion', 'y', [impulsion, y - asientoBoca],
+    [bocasX, bocasZ], r.bocas.radio, r.bocas.paso);
+  racorAgua(comp, 'bomba_boca_aspiracion', 'y', [y + asientoBoca, aspiracion],
+    [bocasX, bocasZ], r.bocas.radio, r.bocas.paso);
+
+  const apoyo = r.base;
+  [apoyo.primer_eje, apoyo.primer_eje + apoyo.distancia].forEach((avance, i) => {
+    const x = frente + avance;
+    bloque(comp, `bomba_apoyo_elastico_${i + 1}`, [x - apoyo.largo / 2, x + apoyo.largo / 2],
+      [y - apoyo.ancho / 2, y + apoyo.ancho / 2], [base, base + apoyo.alto]);
+  });
+
+  // El vaso de malla se desenrosca desde arriba y el racor queda en la aspiración.
+  const f = r.filtro;
+  const extremo = aspiracion + f.vuelo;
+  const centroVaso = [bocasX, (aspiracion + extremo) / 2];
+  const plano = bocasZ + f.radio_cuerpo / 2;
+  racorAgua(comp, 'bomba_filtro_aspiracion_cabezal', 'y', [aspiracion, extremo],
+    [bocasX, bocasZ], f.radio_cuerpo, r.bocas.paso);
+  const vaso = cilindroForma(centroVaso, [plano, plano + f.alto], f.radio_vaso);
+  const hueco = cilindroForma(centroVaso, [plano, plano + f.alto - f.pared], f.radio_vaso - f.pared);
+  comp.poner('bomba_filtro_aspiracion_vaso', vaso.cut(hueco));
+  cilindro(comp, 'bomba_filtro_aspiracion_malla_50', centroVaso, [plano, plano + f.alto - f.pared], f.radio_malla);
+}
+
+// R129: vaso vertical de la impulsión de agua fría, con acceso a su precarga.
+function vasoExpansion(trasera, y, base, r) {
+  const comp = componente('vaso_expansion_agua', COMEDOR);
+  const x = trasera + r.desde_trasera;
+  const centro = [x, y];
+  const radio = r.diametro / 2;
+  const toma = base + r.hueco_inferior;
+  const cuerpo = [toma + r.toma, toma + r.alto - r.alto_tapon];
+  const vaso = cilindro(comp, 'vaso_expansion_refix_dd_2', centro, cuerpo, radio);
+  redondear(vaso, r.radio_fondos, (arista) => arista.geomType === 'CIRCLE');
+  racorAgua(comp, 'vaso_expansion_toma', 'z', [toma, cuerpo[0]], centro, r.radio_toma, r.paso_toma);
+  cilindro(comp, 'vaso_expansion_tapon_precarga', centro, [cuerpo[1], toma + r.alto], r.radio_tapon);
+
+  const a = r.soporte;
+  const z = base + a.alto;
+  const zAbrazadera = [z - a.abrazadera_alto, z];
+  const exterior = cilindroForma(centro, zAbrazadera, radio + a.abrazadera_grueso);
+  const interior = cilindroForma(centro, zAbrazadera, radio);
+  const yCuerpo = y - radio;
+  const yAtras = yCuerpo - a.fondo;
+  const ancho = [x - a.ancho / 2, x + a.ancho / 2];
+  const ala = cajaForma(ancho, [yAtras, yAtras + a.ala], [base, base + a.grueso]);
+  const montante = cajaForma(ancho, [yCuerpo - a.grueso, yCuerpo], [base + a.grueso, z]);
+  comp.poner('vaso_expansion_soporte', ala.fuse(montante).fuse(exterior.cut(interior)));
 }
 
 // R127: carcasa hueca con boca de inspeccion y salida de desague por debajo.
@@ -654,6 +722,11 @@ function comedor() {
   resumen.sofa = sofa.cuerpos.length;
   calefactorAgua(tramo);
   prefiltradoAgua(tramo);
+  const presion = R.PRESURIZACION_AGUA;
+  const ejeAgua = tramo.y[0] + ESPESOR + presion.eje_desde_costado;
+  const traseraArcon = tramo.x[0] + ESPESOR;
+  bombaAgua(traseraArcon, ejeAgua, SUELO + ESPESOR, presion.bomba);
+  vasoExpansion(traseraArcon, ejeAgua, SUELO + ESPESOR, presion.vaso);
 
   const m = R.MESA;
   const comp = componente('mesa', COMEDOR);

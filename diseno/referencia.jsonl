@@ -139,6 +139,20 @@
 {"ruta":"Caja/Interior/Comedor/prefiltrado_agua","nombre":"prefiltro_vaso_pp_1_um","caja":[-1877,-1692,-819.1,-634.1,85,416],"litros":8.897,"area":0.2461,"material":"Polipropileno azul","caras":3}
 {"ruta":"Caja/Interior/Comedor/prefiltrado_agua","nombre":"prefiltro_union_entre_cabezales","caja":[-2119,-2077,-744.6,-708.6,420,456],"litros":0.03,"area":0.0088,"material":"Latón","caras":4}
 {"ruta":"Caja/Interior/Comedor/prefiltrado_agua","nombre":"prefiltro_soporte_extraible","caja":[-2222,-1687,-756.6,-611.6,360,464],"litros":0.524,"area":0.2684,"material":"Acero","caras":8}
+{"ruta":"Caja/Interior/Comedor/bomba_agua","nombre":"bomba_shurflo_4009_motor","caja":[-2105,-1992,-980,-910,97,167],"litros":0.435,"area":0.0325,"material":"Negro mate","caras":3}
+{"ruta":"Caja/Interior/Comedor/bomba_agua","nombre":"bomba_shurflo_4009_cabezal","caja":[-2173,-2105,-989,-901,91,179],"litros":0.414,"area":0.031,"material":"Negro mate","caras":3}
+{"ruta":"Caja/Interior/Comedor/bomba_agua","nombre":"bomba_tapa_presostato","caja":[-2197,-2173,-968,-922,134,172],"litros":0.042,"area":0.0075,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Comedor/bomba_agua","nombre":"bomba_boca_impulsion","caja":[-2160.5,-2139.5,-1007.5,-978.5,142.5,163.5],"litros":0.006,"area":0.0036,"material":"Negro mate","caras":4}
+{"ruta":"Caja/Interior/Comedor/bomba_agua","nombre":"bomba_boca_aspiracion","caja":[-2160.5,-2139.5,-911.5,-882.5,142.5,163.5],"litros":0.006,"area":0.0036,"material":"Negro mate","caras":4}
+{"ruta":"Caja/Interior/Comedor/bomba_agua","nombre":"bomba_apoyo_elastico_1","caja":[-2097,-2075,-997.5,-892.5,68,97],"litros":0.067,"area":0.012,"material":"Goma","caras":6}
+{"ruta":"Caja/Interior/Comedor/bomba_agua","nombre":"bomba_apoyo_elastico_2","caja":[-2024,-2002,-997.5,-892.5,68,97],"litros":0.067,"area":0.012,"material":"Goma","caras":6}
+{"ruta":"Caja/Interior/Comedor/bomba_agua","nombre":"bomba_filtro_aspiracion_cabezal","caja":[-2162,-2138,-882.5,-817.5,141,165],"litros":0.019,"area":0.0084,"material":"Negro mate","caras":4}
+{"ruta":"Caja/Interior/Comedor/bomba_agua","nombre":"bomba_filtro_aspiracion_vaso","caja":[-2174,-2126,-874,-826,159,187],"litros":0.011,"area":0.0114,"material":"Nailon transparente","caras":5}
+{"ruta":"Caja/Interior/Comedor/bomba_agua","nombre":"bomba_filtro_aspiracion_malla_50","caja":[-2164,-2136,-864,-836,159,185],"litros":0.016,"area":0.0035,"material":"Inox","caras":3}
+{"ruta":"Caja/Interior/Comedor/vaso_expansion_agua","nombre":"vaso_expansion_refix_dd_2","caja":[-1903,-1771,-1011,-879,142,373],"litros":2.969,"area":0.1096,"material":"Verde lacado","caras":5}
+{"ruta":"Caja/Interior/Comedor/vaso_expansion_agua","nombre":"vaso_expansion_toma","caja":[-1851,-1823,-959,-931,118,142],"litros":0.007,"area":0.0042,"material":"Inox","caras":4}
+{"ruta":"Caja/Interior/Comedor/vaso_expansion_agua","nombre":"vaso_expansion_tapon_precarga","caja":[-1847,-1827,-955,-935,373,387],"litros":0.004,"area":0.0015,"material":"Negro mate","caras":3}
+{"ruta":"Caja/Interior/Comedor/vaso_expansion_agua","nombre":"vaso_expansion_soporte","caja":[-1906,-1768,-1027,-876,68,248],"litros":0.092,"area":0.054,"material":"Acero","caras":13}
 {"ruta":"Caja/Interior/Comedor/mesa","nombre":"mesa_tablero","caja":[-1945.4,-1043.6,-547.5,53.8,800,820],"litros":10.745,"area":1.1335,"material":"Blanco lacado","caras":7}
 {"ruta":"Caja/Interior/Comedor/mesa","nombre":"mesa_columna","caja":[-1539.5,-1449.5,-291.8,-201.8,70,800],"litros":5.913,"area":0.279,"material":"Blanco lacado","caras":6}
 {"ruta":"Caja/Interior/Comedor/mesa","nombre":"mesa_base","caja":[-1694.5,-1294.5,-406.8,-86.9,50,70],"litros":2.56,"area":0.2848,"material":"Blanco lacado","caras":6}

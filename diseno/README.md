@@ -39,6 +39,13 @@ elevado de 50 (R3). De la trasera a la cabina:
     seguida de un DP BIG 10 DUO con cartuchos CPP BIG SX de polipropileno
     de 5 y 1 µm. El soporte se extrae por la tapa del asiento para desenroscar los
     vasos fuera del arcón. [Hydra Mini](https://www.atlasfiltri.com.br/sites/default/files/prodotti/resources/HydraMINI_EN.pdf) · [DP BIG](https://www.atlasfiltri.com/sites/default/files/prodotti/resources/DP_BIG_2.pdf)
+  - Presurización del agua sanitaria junto al prefiltrado, del lado del
+    costado (R129). Bomba Shurflo 4009-231-A54K de 24 V sobre su base
+    elástica, con filtro de aspiración 255-223 de malla 50. Vaso de membrana
+    Refix DD 2, de 2 L y Ø132 × 269 mm, en vertical, con 50 mm bajo la toma
+    para montar la T de la impulsión fría. Desde la tapa del asiento se
+    accede al filtro de aspiración, al tapón de precarga y a los vasos del
+    prefiltrado. [Pentair](https://www.pentair.com/content/dam/extranet/web/nam/shurflo/data-sheets/4009-series-fresh-water-pumps-ds-4009-231-X54%28K%29.pdf) · [Reflex](https://reflex-winkelmann.de/en/products/7381500)
   - Aparador entre el sofá y la puerta, con reborde redondeado (R36, R100).
   - Depósito de agua de polietileno blanco bajo el aparador, el retorno y la
     esquina del sofá (R127). El hueco entre tableros mide 1177,7 × 1055,4 ×
@@ -98,6 +105,9 @@ elevado de 50 (R3). De la trasera a la cabina:
 - **Prefiltrado de llenado.** Definir la fijación extraíble, las acometidas
   desmontables y el desagüe de lavado, y comprobar el caudal de llenado con
   los cartuchos instalados frente al objetivo de 15–20 L/min (R128).
+- **Presurización del agua sanitaria.** Definir los anclajes, las mangueras
+  y la alimentación de la bomba. Ajustar la precarga del vaso según la presión
+  de arranque de la bomba y las instrucciones del fabricante (R129).
 - **Uniones y anclaje del bastidor.** No están dibujadas las escuadras de
   esquina 4040 de Aluxprofile ni las piezas de fijación al suelo, ni las
   escuadras con las que va sujeta cada batería (R124). El anclaje tiene que

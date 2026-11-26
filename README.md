@@ -231,7 +231,8 @@ Caja
     Cocina           encimera, altos_cocina, fregadero, vitroceramica,
                      ventana_cocina
     Comedor          sofa (3 módulos), calefactor_agua, prefiltrado_agua,
-                     mesa, aparador, deposito_agua, altos_comedor, ventana_comedor
+                     bomba_agua, vaso_expansion_agua, mesa, aparador,
+                     deposito_agua, altos_comedor, ventana_comedor
     Bano             tabiques_y_puerta, instalaciones_bano, ducha_cerrada,
                      ducha_abierta, toallero, alto_bano, ventana_bano
     suelo_elevado
@@ -294,7 +295,7 @@ ventilador, cúpula de satélite, antena, focos y luces de gabarito.
 
 ## Estado y cabos sueltos
 
-Al día, el modelo da 0 fuera de sitio: 637 cuerpos, 419 en el interior.
+Al día, el modelo da 0 fuera de sitio: 651 cuerpos, 433 en el interior.
 
 Contar los cuerpos no es una formalidad: `caja()` devuelve `null` cuando el
 rango que le llega mide cero, sin quejarse, y la pieza desaparece sin aviso.

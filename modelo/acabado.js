@@ -40,6 +40,8 @@ const MATERIALES = {
   sofa: 'Blanco lacado',
   calefactor_agua: 'Inox',
   prefiltrado_agua: 'Negro mate',
+  bomba_agua: 'Negro mate',
+  vaso_expansion_agua: 'Verde lacado',
   deposito_agua: 'Polietileno blanco',
   mesa: 'Blanco lacado',
   altos_comedor: 'Blanco lacado',
@@ -161,6 +163,11 @@ const POR_PREFIJO = [
   ['prefiltro_vaso_malla', 'PET transparente'], ['prefiltro_vaso_pp_', 'Polipropileno azul'],
   ['prefiltro_malla_inox_', 'Inox'], ['prefiltro_union_', 'Latón'],
   ['prefiltro_soporte_', 'Acero'],
+  // R129: base elástica, filtro de aspiración y soporte del vaso.
+  ['bomba_apoyo_', 'Goma'], ['bomba_filtro_aspiracion_vaso', 'Nailon transparente'],
+  ['bomba_filtro_aspiracion_malla_', 'Inox'],
+  ['vaso_expansion_toma', 'Inox'], ['vaso_expansion_tapon_', 'Negro mate'],
+  ['vaso_expansion_soporte', 'Acero'],
   // R110: la claraboya es cristal tintado
   ['claraboya', 'Vidrio oscuro'],
 ];

@@ -148,6 +148,8 @@ const POR_PREFIJO = [
   // R120 a R123: bornes de cobre, el cuadro blanco con sus automaticos grises, y
   // los cables rojos el positivo, negros el negativo y gris la manguera de 230
   ['borne_', 'Cobre'], ['balda_', 'Aluminio'], ['bastidor_', 'Aluminio'],
+  // R125: los desconectadores, negros con el mando rojo
+  ['mando_desconectador', 'Piloto rojo'], ['desconectador_', 'Negro mate'],
   ['cuadro_automatico', 'Gris lacado'], ['cuadro_diferencial', 'Gris lacado'], ['cuadro', 'Blanco mate'],
   ['cable_pos', 'Cable rojo'], ['cable_neg', 'Negro mate'], ['cable_ac', 'Cable gris'],
   // R110: la claraboya es cristal tintado

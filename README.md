@@ -225,7 +225,7 @@ Caja
     Garaje           garaje (fondo, frontal, trasera y costados), bajo la
                      base_colchon; mampara, electrico (los equipos de
                      Victron, su bastidor y el cuadro de 230) y cableado
-                     (R119 a R124)
+                     (R119 a R125)
     Cocina           encimera, altos_cocina, fregadero, vitroceramica,
                      ventana_cocina
     Comedor          sofa (3 módulos), mesa, aparador, altos_comedor,
@@ -292,7 +292,7 @@ ventilador, cúpula de satélite, antena, focos y luces de gabarito.
 
 ## Estado y cabos sueltos
 
-Al día, el modelo da 0 fuera de sitio: 609 cuerpos, 391 en el interior.
+Al día, el modelo da 0 fuera de sitio: 615 cuerpos, 397 en el interior.
 
 Contar los cuerpos no es una formalidad: `caja()` devuelve `null` cuando el
 rango que le llega mide cero, sin quejarse, y la pieza desaparece sin aviso.

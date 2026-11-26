@@ -589,9 +589,15 @@
 {"ruta":"Caja/Interior/Garaje/electrico","nombre":"orion_xs","caja":[2214,2267,727.8,852.2,153.9,292],"litros":0.911,"area":0.0622,"material":"Azul Victron","caras":6}
 {"ruta":"Caja/Interior/Garaje/electrico","nombre":"orion_tr","caja":[2181,2267,956.5,1143.5,400,531],"litros":2.107,"area":0.1037,"material":"Azul Victron","caras":6}
 {"ruta":"Caja/Interior/Garaje/electrico","nombre":"cerbo","caja":[2219,2267,973,1127,650,728],"litros":0.577,"area":0.0463,"material":"Azul Victron","caras":6}
-{"ruta":"Caja/Interior/Garaje/cableado","nombre":"cable_pos_bateria2","caja":[2205.4,2224.4,335.2,354.2,553,638],"litros":0.024,"area":0.0056,"material":"Cable rojo","caras":3}
+{"ruta":"Caja/Interior/Garaje/electrico","nombre":"desconectador_bateria1","caja":[2208.3,2267,524.6,622.4,300,397.8],"litros":0.561,"area":0.0421,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Garaje/electrico","nombre":"mando_desconectador_bateria1","caja":[2188.3,2208.3,543.5,603.5,318.9,378.9],"litros":0.057,"area":0.0094,"material":"Piloto rojo","caras":3}
+{"ruta":"Caja/Interior/Garaje/electrico","nombre":"desconectador_bateria2","caja":[2208.3,2267,524.6,622.4,460,557.8],"litros":0.561,"area":0.0421,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Garaje/electrico","nombre":"mando_desconectador_bateria2","caja":[2188.3,2208.3,543.5,603.5,478.9,538.9],"litros":0.057,"area":0.0094,"material":"Piloto rojo","caras":3}
+{"ruta":"Caja/Interior/Garaje/cableado","nombre":"cable_pos_bateria2","caja":[2150.5,2254.5,335.2,608,553,609.5],"litros":0.14,"area":0.0304,"material":"Cable rojo","caras":31}
+{"ruta":"Caja/Interior/Garaje/cableado","nombre":"cable_pos_bateria2_lynx","caja":[2110.5,2254.5,290.5,558,430.5,638],"litros":0.207,"area":0.0446,"material":"Cable rojo","caras":38}
 {"ruta":"Caja/Interior/Garaje/cableado","nombre":"cable_neg_bateria2","caja":[2205.4,2224.4,-354.2,256.1,553,638],"litros":0.193,"area":0.0414,"material":"Negro mate","caras":17}
-{"ruta":"Caja/Interior/Garaje/cableado","nombre":"cable_pos_bateria1","caja":[2205.4,2224.4,335.2,500,239,638],"litros":0.171,"area":0.0369,"material":"Cable rojo","caras":31}
+{"ruta":"Caja/Interior/Garaje/cableado","nombre":"cable_pos_bateria1","caja":[2205.4,2254.5,335.2,583,239,300],"litros":0.093,"area":0.0204,"material":"Cable rojo","caras":24}
+{"ruta":"Caja/Interior/Garaje/cableado","nombre":"cable_pos_bateria1_lynx","caja":[2205.4,2254.5,433.9,583,397.8,638],"litros":0.118,"area":0.0258,"material":"Cable rojo","caras":38}
 {"ruta":"Caja/Interior/Garaje/cableado","nombre":"cable_neg_bateria1","caja":[2180.5,2254.5,-354.2,520,239,638],"litros":0.411,"area":0.0875,"material":"Negro mate","caras":45}
 {"ruta":"Caja/Interior/Garaje/cableado","nombre":"cable_pos_multiplus_1","caja":[2187,2201,-817.5,-397.9,73,638],"litros":0.155,"area":0.0449,"material":"Cable rojo","caras":31}
 {"ruta":"Caja/Interior/Garaje/cableado","nombre":"cable_pos_multiplus_2","caja":[2209,2223,-797.5,-397.9,73,638],"litros":0.152,"area":0.044,"material":"Cable rojo","caras":31}

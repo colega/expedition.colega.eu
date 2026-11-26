@@ -272,6 +272,17 @@ export const ELECTRICO = { lado_multiplus: 'puerta', holgura_bateria: 20.0, huec
 export const BASTIDOR = { modelo: 'Aluxprofile perfil ranurado 4040', perfil: 40.0, kg_m: 1.395,
   holgura_mampara: 8.0, alto_sobre_torre: 40.0 };
 
+// R125 Cada bateria tiene su desconectador manual en el positivo, entre ella y
+//      el Class-T Power In, para aislarla al guardar el camion o al trabajar en
+//      la instalacion. Es un Blue Sea 9003e: 350 A continuos (la bateria da 300),
+//      600 A durante 5 minutos, hasta 48 V, esparragos M10. Mide 97.8 x 97.8 de
+//      brida y 78.7 de fondo con el mando. Van colgados uno encima de otro,
+//      encima del BatteryProtect, a 300 y a 460, con el mando rojo hacia la
+//      mampara. No cortan con carga: antes se apagan el MultiPlus y los
+//      cargadores, y el dia a dia se apaga con el remote on/off del BMS.
+export const DESCONECTADOR = { modelo: 'Blue Sea 9003e', lado: 97.8, fondo: 78.7, mando: 20.0,
+  radio_mando: 30.0, continuo: 350.0, z: [300.0, 460.0] };
+
 // R122 El cuadro de 230 es un Schneider Resi9 MP MIP11108T de superficie, de una
 //      fila de 8 modulos: un diferencial de 2 modulos y 5 automaticos. Le llega
 //      la salida AC-OUT 1 del MultiPlus por abajo.

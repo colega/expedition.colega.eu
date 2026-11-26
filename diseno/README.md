@@ -49,7 +49,8 @@ elevado de 50 (R3). De la trasera a la cabina:
   y dos distribuidores). Del lado de la puerta, a mano desde la trampilla
   grande, el MultiPlus-II 24/5000 colgado a 100 del suelo y el cuadro de 230
   con un diferencial y cinco automáticos (R122). Del lado de la cocina, el
-  BatteryProtect, los dos MPPT 150/35 y el Orion XS 1400 en columna, y el
+  BatteryProtect con los dos desconectadores Blue Sea 9003e de las baterías
+  encima, uno en el positivo de cada una (R125), los dos MPPT 150/35 y el Orion XS 1400 en columna, y el
   Orion-Tr 24/12 con el Cerbo GX. Nada de lo que Victron no deja encima de las
   baterías queda encima de ellas. El cableado principal va con las secciones de
   los manuales (R123).
@@ -79,7 +80,6 @@ elevado de 50 (R3). De la trasera a la cabina:
   las placas a los MPPT, el del alternador al Orion XS, la toma de 230 de
   fuera, las salidas del cuadro, la de 12 del Orion-Tr y la del
   BatteryProtect, y los cables de datos del Cerbo y del BMS (R123).
-
 - **Salida del tubo del Separett.** Baja por la plataforma hasta el suelo de la
   casa y de ahí tiene que salir afuera (R104).
 - **Baño**: sobre la plataforma quedan 1850 hasta el techo, y con la ducha

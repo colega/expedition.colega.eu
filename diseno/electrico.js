@@ -151,7 +151,17 @@ function equipos(M) {
   columna.orion_tr = enPared(comp, 'orion_tr', V.orion_tr, y2, E.orion_tr_z);
   enPared(comp, 'cerbo', V.cerbo, y2 + (V.orion_tr.ancho - V.cerbo.ancho) / 2.0, E.cerbo_z);
 
-  return { bornes, lynx, zL, mp, cuadro, protector, columna, fin };
+  // R125: los desconectadores de las baterias, encima del BatteryProtect
+  const S = R.DESCONECTADOR;
+  const desconectadores = S.z.map((z0, k) => {
+    const c = { x: [XW - S.fondo + S.mando, XW], y: [yp - S.lado / 2, yp + S.lado / 2], z: [z0, z0 + S.lado] };
+    poner(comp, `desconectador_bateria${k + 1}`, c.x, c.y, c.z);
+    comp.poner(`mando_desconectador_bateria${k + 1}`,
+      cilindroEntre('x', [yp, z0 + S.lado / 2], [XW - S.fondo, c.x[0]], S.radio_mando));
+    return c;
+  });
+
+  return { bornes, lynx, zL, mp, cuadro, protector, columna, fin, desconectadores, yp };
 }
 
 // R123: el cableado principal. Va por calles para no pisar nada de otro
@@ -176,7 +186,20 @@ function cableado(M, q) {
   // encima de ella; los de la de abajo salen por el hueco de los bornes hasta el
   // paso del costado de la puerta y suben por ahi.
   const z2 = b2.pos[2];
-  cable(comp, 'cable_pos_bateria2', [b2.pos, [b2.pos[0], dentro('bateria2+', entrada, b2.pos[1]), zL]], C.bateria);
+  // R125: cada positivo va de la bateria a su desconectador y de ahi al Class-T
+  // Power In. Los desconectadores entran por abajo o por arriba, pegados a la
+  // pared, y salen por la otra cara
+  const [s1, s2] = q.desconectadores;
+  const yS = q.yp, xS = 2245.0;
+  // el de arriba: sube, corre por encima del bastidor hasta su desconectador y
+  // vuelve por delante de los montantes a su entrada, en y 300 desde el borde
+  const xIda = 2160.0, xVuelta = 2120.0, zIda = 600.0, zVuelta = 605.0;
+  const yIn2B = dentro('bateria2+', entrada, entrada.y[0] + 168.0);
+  cable(comp, 'cable_pos_bateria2', [b2.pos, [b2.pos[0], b2.pos[1], zIda], [xIda, b2.pos[1], zIda],
+    [xIda, yS - 25.0, zIda], [xS, yS - 25.0, zIda], [xS, yS - 25.0, s2.z[1]]], C.bateria);
+  cable(comp, 'cable_pos_bateria2_lynx', [[xS, yS + 25.0, s2.z[0]], [xS, yS + 25.0, s2.z[0] - 20.0],
+    [xVuelta, yS + 25.0, s2.z[0] - 20.0], [xVuelta, yS + 25.0, zVuelta], [xVuelta, yIn2B, zVuelta],
+    [xS, yIn2B, zVuelta], [xS, yIn2B, zL]], C.bateria);
   const yNeg2 = dentro('bateria2-', entrada, entrada.y[1] - 57.6);
   cable(comp, 'cable_neg_bateria2', [b2.neg, [b2.neg[0], b2.neg[1], z2 + 27.0],
     [b2.neg[0], yNeg2, z2 + 27.0], [b2.neg[0], yNeg2, zL]], C.bateria);
@@ -187,7 +210,10 @@ function cableado(M, q) {
   const yIn1 = dentro('bateria1+', entrada, entrada.y[0] + 24.6);
   const yIn2 = dentro('bateria1-', entrada, entrada.y[0] + 54.6);
   const xPos = b1.pos[0], yPos = -(q.fin + 10.0), zPos = zL - 18.0;
-  cable(comp, 'cable_pos_bateria1', [b1.pos, [xPos, b1.pos[1], zHueco], [xPos, yPos, zHueco],
+  cable(comp, 'cable_pos_bateria1', [b1.pos, [xPos, b1.pos[1], zHueco], [xPos, yS, zHueco], [xS, yS, zHueco],
+    [xS, yS, s1.z[0]]], C.bateria);
+  const zSale = s1.z[1] + 22.0;
+  cable(comp, 'cable_pos_bateria1_lynx', [[xS, yS, s1.z[1]], [xS, yS, zSale], [xPos, yS, zSale], [xPos, yPos, zSale],
     [xPos, yPos, zPos], [xPos, yIn1, zPos], [xPos, yIn1, zL]], C.bateria);
   const xDelante = 2190.0, xNeg = 2245.0, yNeg = -(q.fin + 30.0), zNeg = zL - 28.0;
   cable(comp, 'cable_neg_bateria1', [b1.neg, [b1.neg[0], b1.neg[1], zHueco], [xDelante, b1.neg[1], zHueco],

@@ -120,13 +120,25 @@
 {"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_retorno_tapa","caja":[-1013.7,-422.3,-593.6,-93.6,472,490],"litros":5.323,"area":0.6307,"material":"Blanco lacado","caras":6}
 {"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_retorno_cojin","caja":[-998.7,-437.3,-578.6,-108.6,490,540],"litros":13.193,"area":0.6309,"material":"Tela gris","caras":6}
 {"ruta":"Caja/Interior/Comedor/sofa","nombre":"sofa_retorno_respaldo1","caja":[-572.3,-422.3,-593.6,-108.6,540,930],"litros":22.698,"area":0.5905,"material":"Tela gris","caras":6}
-{"ruta":"Caja/Interior/Comedor/calefactor_agua","nombre":"acumulador","caja":[-1949.3,-1349.3,-1039.3,-739.3,88,388],"litros":42.412,"area":0.7069,"material":"Gris lacado","caras":3}
-{"ruta":"Caja/Interior/Comedor/calefactor_agua","nombre":"calefactor_cuna_1","caja":[-1871.8,-1826.8,-989.3,-789.3,68,126.2],"litros":0.288,"area":0.0369,"material":"Acero","caras":6}
-{"ruta":"Caja/Interior/Comedor/calefactor_agua","nombre":"calefactor_cuna_2","caja":[-1471.8,-1426.8,-989.3,-789.3,68,126.2],"litros":0.288,"area":0.0369,"material":"Acero","caras":6}
-{"ruta":"Caja/Interior/Comedor/calefactor_agua","nombre":"calefactor_sanitaria_entrada_fria","caja":[-1349.3,-1314.3,-842.3,-816.3,175,201],"litros":0.012,"area":0.0053,"material":"Inox","caras":4}
-{"ruta":"Caja/Interior/Comedor/calefactor_agua","nombre":"calefactor_sanitaria_salida_caliente","caja":[-1349.3,-1314.3,-842.3,-816.3,275,301],"litros":0.012,"area":0.0053,"material":"Inox","caras":4}
-{"ruta":"Caja/Interior/Comedor/calefactor_agua","nombre":"calefactor_primario_entrada","caja":[-1349.3,-1314.3,-962.3,-936.3,275,301],"litros":0.012,"area":0.0053,"material":"Cobre","caras":4}
-{"ruta":"Caja/Interior/Comedor/calefactor_agua","nombre":"calefactor_primario_retorno","caja":[-1349.3,-1314.3,-962.3,-936.3,175,201],"litros":0.012,"area":0.0053,"material":"Cobre","caras":4}
+{"ruta":"Caja/Interior/Comedor/calefactor_agua","nombre":"isotemp_basic_24","caja":[-1456.7,-1071.7,-1016.6,-626.6,73,463],"litros":45.992,"area":0.7106,"material":"Inox","caras":3}
+{"ruta":"Caja/Interior/Comedor/calefactor_agua","nombre":"calefactor_cuna_1","caja":[-1417.7,-1385.7,-1016.6,-626.6,68,138.1],"litros":0.344,"area":0.05,"material":"Inox","caras":6}
+{"ruta":"Caja/Interior/Comedor/calefactor_agua","nombre":"calefactor_cuna_2","caja":[-1137.7,-1105.7,-1016.6,-626.6,68,138.1],"litros":0.344,"area":0.05,"material":"Inox","caras":6}
+{"ruta":"Caja/Interior/Comedor/calefactor_agua","nombre":"calefactor_tapa_resistencia","caja":[-1496.7,-1456.7,-915.6,-727.6,180,426],"litros":1.8,"area":0.1224,"material":"Negro mate","caras":10}
+{"ruta":"Caja/Interior/Comedor/calefactor_agua","nombre":"calefactor_motor_ida","caja":[-1501.7,-1456.7,-716.6,-692.6,192,216],"litros":0.012,"area":0.0061,"material":"Inox","caras":4}
+{"ruta":"Caja/Interior/Comedor/calefactor_agua","nombre":"calefactor_motor_retorno","caja":[-1501.7,-1456.7,-950.6,-926.6,192,216],"litros":0.012,"area":0.0061,"material":"Inox","caras":4}
+{"ruta":"Caja/Interior/Comedor/calefactor_agua","nombre":"calefactor_hidronico_ida","caja":[-1501.7,-1456.7,-703.6,-679.6,274,298],"litros":0.012,"area":0.0061,"material":"Inox","caras":4}
+{"ruta":"Caja/Interior/Comedor/calefactor_agua","nombre":"calefactor_hidronico_retorno","caja":[-1501.7,-1456.7,-776.6,-752.6,136,160],"litros":0.012,"area":0.0061,"material":"Inox","caras":4}
+{"ruta":"Caja/Interior/Comedor/calefactor_agua","nombre":"calefactor_sanitaria_entrada_fria","caja":[-1541.7,-1456.7,-885.6,-861.6,136,160],"litros":0.023,"area":0.011,"material":"Latón","caras":4}
+{"ruta":"Caja/Interior/Comedor/calefactor_agua","nombre":"calefactor_sanitaria_salida_mezclada","caja":[-1526.7,-1456.7,-963.6,-939.6,274,298],"litros":0.019,"area":0.0091,"material":"Latón","caras":4}
+{"ruta":"Caja/Interior/Comedor/prefiltrado_agua","nombre":"prefiltro_cabezal_malla","caja":[-2222,-2119,-768.6,-684.6,416,460],"litros":0.381,"area":0.0338,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Comedor/prefiltrado_agua","nombre":"prefiltro_vaso_malla","caja":[-2212.5,-2128.5,-768.6,-684.6,253,416],"litros":0.138,"area":0.0929,"material":"PET transparente","caras":6}
+{"ruta":"Caja/Interior/Comedor/prefiltrado_agua","nombre":"prefiltro_malla_inox_90_um","caja":[-2193.5,-2147.5,-749.6,-703.6,256,416],"litros":0.266,"area":0.0264,"material":"Inox","caras":3}
+{"ruta":"Caja/Interior/Comedor/prefiltrado_agua","nombre":"prefiltro_descarga_malla","caja":[-2186.5,-2154.5,-742.6,-710.6,188,253],"litros":0.032,"area":0.0116,"material":"Negro mate","caras":4}
+{"ruta":"Caja/Interior/Comedor/prefiltrado_agua","nombre":"prefiltro_cabezal_duo","caja":[-2077,-1687,-819.1,-634.1,416,460],"litros":3.175,"area":0.1949,"material":"Negro mate","caras":6}
+{"ruta":"Caja/Interior/Comedor/prefiltrado_agua","nombre":"prefiltro_vaso_pp_5_um","caja":[-2072,-1887,-819.1,-634.1,85,416],"litros":8.897,"area":0.2461,"material":"Polipropileno azul","caras":3}
+{"ruta":"Caja/Interior/Comedor/prefiltrado_agua","nombre":"prefiltro_vaso_pp_1_um","caja":[-1877,-1692,-819.1,-634.1,85,416],"litros":8.897,"area":0.2461,"material":"Polipropileno azul","caras":3}
+{"ruta":"Caja/Interior/Comedor/prefiltrado_agua","nombre":"prefiltro_union_entre_cabezales","caja":[-2119,-2077,-744.6,-708.6,420,456],"litros":0.03,"area":0.0088,"material":"Latón","caras":4}
+{"ruta":"Caja/Interior/Comedor/prefiltrado_agua","nombre":"prefiltro_soporte_extraible","caja":[-2222,-1687,-756.6,-611.6,360,464],"litros":0.524,"area":0.2684,"material":"Acero","caras":8}
 {"ruta":"Caja/Interior/Comedor/mesa","nombre":"mesa_tablero","caja":[-1945.4,-1043.6,-547.5,53.8,800,820],"litros":10.745,"area":1.1335,"material":"Blanco lacado","caras":7}
 {"ruta":"Caja/Interior/Comedor/mesa","nombre":"mesa_columna","caja":[-1539.5,-1449.5,-291.8,-201.8,70,800],"litros":5.913,"area":0.279,"material":"Blanco lacado","caras":6}
 {"ruta":"Caja/Interior/Comedor/mesa","nombre":"mesa_base","caja":[-1694.5,-1294.5,-406.8,-86.9,50,70],"litros":2.56,"area":0.2848,"material":"Blanco lacado","caras":6}

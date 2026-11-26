@@ -29,12 +29,16 @@ elevado de 50 (R3). De la trasera a la cabina:
   - Colchoneta de los perros, a ras del colchón (R53).
 - **Costado de la puerta**, el derecho, el de la acera:
   - Sofá en L con la mesa junto a la trasera (R20, R13).
-  - Calefactor de agua de doble circuito dentro del arcón del tramo largo
-    del sofá, accesible por la tapa del asiento (R126). La reserva para el
-    acumulador es de 600 de largo por 300 de diámetro, más 35 para las cuatro
-    bocas orientadas hacia la cabina. Dos bocas son la entrada de agua fría
-    y la salida de agua caliente sanitaria. Las otras dos son la entrada y
-    el retorno del fluido caloportador del intercambiador.
+  - Isotemp Basic de 24 L, doble serpentín (602431BD00003), en horizontal
+    dentro del arcón del tramo largo del sofá (R126). Mide 470 × 390 ×
+    395 mm con apoyos y quedan 9 mm bajo la tapa. Sus seis conexiones miran
+    al centro del arcón. Lleva mezcladora termostática y resistencia de
+    750 W a 230 V. [Manual de Indel Marine](https://www.epixmarine.ro/upload/product_docs/Manual-utilizare-boiler-Isotemp-Indel-Webasto-Marine.pdf)
+  - Prefiltrado de llenado de tres etapas (R128), hacia la trasera del mismo
+    arcón. Primero va una malla inoxidable lavable Hydra Mini RAH de 90 µm,
+    seguida de un DP BIG 10 DUO con cartuchos CPP BIG SX de polipropileno
+    de 5 y 1 µm. El soporte se extrae por la tapa del asiento para desenroscar los
+    vasos fuera del arcón. [Hydra Mini](https://www.atlasfiltri.com.br/sites/default/files/prodotti/resources/HydraMINI_EN.pdf) · [DP BIG](https://www.atlasfiltri.com/sites/default/files/prodotti/resources/DP_BIG_2.pdf)
   - Aparador entre el sofá y la puerta, con reborde redondeado (R36, R100).
   - Depósito de agua de polietileno blanco bajo el aparador, el retorno y la
     esquina del sofá (R127). El hueco entre tableros mide 1177,7 × 1055,4 ×
@@ -88,9 +92,12 @@ elevado de 50 (R3). De la trasera a la cabina:
 
 - **Depósito de agua.** Dimensionar los apoyos y el anclaje para la carga
   del depósito lleno (R127).
-- **Calefactor de agua.** Elegir el equipo y la fuente de calor del primario,
-  y definir el anclaje y el recorrido de las tuberías de los dos circuitos
-  (R126).
+- **Calefactor de agua.** Definir el anclaje al arcón, el cableado de la
+  resistencia y el trazado de los serpentines del motor y de la calefacción
+  hidrónica y el del agua sanitaria (R126).
+- **Prefiltrado de llenado.** Definir la fijación extraíble, las acometidas
+  desmontables y el desagüe de lavado, y comprobar el caudal de llenado con
+  los cartuchos instalados frente al objetivo de 15–20 L/min (R128).
 - **Uniones y anclaje del bastidor.** No están dibujadas las escuadras de
   esquina 4040 de Aluxprofile ni las piezas de fijación al suelo, ni las
   escuadras con las que va sujeta cada batería (R124). El anclaje tiene que

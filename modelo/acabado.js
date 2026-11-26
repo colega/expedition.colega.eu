@@ -38,7 +38,8 @@ const MATERIALES = {
   encimera: 'Blanco lacado',
   altos_cocina: 'Blanco lacado',
   sofa: 'Blanco lacado',
-  calefactor_agua: 'Gris lacado',
+  calefactor_agua: 'Inox',
+  prefiltrado_agua: 'Negro mate',
   deposito_agua: 'Polietileno blanco',
   mesa: 'Blanco lacado',
   altos_comedor: 'Blanco lacado',
@@ -154,10 +155,12 @@ const POR_PREFIJO = [
   ['mando_desconectador', 'Piloto rojo'], ['desconectador_', 'Negro mate'],
   ['cuadro_automatico', 'Gris lacado'], ['cuadro_diferencial', 'Gris lacado'], ['cuadro', 'Blanco mate'],
   ['cable_pos', 'Cable rojo'], ['cable_neg', 'Negro mate'], ['cable_ac', 'Cable gris'],
-  // R126: se distinguen las bocas de agua sanitaria y las del primario.
-  ['calefactor_cuna_', 'Acero'],
-  ['calefactor_sanitaria_', 'Inox'],
-  ['calefactor_primario_', 'Cobre'],
+  // R126 y R128: conexiones, tapas y vasos de los equipos de agua.
+  ['calefactor_tapa_', 'Negro mate'],
+  ['calefactor_sanitaria_', 'Latón'],
+  ['prefiltro_vaso_malla', 'PET transparente'], ['prefiltro_vaso_pp_', 'Polipropileno azul'],
+  ['prefiltro_malla_inox_', 'Inox'], ['prefiltro_union_', 'Latón'],
+  ['prefiltro_soporte_', 'Acero'],
   // R110: la claraboya es cristal tintado
   ['claraboya', 'Vidrio oscuro'],
 ];

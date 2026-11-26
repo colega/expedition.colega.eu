@@ -340,13 +340,39 @@ export const SOFA = { fin_x: -422.3, fondo: 591.4, retorno: 500.0 };
 export const ASIENTO = 490.0;
 export const COJIN_ASIENTO = 50.0;
 export const RESPALDO = { abajo: 150.0, arriba: 90.0, alto: 880.0 };
-// R126 Bajo la tapa del tramo largo va un acumulador de agua caliente
-//      sanitaria con intercambiador. El primario y el agua sanitaria tienen
-//      dos bocas cada uno, hacia la cabina. Son cotas de reserva para el
-//      equipo y sus apoyos, hasta elegir el modelo y la fuente de calor.
-export const CALEFACTOR_AGUA = { largo: 600.0, diametro: 300.0, elevacion: 20.0,
-  apoyo: { largo: 45.0, ancho: 200.0, alto: 60.0, desde_extremo: 100.0 },
-  boca: { vuelo: 35.0, radio: 13.0, radio_interior: 8.0, desfase_y: 60.0, desfase_z: 50.0 } };
+// R126 Isotemp Basic 24 de doble serpentín, 602431BD00003, con mezcladora
+//      termostática y resistencia de 230 V / 750 W. Horizontal en el arcón
+//      del tramo largo. Figura 12a de Indel Marine: 470 × 390 × 395 mm con
+//      apoyos, y 280 entre sus ejes. Las bocas quedan hacia la trasera para
+//      acceder desde el centro del arcón; sus detalles siguen la figura 4.
+export const CALEFACTOR_AGUA = {
+  largo: 470.0, diametro: 390.0, alto: 395.0,
+  margen_cabina: 40.0, margen_pasillo: 15.0, frente: 85.0,
+  apoyo: { inicio: 140.0, distancia: 280.0, fondo: 32.0, alto: 75.0, hombro: 142.0 },
+  tapa: { vuelo: 40.0, semiancho: 94.0, abajo: -88.0, arriba: 158.0, chaflan: 25.0 },
+  racor: { radio: 12.0, paso: 7.5 },
+  bocas: [
+    ['motor_ida', 117.0, -64.0, 45.0],
+    ['motor_retorno', -117.0, -64.0, 45.0],
+    ['hidronico_ida', 130.0, 18.0, 45.0],
+    ['hidronico_retorno', 57.0, -120.0, 45.0],
+    ['sanitaria_entrada_fria', -52.0, -120.0, 85.0],
+    ['sanitaria_salida_mezclada', -130.0, 18.0, 70.0],
+  ],
+};
+// R128 Prefiltrado de llenado, en el extremo de la trasera del arcón:
+//      Hydra Mini PM RAH (RA6412223) de 90 µm, seguido de un DP BIG 10 DUO
+//      opaco (RA1702712) con cartuchos BIG SX de PP de 5 y 1 µm. Las
+//      dimensiones generales son las de Atlas Filtri. El soporte sale
+//      por arriba para descolgar los vasos fuera del arcón.
+export const PREFILTRADO_AGUA = {
+  margen_trasera: 45.0, margen_tapa: 12.0, eje_desde_pasillo: 115.0,
+  malla: { largo: 103.0, ancho: 84.0, alto: 272.0, cabecera: 44.0,
+    pared: 3.0, descarga: 65.0, radio_descarga: 16.0, radio_malla: 23.0, paso_descarga: 10.0 },
+  duo: { largo: 390.0, ancho: 185.0, alto: 375.0, cabecera: 44.0, cartuchos: [5, 1] },
+  union: { largo: 42.0, radio: 18.0, paso: 10.0 },
+  soporte: { grueso: 4.0, ala: 30.0, alto: 100.0 },
+};
 // R13 La mesa es de altura ajustable, con tablero de 20 y la cara de arriba a
 //     770 sobre el piso: 260 de rodillas sobre el cojin (R94).
 // R69 Lleva cortada a 45 grados la esquina que da al paso de la cocina, 100

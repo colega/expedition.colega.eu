@@ -69,12 +69,11 @@ export function huecos(modelo) {
     // la pared. R103: la puerta de la ducha tampoco, que se mueve y se separa
     // de la pared a proposito, ni el toallero, que cuelga del tabique (R106),
     // ni la plataforma del inodoro, que tiene el armario entre ella y la pared,
-    // ni el calefactor y el deposito de agua, que van dentro del mobiliario
-    // (R126 y R127).
+    // ni los equipos de agua, que van dentro del mobiliario (R126 a R128).
     if (VEHICULO.has(comp.nombre) || comp.nombre.startsWith('ventan')
         || comp.nombre.startsWith('ducha_') || comp.nombre === 'toallero'
         || comp.nombre === 'plataforma_wc'
-        || ['calefactor_agua', 'deposito_agua'].includes(comp.nombre)
+        || ['calefactor_agua', 'deposito_agua', 'prefiltrado_agua'].includes(comp.nombre)
         // R119 a R123: lo electrico va dentro del garaje, contra sus tableros
         || ['mampara', 'electrico', 'cableado'].includes(comp.nombre)) continue;
     const cajas = comp.cuerpos.map((c) => envolvente(c.forma));

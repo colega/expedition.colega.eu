@@ -496,41 +496,88 @@ function moduloSofa(comp, nombre, c, paredes, largueros = []) {
   });
 }
 
-// R126: acumulador sobre dos cunas dentro del arcon del tramo largo.
+function racorAgua(comp, nombre, x, centro, radio, paso) {
+  const exterior = cilindroEntre('x', centro, x, radio);
+  comp.poner(nombre, exterior.cut(cilindroEntre('x', centro, x, paso)));
+}
+
+// R126: Isotemp horizontal, con sus tomas en el extremo de la trasera.
 function calefactorAgua(tramo) {
   const comp = componente('calefactor_agua', COMEDOR);
-  const { largo, diametro, elevacion, apoyo, boca } = R.CALEFACTOR_AGUA;
-  const centroX = (tramo.x[0] + tramo.x[1]) / 2;
-  const centroY = (tramo.y[0] + tramo.y[1]) / 2;
+  const r = R.CALEFACTOR_AGUA;
   const base = tramo.z[0] + ESPESOR;
-  const radio = diametro / 2;
-  const ejeZ = base + elevacion + radio;
-  const x = [centroX - largo / 2, centroX + largo / 2];
-  const acumulador = cilindroEntre('x', [centroY, ejeZ], x, radio);
-  comp.poner('acumulador', acumulador);
+  const radio = r.diametro / 2;
+  const centroY = tramo.y[1] - ESPESOR - r.margen_pasillo - radio;
+  const ejeZ = base + r.alto - radio;
+  const cola = tramo.x[1] - ESPESOR - r.margen_cabina;
+  const extremo = cola - r.largo;
+  const frente = extremo + r.frente;
+  const acumulador = cilindroEntre('x', [centroY, ejeZ], [frente, cola], radio);
+  comp.poner('isotemp_basic_24', acumulador);
 
-  const anchoApoyo = [centroY - apoyo.ancho / 2, centroY + apoyo.ancho / 2];
-  [x[0] + apoyo.desde_extremo, x[1] - apoyo.desde_extremo].forEach((centro, i) => {
-    const cuna = cajaForma([centro - apoyo.largo / 2, centro + apoyo.largo / 2],
-      anchoApoyo, [base, base + apoyo.alto]);
-    comp.poner(`calefactor_cuna_${i + 1}`, cuna.cut(acumulador));
+  const { apoyo, tapa, racor } = r;
+  const cuna = [[-radio, 0], [radio, 0], [apoyo.hombro, apoyo.alto], [-apoyo.hombro, apoyo.alto]]
+    .map(([y, z]) => [centroY + y, base + z]);
+  [apoyo.inicio, apoyo.inicio + apoyo.distancia].forEach((avance, i) => {
+    const forma = prismaForma('x', extremo + avance, apoyo.fondo, cuna);
+    comp.poner(`calefactor_cuna_${i + 1}`, forma.cut(acumulador));
   });
 
-  const ySanitaria = centroY + boca.desfase_y;
-  const yPrimario = centroY - boca.desfase_y;
-  const zAlta = ejeZ + boca.desfase_z;
-  const zBaja = ejeZ - boca.desfase_z;
-  const tramoBoca = [x[1], x[1] + boca.vuelo];
-  for (const [nombre, y, z] of [
-    ['sanitaria_entrada_fria', ySanitaria, zBaja],
-    ['sanitaria_salida_caliente', ySanitaria, zAlta],
-    ['primario_entrada', yPrimario, zAlta],
-    ['primario_retorno', yPrimario, zBaja],
-  ]) {
-    const exterior = cilindroEntre('x', [y, z], tramoBoca, boca.radio);
-    const interior = cilindroEntre('x', [y, z], tramoBoca, boca.radio_interior);
-    comp.poner(`calefactor_${nombre}`, exterior.cut(interior));
+  const { semiancho: a, abajo, arriba, chaflan: ch } = tapa;
+  const contorno = [[-a + ch, abajo], [a - ch, abajo], [a, abajo + ch], [a, arriba - ch],
+    [a - ch, arriba], [-a + ch, arriba], [-a, arriba - ch], [-a, abajo + ch]]
+    .map(([y, z]) => [centroY + y, ejeZ + z]);
+  prisma(comp, 'calefactor_tapa_resistencia', 'x', frente - tapa.vuelo / 2, tapa.vuelo, contorno);
+  for (const [nombre, y, z, vuelo] of r.bocas) {
+    racorAgua(comp, `calefactor_${nombre}`, [frente - vuelo, frente],
+      [centroY + y, ejeZ + z], racor.radio, racor.paso);
   }
+}
+
+// R128: la malla y el cabezal doble quedan unidos en serie en el mismo soporte.
+function prefiltradoAgua(tramo) {
+  const comp = componente('prefiltrado_agua', COMEDOR);
+  const r = R.PREFILTRADO_AGUA;
+  const { malla, duo, union, soporte } = r;
+  const pared = tramo.y[1] - ESPESOR;
+  const y = pared - r.eje_desde_pasillo;
+  const z = bajoTapaSofa(tramo.z[0]) - r.margen_tapa;
+  const entrada = tramo.x[0] + ESPESOR + r.margen_trasera;
+  const finMalla = entrada + malla.largo;
+  const inicioDuo = finMalla + union.largo;
+  const salida = inicioDuo + duo.largo;
+
+  const xMalla = (entrada + finMalla) / 2;
+  const baseMalla = z - malla.alto;
+  const fondoVaso = baseMalla + malla.descarga;
+  const fondoCabezal = z - malla.cabecera;
+  bloque(comp, 'prefiltro_cabezal_malla', [entrada, finMalla],
+    [y - malla.ancho / 2, y + malla.ancho / 2], [fondoCabezal, z]);
+  const vaso = cilindroForma([xMalla, y], [fondoVaso, fondoCabezal], malla.ancho / 2);
+  const hueco = cilindroForma([xMalla, y], [fondoVaso + malla.pared, fondoCabezal], malla.ancho / 2 - malla.pared);
+  const pasoDescarga = cilindroForma([xMalla, y], [baseMalla, fondoVaso + malla.pared], malla.paso_descarga);
+  comp.poner('prefiltro_vaso_malla', vaso.cut(hueco).cut(pasoDescarga));
+  cilindro(comp, 'prefiltro_malla_inox_90_um', [xMalla, y], [fondoVaso + malla.pared, fondoCabezal], malla.radio_malla);
+  const descarga = cilindroForma([xMalla, y], [baseMalla, fondoVaso], malla.radio_descarga);
+  comp.poner('prefiltro_descarga_malla', descarga.cut(pasoDescarga));
+
+  const radioDuo = duo.ancho / 2;
+  bloque(comp, 'prefiltro_cabezal_duo', [inicioDuo, salida],
+    [y - radioDuo, y + radioDuo], [z - duo.cabecera, z]);
+  const separacion = duo.largo / duo.cartuchos.length;
+  duo.cartuchos.forEach((micras, i) => {
+    const x = inicioDuo + (i + 0.5) * separacion;
+    cilindro(comp, `prefiltro_vaso_pp_${micras}_um`, [x, y], [z - duo.alto, z - duo.cabecera], radioDuo);
+  });
+  racorAgua(comp, 'prefiltro_union_entre_cabezales', [finMalla, inicioDuo],
+    [y, z - malla.cabecera / 2], union.radio, union.paso);
+
+  // Ángulo desmontable desde el asiento, sujeto al lado del arcón que da al paso.
+  const ala = y - soporte.ala;
+  const g = soporte.grueso;
+  prisma(comp, 'prefiltro_soporte_extraible', 'x', (entrada + salida) / 2, salida - entrada,
+    [[ala, z], [pared - g, z], [pared - g, z - soporte.alto], [pared, z - soporte.alto],
+      [pared, z + g], [ala, z + g]]);
 }
 
 // R127: carcasa hueca con boca de inspeccion y salida de desague por debajo.
@@ -606,6 +653,7 @@ function comedor() {
   moduloSofa(sofa, 'sofa_retorno', retorno, [['x', 1, [retorno.y[0], retorno.y[1] - 15]]], ['x2', 'y1']);
   resumen.sofa = sofa.cuerpos.length;
   calefactorAgua(tramo);
+  prefiltradoAgua(tramo);
 
   const m = R.MESA;
   const comp = componente('mesa', COMEDOR);

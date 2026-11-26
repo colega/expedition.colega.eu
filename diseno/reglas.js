@@ -231,21 +231,41 @@ export const VICTRON = {
     bornes: 47.0, borne_alto: 8.0 },
 };
 
-// R121 En el hueco, lo que pesa va al suelo y lo demas se cuelga del tablero del
-//      garaje contra la cabina. Del costado de la puerta al de la cocina:
-//        - las dos baterias en el suelo, en linea, con los 20 libres que pide
-//          Victron a los lados y 23.5 delante y detras
-//        - el MultiPlus a continuacion, colgado 100 sobre el suelo para que los
-//          cables le entren por abajo
-//        - lo que Victron no deja encima de las baterias va junto al MultiPlus:
-//          los dos MPPT y el Orion XS en columna, con 100 libres arriba y
-//          abajo, y el BatteryProtect encima del MultiPlus
-//        - encima de las baterias, a 430, la cadena Lynx: Power In, BMS y los
-//          dos distribuidores, montada boca abajo para que las baterias entren
-//          por el costado de la puerta. El Cerbo va encima del BMS, y al otro
-//          lado el Orion-Tr y el cuadro de 230
-export const ELECTRICO = { holgura_bateria: 20.0, bajo_multiplus: 100.0, holgura_cargador: 100.0,
-  lynx_y: -1110.0, lynx_z: 430.0, cerbo_z: 700.0, orion_tr_y: -100.0, cuadro_y: 250.0 };
+// R121 Las dos baterias van en torre, centradas en el ancho de la caja, que es
+//      donde mejor reparte su peso el chasis: la de abajo en el suelo y la de
+//      arriba en una balda de aluminio de 8, en el bastidor de R124. Entre una
+//      bateria y lo de encima quedan 100 para los bornes y los cables. Alrededor,
+//      los 20 libres que pide Victron a los lados y 23.5 delante y detras. Encima de la torre, la cadena Lynx: Power In, BMS y los
+//      dos distribuidores, montada boca abajo para que las baterias entren por
+//      el costado de la puerta. Lo demas se cuelga del tablero del garaje,
+//      fuera de la vertical de las baterias, como pide Victron:
+//        - del lado de la cocina, el MultiPlus junto a la torre, colgado 100
+//          sobre el suelo para que los cables le entren por abajo, y el cuadro
+//          de 230 a continuacion
+//        - del lado de la puerta, el BatteryProtect junto a la torre, a menos
+//          de los 50 que pide de la bateria; la columna de los dos MPPT y el
+//          Orion XS, con 100 libres alrededor; y la del Orion-Tr y el Cerbo
+//      Entre la torre y lo de los lados queda un paso de 40 para los cables que
+//      suben.
+export const ELECTRICO = { holgura_bateria: 20.0, hueco_bornes: 100.0, balda: 8.0,
+  paso_cables: 40.0, bajo_multiplus: 100.0, holgura_cargador: 100.0, columna_cargadores_y: -790.0,
+  orion_tr_z: 400.0, cerbo_z: 650.0, cuadro_z: 450.0 };
+
+// R124 La torre de baterias va en un bastidor de perfil de aluminio ranurado
+//      4040 de Aluxprofile (ranura de 8, 1.395 kg/m, Ix = Iy = 7.56 cm4), que
+//      lleva el peso al suelo de la caja y no a la pared:
+//        - cuatro montantes en las esquinas, en los costados de la torre y fuera
+//          de los 20 libres de las baterias: el fondo del hueco no deja meterlos
+//          delante y detras. Los de delante, 8 detras de la mampara para no
+//          tocar su carril, y los de detras contra el tablero del garaje
+//        - dos largueros a lo ancho, delante y detras, bajo los cantos de la
+//          bateria de arriba, con la balda encima
+//        - en cada costado, tres travesaños a lo largo: en el suelo, bajo la
+//          balda y arriba, cerrando el marco
+//      Se ancla al suelo de la caja por los travesaños de abajo, y cada bateria
+//      va sujeta con las escuadras que trae.
+export const BASTIDOR = { modelo: 'Aluxprofile perfil ranurado 4040', perfil: 40.0, kg_m: 1.395,
+  holgura_mampara: 8.0, alto_sobre_torre: 40.0 };
 
 // R122 El cuadro de 230 es un Schneider Resi9 MP MIP11108T de superficie, de una
 //      fila de 8 modulos: un diferencial de 2 modulos y 5 automaticos. Le llega

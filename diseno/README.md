@@ -42,16 +42,16 @@ elevado de 50 (R3). De la trasera a la cabina:
   arriba todo es dormitorio, y hacia abajo, garaje.
 - **Electricidad**, en el garaje, junto a la cabina, tras una mampara de
   metacrilato desmontable a 270 de la pared (R119). Equipos de Victron (R120,
-  R121): las dos baterías Lithium NG de 25,6 V / 300 Ah en el suelo, en línea, y
-  a continuación el MultiPlus-II 24/5000 colgado a 100 del suelo. A su lado, en
-  columna, los dos MPPT 150/35 y el Orion XS 1400, con el BatteryProtect encima
-  del MultiPlus. Sobre las baterías, la cadena Lynx (Power In, Smart BMS NG y
-  dos distribuidores), el Cerbo GX, el Orion-Tr 24/12 y el cuadro de 230 con un
-  diferencial y cinco automáticos (R122). El cableado principal va con las
-  secciones de los manuales (R123).
-  Altos en U: el de los pies, de 422, y el de las almohadas y el
-  de la cabina, de 250 (R65, R80). Un cajón-escalón en la esquina con el baño
-  (R101).
+  R121): las dos baterías Lithium NG de 25,6 V / 300 Ah en torre, centradas en
+  el ancho, en un bastidor de perfil 4040 de Aluxprofile anclado al suelo, la
+  de arriba en una balda de aluminio (R124), y encima la cadena Lynx
+  (Power In, Smart BMS NG y dos distribuidores). Del lado de la cocina, el
+  MultiPlus-II 24/5000 colgado a 100 del suelo y el cuadro de 230 con un
+  diferencial y cinco automáticos (R122). Del lado de la puerta, el
+  BatteryProtect, los dos MPPT 150/35 y el Orion XS 1400 en columna, y el
+  Orion-Tr 24/12 con el Cerbo GX. Nada de lo que Victron no deja encima de las
+  baterías queda encima de ellas. El cableado principal va con las secciones de
+  los manuales (R123).
 - **Ventanas** de Outbound con persiana por dentro. Cada una va centrada en lo
   suyo, y las de un costado rematan a la misma cota: 1600 en el de la cocina y
   1672 en el de la puerta (R90, R93, R96). Por fuera, los marcos de las
@@ -73,11 +73,14 @@ elevado de 50 (R3). De la trasera a la cabina:
 - **Fusibles de las baterías.** El Lynx Power In no lleva fusibles y Victron
   pide uno por batería en el positivo: un Lynx Class-T Power In o un Class-T de
   350 A en cada cable (R123).
+- **Uniones y anclaje del bastidor.** No están dibujadas las escuadras de
+  esquina 4040 de Aluxprofile ni las piezas de fijación al suelo, ni las
+  escuadras con las que va sujeta cada batería (R124). El anclaje tiene que
+  bajar al falso chasis, no quedarse en el tablero del garaje.
 - **Lo que entra y sale del hueco eléctrico** no está dibujado: los cables de
   las placas a los MPPT, el del alternador al Orion XS, la toma de 230 de
   fuera, las salidas del cuadro, la de 12 del Orion-Tr y la del
   BatteryProtect, y los cables de datos del Cerbo y del BMS (R123).
-- **El Orion XS** pide 100 libres alrededor y a los lados le quedan 69 (R121).
 
 - **Salida del tubo del Separett.** Baja por la plataforma hasta el suelo de la
   casa y de ahí tiene que salir afuera (R104).
